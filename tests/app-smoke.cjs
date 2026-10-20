@@ -43,3 +43,44 @@ action('reveal');action('rate',{grade:'good'});
 assert.equal(readState().words[first.id].relearning,false);
 assert.match(el('#main').innerHTML,/这一组，已经记进去了/);
 console.log('PASS: six views; reading graduation/reset; repeated again/hard until good; reload persistence; stable group progress; phrases, search, details, favorites and settings.');
+// The new list uses reading errors only, and its badge updates on the fifth error.
+const E=ctx.window.KotobaEngine,known=ctx.window.KOTOBA_DATA.words.slice(0,3);
+handlers.input({target:{id:'wordSearch',value:''}});
+const wrongState=E.fresh();E.rate(wrongState,first.id,'good');
+for(let i=0;i<4;i++){E.recordReading(wrongState,first.id,false,i%2?'kana':'kanji');E.recordReading(wrongState,first.id,true);}
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(wrongState)});nav('extreme');
+assert.match(el('#main').innerHTML,/还没有符合条件的极易错词/);assert.equal(el('#extremeNav').textContent,0);
+nav('today');action('quiz');answer(false);assert.equal(readState().words[first.id].readingWrong,5);
+assert.equal(el('#extremeNav').textContent,1);nav('extreme');assert.match(el('#main').innerHTML,/累计错 5 次/);
+assert.match(el('#main').innerHTML,/行く/);
+// A tab left open on the empty review page updates at Beijing midnight, with no reload.
+let clock=Date.parse('2026-10-20T21:48:00+08:00');
+ctx.Date=class extends Date{constructor(...args){super(...(args.length?args:[clock]));}static now(){return clock;}};
+ctx.Math=Object.create(Math);ctx.Math.random=()=>.1;winHandlers.focus();
+const daily=E.fresh();for(const w of known)E.rate(daily,w.id,'good',clock);
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(daily)});nav('review');
+assert.equal(options().length,0);assert.match(el('#main').innerHTML,/到期的词，都复习好了/);
+clock=Date.parse('2026-10-21T00:00:00+08:00');winHandlers.focus();
+assert.equal(el('#dueNav').textContent,3);assert.equal(options().length,4);
+assert.ok(!el('#main').innerHTML.includes('data-action="card"'),'review must not have separate card/reading tabs');
+const modes=new Set();let steps=0,wrongOnce=false;
+while(!el('#main').innerHTML.includes('到期的词，都复习好了')&&steps++<15){
+ const o=options();
+ if(o.length){
+  modes.add('quiz');const prompt=el('#main').innerHTML.match(/<h2 lang="ja" class="[^"]*">([^<]+)<\/h2>/)?.[1];
+  const w=known.find(w=>w.kana===prompt||ctx.window.KotobaQuiz.written(w)===prompt);assert.ok(w,prompt);
+  const a=o.find(v=>v===w.kana||v===ctx.window.KotobaQuiz.written(w));assert.ok(a);
+  action('quizAnswer',{answer:wrongOnce?a:o.find(v=>v!==a)});wrongOnce=true;
+  assert.match(el('#main').innerHTML,/quiz-feedback/,'feedback stays visible until Continue');
+  ctx.Math.random=()=>.9;action('nextQuiz');
+ }else{
+  modes.add('card');assert.ok(cardWord());action('reveal');ctx.Math.random=()=>.1;action('rate',{grade:'good'});
+ }
+}
+assert.ok(steps<15);assert.deepEqual([...modes].sort(),['card','quiz']);
+assert.equal(E.counts(readState(),clock).due,0);assert.equal(E.counts(readState(),clock+E.DAY).due,1,'today’s reading error is scheduled again tomorrow');
+// Already-graduated readings continue to get word cards rather than re-entering reading training.
+const graduated=E.fresh();E.rate(graduated,first.id,'good',clock-E.DAY);graduated.words[first.id].readingStreak=5;
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(graduated)});nav('review');ctx.Math.random=()=>.1;
+assert.equal(options().length,0);assert.equal(cardWord(),first.word);
+console.log('PASS: extreme fifth-error list; live midnight unlock; mixed review cards/questions; feedback, retries and next-day errors; graduated readings stay retired.');

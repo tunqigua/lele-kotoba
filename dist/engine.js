@@ -3,6 +3,11 @@
 'use strict';
 const KEY='lele-kotoba-v2', LEGACY_KEY='lele-kotoba-v1', DAY=86400000, INTERVALS=[1,3,7,14,30,60];
 const today=(now=Date.now())=>new Date(now+8*3600000).toISOString().slice(0,10);
+const dayStart=(now=Date.now())=>Date.parse(today(now)+'T00:00:00+08:00');
+const reviewDue=(now=Date.now(),days=1)=>dayStart(now)+days*DAY;
+const validDay=d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d);
+const isDue=(w,now=Date.now())=>!!(w?.seen&&(w.reviewPending||w.due<=now||(w.troubleDays||[]).some(d=>d<=today(now))));
+function markTrouble(w,now){w.troubleDays=[...new Set([...(w.troubleDays||[]),today(reviewDue(now))])].sort();}
 const fresh=()=>({schema:1,words:{},logs:[],settings:{newGoal:20,reviewGoal:50,priority:'all',lesson:'all'},savedAt:null});
 function validate(raw,ids){
  if(!raw||raw.schema!==1||typeof raw.words!=='object'||Array.isArray(raw.words)||!Array.isArray(raw.logs))throw Error('备份格式不匹配，请选择「拾词」导出的 JSON 文件。');
@@ -15,7 +20,13 @@ function validate(raw,ids){
   const history=raw.logs.filter(l=>l&&l.id===id&&['quizRight','quizWrong'].includes(l.grade));let legacyStreak=0;for(const l of history)legacyStreak=l.grade==='quizRight'?Math.min(5,legacyStreak+1):0;
   const readingStreak=Number.isInteger(v.readingStreak)&&v.readingStreak>=0&&v.readingStreak<=5?v.readingStreak:legacyStreak;
   const lastCard=lastCardGrades.get(id),relearning=v.seen>0&&(typeof v.relearning==='boolean'?v.relearning:lastCard?.day===today()&&['again','hard'].includes(lastCard.grade));
-  next.words[id]={readingStreak,readingTotal:Number.isInteger(v.readingTotal)&&v.readingTotal>=0?v.readingTotal:history.filter(l=>l.grade==='quizRight').length,stage:v.stage,due:v.due,seen:Math.min(v.seen,100000),lapses:Math.min(v.lapses,100000),star:!!v.star,relearning,lastReviewDay:typeof v.lastReviewDay==='string'?v.lastReviewDay:null,learnedOn:typeof v.learnedOn==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v.learnedOn)?v.learnedOn:today()};
+  const cardHistory=raw.logs.filter(l=>l&&l.id===id&&['again','hard','good','quizWrong'].includes(l.grade)&&validDay(l.day));
+  const reviewedOn=[validDay(v.reviewedOn)?v.reviewedOn:'',...cardHistory.filter(l=>l.grade==='good').map(l=>l.day)].sort().at(-1)||null;
+  const troubleDays=[...new Set([...(Array.isArray(v.troubleDays)?v.troubleDays.filter(validDay):[]),...cardHistory.filter(l=>l.grade!=='good').map(l=>today(Date.parse(l.day+'T00:00:00+08:00')+DAY))])].filter(d=>!reviewedOn||d>reviewedOn).sort();
+  const reviewPending=!!v.reviewPending&&relearning;
+  const due=v.due>0?Math.max(dayStart(v.due),relearning&&lastCard?.day===today()&&!reviewPending?reviewDue():0):0;
+  const readingWrong=Math.max(Number.isSafeInteger(v.readingWrong)&&v.readingWrong>=0?v.readingWrong:0,history.filter(l=>l.grade==='quizWrong').length);
+  next.words[id]={readingWrong,troubleDays,reviewedOn,reviewPending,readingStreak,readingTotal:Number.isInteger(v.readingTotal)&&v.readingTotal>=0?v.readingTotal:history.filter(l=>l.grade==='quizRight').length,stage:v.stage,due,seen:Math.min(v.seen,100000),lapses:Math.min(v.lapses,100000),star:!!v.star,relearning,lastReviewDay:typeof v.lastReviewDay==='string'?v.lastReviewDay:null,learnedOn:typeof v.learnedOn==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v.learnedOn)?v.learnedOn:today()};
  }
  next.logs=raw.logs.slice(-20000).filter(l=>l&&ids.has(l.id)&&/^\d{4}-\d{2}-\d{2}$/.test(l.day)&&['again','hard','good','quizWrong','quizRight'].includes(l.grade)).map(l=>({id:l.id,day:l.day,grade:l.grade,isNew:!!l.isNew,...(['kana','kanji'].includes(l.quizType)?{quizType:l.quizType}:{})}));
  const s=raw.settings||{};
@@ -27,21 +38,22 @@ function validate(raw,ids){
 }
 function counts(state,now=Date.now()){
  const logs=state.logs.filter(l=>l.day===today(now));
- return {learned:Object.values(state.words).filter(w=>w.seen>0).length,mastered:Object.values(state.words).filter(w=>w.seen>0&&w.stage>=3).length,due:Object.values(state.words).filter(w=>w.seen>0&&(w.relearning||w.due<=now)).length,newToday:new Set(logs.filter(l=>l.isNew).map(l=>l.id)).size,reviewToday:new Set(logs.filter(l=>!l.isNew&& !l.grade.startsWith('quiz')&&!logs.some(a=>a.id===l.id&&a.isNew)).map(l=>l.id)).size,answers:logs.length};
+ return {learned:Object.values(state.words).filter(w=>w.seen>0).length,mastered:Object.values(state.words).filter(w=>w.seen>0&&w.stage>=3).length,due:Object.values(state.words).filter(w=>isDue(w,now)).length,newToday:new Set(logs.filter(l=>l.isNew).map(l=>l.id)).size,reviewToday:new Set(logs.filter(l=>!l.isNew&& !l.grade.startsWith('quiz')&&!logs.some(a=>a.id===l.id&&a.isNew)).map(l=>l.id)).size,answers:logs.length};
 }
 function rate(state,id,grade,now=Date.now()){
  if(!['again','hard','good'].includes(grade))throw Error('Invalid grade');
  const old=state.words[id]||{stage:0,due:0,seen:0,lapses:0,star:false,learnedOn:today(now)};
  const isNew=old.seen===0;
  const stage=grade==='again'?0:grade==='hard'?Math.max(0,old.stage-1):(isNew?0:old.lastReviewDay===today(now)?old.stage:Math.min(5,old.stage+1));
- state.words[id]={...old,stage,relearning:grade!=='good',lastReviewDay:today(now),seen:old.seen+1,lapses:old.lapses+(grade==='again'?1:0),due:now+(grade==='again'?600000:grade==='hard'?DAY:DAY*INTERVALS[stage]),learnedOn:isNew?today(now):old.learnedOn};
+ state.words[id]={...old,stage,relearning:grade!=='good',reviewPending:grade!=='good'&&isDue(old,now),reviewedOn:grade==='good'?today(now):old.reviewedOn,lastReviewDay:today(now),seen:old.seen+1,lapses:old.lapses+(grade==='again'?1:0),due:reviewDue(now,grade==='good'?INTERVALS[stage]:1),learnedOn:isNew?today(now):old.learnedOn};
+ if(grade==='good')state.words[id].troubleDays=(old.troubleDays||[]).filter(d=>d>today(now));else markTrouble(state.words[id],now);
  state.logs.push({id,day:today(now),grade,isNew});state.logs=state.logs.slice(-20000);return state.words[id];
 }
 function filter(words,settings){return words.filter(w=>(settings.priority==='all'||w.priority===settings.priority)&&(settings.lesson==='all'||(settings.lesson==='exam'?w.source==='exam':w.lesson&&w.lesson.split('-')[0]===settings.lesson)));}
 function queue(words,state,mode='mixed',now=Date.now()){
  const selected=filter(words,state.settings),c=counts(state,now);
- const pending=selected.filter(w=>state.words[w.id]?.seen>0&&state.words[w.id].relearning);
- const due=selected.filter(w=>state.words[w.id]?.seen>0&&!state.words[w.id].relearning&&state.words[w.id].due<=now).sort((a,b)=>state.words[a.id].due-state.words[b.id].due).slice(0,Math.max(0,state.settings.reviewGoal-c.reviewToday));
+ const pending=selected.filter(w=>state.words[w.id]?.seen>0&&(mode==='review'?state.words[w.id].reviewPending:state.words[w.id].relearning));
+ const due=selected.filter(w=>isDue(state.words[w.id],now)&&!pending.some(p=>p.id===w.id)).sort((a,b)=>state.words[a.id].due-state.words[b.id].due).slice(0,Math.max(0,state.settings.reviewGoal-c.reviewToday));
  const unseen=selected.filter(w=>!state.words[w.id]?.seen).slice(0,Math.max(0,state.settings.newGoal-c.newToday));
  return [...pending,...(mode==='review'?due:mode==='new'?unseen:[...due,...unseen])];
 }
@@ -66,9 +78,10 @@ function recordReading(state,id,correct,type='kana',now=Date.now()){
  const w=state.words[id];if(!w?.seen||w.readingStreak>=5)return false;
  w.readingStreak=correct?Math.min(5,(w.readingStreak||0)+1):0;
  w.readingTotal=(w.readingTotal||0)+(correct?1:0);
- if(!correct)w.lapses++;
+ if(!correct){w.lapses++;w.readingWrong=(w.readingWrong||0)+1;markTrouble(w,now);}
  state.logs.push({id,day:today(now),grade:correct?'quizRight':'quizWrong',isNew:false,quizType:type});state.logs=state.logs.slice(-20000);return true;
 }
-const api={KEY,LEGACY_KEY,DAY,INTERVALS,today,fresh,validate,counts,rate,filter,queue,advanceSession,readingPool,recordReading};
+function extremePool(words,state){return words.filter(w=>state.words[w.id]?.seen>0&&(state.words[w.id].readingWrong||0)>=5);}
+const api={KEY,LEGACY_KEY,DAY,INTERVALS,today,dayStart,reviewDue,isDue,extremePool,fresh,validate,counts,rate,filter,queue,advanceSession,readingPool,recordReading};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.KotobaEngine=api;
 })(typeof window!=='undefined'?window:globalThis);
