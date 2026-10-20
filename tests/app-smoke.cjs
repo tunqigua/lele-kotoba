@@ -22,4 +22,24 @@ for(const v of ['library','mistakes','review','stats','about','today']){nav(v);a
 nav('library');handlers.input({target:{id:'wordSearch',value:'借りる'}});assert.match(el('#wordTable').innerHTML,/借りる/);
 const id=ctx.window.KOTOBA_DATA.words.find(w=>w.word==='借りる').id;action('detail',{id});assert.match(el('#detailContent').innerHTML,/かりられる/);assert.match(el('#detailContent').innerHTML,/联合记忆/);el('#detailDialog').close();action('star',{id});nav('mistakes');assert.match(el('#main').innerHTML,/借りる/);
 action('settings');assert.ok(el('#settingsDialog').open);el('#newGoal').value='30';el('#reviewGoal').value='60';el('#saveSettings').onclick();assert.equal(readState().settings.newGoal,30);
-console.log('PASS: six views; unseen-word exclusion; four correct → wrong reset → five correct graduation; phrases, search, details, favorites, persistence and settings.');
+// Exercise the actual card buttons as well as the shared scheduling engine.
+const repeatState=ctx.window.KotobaEngine.fresh();repeatState.settings.newGoal=3;
+winHandlers.storage({key:ctx.window.KotobaEngine.KEY,newValue:JSON.stringify(repeatState)});
+nav('today');action('card');
+const cardWord=()=>el('#main').innerHTML.match(/<div class="word-core"><h2 lang="ja">([^<]+)<\/h2>/)?.[1];
+let repeated=0,cardSteps=0;
+while(repeated<7&&cardSteps++<30){
+ const word=cardWord();assert.ok(word);
+ action('reveal');
+ if(word===first.word){action('rate',{grade:repeated++%2?'again':'hard'});assert.equal(readState().words[first.id].relearning,true);}
+ else action('rate',{grade:'good'});
+}
+assert.equal(repeated,7,'both non-good buttons must keep returning the word after the old two-retry cap');
+assert.match(el('#main').innerHTML,/本组 2 \/ 3/);
+assert.equal(cardWord(),first.word);
+winHandlers.storage({key:ctx.window.KotobaEngine.KEY,newValue:JSON.stringify(readState())});
+assert.equal(cardWord(),first.word,'unfinished word must survive a validated reload');
+action('reveal');action('rate',{grade:'good'});
+assert.equal(readState().words[first.id].relearning,false);
+assert.match(el('#main').innerHTML,/这一组，已经记进去了/);
+console.log('PASS: six views; reading graduation/reset; repeated again/hard until good; reload persistence; stable group progress; phrases, search, details, favorites and settings.');
