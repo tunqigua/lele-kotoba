@@ -22,6 +22,20 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
 .study-title{font-size:20px;line-height:1.4;margin:0;font-weight:600}
 .study-instruction{font-size:14px;line-height:1.5;color:#6d7869;margin:3px 0 0}
 .word-core h2,.phrase-jp,.phrase-reading,.word-meaning,.quiz-choice{overflow-wrap:anywhere}
+.inline-forms{margin-top:12px}
+.inline-forms .conjugation{margin-top:0;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.inline-forms .form-cell{padding:6px 8px;min-width:0}
+.inline-forms .form-cell small{font-size:12px;line-height:1.4;margin-bottom:3px}
+.inline-forms .form-cell span{font-size:16px;line-height:1.45;overflow-wrap:anywhere}
+.card-detail .form-caption{font-size:12px;line-height:1.5;color:#77816f;margin:5px 0 0}
+.form-pos{font-weight:400;font-size:12px;color:#77816f;margin-left:8px}
+.inline-word-type{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:12px;font-size:15px;line-height:1.5}
+.inline-word-type .detail-label{margin-bottom:0}
+.card-provenance{margin-top:auto;padding-top:8px;font-size:13px;line-height:1.5;color:#6d7863}
+.source-list{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.source-list>.detail-label{margin:0;white-space:nowrap}
+.card-provenance .evidence{padding-top:4px;margin-top:0;font-size:13px;line-height:1.5}
+.dictionary-link{align-self:flex-start;display:inline-flex;line-height:1.5;margin-top:8px}
 
 @media(min-width:961px){
   body{font-size:16px}
@@ -57,6 +71,10 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
   .is-revealed>.card-detail{grid-column:2;grid-row:2;min-width:0;min-height:0;border-top:0;border-left:1px solid #e5e9df;padding:16px 20px;display:flex;flex-direction:column}
   .card-detail .detail-label{font-size:14px;line-height:1.5;margin-bottom:7px;color:#52614b}
   .card-detail p{font-size:17px;line-height:1.65;color:#56634f}
+  .card-detail .inline-forms>.detail-label{margin-bottom:5px}
+  .card-detail .form-caption{font-size:12px;line-height:1.5;margin-top:5px;color:#77816f}
+  .card-provenance .source-list>.detail-label{font-size:13px;margin:0}
+  .card-provenance .evidence{font-size:13px;line-height:1.5;margin:0;padding-top:4px}
   .card-detail .example{margin-top:10px}
   .example .jp{font-size:19px;line-height:1.6}
   .example .zh{font-size:15px;line-height:1.6}
@@ -161,6 +179,15 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
   .quiz-options{gap:8px;padding:10px}
   .quiz-feedback{padding:8px 14px;gap:5px 14px}
   .quiz-feedback>p{font-size:15px;line-height:1.45}
+  .inline-forms{margin-top:8px}
+  .inline-forms .conjugation{grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}
+  .inline-forms .form-cell{padding:5px}
+  .inline-forms .form-cell span{font-size:15px;line-height:1.4}
+  .inline-forms .form-cell small{font-size:11px}
+  .card-detail .form-caption{font-size:11px}
+  .card-provenance{font-size:12px;padding-top:6px}
+  .card-provenance .source-list>.detail-label,.card-provenance .evidence{font-size:12px;line-height:1.4}
+  .dictionary-link{margin-top:5px;font-size:14px}
 }
 @media(max-width:960px){
   .sidebar-tools{padding:8px 0 0}
