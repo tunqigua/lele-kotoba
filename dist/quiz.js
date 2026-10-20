@@ -1,6 +1,7 @@
 /* Local sound/character contrasts only: never pull unrelated vocabulary as choices. */
 (function(root){
 'use strict';
+const engine=typeof module!=='undefined'&&module.exports?require('./engine.js'):root.KotobaEngine;
 const shuffle=(list,random=Math.random)=>{const a=[...list];for(let i=a.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
 const hira=s=>s.replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));
 const kata=s=>s.replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96));
@@ -47,8 +48,8 @@ function contextHint(w){
  if(w.meaning.includes(target))return '请选择正确写法';
  return w.meaning;
 }
-function createQuestion(words,state,previousId=null,random=Math.random){
- let pool=words.filter(w=>state.words[w.id]?.seen>0&&(state.words[w.id].readingStreak||0)<5);
+function createQuestion(words,state,previousId=null,random=Math.random,now=Date.now()){
+ let pool=engine.readingPool(words,state,now);
  if(pool.length>1)pool=pool.filter(w=>w.id!==previousId);if(!pool.length)return null;
  const w=pool[Math.floor(random()*pool.length)],hasKanji=/[一-龯]/.test(written(w)),type=hasKanji&&random()<.5?'kanji':'kana';
  const options=type==='kanji'?kanjiOptions(w,random):kanaOptions(w,random);

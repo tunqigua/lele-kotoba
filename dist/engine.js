@@ -1,12 +1,14 @@
 /* Small, dependency-free study engine. Browser and Node share the same logic. */
 (function(root){
 'use strict';
-const KEY='lele-kotoba-v2', LEGACY_KEY='lele-kotoba-v1', DAY=86400000, INTERVALS=[1,3,7,14,30,60];
+const KEY='lele-kotoba-v3', LEGACY_KEY='lele-kotoba-v2', EARLIEST_KEY='lele-kotoba-v1', DAY=86400000, INTERVALS=[1,3,7,14,30,60], READING_INTERVALS=[7,14,30];
 const today=(now=Date.now())=>new Date(now+8*3600000).toISOString().slice(0,10);
 const dayStart=(now=Date.now())=>Date.parse(today(now)+'T00:00:00+08:00');
 const reviewDue=(now=Date.now(),days=1)=>dayStart(now)+days*DAY;
 const validDay=d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d);
-const isDue=(w,now=Date.now())=>!!(w?.seen&&(w.reviewPending||w.due<=now||(w.troubleDays||[]).some(d=>d<=today(now))));
+const readingCheckDue=(w,now=Date.now())=>!!(w?.seen&&w.readingDoneDay!==today(now)&&Number.isFinite(w.readingDue)&&w.readingDue>0&&w.readingDue<=now);
+const readingReady=(w,now=Date.now())=>!!(w?.seen&&w.readingDoneDay!==today(now)&&((w.readingStreak||0)<5?(w.readingDue||0)<=now:readingCheckDue(w,now)));
+const isDue=(w,now=Date.now())=>!!(w?.seen&&(w.reviewPending||w.readingRetry||w.due<=now||readingCheckDue(w,now)||(w.troubleDays||[]).some(d=>d<=today(now))));
 function markTrouble(w,now){w.troubleDays=[...new Set([...(w.troubleDays||[]),today(reviewDue(now))])].sort();}
 const fresh=()=>({schema:1,words:{},logs:[],settings:{newGoal:20,reviewGoal:50,priority:'all',lesson:'all'},savedAt:null});
 function validate(raw,ids){
@@ -17,8 +19,14 @@ function validate(raw,ids){
  for(const [id,v]of Object.entries(raw.words)){
   if(!ids.has(id))continue;
   if(!v||!Number.isInteger(v.stage)||v.stage<0||v.stage>5||!Number.isFinite(v.due)||v.due<0||v.due>Date.now()+DAY*730||!Number.isFinite(v.seen)||v.seen<0||!Number.isFinite(v.lapses)||v.lapses<0)throw Error('备份中有无效的单词进度。');
-  const history=raw.logs.filter(l=>l&&l.id===id&&['quizRight','quizWrong'].includes(l.grade));let legacyStreak=0;for(const l of history)legacyStreak=l.grade==='quizRight'?Math.min(5,legacyStreak+1):0;
-  const readingStreak=Number.isInteger(v.readingStreak)&&v.readingStreak>=0&&v.readingStreak<=5?v.readingStreak:legacyStreak;
+  const history=raw.logs.filter(l=>l&&l.id===id&&['quizRight','quizWrong'].includes(l.grade)&&validDay(l.day));
+  const daily=new Map();for(const l of history){const day=daily.get(l.day)||{wrong:false,right:false,last:null};day.wrong=day.wrong||l.grade==='quizWrong';day.right=day.right||l.grade==='quizRight';day.last=l.grade;daily.set(l.day,day);}
+  let legacyStreak=0;for(const [,d]of [...daily].sort(([a],[b])=>a.localeCompare(b)))legacyStreak=d.wrong?0:d.right?Math.min(5,legacyStreak+1):legacyStreak;
+  const dailyRule=v.readingRule==='daily-v1';
+  const readingStreak=dailyRule&&Number.isInteger(v.readingStreak)&&v.readingStreak>=0&&v.readingStreak<=5?v.readingStreak:legacyStreak;
+  const lastReading=history.at(-1),lastFailed=history.filter(l=>l.grade==='quizWrong').at(-1);
+  const readingDoneDay=dailyRule&&validDay(v.readingDoneDay)?v.readingDoneDay:lastReading?.grade==='quizRight'?lastReading.day:null;
+  const readingFailedDay=dailyRule&&validDay(v.readingFailedDay)?v.readingFailedDay:lastFailed?.day||null;
   const lastCard=lastCardGrades.get(id),relearning=v.seen>0&&(typeof v.relearning==='boolean'?v.relearning:lastCard?.day===today()&&['again','hard'].includes(lastCard.grade));
   const cardHistory=raw.logs.filter(l=>l&&l.id===id&&['again','hard','good','quizWrong'].includes(l.grade)&&validDay(l.day));
   const reviewedOn=[validDay(v.reviewedOn)?v.reviewedOn:'',...cardHistory.filter(l=>l.grade==='good').map(l=>l.day)].sort().at(-1)||null;
@@ -26,7 +34,11 @@ function validate(raw,ids){
   const reviewPending=!!v.reviewPending&&relearning;
   const due=v.due>0?Math.max(dayStart(v.due),relearning&&lastCard?.day===today()&&!reviewPending?reviewDue():0):0;
   const readingWrong=Math.max(Number.isSafeInteger(v.readingWrong)&&v.readingWrong>=0?v.readingWrong:0,history.filter(l=>l.grade==='quizWrong').length);
-  next.words[id]={readingWrong,troubleDays,reviewedOn,reviewPending,readingStreak,readingTotal:Number.isInteger(v.readingTotal)&&v.readingTotal>=0?v.readingTotal:history.filter(l=>l.grade==='quizRight').length,stage:v.stage,due,seen:Math.min(v.seen,100000),lapses:Math.min(v.lapses,100000),star:!!v.star,relearning,lastReviewDay:typeof v.lastReviewDay==='string'?v.lastReviewDay:null,learnedOn:typeof v.learnedOn==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v.learnedOn)?v.learnedOn:today()};
+  const readingStage=dailyRule&&readingStreak>=5&&Number.isInteger(v.readingStage)&&v.readingStage>=0&&v.readingStage<READING_INTERVALS.length?v.readingStage:0;
+  const lastReadingDay=history.filter(l=>l.grade==='quizRight'&&validDay(l.day)).at(-1)?.day;
+  const baseline=lastReadingDay?Date.parse(lastReadingDay+'T00:00:00+08:00'):Number.isFinite(Date.parse(raw.savedAt))?Date.parse(raw.savedAt):Date.now();
+  const readingDue=dailyRule&&Number.isFinite(v.readingDue)&&v.readingDue>=0&&v.readingDue<=Date.now()+DAY*730?(v.readingDue?dayStart(v.readingDue):0):readingStreak>=5?reviewDue(baseline,READING_INTERVALS[0]):readingDoneDay?reviewDue(Date.parse(readingDoneDay+'T00:00:00+08:00')):0;
+  next.words[id]={readingRetry:!!v.readingRetry&&readingDoneDay!==today(),readingRule:'daily-v1',readingDoneDay,readingFailedDay,readingDue,readingStage,readingWrong,troubleDays,reviewedOn,reviewPending,readingStreak,readingTotal:Number.isInteger(v.readingTotal)&&v.readingTotal>=0?v.readingTotal:history.filter(l=>l.grade==='quizRight').length,stage:v.stage,due,seen:Math.min(v.seen,100000),lapses:Math.min(v.lapses,100000),star:!!v.star,relearning,lastReviewDay:typeof v.lastReviewDay==='string'?v.lastReviewDay:null,learnedOn:typeof v.learnedOn==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v.learnedOn)?v.learnedOn:today()};
  }
  next.logs=raw.logs.slice(-20000).filter(l=>l&&ids.has(l.id)&&/^\d{4}-\d{2}-\d{2}$/.test(l.day)&&['again','hard','good','quizWrong','quizRight'].includes(l.grade)).map(l=>({id:l.id,day:l.day,grade:l.grade,isNew:!!l.isNew,...(['kana','kanji'].includes(l.quizType)?{quizType:l.quizType}:{})}));
  const s=raw.settings||{};
@@ -52,7 +64,7 @@ function rate(state,id,grade,now=Date.now()){
 function filter(words,settings){return words.filter(w=>(settings.priority==='all'||w.priority===settings.priority)&&(settings.lesson==='all'||(settings.lesson==='exam'?w.source==='exam':w.lesson&&w.lesson.split('-')[0]===settings.lesson)));}
 function queue(words,state,mode='mixed',now=Date.now()){
  const selected=filter(words,state.settings),c=counts(state,now);
- const pending=selected.filter(w=>state.words[w.id]?.seen>0&&(mode==='review'?state.words[w.id].reviewPending:state.words[w.id].relearning));
+ const pending=selected.filter(w=>state.words[w.id]?.seen>0&&(mode==='review'?(state.words[w.id].reviewPending||state.words[w.id].readingRetry):(state.words[w.id].relearning||state.words[w.id].readingRetry)));
  const due=selected.filter(w=>isDue(state.words[w.id],now)&&!pending.some(p=>p.id===w.id)).sort((a,b)=>state.words[a.id].due-state.words[b.id].due).slice(0,Math.max(0,state.settings.reviewGoal-c.reviewToday));
  const unseen=selected.filter(w=>!state.words[w.id]?.seen).slice(0,Math.max(0,state.settings.newGoal-c.newToday));
  return [...pending,...(mode==='review'?due:mode==='new'?unseen:[...due,...unseen])];
@@ -73,15 +85,25 @@ function advanceSession(session,grade,random=Math.random){
  session.queue.splice(session.index+1,session.queue.length,...remaining);
  session.index++;return id;
 }
-function readingPool(words,state){return words.filter(w=>state.words[w.id]?.seen>0&&(state.words[w.id].readingStreak||0)<5);}
+function readingPool(words,state,now=Date.now()){return words.filter(w=>readingReady(state.words[w.id],now));}
 function recordReading(state,id,correct,type='kana',now=Date.now()){
- const w=state.words[id];if(!w?.seen||w.readingStreak>=5)return false;
- w.readingStreak=correct?Math.min(5,(w.readingStreak||0)+1):0;
+ const w=state.words[id];if(!readingReady(w,now))return false;
+ const day=today(now),wasStable=w.readingStreak>=5;
+ w.readingRule='daily-v1';
  w.readingTotal=(w.readingTotal||0)+(correct?1:0);
- if(!correct){w.lapses++;w.readingWrong=(w.readingWrong||0)+1;markTrouble(w,now);}
+ if(correct){
+  w.readingDoneDay=day;w.readingRetry=false;
+  // A correction finishes today's practice, but does not certify a fresh retrieval.
+  w.readingStreak=w.readingFailedDay===day?0:Math.min(5,(w.readingStreak||0)+1);
+  if(w.readingStreak>=5){w.readingStage=wasStable?Math.min(READING_INTERVALS.length-1,(w.readingStage||0)+1):0;w.readingDue=reviewDue(now,READING_INTERVALS[w.readingStage]);}
+  else{w.readingStage=0;w.readingDue=reviewDue(now);}
+ }else{
+  w.readingFailedDay=day;w.readingStreak=0;w.readingStage=0;w.readingDue=0;
+  w.lapses++;w.readingWrong=(w.readingWrong||0)+1;markTrouble(w,now);
+ }
  state.logs.push({id,day:today(now),grade:correct?'quizRight':'quizWrong',isNew:false,quizType:type});state.logs=state.logs.slice(-20000);return true;
 }
 function extremePool(words,state){return words.filter(w=>state.words[w.id]?.seen>0&&(state.words[w.id].readingWrong||0)>=5);}
-const api={KEY,LEGACY_KEY,DAY,INTERVALS,today,dayStart,reviewDue,isDue,extremePool,fresh,validate,counts,rate,filter,queue,advanceSession,readingPool,recordReading};
+const api={KEY,LEGACY_KEY,EARLIEST_KEY,DAY,INTERVALS,READING_INTERVALS,today,dayStart,reviewDue,isDue,readingReady,readingCheckDue,extremePool,fresh,validate,counts,rate,filter,queue,advanceSession,readingPool,recordReading};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.KotobaEngine=api;
 })(typeof window!=='undefined'?window:globalThis);

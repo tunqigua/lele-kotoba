@@ -24,8 +24,8 @@ test('yesterday’s reading errors and uncertain cards remain scheduled after sa
  assert.equal(E.counts(s,midnight-1).due,0);
  assert.deepEqual(E.queue(words,s,'review',midnight).map(w=>w.id).sort(),['a','b','c']);
  const restored=copy(s);assert.deepEqual(E.queue(words,restored,'review',midnight).map(w=>w.id).sort(),['a','b','c']);
- E.rate(restored,'a','good',midnight);assert.equal(E.isDue(restored.words.a,midnight),false);
- E.recordReading(restored,'a',false,'kanji',midnight+10);E.rate(restored,'a','good',midnight+20);
+ E.rate(restored,'a','good',midnight);assert.equal(E.isDue(restored.words.a,midnight),true,'daily reading is still due after a card review');
+ E.recordReading(restored,'a',false,'kanji',midnight+10);E.recordReading(restored,'a',true,'kana',midnight+15);E.rate(restored,'a','good',midnight+20);
  assert.equal(E.isDue(restored.words.a,midnight+30),false);
  assert.equal(E.isDue(restored.words.a,midnight+E.DAY),true,'a new error today must survive a successful review today');
 });
@@ -54,13 +54,15 @@ test('extremely difficult words count cumulative reading errors across both type
   E.recordReading(s,'a',false,i%2?'kanji':'kana',evening+i);
   assert.equal(s.words.a.readingStreak,0);
   if(i<4)assert.equal(E.extremePool(words,s).length,0);
-  E.recordReading(s,'a',true,'kana',evening+i);
+
  }
  assert.equal(s.words.a.readingWrong,5);assert.deepEqual(E.extremePool(words,s).map(w=>w.id),['a']);
- for(let i=0;i<4;i++)E.recordReading(s,'a',true,'kanji',evening+100+i);
+ E.recordReading(s,'a',true,'kanji',evening+100);
+ assert.equal(s.words.a.readingStreak,0);
+ for(let i=1;i<=5;i++)E.recordReading(s,'a',true,'kanji',evening+i*E.DAY);
  assert.equal(s.words.a.readingStreak,5);assert.equal(E.readingPool(words,s).some(w=>w.id==='a'),false);
  assert.deepEqual(E.extremePool(words,copy(s)).map(w=>w.id),['a'],'graduation does not erase the cumulative list');
- assert.equal(E.recordReading(s,'a',false,'kana',evening+200),false);assert.equal(s.words.a.readingWrong,5);
+ assert.equal(E.recordReading(s,'a',false,'kana',evening+5*E.DAY+200),false);assert.equal(s.words.a.readingWrong,5);
 });
 
 test('legacy wrong-answer logs migrate once and lifetime totals survive log trimming',()=>{

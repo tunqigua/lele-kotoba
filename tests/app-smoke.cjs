@@ -3,7 +3,9 @@ const vm=require('node:vm'),fs=require('node:fs'),assert=require('node:assert/st
 const els=new Map(),handlers={},storage=new Map();
 function el(s){if(!els.has(s))els.set(s,{innerHTML:'',textContent:'',style:{},value:'',dataset:{},classList:{add(){},remove(){},toggle(){}},showModal(){this.open=true;},close(){this.open=false;},click(){},remove(){},files:[]});return els.get(s);}
 const document={querySelector(s){if(s==='dialog[open]')return [...els.values()].find(v=>v.open)||null;return el(s);},querySelectorAll(){return[];},addEventListener(n,cb){handlers[n]=cb;},createElement(tag){return {...el(tag+Math.random()),set id(x){els.set('#'+x,this);},get id(){return'';}};},body:{append(){}}};
-const winHandlers={},ctx={document,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},location:{hash:''},history:{replaceState(a,b,h){ctx.location.hash=h;}},setTimeout(){return 1;},clearTimeout(){},Date,Intl,Map,Set,Math,Blob,URL,SpeechSynthesisUtterance(){},console};
+let clock=Date.parse('2026-10-20T21:48:00+08:00');
+const FakeDate=class extends Date{constructor(...args){super(...(args.length?args:[clock]));}static now(){return clock;}};
+const winHandlers={},ctx={document,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},location:{hash:''},history:{replaceState(a,b,h){ctx.location.hash=h;}},setTimeout(){return 1;},clearTimeout(){},Date:FakeDate,Intl,Map,Set,Math,Blob,URL,SpeechSynthesisUtterance(){},console};
 ctx.window={...ctx,scrollY:0,scrollTo(){},addEventListener(n,cb){winHandlers[n]=cb;}};
 vm.createContext(ctx);for(const f of ['data.js','engine.js','quiz.js','app.js'])vm.runInContext(fs.readFileSync(__dirname+'/../dist/'+f,'utf8'),ctx,{filename:f});
 function action(name,data={}){const button={dataset:{action:name,...data},disabled:false};handlers.click({target:{closest(s){return s==='[data-action]'?button:null;}}});}
@@ -15,9 +17,10 @@ action('quiz');assert.match(el('#main').innerHTML,/先学词，再训练/);asser
 action('card');action('reveal');assert.match(el('#main').innerHTML,/联合记忆/);action('rate',{grade:'good'});assert.equal(readState().words[first.id].seen,1);
 action('quiz');
 function answer(correct=true){const o=options();assert.equal(o.length,4);assert.equal(new Set(o).size,4);const a=o.find(v=>v==='いく'||v==='行く');assert.ok(a);action('quizAnswer',{answer:correct?a:o.find(v=>v!==a)});}
-for(let i=0;i<4;i++){answer();action('nextQuiz');}assert.equal(readState().words[first.id].readingStreak,4);
-answer(false);assert.match(el('#main').innerHTML,/计数已归零/);assert.equal(readState().words[first.id].readingStreak,0);action('nextQuiz');
-for(let i=0;i<5;i++){answer();action('nextQuiz');}assert.equal(readState().words[first.id].readingStreak,5);assert.equal(options().length,0);assert.match(el('#main').innerHTML,/已学词已全部过关/);
+for(let i=0;i<4;i++){answer();action('nextQuiz');assert.equal(options().length,0);if(i<3){clock+=86400000;winHandlers.focus();}}assert.equal(readState().words[first.id].readingStreak,4);
+clock+=86400000;winHandlers.focus();answer(false);assert.match(el('#main').innerHTML,/计数已归零/);assert.equal(readState().words[first.id].readingStreak,0);action('nextQuiz');
+assert.equal(options().length,4);answer(true);assert.match(el('#main').innerHTML,/今日订正完成/);action('nextQuiz');assert.equal(options().length,0);assert.equal(readState().words[first.id].readingStreak,0);
+for(let i=0;i<5;i++){clock+=86400000;winHandlers.focus();answer();action('nextQuiz');assert.equal(options().length,0);}assert.equal(readState().words[first.id].readingStreak,5);assert.match(el('#main').innerHTML,/本轮读音练习已完成/);
 for(const v of ['library','mistakes','review','stats','about','today']){nav(v);assert.ok(el('#main').innerHTML.length>300);assert.ok(!el('#main').innerHTML.includes('undefined'));}
 nav('library');handlers.input({target:{id:'wordSearch',value:'借りる'}});assert.match(el('#wordTable').innerHTML,/借りる/);
 const id=ctx.window.KOTOBA_DATA.words.find(w=>w.word==='借りる').id;action('detail',{id});assert.match(el('#detailContent').innerHTML,/かりられる/);assert.match(el('#detailContent').innerHTML,/联合记忆/);el('#detailDialog').close();action('star',{id});nav('mistakes');assert.match(el('#main').innerHTML,/借りる/);
@@ -42,20 +45,19 @@ assert.equal(cardWord(),first.word,'unfinished word must survive a validated rel
 action('reveal');action('rate',{grade:'good'});
 assert.equal(readState().words[first.id].relearning,false);
 assert.match(el('#main').innerHTML,/这一组，已经记进去了/);
-console.log('PASS: six views; reading graduation/reset; repeated again/hard until good; reload persistence; stable group progress; phrases, search, details, favorites and settings.');
+console.log('PASS: six views; reading low-frequency transition/reset; repeated again/hard until good; reload persistence; stable group progress; phrases, search, details, favorites and settings.');
 // The new list uses reading errors only, and its badge updates on the fifth error.
 const E=ctx.window.KotobaEngine,known=ctx.window.KOTOBA_DATA.words.slice(0,3);
 handlers.input({target:{id:'wordSearch',value:''}});
 const wrongState=E.fresh();E.rate(wrongState,first.id,'good');
-for(let i=0;i<4;i++){E.recordReading(wrongState,first.id,false,i%2?'kana':'kanji');E.recordReading(wrongState,first.id,true);}
+for(let i=0;i<4;i++)E.recordReading(wrongState,first.id,false,i%2?'kana':'kanji');
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(wrongState)});nav('extreme');
 assert.match(el('#main').innerHTML,/还没有符合条件的极易错词/);assert.equal(el('#extremeNav').textContent,0);
 nav('today');action('quiz');answer(false);assert.equal(readState().words[first.id].readingWrong,5);
 assert.equal(el('#extremeNav').textContent,1);nav('extreme');assert.match(el('#main').innerHTML,/累计错 5 次/);
 assert.match(el('#main').innerHTML,/行く/);
 // A tab left open on the empty review page updates at Beijing midnight, with no reload.
-let clock=Date.parse('2026-10-20T21:48:00+08:00');
-ctx.Date=class extends Date{constructor(...args){super(...(args.length?args:[clock]));}static now(){return clock;}};
+clock=Date.parse('2026-10-20T21:48:00+08:00');
 ctx.Math=Object.create(Math);ctx.Math.random=()=>.1;winHandlers.focus();
 const daily=E.fresh();for(const w of known)E.rate(daily,w.id,'good',clock);
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(daily)});nav('review');
@@ -79,8 +81,44 @@ while(!el('#main').innerHTML.includes('到期的词，都复习好了')&&steps++
 }
 assert.ok(steps<15);assert.deepEqual([...modes].sort(),['card','quiz']);
 assert.equal(E.counts(readState(),clock).due,0);assert.equal(E.counts(readState(),clock+E.DAY).due,1,'today’s reading error is scheduled again tomorrow');
-// Already-graduated readings continue to get word cards rather than re-entering reading training.
-const graduated=E.fresh();E.rate(graduated,first.id,'good',clock-E.DAY);graduated.words[first.id].readingStreak=5;
+// Stable readings get word cards until their low-frequency check becomes due.
+const graduated=E.fresh();E.rate(graduated,first.id,'good',clock-E.DAY);graduated.words[first.id].readingRule='daily-v1';graduated.words[first.id].readingStreak=5;graduated.words[first.id].readingDue=E.reviewDue(clock,7);
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(graduated)});nav('review');ctx.Math.random=()=>.1;
 assert.equal(options().length,0);assert.equal(cardWord(),first.word);
-console.log('PASS: extreme fifth-error list; live midnight unlock; mixed review cards/questions; feedback, retries and next-day errors; graduated readings stay retired.');
+console.log('PASS: extreme fifth-error list; live midnight unlock; mixed review cards/questions; feedback, retries and next-day errors; stable readings rest between checks.');
+
+// Low-frequency checks return at midnight, extend on success, and recover on failure.
+const maintenance=E.fresh();E.rate(maintenance,first.id,'good',clock);
+maintenance.words[first.id].readingRule='daily-v1';maintenance.words[first.id].readingStreak=5;maintenance.words[first.id].readingStage=0;
+maintenance.words[first.id].readingDue=E.reviewDue(clock,7);maintenance.words[first.id].due=E.reviewDue(clock,60);
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(maintenance)});nav('today');action('quiz');
+assert.equal(options().length,0);assert.match(el('#main').innerHTML,/下次读音练习/);
+clock=maintenance.words[first.id].readingDue;winHandlers.focus();assert.equal(options().length,4);
+answer(true);assert.match(el('#main').innerHTML,/已转低频抽查/);
+assert.equal(readState().words[first.id].readingStage,1);assert.equal(readState().words[first.id].readingDue,E.reviewDue(clock,14));
+action('nextQuiz');assert.equal(options().length,0);
+const checkState=readState();checkState.words[first.id].due=E.reviewDue(clock,60);
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(checkState)});nav('review');
+assert.equal(options().length,0);clock=checkState.words[first.id].readingDue;ctx.Math.random=()=>.9;winHandlers.focus();
+assert.equal(options().length,4,'a due reading check must be served even when random selection would prefer a card');
+answer(false);const failed=readState().words[first.id];
+assert.equal(failed.readingStreak,0);assert.equal(failed.readingDue,0);assert.equal(failed.readingWrong,1);assert.equal(failed.reviewPending,true);
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(readState())});
+assert.equal(options().length,4,'an unfinished failed reading review remains a reading question after reload');
+answer(true);assert.equal(readState().words[first.id].readingStreak,0);action('nextQuiz');nav('today');action('quiz');
+assert.equal(options().length,0,'after correction, this word stops for today');clock+=E.DAY;winHandlers.focus();
+assert.equal(options().length,4,'failed stable word returns to normal training on the next day');
+console.log('PASS: low-frequency empty state; midnight return; 14-day extension; mixed review forced check; failure/reset and unfinished review reload.');
+
+// Both prior storage versions migrate automatically; old tabs cannot overwrite the new schedule.
+const legacyProgress=E.fresh();E.rate(legacyProgress,first.id,'good',clock);
+legacyProgress.words[first.id].star=true;for(let i=0;i<5;i++)E.recordReading(legacyProgress,first.id,true,'kana',clock+(i-4)*E.DAY);delete legacyProgress.words[first.id].readingRule;delete legacyProgress.words[first.id].readingDue;delete legacyProgress.words[first.id].readingStage;delete legacyProgress.words[first.id].readingDoneDay;
+const legacyJson=JSON.stringify(legacyProgress);
+for(const legacyKey of [E.LEGACY_KEY,E.EARLIEST_KEY]){
+ storage.delete(E.KEY);storage.delete(E.LEGACY_KEY);storage.delete(E.EARLIEST_KEY);storage.set(legacyKey,legacyJson);
+ ctx.location.hash='#today';vm.runInContext(fs.readFileSync(__dirname+'/../dist/app.js','utf8'),ctx,{filename:'app.js'});
+ const migrated=readState().words[first.id];assert.equal(migrated.seen,1);assert.equal(migrated.star,true);
+ assert.equal(migrated.readingStreak,5);assert.equal(migrated.readingDue,E.reviewDue(clock,7));
+ assert.equal(storage.get(legacyKey),legacyJson,'migration leaves old storage untouched');
+}
+console.log('PASS: automatic v1/v2 progress migration to isolated v3 storage.');
