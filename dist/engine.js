@@ -2,6 +2,7 @@
 (function(root){
 'use strict';
 const KEY='lele-kotoba-v3', LEGACY_KEY='lele-kotoba-v2', EARLIEST_KEY='lele-kotoba-v1', DAY=86400000, INTERVALS=[1,3,7,14,30,60], READING_INTERVALS=[7,14,30];
+function shuffle(list,random=Math.random){const a=[...list];for(let i=a.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 const today=(now=Date.now())=>new Date(now+8*3600000).toISOString().slice(0,10);
 const dayStart=(now=Date.now())=>Date.parse(today(now)+'T00:00:00+08:00');
 const reviewDue=(now=Date.now(),days=1)=>dayStart(now)+days*DAY;
@@ -62,11 +63,12 @@ function rate(state,id,grade,now=Date.now()){
  state.logs.push({id,day:today(now),grade,isNew});state.logs=state.logs.slice(-20000);return state.words[id];
 }
 function filter(words,settings){return words.filter(w=>(settings.priority==='all'||w.priority===settings.priority)&&(settings.lesson==='all'||(settings.lesson==='exam'?w.source==='exam':w.lesson&&w.lesson.split('-')[0]===settings.lesson)));}
-function queue(words,state,mode='mixed',now=Date.now()){
+function queue(words,state,mode='mixed',now=Date.now(),random=Math.random){
  const selected=filter(words,state.settings),c=counts(state,now);
- const pending=selected.filter(w=>state.words[w.id]?.seen>0&&(mode==='review'?(state.words[w.id].reviewPending||state.words[w.id].readingRetry):(state.words[w.id].relearning||state.words[w.id].readingRetry)));
- const due=selected.filter(w=>isDue(state.words[w.id],now)&&!pending.some(p=>p.id===w.id)).sort((a,b)=>state.words[a.id].due-state.words[b.id].due).slice(0,Math.max(0,state.settings.reviewGoal-c.reviewToday));
- const unseen=selected.filter(w=>!state.words[w.id]?.seen).slice(0,Math.max(0,state.settings.newGoal-c.newToday));
+ const pending=shuffle(selected.filter(w=>state.words[w.id]?.seen>0&&(mode==='review'?(state.words[w.id].reviewPending||state.words[w.id].readingRetry):(state.words[w.id].relearning||state.words[w.id].readingRetry))),random);
+ const due=shuffle(shuffle(selected.filter(w=>isDue(state.words[w.id],now)&&!pending.some(p=>p.id===w.id)),random).sort((a,b)=>state.words[a.id].due-state.words[b.id].due).slice(0,Math.max(0,state.settings.reviewGoal-c.reviewToday)),random);
+ // Draw from the entire eligible pool before applying the daily limit.
+ const unseen=shuffle(selected.filter(w=>!state.words[w.id]?.seen),random).slice(0,Math.max(0,state.settings.newGoal-c.newToday));
  return [...pending,...(mode==='review'?due:mode==='new'?unseen:[...due,...unseen])];
 }
 function advanceSession(session,grade,random=Math.random){
@@ -104,6 +106,6 @@ function recordReading(state,id,correct,type='kana',now=Date.now()){
  state.logs.push({id,day:today(now),grade:correct?'quizRight':'quizWrong',isNew:false,quizType:type});state.logs=state.logs.slice(-20000);return true;
 }
 function extremePool(words,state){return words.filter(w=>state.words[w.id]?.seen>0&&(state.words[w.id].readingWrong||0)>=5);}
-const api={KEY,LEGACY_KEY,EARLIEST_KEY,DAY,INTERVALS,READING_INTERVALS,today,dayStart,reviewDue,isDue,readingReady,readingCheckDue,extremePool,fresh,validate,counts,rate,filter,queue,advanceSession,readingPool,recordReading};
+const api={KEY,LEGACY_KEY,EARLIEST_KEY,DAY,INTERVALS,READING_INTERVALS,shuffle,today,dayStart,reviewDue,isDue,readingReady,readingCheckDue,extremePool,fresh,validate,counts,rate,filter,queue,advanceSession,readingPool,recordReading};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.KotobaEngine=api;
 })(typeof window!=='undefined'?window:globalThis);

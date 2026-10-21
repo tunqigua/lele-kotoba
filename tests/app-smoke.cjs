@@ -5,7 +5,8 @@ function el(s){if(!els.has(s))els.set(s,{innerHTML:'',textContent:'',style:{},va
 const document={querySelector(s){if(s==='dialog[open]')return [...els.values()].find(v=>v.open)||null;return el(s);},querySelectorAll(){return[];},addEventListener(n,cb){handlers[n]=cb;},createElement(tag){return {...el(tag+Math.random()),set id(x){els.set('#'+x,this);},get id(){return'';}};},body:{append(){}}};
 let clock=Date.parse('2026-10-20T21:48:00+08:00');
 const FakeDate=class extends Date{constructor(...args){super(...(args.length?args:[clock]));}static now(){return clock;}};
-const winHandlers={},ctx={document,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},location:{hash:''},history:{replaceState(a,b,h){ctx.location.hash=h;}},setTimeout(){return 1;},clearTimeout(){},Date:FakeDate,Intl,Map,Set,Math,Blob,URL,SpeechSynthesisUtterance(){},console};
+const initialMath=Object.create(Math);initialMath.random=()=>.999999;
+const winHandlers={},ctx={document,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},location:{hash:''},history:{replaceState(a,b,h){ctx.location.hash=h;}},setTimeout(){return 1;},clearTimeout(){},Date:FakeDate,Intl,Map,Set,Math:initialMath,Blob,URL,SpeechSynthesisUtterance(){},console};
 ctx.window={...ctx,scrollY:0,scrollTo(){},addEventListener(n,cb){winHandlers[n]=cb;}};
 vm.createContext(ctx);for(const f of ['data.js','engine.js','quiz.js','app.js'])vm.runInContext(fs.readFileSync(__dirname+'/../dist/'+f,'utf8'),ctx,{filename:f});
 function action(name,data={}){const button={dataset:{action:name,...data},disabled:false};handlers.click({target:{closest(s){return s==='[data-action]'?button:null;}}});}
@@ -122,3 +123,16 @@ for(const legacyKey of [E.LEGACY_KEY,E.EARLIEST_KEY]){
  assert.equal(storage.get(legacyKey),legacyJson,'migration leaves old storage untouched');
 }
 console.log('PASS: automatic v1/v2 progress migration to isolated v3 storage.');
+// Regular cards and the extra-new-word button both draw across the full word pool.
+function randomSeed(seed){let n=seed;return()=>{n=(1664525*n+1013904223)>>>0;return n/4294967296;};}
+const allWords=ctx.window.KOTOBA_DATA.words,randomState=E.fresh();randomState.settings.newGoal=1;
+const expectedFirst=E.queue(allWords,randomState,'new',clock,randomSeed(73))[0];
+ctx.Math.random=randomSeed(73);winHandlers.storage({key:E.KEY,newValue:JSON.stringify(randomState)});nav('today');action('card');
+assert.equal(cardWord(),ctx.window.KotobaQuiz.written(expectedFirst));
+assert.ok(!Array.from(allWords.slice(0,20)).some(w=>w.id===expectedFirst.id),'daily card must not be confined to the alphabetic prefix');
+action('reveal');action('rate',{grade:'good'});assert.match(el('#main').innerHTML,/这一组，已经记进去了/);
+const afterRandom=readState(),expectedExtra=E.shuffle(E.filter(allWords,afterRandom.settings).filter(w=>!afterRandom.words[w.id]?.seen),randomSeed(101)).slice(0,10);
+ctx.Math.random=randomSeed(101);action('extra');assert.equal(cardWord(),ctx.window.KotobaQuiz.written(expectedExtra[0]));
+const extraSeen=new Set();for(let i=0;i<10;i++){const label=cardWord();assert.equal(label,ctx.window.KotobaQuiz.written(expectedExtra[i]));assert.ok(!extraSeen.has(label));extraSeen.add(label);action('reveal');action('rate',{grade:'good'});}
+assert.match(el('#main').innerHTML,/这一组，已经记进去了/);
+console.log('PASS: new cards and extra-new draws randomize the full pool; learned-only review excludes unseen words.');
