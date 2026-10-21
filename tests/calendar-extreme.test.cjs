@@ -50,18 +50,18 @@ test('old time-of-day schedules migrate to midnight without losing progress or r
 test('extremely difficult words count cumulative reading errors across both types, independent of streaks',()=>{
  const s=E.fresh();E.rate(s,'a','good',evening);E.rate(s,'b','good',evening);
  for(let i=0;i<5;i++){
-  E.rate(s,'b','again',evening+i); // card errors must never qualify a word for this list
+  E.rate(s,'b','again',evening+i); // card errors qualify separately after five consecutive again grades
   E.recordReading(s,'a',false,i%2?'kanji':'kana',evening+i);
   assert.equal(s.words.a.readingStreak,0);
   if(i<4)assert.equal(E.extremePool(words,s).length,0);
 
  }
- assert.equal(s.words.a.readingWrong,5);assert.deepEqual(E.extremePool(words,s).map(w=>w.id),['a']);
+ assert.equal(s.words.a.readingWrong,5);assert.deepEqual(E.extremePool(words,s).map(w=>w.id),['a','b']);
  E.recordReading(s,'a',true,'kanji',evening+100);
  assert.equal(s.words.a.readingStreak,0);
  for(let i=1;i<=5;i++)E.recordReading(s,'a',true,'kanji',evening+i*E.DAY);
  assert.equal(s.words.a.readingStreak,5);assert.equal(E.readingPool(words,s).some(w=>w.id==='a'),false);
- assert.deepEqual(E.extremePool(words,copy(s)).map(w=>w.id),['a'],'graduation does not erase the cumulative list');
+ assert.deepEqual(E.extremePool(words,copy(s)).map(w=>w.id),['a','b'],'graduation does not erase the cumulative list');
  assert.equal(E.recordReading(s,'a',false,'kana',evening+5*E.DAY+200),false);assert.equal(s.words.a.readingWrong,5);
 });
 
