@@ -10,7 +10,7 @@ const winHandlers={},ctx={document,localStorage:{getItem:k=>storage.get(k)||null
 ctx.window={...ctx,scrollY:0,scrollTo(){},addEventListener(n,cb){winHandlers[n]=cb;}};
 vm.createContext(ctx);for(const f of ['data.js','engine.js','quiz.js','app.js'])vm.runInContext(fs.readFileSync(__dirname+'/../dist/'+f,'utf8'),ctx,{filename:f});
 function action(name,data={}){const before=spoken.length,button={dataset:{action:name,...data},disabled:false};handlers.click({target:{closest(s){return s==='[data-action]'?button:null;}}});if(!['reveal','speak','quizAnswer'].includes(name))assert.equal(spoken.length,before,'navigation, next questions and rerenders must be silent');}
-function nav(v){ctx.location.hash='#'+v;winHandlers.hashchange();}
+function nav(v){const before=spoken.length;ctx.location.hash='#'+v;winHandlers.hashchange();assert.equal(spoken.length,before,'changing sections must not pronounce an answer');}
 function options(){return [...el('#main').innerHTML.matchAll(/data-answer="([^"]+)"/g)].map(m=>m[1]);}
 const readState=()=>JSON.parse(storage.get(ctx.window.KotobaEngine.KEY));
 const first=ctx.window.KOTOBA_DATA.words[0];assert.equal(first.word,'行く');
@@ -167,3 +167,46 @@ for(let i=1;i<=5;i++){action('reveal');action('rate',{grade:'again'});assert.equ
 action('reveal');action('rate',{grade:'good'});nav('extreme');assert.match(el('#main').innerHTML,/最高连点 5 次/);assert.match(el('#main').innerHTML,/行く/);
 assert.equal(readState().words[first.id].readingWrong||0,0);
 console.log('PASS: all yesterday words plus ten historical words; backup above thirty; fixed daily draw; midnight rollover; fifth card-again inclusion; correct-target audio after both answer types with no pre-answer or duplicate speech.');
+
+// Unlimited grind uses only questions, independently of daily completion and quotas.
+const grindState=E.fresh();grindState.settings.newGoal=1;grindState.settings.reviewGoal=1;grindState.settings.priority='C';grindState.settings.lesson='exam';
+const grindKnown=allWords.slice(0,12);
+for(const w of grindKnown){E.rate(grindState,w.id,'good',clock-E.DAY);E.recordReading(grindState,w.id,true,'kana',clock);}
+grindState.words[grindKnown[11].id].readingStreak=5;grindState.words[grindKnown[11].id].readingDue=E.reviewDue(clock,7);
+grindState.words[first.id].grindStreak=4;E.dailyReadingPlan(allWords,grindState,clock);
+const regularPlan=JSON.stringify(grindState.readingPlan),regularDone=grindKnown.map(w=>grindState.words[w.id].readingDoneDay);
+const originalForWord=ctx.window.KotobaQuiz.questionForWord;let grindQuestion;
+ctx.window.KotobaQuiz.questionForWord=(...args)=>(grindQuestion=originalForWord(...args));ctx.Math.random=randomSeed(37);
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(grindState)});nav('grind');
+assert.equal(el('#grindNav').textContent,11);assert.equal(options().length,4);assert.match(el('#main').innerHTML,/累计错 0 次/);
+assert.ok(!el('#main').innerHTML.includes('data-action="reveal"'),'grind never shows a word card');
+assert.ok(!el('#main').innerHTML.includes('data-action="card"'),'grind has no card tab');
+const roundIds=new Map(),grindTypes=new Set();let grindSteps=0,lastGrindId=null,wrongGrindId;
+while(options().length&&grindSteps++<80){
+ const q=grindQuestion,id=q.id,before=readState(),w=grindKnown.find(w=>w.id===id),round=before.grindSession.round;
+ assert.ok(w&&id!==grindKnown[11].id);assert.notEqual(id,lastGrindId);lastGrindId=id;
+ const inRound=roundIds.get(round)||new Set();assert.ok(!inRound.has(id),'a word occurs only once in a shuffled round');inRound.add(id);roundIds.set(round,inRound);grindTypes.add(q.type);
+ const correct=grindSteps!==1,choice=correct?q.answer:q.options.find(a=>a!==q.answer),speechBefore=spoken.length;
+ action('quizAnswer',{answer:choice});const after=readState();
+ assert.equal(spoken.length,speechBefore+1);assert.equal(spoken.at(-1).text,w.kana);
+ assert.equal(after.words[id].grindStreak,correct?(before.words[id].grindStreak||0)+1:0);
+ if(!correct){wrongGrindId=id;assert.match(el('#main').innerHTML,/累计错 1 次/);assert.match(el('#main').innerHTML,/狂刷计数已归零/);}
+ action('quizAnswer',{answer:q.answer});assert.equal(spoken.length,speechBefore+1);assert.deepEqual(readState().words[id],after.words[id]);
+ assert.equal(JSON.stringify(after.readingPlan),regularPlan);assert.deepEqual(grindKnown.map(w=>after.words[w.id].readingDoneDay),regularDone);
+ if(after.words[id].grindStreak===5)assert.match(el('#main').innerHTML,/本词已移出狂刷/);
+ action('nextQuiz');
+}
+assert.ok(grindSteps>30&&grindSteps<80);assert.equal(options().length,0);assert.match(el('#main').innerHTML,/狂刷已全部达标/);
+assert.equal(el('#grindNav').textContent,0);assert.deepEqual([...grindTypes].sort(),['kana','kanji']);
+assert.equal(readState().words[wrongGrindId].readingWrong,1,'success never clears the lifetime wrong total');
+nav('stats');nav('grind');assert.equal(options().length,0,'qualified words stay out on re-entry');
+// A later uncertain card reopens even a previously cross-day-qualified word; keyboard and speech match clicks.
+const reopened=readState(),reopenedId=grindKnown[11].id;E.rate(reopened,reopenedId,'hard',clock);
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(reopened)});assert.equal(options().length,4);assert.equal(el('#grindNav').textContent,1);
+const keyIndex=grindQuestion.options.indexOf(grindQuestion.answer),keySpeech=spoken.length;
+handlers.keydown({key:String(keyIndex+1),target:{matches(){return false;},closest(){return null;}},preventDefault(){}});
+assert.equal(readState().words[reopenedId].grindStreak,1);assert.equal(spoken.length,keySpeech+1);
+handlers.keydown({key:'Enter',target:{matches(){return false;},closest(){return null;}},preventDefault(){}});
+assert.equal(options().length,4);assert.equal(spoken.length,keySpeech+1,'next question starts silently even with only one remaining word');
+ctx.window.KotobaQuiz.questionForWord=originalForWord;
+console.log('PASS: question-only unlimited grind; all learned scopes; full shuffled rounds; fifth-success removal; wrong/reset and lifetime label; no daily-plan consumption; navigation persistence; keyboard answers and correct-target speech.');

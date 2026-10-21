@@ -51,11 +51,14 @@ function contextHint(w){
 function createQuestion(words,state,previousId=null,random=Math.random,now=Date.now()){
  let pool=engine.readingPool(words,state,now);
  if(pool.length>1)pool=pool.filter(w=>w.id!==previousId);if(!pool.length)return null;
- const w=pool[Math.floor(random()*pool.length)],hasKanji=/[一-龯]/.test(written(w)),type=hasKanji&&random()<.5?'kanji':'kana';
+ return questionForWord(pool[Math.floor(random()*pool.length)],random);
+}
+function questionForWord(w,random=Math.random){
+ const hasKanji=/[一-龯]/.test(written(w)),type=hasKanji&&random()<.5?'kanji':'kana';
  const options=type==='kanji'?kanjiOptions(w,random):kanaOptions(w,random);
  if(options.length!==4)throw Error('Unable to form four distinct choices: '+w.word);
  return {id:w.id,type,options,answer:type==='kanji'?written(w):(/^[ァ-ヺー]+$/.test(w.kana)?w.kana:hira(w.kana)),prompt:type==='kanji'?w.kana:hasKanji?written(w):w.meaning,hint:type==='kanji'?contextHint(w):hasKanji?w.meaning:'中文提示 · 选择正确假名',selected:null};
 }
-const api={shuffle,phonetic,distance,kanaOptions,kanjiOptions,createQuestion,written};
+const api={shuffle,phonetic,distance,kanaOptions,kanjiOptions,createQuestion,questionForWord,written};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.KotobaQuiz=api;
 })(typeof window!=='undefined'?window:globalThis);
