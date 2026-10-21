@@ -24,17 +24,17 @@ test('a fixed daily plan does not refill after correct answers and survives relo
  const v=E.validate(JSON.parse(JSON.stringify(s)),ids);assert.deepEqual(v.readingPlan.ids,selected);assert.equal(E.dailyReadingPool(words,v,now).length,0);
 });
 
-test('tomorrow’s new plan promotes today’s new words and preserves the 30-word cap at the Beijing midnight boundary',()=>{
+test('tomorrow’s new plan promotes all today’s new words at the Beijing midnight boundary',()=>{
  const s=fixture(),p=E.dailyReadingPlan(words,s,now,seeded());const boundary=E.reviewDue(now);
  assert.equal(E.dailyReadingPlan(words,s,boundary-1),p);
- const tomorrow=E.dailyReadingPlan(words,s,boundary,seeded(60));assert.equal(tomorrow.day,E.today(boundary));assert.equal(tomorrow.ids.length,30);
+ const tomorrow=E.dailyReadingPlan(words,s,boundary,seeded(60));assert.equal(tomorrow.day,E.today(boundary));assert.equal(tomorrow.ids.length,20);
  assert.ok(words.slice(70,80).every(w=>tomorrow.ids.includes(w.id)),'today’s new words receive priority tomorrow');
 });
 
-test('yesterday shortfalls use earlier learned words, but future low-frequency checks remain resting',()=>{
+test('historical extras remain ten when yesterday has fewer words; future low-frequency checks rest',()=>{
  const s=E.fresh();learned(s,0,5,1);learned(s,5,55,7);
  for(const w of words.slice(5,25)){Object.assign(s.words[w.id],{readingRule:'daily-v1',readingStreak:5,readingDue:E.reviewDue(now,7)});}
- const p=E.dailyReadingPlan(words,s,now,seeded());assert.equal(p.ids.length,30);assert.ok(words.slice(0,5).every(w=>p.ids.includes(w.id)));
+ const p=E.dailyReadingPlan(words,s,now,seeded());assert.equal(p.ids.length,15);assert.ok(words.slice(0,5).every(w=>p.ids.includes(w.id)));
  assert.ok(!p.ids.some(id=>Number(id.slice(1))>=5&&Number(id.slice(1))<25));
  const few=E.fresh();learned(few,0,7,1);learned(few,7,10,3);learned(few,10,20,0);
  assert.equal(E.dailyReadingPlan(words,few,now,seeded()).ids.length,10);
@@ -55,7 +55,30 @@ test('unselected reading schedules wait while card reviews still work normally',
  assert.equal(E.readingPlanned(s,outside,now),false);assert.equal(E.recordReading(s,outside,true,'kana',now),false,'unselected words cannot consume extra daily slots');
 });
 
-test('a surplus of yesterday words can fill missing historical slots without including unseen words',()=>{
+test('all yesterday words remain included when there are no historical words',()=>{
  const s=E.fresh();learned(s,0,35,1);const p=E.dailyReadingPlan(words,s,now,seeded());
- assert.equal(p.ids.length,30);assert.ok(p.ids.every(id=>s.words[id]?.learnedOn===E.today(now-E.DAY)));
+ assert.equal(p.ids.length,35);assert.ok(p.ids.every(id=>s.words[id]?.learnedOn===E.today(now-E.DAY)));
+});
+
+test('yesterday counts of zero, five, twenty-five or fifty always receive just ten historical extras',()=>{
+ for(const count of [0,5,25,50]){
+  const s=E.fresh();learned(s,0,count,1);learned(s,count,count+30,7);
+  const p=E.dailyReadingPlan(words,s,now,seeded());assert.equal(p.ids.length,count+10);
+  assert.ok(words.slice(0,count).every(w=>p.ids.includes(w.id)));
+  assert.equal(p.ids.filter(id=>s.words[id].learnedOn<E.today(now-E.DAY)).length,10);
+  const copy=E.validate(JSON.parse(JSON.stringify(s)),ids);
+  assert.deepEqual(E.dailyReadingPlan(words,copy,now,seeded(99)),p,'reload and backup preserve the full list above thirty');
+ }
+});
+
+test('an existing thirty-word plan upgrades once, retaining progress and its historical draw',()=>{
+ const s=E.fresh();learned(s,0,25,1);learned(s,25,65,7);
+ const oldIds=[...words.slice(0,20),...words.slice(25,35)].map(w=>w.id);
+ s.readingPlan={day:E.today(now),ids:oldIds};E.recordReading(s,'w0',true,'kana',now);E.recordReading(s,'w25',false,'kanji',now);
+ const copy=E.validate(JSON.parse(JSON.stringify(s)),ids),p=E.dailyReadingPlan(words,copy,now,seeded());
+ assert.equal(p.ids.length,35);assert.ok(words.slice(0,25).every(w=>p.ids.includes(w.id)));
+ assert.ok(words.slice(25,35).every(w=>p.ids.includes(w.id)));
+ assert.equal(copy.words.w0.readingDoneDay,E.today(now));assert.equal(copy.words.w25.readingWrong,1);
+ assert.deepEqual(E.dailyReadingStatus(words,copy,now),{total:35,done:1,remaining:34});
+ assert.equal(E.dailyReadingPlan(words,copy,now,seeded(98)),p);
 });
