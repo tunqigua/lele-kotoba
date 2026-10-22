@@ -209,3 +209,5 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
 }
 
 .grind-errors{display:inline-block;margin-left:12px;font-size:13px;font-weight:400;color:#7b8576}
+
+.verb-warning{color:#b43d39;font-size:14px;font-weight:600;line-height:1.5;margin:0 0 8px;letter-spacing:0}.detail-word+.verb-warning{text-align:center}.quiz-card .verb-warning{font-size:14px}td .verb-warning{font-size:12px;margin:4px 0}

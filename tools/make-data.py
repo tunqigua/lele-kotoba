@@ -438,6 +438,10 @@ for name,kana,meaning,pos,lesson,page in [
  ('テニス','テニス','网球','名词','11-2',195),('ペン','ペン','笔','名词','5-2',197),('スープ','スープ','汤','名词','13-1',193)]:
  if name not in {w['word'] for w in words}:words.append(dict(word=name,kana=kana,meaning=meaning,pos=pos,lesson=lesson,page=page,note='',source='book',collection='original',sources=[dict(collection='original',page=page,lesson=lesson)]))
 # Priorities follow transferable test skills; a single paper's word occurrences never set priority.
+from import_indexes import import_indexes
+index_imports = import_indexes(words)
+from import_documents import import_documents
+document_imports = import_documents(words)
 core=set('''行く 来る する 食べる 飲む 見る 聞く 話す 買う 帰る 寝る 働く ある いる 開ける 入る 出る 乗る 待つ 持つ 使う 作る 会う 書く 貸す 借りる 教える あげる くれる 送る 遅れる 起きる 終わる 決める 着る 手伝う なる 始まる 払う 降る 見せる 入れる できる 返す 要る 読む 始める 休む やる やめる
 いい・よい 新しい 古い 高い 安い 大きい 小さい 多い 少ない 近い 遠い 暑い 熱い 暖かい 温かい 寒い 涼しい 冷たい 忙しい 楽しい 面白い 難しい 易しい 優しい 早い・速い 広い 狭い 低い 欲しい
 静か にぎやか きれい 便利 不便 元気 暇 上手 下手 好き 嫌い 大変 大丈夫 必要
@@ -447,6 +451,7 @@ core=set('''行く 来る する 食べる 飲む 見る 聞く 話す 買う �
 学校 大学 教室 図書館 図書室 学生 先生 友達 家族 父 母 兄 姉 弟 妹 両親 授業 勉強 試験 本 辞書 教科書 会社 家 部屋 駅 病院 銀行 郵便局 店 お金 値段 家賃 名前 電話 手紙 切手 注文 紹介 先輩 天気 雨 雪 電車 車 食事 朝ご飯 昼ご飯 水 お茶 音楽 映画 予定 相談'''.split())
 recognition=set('''名所 メール 眼鏡 木曜日 野菜 やっぱり 夕方 有名 曜日 横 よろしく ラーメン ラジオ ランチ 立派 留学生 赤い 明るい 辛い 大好き 複雑 大満足 写真 時計 机 椅子 窓 靴 帽子 果物 お菓子 牛乳 コーヒー アパート 建物 国 町 所 中 上 下 前 後 近く 公園 喫茶店 研究室 食堂 本屋 季節 春 夏 秋 冬 台風 桜 花 体 手 人気 計算 交通 最後 歴史 礼金'''.split())
 core.update("""言う 思う 考える 歩く 急ぐ 受ける 置く 押す 覚える 降りる 顔 返す 会議 確認 紙 彼 川 比べる 暗い 消す 結婚 健康 子ども 仕事 質問 自由 宿題 出発 趣味 将来 心配 座る 住む 成績 大事 大切 出す 正しい 立つ 頼む 足りる 地下鉄 地図 着く 伝える 続ける 強い 通る 時 年 長い 習う 荷物 脱ぐ 歯 運ぶ 場所 走る 晴れ 晩ご飯 左 右 返事 ほとんど 本当 曲がる 学ぶ 守る 見える 道 もらう 問題 来年 旅行 分かる 忘れる 悪い 日本語 しかし しかも それでも それでは これから できるだけ もっと なかなか ずっと 必ず たぶん 例えば なるほど どうして 書道""".split())
+core.update('受け取る 動く 生まれる 落ちる 落とす 踊る 飼う 変える 変わる 感じる 気付く 決まる 数える 閉める 閉じる 止める 取る 直す 治す 並べる 逃げる 煮る 眠る 残す 乗り換える 吹く 見つける 迎える 焼く 汚れる 分ける 渡す 慣れる 似る 厚い 青い 黒い 薄い 軽い 遅い 悲しい 美しい 珍しい 危険 簡単 安心 意味 意見 空港 切符 外国語 漢字 会話 経験 機会 遅刻 注意 中止 予約 用意 必ず'.split())
 recognition.update(w['word'] for w in words if w['pos'] in ['专名','接头词','接尾词','量词','数量词','感叹词'])
 first=['行く' ,'来る','する','帰る','食べる','飲む','見る','聞く','書く','読む','ある','いる','学校','切手','注文','先輩','よく','あまり','もう','まだ']
 for i,w in enumerate(words):
@@ -529,6 +534,25 @@ from enrich import enrich
 meta.update(version='2026.10.20.3',bookRange='原词表第189—198页；新增词表第198—209页',scopeNote='原词表为精选；新增12页的可辨认词项逐条补入并去重。同音异义保留，课次不清楚时留空。')
 meta['sources'][0]['description']='用户上传22张词表照片；原词表与新增词表分别标记出处，同词合并多处来源。'
 meta['counts']={'total':len(words),'original':sum(any(s['collection']=='original' for s in w['sources']) for w in words),'additional':sum(any(s['collection']=='additional' for s in w['sources']) for w in words),'examOnly':sum(w['source']=='exam' for w in words)}
+meta.update(version='2026.10.22.1',indexImports=index_imports,bookRange='原词表189—198页；新增词表198—209页；扩展词表一225—237页；扩展词表二186—192页',scopeNote='共42张词表照片；原词表保留既有精选，其余词表的可辨认词条逐页录入，分别保留来源、实印页码与课次。同形异读、同音异义分别保留；教材合并的同音异字按词义拆分。')
+meta['collections']={'original':{'label':'原词表','pages':list(range(189,199))},'additional':{'label':'新增词表','pages':list(range(198,210))},'index3':{'label':'扩展词表一','pages':list(range(225,238))},'index4':{'label':'扩展词表二','pages':list(range(186,193))}}
+meta['sources'][0]['description']='共42张用户词表照片；本次20张实际来自两套索引（225—237页及186—192页），逐页核对，重复词合并来源。'
+for spec in index_imports['collections']:meta['counts'][spec['collection']]=sum(any(s['collection']==spec['collection'] for s in w['sources']) for w in words)
+meta['vocabularyCorrections']=[{'word':'バドミントン','collection':'index3','page':234,'printed':'バトミントン','description':'原印缺少浊点，按规范写法バドミントン训练。','url':'https://kotobank.jp/word/ばどみんとん-3164232'}]
+meta.update(version='2026.10.22.2', documentImports=document_imports)
+for spec in document_imports['collections']:
+ meta['collections'][spec['collection']]={'label':spec['label'], 'document':spec['document'], 'pages':[]}
+ meta['counts'][spec['collection']]=spec['added']
+meta['bookRange']+='；初级与中级Word补充词表'
+meta['scopeNote']+='另比对两份Word词表，仅补缺词；重复练习表不重复录入，Word来源按原表项号标注，不虚构教材页码。'
+meta['sources'].append({'title':'Word补充词表','description':'用户上传初级、中级两份Word词表；仅补已有词库缺项，保留原表项号，校正可确认的读音与错位。初级练习表第290项缺词形和读音，暂不猜填。'})
+meta['sources'].extend([
+ {'title':'小学館・大辞泉：外出','url':'https://kotobank.jp/word/外出-457545','description':'校正外出的读音为がいしゅつ。'},
+ {'title':'小学館・大辞泉：活躍','url':'https://kotobank.jp/word/活躍-464593','description':'校正活躍的读音为かつやく。'},
+ {'title':'小学館・大辞泉：価値','url':'https://kotobank.jp/word/価値-45051','description':'校正価値的读音为かち。'},
+ {'title':'小学館・大辞泉：団地','url':'https://kotobank.jp/word/団地-95279','description':'按だんち与住宅区释义补全原表漏字。'},
+ {'title':'小学館・大辞泉：天敵','url':'https://kotobank.jp/word/天敵-102601','description':'校正天敵的读音为てんてき。'},
+ {'title':'小学館・大辞泉：棟','url':'https://kotobank.jp/word/棟-140698','description':'建筑物的棟读とう；教学棟不按楼的读音ろう出题。'}])
 enrich(words,meta)
 path=pathlib.Path(__file__).resolve().parents[1]/'dist/data.js'
 path.write_text('window.KOTOBA_DATA = '+json.dumps({'meta':meta,'words':words},ensure_ascii=False,separators=(',',':'))+';\n')

@@ -152,6 +152,9 @@ function nextGrindWord(words,state,random=Math.random){
  const s=state.grindSession||(state.grindSession={remaining:[],recent:[],lastId:null,round:0});
  s.remaining=s.remaining.filter(id=>known.has(id));
  if(!s.remaining.length&&pool.length){s.remaining=shuffle(pool.map(w=>w.id),random);s.round++;}
+ // Keep the randomized order inside each group, but serve past mistakes first.
+ const hasErrors=id=>!!(state.words[id].readingWrong||state.words[id].lapses||state.words[id].grindRequired);
+ s.remaining.sort((a,b)=>Number(hasErrors(b))-Number(hasErrors(a)));
  // Space recent words across the round boundary as well; larger pools allow a longer gap.
  const gap=Math.min(6,Math.floor(pool.length/2)),recent=(s.recent||[]).slice(-gap),available=s.remaining.findIndex(id=>!recent.includes(id));
  if(available>0)[s.remaining[0],s.remaining[available]]=[s.remaining[available],s.remaining[0]];

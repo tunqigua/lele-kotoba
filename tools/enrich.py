@@ -6,7 +6,9 @@ def enrich(words,meta):
     all_readings={}
     for w in words:all_readings.setdefault(written(w),set()).add(w['kana'])
     variants={'行く':['ゆく'],'明日':['あす','みょうにち'],'昨日':['さくじつ'],'一日':['ついたち'],'日本':['にっぽん'],'何（なに）':['なん'],'何（なん）':['なに'],'いい・よい':['よい']}
+    variants['毎年']=['まいねん']
     alternate_writings={'行く':['往く','逝く','征く'],'来る':['來る'],'飲む':['呑む'],'見る':['観る','視る'],'聞く':['聴く'],'会う':['逢う'],'暖かい':['温かい'],'温かい':['暖かい'],'桜':['櫻'],'国':['國'],'体':['體'],'沢':['澤'],'子ども':['子供'],'分かる':['判る','解る'],'変わり':['替わり'],'代わり':['替わり'],'書く':['描く'],'造る':['作る'],'作る':['造る'],'外':['他'],'何か':['なんか']}
+    alternate_writings.update({'入り口':['入口'], '石けん':['石鹸'], '茶わん':['茶碗'], 'バドミントン':[], '少なくとも':['すくなくとも'], '目まい':['目眩','眩暈'], '目にあう':['目に遭う','目に会う','目に遇う'], '片付ける':['片づける'], '繋ぐ':['繫ぐ'], '気付く':['気づく'], '苛める':['いじめる'], '仕舞う':['しまう'], '無くす':['なくす']})
     notes={
      '雰囲気':'读作「ふんいき」，不是「ふいんき」。場の雰囲気＝现场气氛。',
      '小包':'读作「こづつみ」，注意「づ」，不是「こずつみ」。',
@@ -35,7 +37,14 @@ def enrich(words,meta):
      '普及':'ふきゅう：拗音きゅ与长音う；区别不朽、復旧等同音近音词。',
      '宜しい':'读「よろしい」，是「いい」的礼貌表达。',
      '何か':'此条教材读なんか（口语）；也有「なにか」的标准读法。读音题加语境，并避开两种都正确的选项。',
+     'いらっしゃる':'「いる・行く・来る」的尊敬语；一类动词，ます形用「いらっしゃいます」。',
+     'なさる':'「する」的尊敬语；一类动词，常用ます形「なさいます」，て形「なさって」。',
+     '愛する':'サ变动词；常用ない形「あいさない」、可能表达「あいせる」，不机械写成「あいできる」。',
+     '存じる':'「知る・思う」的自谦表达；ぞんじます／ぞんじて／ぞんじない。',
+     '何年':'本条按词表读「なにどし」，问生肖年份；问经过几年时的「なんねん」是另一用法。',
+     '清水':'本条按词表读「きよみず」，作为日本专名识记；不按普通名词「しみず」出读音干扰题。',
     }
+    overrides={'いらっしゃる':{'masu':'いらっしゃいます'},'なさる':{'masu':'なさいます','potential':None},'愛する':{'nai':'あいさない','potential':'あいせる'},'存じる':{'potential':None}}
     curated_kana={
       '切手':['きて','きっで','きいて'],'注文':['ちゅもん','じゅうもん','ちゅうもく'],
       '紹介':['しょかい','しょうがい','じょうかい'],'先輩':['せんはい','ぜんぱい','せんばい'],
@@ -70,8 +79,9 @@ def enrich(words,meta):
       '国際':['国祭','囲際','国察'],'世界':['世畑','卅界','世堺']
     }
     for w in words:
+        if w['word'] in overrides:w['forms'].update(overrides[w['word']])
         w['phrases']=[]
-        w['acceptedKana']=list(all_readings.get(written(w),set())|set(variants.get(w['word'],[])))
+        w['acceptedKana']=sorted(all_readings.get(written(w),set())|set(variants.get(w['word'],[])))
         if w['word']=='何か':w['acceptedKana'].append('なにか')
         w['acceptedWritten']=alternate_writings.get(w['word'],[])
         if w['word'] in notes:w['note']=notes[w['word']]
@@ -83,9 +93,12 @@ def enrich(words,meta):
         if w['word'] in curated_kana:w['kanaDistractors']=curated_kana[w['word']]
         if w['word'] in curated_kanji:w['kanjiDistractors']=curated_kanji[w['word']]
     phrases=[]
+    seen_phrases=set()
     def add(jp,kana,zh,names):
+        if (jp,kana) in seen_phrases:return
         linked=[index[n] for n in names if n in index]
         if len({w['id'] for w in linked})<2:return
+        seen_phrases.add((jp,kana))
         phrase=dict(jp=jp,kana=kana,meaning=zh,words=[dict(id=w['id'],word=written(w),kana=w['kana'],meaning=w['meaning']) for w in linked])
         phrases.append(phrase)
         for w in linked:w['phrases'].append(phrase)
@@ -253,6 +266,38 @@ def enrich(words,meta):
 旅行の準備|りょこうのじゅんび|旅行的准备|旅行,準備'''
     # Only attach when both named vocabulary entries actually exist.
     for line in raw.splitlines():
+        jp,kana,zh,names=line.split('|');add(jp,kana,zh,names.split(','))
+    new_phrases='''切符を買う|きっぷをかう|买车票|切符,買う
+空港に着く|くうこうにつく|到达机场|空港,着く
+相手の意見を聞く|あいてのいけんをきく|听取对方的意见|相手,意見,聞く
+荷物を預ける|にもつをあずける|寄存行李|荷物,預ける
+お茶を入れる|おちゃをいれる|泡茶|お茶,入れる
+音楽会に行く|おんがくかいにいく|去音乐会|音楽会,行く
+階段を上がる|かいだんをあがる|上楼梯|階段,上がる
+気持ちを伝える|きもちをつたえる|传达心情|気持ち,伝える
+日本語の会話|にほんごのかいわ|日语会话|日本語,会話
+漢字の書き方|かんじのかきかた|汉字的写法|漢字,書き方
+友達に謝る|ともだちにあやまる|向朋友道歉|友達,謝る
+部屋を片付ける|へやをかたづける|收拾房间|部屋,片付ける
+意見を変える|いけんをかえる|改变意见|意見,変える
+家事を手伝う|かじをてつだう|帮忙做家务|家事,手伝う
+給料をもらう|きゅうりょうをもらう|领取工资|給料,もらう
+図書館で読書する|としょかんでどくしょする|在图书馆读书|図書館,読書
+宿題を提出する|しゅくだいをていしゅつする|交作业|宿題,提出
+授業に遅刻する|じゅぎょうにちこくする|上课迟到|授業,遅刻
+電車を乗り換える|でんしゃをのりかえる|换乘电车|電車,乗り換える
+友達を迎える|ともだちをむかえる|迎接朋友|友達,迎える
+服が汚れる|ふくがよごれる|衣服变脏|服,汚れる
+食事を用意する|しょくじをよういする|准备饭菜|食事,用意
+ホテルを予約する|ホテルをよやくする|预订酒店|ホテル,予約
+原因を調べる|げんいんをしらべる|调查原因|原因,調べる
+質問に答える|しつもんにこたえる|回答问题|質問,答える
+時計を直す|とけいをなおす|修理钟表|時計,直す
+病気を治す|びょうきをなおす|治疗疾病|病気,治す
+家族を愛する|かぞくをあいする|爱家人|家族,愛する
+友達と協力する|ともだちときょうりょくする|与朋友合作|友達,協力
+作品を発表する|さくひんをはっぴょうする|发表作品|作品,発表'''
+    for line in new_phrases.splitlines():
         jp,kana,zh,names=line.split('|');add(jp,kana,zh,names.split(','))
     meta['phraseCount']=len(phrases)
     meta['wordsWithPhrases']=sum(bool(w['phrases']) for w in words)

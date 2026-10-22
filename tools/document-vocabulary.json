@@ -1,0 +1,8441 @@
+{
+  "documents": [
+    {
+      "collection": "docBeginner",
+      "label": "初级补充词表",
+      "document": "大学标准日语单词表（1）(1).docx",
+      "rows": [
+        {
+          "number": 1,
+          "kana": "あいさつ",
+          "word": "挨拶",
+          "pos": "名词・サ变动词",
+          "meaning": "打招呼,寒暄;致词",
+          "raw": {
+            "word": "挨拶",
+            "kana": "あいさつ",
+            "pos": "名·动3自",
+            "meaning": "打招呼,寒暄;致词"
+          },
+          "note": ""
+        },
+        {
+          "number": 2,
+          "kana": "あさごはん",
+          "word": "朝ご飯",
+          "pos": "名词",
+          "meaning": "早饭",
+          "raw": {
+            "word": "朝ご飯",
+            "kana": "あさごはん",
+            "pos": "名",
+            "meaning": "早饭"
+          },
+          "note": ""
+        },
+        {
+          "number": 3,
+          "kana": "あんぜん",
+          "word": "安全",
+          "pos": "名词・二类形容词",
+          "meaning": "安全,平安",
+          "raw": {
+            "word": "安全",
+            "kana": "あんぜん",
+            "pos": "名·形2",
+            "meaning": "安全,平安"
+          },
+          "note": ""
+        },
+        {
+          "number": 4,
+          "kana": "あんない",
+          "word": "案内",
+          "pos": "名词・サ变动词",
+          "meaning": "引导,导游",
+          "raw": {
+            "word": "案内",
+            "kana": "あんない",
+            "pos": "名·动3他",
+            "meaning": "引导,导游"
+          },
+          "note": ""
+        },
+        {
+          "number": 5,
+          "kana": "いがい",
+          "word": "以外",
+          "pos": "名词",
+          "meaning": "以外",
+          "raw": {
+            "word": "以外",
+            "kana": "いがい",
+            "pos": "名",
+            "meaning": "以外"
+          },
+          "note": ""
+        },
+        {
+          "number": 6,
+          "kana": "いしゃ",
+          "word": "医者",
+          "pos": "名词",
+          "meaning": "医生",
+          "raw": {
+            "word": "医者",
+            "kana": "いしゃ",
+            "pos": "名",
+            "meaning": "医生"
+          },
+          "note": ""
+        },
+        {
+          "number": 7,
+          "kana": "いちば",
+          "word": "市場",
+          "pos": "名词",
+          "meaning": "集市,市场",
+          "raw": {
+            "word": "市場",
+            "kana": "いちば",
+            "pos": "名",
+            "meaning": "集市,市场"
+          },
+          "note": ""
+        },
+        {
+          "number": 8,
+          "kana": "いっしょうけんめい",
+          "word": "一生懸命",
+          "pos": "名词・二类形容词・副词",
+          "meaning": "尽力;拼命(地),努力",
+          "raw": {
+            "word": "一生懸命",
+            "kana": "いっしょうけんめい",
+            "pos": "名·形2·副",
+            "meaning": "尽力;拼命(地),努力"
+          },
+          "note": ""
+        },
+        {
+          "number": 9,
+          "kana": "いんしょう",
+          "word": "印象",
+          "pos": "名词",
+          "meaning": "印象",
+          "raw": {
+            "word": "印象",
+            "kana": "いんしょう",
+            "pos": "名",
+            "meaning": "印象"
+          },
+          "note": ""
+        },
+        {
+          "number": 10,
+          "kana": "うんてん",
+          "word": "運転",
+          "pos": "名词・サ变动词",
+          "meaning": "驾驶",
+          "raw": {
+            "word": "運転",
+            "kana": "うんてん",
+            "pos": "名·动3自他",
+            "meaning": "驾驶"
+          },
+          "note": ""
+        },
+        {
+          "number": 11,
+          "kana": "うんてんしゅ",
+          "word": "運転手",
+          "pos": "名词",
+          "meaning": "司机",
+          "raw": {
+            "word": "運転手",
+            "kana": "うんてんしゅ",
+            "pos": "名",
+            "meaning": "司机"
+          },
+          "note": ""
+        },
+        {
+          "number": 12,
+          "kana": "うんどう",
+          "word": "運動",
+          "pos": "名词",
+          "meaning": "运动",
+          "raw": {
+            "word": "運動",
+            "kana": "うんどう",
+            "pos": "名",
+            "meaning": "运动"
+          },
+          "note": ""
+        },
+        {
+          "number": 13,
+          "kana": "うんどうかい",
+          "word": "運動会",
+          "pos": "名词",
+          "meaning": "运动会",
+          "raw": {
+            "word": "運動会",
+            "kana": "うんどうかい",
+            "pos": "名",
+            "meaning": "运动会"
+          },
+          "note": ""
+        },
+        {
+          "number": 14,
+          "kana": "うんどうじょう",
+          "word": "運動場",
+          "pos": "名词",
+          "meaning": "运动场,操场",
+          "raw": {
+            "word": "運動場",
+            "kana": "うんどうじょう",
+            "pos": "名",
+            "meaning": "运动场,操场"
+          },
+          "note": ""
+        },
+        {
+          "number": 15,
+          "kana": "うんなん",
+          "word": "雲南",
+          "pos": "专名",
+          "meaning": "云南",
+          "raw": {
+            "word": "雲南",
+            "kana": "うんなん",
+            "pos": "专",
+            "meaning": "云南"
+          },
+          "note": ""
+        },
+        {
+          "number": 16,
+          "kana": "えいが",
+          "word": "映画",
+          "pos": "名词",
+          "meaning": "电影",
+          "raw": {
+            "word": "映画",
+            "kana": "えいが",
+            "pos": "名",
+            "meaning": "电影"
+          },
+          "note": ""
+        },
+        {
+          "number": 17,
+          "kana": "えいご",
+          "word": "英語",
+          "pos": "专名",
+          "meaning": "英语",
+          "raw": {
+            "word": "英語",
+            "kana": "えいご",
+            "pos": "专",
+            "meaning": "英语"
+          },
+          "note": ""
+        },
+        {
+          "number": 18,
+          "kana": "えいよう",
+          "word": "栄養",
+          "pos": "名词",
+          "meaning": "营养",
+          "raw": {
+            "word": "栄養",
+            "kana": "えいよう",
+            "pos": "名",
+            "meaning": "营养"
+          },
+          "note": ""
+        },
+        {
+          "number": 19,
+          "kana": "えんぴつ",
+          "word": "鉛筆",
+          "pos": "名词",
+          "meaning": "铅笔",
+          "raw": {
+            "word": "鉛筆",
+            "kana": "えんぴつ",
+            "pos": "名",
+            "meaning": "铅笔"
+          },
+          "note": ""
+        },
+        {
+          "number": 20,
+          "kana": "おうえん",
+          "word": "応援",
+          "pos": "名词・サ变动词",
+          "meaning": "助威；援助",
+          "raw": {
+            "word": "応援",
+            "kana": "おうえん",
+            "pos": "名・动 3 他",
+            "meaning": "助威；援助"
+          },
+          "note": ""
+        },
+        {
+          "number": 21,
+          "kana": "おんがく",
+          "word": "音楽",
+          "pos": "名词",
+          "meaning": "音乐",
+          "raw": {
+            "word": "音楽",
+            "kana": "おんがく",
+            "pos": "名",
+            "meaning": "音乐"
+          },
+          "note": ""
+        },
+        {
+          "number": 22,
+          "kana": "おんがくかい",
+          "word": "音楽会",
+          "pos": "名词",
+          "meaning": "音乐会",
+          "raw": {
+            "word": "音楽会",
+            "kana": "おんがくかい",
+            "pos": "名",
+            "meaning": "音乐会"
+          },
+          "note": ""
+        },
+        {
+          "number": 23,
+          "kana": "おんがくかん",
+          "word": "音楽館",
+          "pos": "名词",
+          "meaning": "音乐厅",
+          "raw": {
+            "word": "音楽館",
+            "kana": "おんがくかん",
+            "pos": "名",
+            "meaning": "音乐厅"
+          },
+          "note": ""
+        },
+        {
+          "number": 24,
+          "kana": "かいぎ",
+          "word": "会議",
+          "pos": "名词",
+          "meaning": "会议",
+          "raw": {
+            "word": "会議",
+            "kana": "かいぎ",
+            "pos": "名",
+            "meaning": "会议"
+          },
+          "note": ""
+        },
+        {
+          "number": 25,
+          "kana": "がいこく",
+          "word": "外国",
+          "pos": "名词",
+          "meaning": "外国",
+          "raw": {
+            "word": "外国",
+            "kana": "がいこく",
+            "pos": "名",
+            "meaning": "外国"
+          },
+          "note": ""
+        },
+        {
+          "number": 26,
+          "kana": "かいしゃ",
+          "word": "会社",
+          "pos": "名词",
+          "meaning": "公司",
+          "raw": {
+            "word": "会社",
+            "kana": "かいしゃ",
+            "pos": "名",
+            "meaning": "公司"
+          },
+          "note": ""
+        },
+        {
+          "number": 27,
+          "kana": "かいしゃいん",
+          "word": "会社員",
+          "pos": "名词",
+          "meaning": "公司职员",
+          "raw": {
+            "word": "会社員",
+            "kana": "かいしゃいん",
+            "pos": "名",
+            "meaning": "公司职员"
+          },
+          "note": ""
+        },
+        {
+          "number": 28,
+          "kana": "かいもの",
+          "word": "買い物",
+          "pos": "名词・サ变动词",
+          "meaning": "买东西,购物",
+          "raw": {
+            "word": "買い物",
+            "kana": "かいもの",
+            "pos": "名·动3自",
+            "meaning": "买东西,购物"
+          },
+          "note": ""
+        },
+        {
+          "number": 29,
+          "kana": "かいわ",
+          "word": "会話",
+          "pos": "名词",
+          "meaning": "会话",
+          "raw": {
+            "word": "会話",
+            "kana": "かいわ",
+            "pos": "名",
+            "meaning": "会话"
+          },
+          "note": ""
+        },
+        {
+          "number": 30,
+          "kana": "がくねん",
+          "word": "学年",
+          "pos": "名词",
+          "meaning": "学年;年级",
+          "raw": {
+            "word": "学年",
+            "kana": "がくねん",
+            "pos": "名",
+            "meaning": "学年;年级"
+          },
+          "note": ""
+        },
+        {
+          "number": 31,
+          "kana": "かしゅ",
+          "word": "歌手",
+          "pos": "名词",
+          "meaning": "歌手",
+          "raw": {
+            "word": "歌手",
+            "kana": "かしゅ",
+            "pos": "名",
+            "meaning": "歌手"
+          },
+          "note": ""
+        },
+        {
+          "number": 32,
+          "kana": "かぜ",
+          "word": "風邪",
+          "pos": "名词",
+          "meaning": "感冒",
+          "raw": {
+            "word": "風邪",
+            "kana": "かぜ",
+            "pos": "名",
+            "meaning": "感冒"
+          },
+          "note": ""
+        },
+        {
+          "number": 33,
+          "kana": "かぞく",
+          "word": "家族",
+          "pos": "名词",
+          "meaning": "家人;家庭",
+          "raw": {
+            "word": "家族",
+            "kana": "かぞく",
+            "pos": "名",
+            "meaning": "家人;家庭"
+          },
+          "note": ""
+        },
+        {
+          "number": 34,
+          "kana": "がっき",
+          "word": "学期",
+          "pos": "名词",
+          "meaning": "学期",
+          "raw": {
+            "word": "学期",
+            "kana": "がっき",
+            "pos": "名",
+            "meaning": "学期"
+          },
+          "note": ""
+        },
+        {
+          "number": 35,
+          "kana": "がっこう",
+          "word": "学校",
+          "pos": "名词",
+          "meaning": "学校",
+          "raw": {
+            "word": "学校",
+            "kana": "がっこう",
+            "pos": "名",
+            "meaning": "学校"
+          },
+          "note": ""
+        },
+        {
+          "number": 36,
+          "kana": "かつどう",
+          "word": "活動",
+          "pos": "名词",
+          "meaning": "活动",
+          "raw": {
+            "word": "活動",
+            "kana": "かつどう",
+            "pos": "名",
+            "meaning": "活动"
+          },
+          "note": ""
+        },
+        {
+          "number": 37,
+          "kana": "かつやく",
+          "word": "活躍",
+          "pos": "名词・サ变动词",
+          "meaning": "活跃",
+          "raw": {
+            "word": "活躍",
+            "kana": "かっやく",
+            "pos": "名·动3自",
+            "meaning": "活跃"
+          },
+          "note": "原表「かっやく」误写，规范读音为「かつやく」。"
+        },
+        {
+          "number": 38,
+          "kana": "かんこうきゃく",
+          "word": "観光客",
+          "pos": "名词",
+          "meaning": "游客",
+          "raw": {
+            "word": "観光客",
+            "kana": "かんこうきゃく",
+            "pos": "名",
+            "meaning": "游客"
+          },
+          "note": ""
+        },
+        {
+          "number": 39,
+          "kana": "かんごし",
+          "word": "看護師",
+          "pos": "名词",
+          "meaning": "护士",
+          "raw": {
+            "word": "看護師",
+            "kana": "かんごし",
+            "pos": "名",
+            "meaning": "护士"
+          },
+          "note": ""
+        },
+        {
+          "number": 40,
+          "kana": "かんさい",
+          "word": "関西",
+          "pos": "专名",
+          "meaning": "（日本）关西",
+          "raw": {
+            "word": "関西",
+            "kana": "かんさい",
+            "pos": "专",
+            "meaning": "（日本）关西"
+          },
+          "note": ""
+        },
+        {
+          "number": 41,
+          "kana": "かんじ",
+          "word": "漢字",
+          "pos": "名词",
+          "meaning": "汉字",
+          "raw": {
+            "word": "漢字",
+            "kana": "かんじ",
+            "pos": "名",
+            "meaning": "汉字"
+          },
+          "note": ""
+        },
+        {
+          "number": 42,
+          "kana": "かんじゃ",
+          "word": "患者",
+          "pos": "名词",
+          "meaning": "病人,患者",
+          "raw": {
+            "word": "患者",
+            "kana": "かんじゃ",
+            "pos": "名",
+            "meaning": "病人,患者"
+          },
+          "note": ""
+        },
+        {
+          "number": 43,
+          "kana": "かんそう",
+          "word": "感想",
+          "pos": "名词",
+          "meaning": "感想",
+          "raw": {
+            "word": "感想",
+            "kana": "かんそう",
+            "pos": "名",
+            "meaning": "感想"
+          },
+          "note": ""
+        },
+        {
+          "number": 44,
+          "kana": "かんたん",
+          "word": "簡単",
+          "pos": "二类形容词",
+          "meaning": "简单,容易",
+          "raw": {
+            "word": "簡単",
+            "kana": "かんたん",
+            "pos": "形2",
+            "meaning": "简单,容易"
+          },
+          "note": ""
+        },
+        {
+          "number": 45,
+          "kana": "かんとく",
+          "word": "監督",
+          "pos": "名词・サ变动词",
+          "meaning": "监考;监督;导演;教练",
+          "raw": {
+            "word": "監督",
+            "kana": "かんとく",
+            "pos": "名·动3他",
+            "meaning": "监考;监督;导演;教练"
+          },
+          "note": ""
+        },
+        {
+          "number": 46,
+          "kana": "きしゃ",
+          "word": "記者",
+          "pos": "名词",
+          "meaning": "记者",
+          "raw": {
+            "word": "記者",
+            "kana": "きしゃ",
+            "pos": "名",
+            "meaning": "记者"
+          },
+          "note": ""
+        },
+        {
+          "number": 47,
+          "kana": "ぎじゅつ",
+          "word": "技術",
+          "pos": "名词",
+          "meaning": "技术",
+          "raw": {
+            "word": "技術",
+            "kana": "ぎじゅつ",
+            "pos": "名",
+            "meaning": "技术"
+          },
+          "note": ""
+        },
+        {
+          "number": 48,
+          "kana": "きって",
+          "word": "切手",
+          "pos": "名词",
+          "meaning": "邮票",
+          "raw": {
+            "word": "切手",
+            "kana": "きって",
+            "pos": "名",
+            "meaning": "邮票"
+          },
+          "note": ""
+        },
+        {
+          "number": 49,
+          "kana": "きねん",
+          "word": "記念",
+          "pos": "名词・サ变动词",
+          "meaning": "纪念",
+          "raw": {
+            "word": "記念",
+            "kana": "きねん",
+            "pos": "名·动3他",
+            "meaning": "纪念"
+          },
+          "note": ""
+        },
+        {
+          "number": 50,
+          "kana": "きのう",
+          "word": "昨日",
+          "pos": "名词",
+          "meaning": "昨天",
+          "raw": {
+            "word": "昨日",
+            "kana": "きのう",
+            "pos": "名",
+            "meaning": "昨天"
+          },
+          "note": ""
+        },
+        {
+          "number": 51,
+          "kana": "きもち",
+          "word": "気持ち",
+          "pos": "名词",
+          "meaning": "心情,感觉",
+          "raw": {
+            "word": "気持ち",
+            "kana": "きもち",
+            "pos": "名",
+            "meaning": "心情,感觉"
+          },
+          "note": ""
+        },
+        {
+          "number": 52,
+          "kana": "ぎゅうにゅう",
+          "word": "牛乳",
+          "pos": "名词",
+          "meaning": "牛奶",
+          "raw": {
+            "word": "牛乳",
+            "kana": "ぎゅうにゅう",
+            "pos": "名",
+            "meaning": "牛奶"
+          },
+          "note": ""
+        },
+        {
+          "number": 53,
+          "kana": "きょう",
+          "word": "今日",
+          "pos": "名词",
+          "meaning": "今天",
+          "raw": {
+            "word": "今日",
+            "kana": "きょう",
+            "pos": "名",
+            "meaning": "今天"
+          },
+          "note": ""
+        },
+        {
+          "number": 54,
+          "kana": "きょうがくとう",
+          "word": "教学棟",
+          "pos": "名词",
+          "meaning": "教学楼",
+          "raw": {
+            "word": "教学棟",
+            "kana": "きょうがくろう",
+            "pos": "名",
+            "meaning": "教学楼"
+          },
+          "note": "原表将棟的读音写成ろう；棟在此读とう，教学棟读きょうがくとう。"
+        },
+        {
+          "number": 55,
+          "kana": "きょうげき",
+          "word": "京劇",
+          "pos": "名词",
+          "meaning": "京剧",
+          "raw": {
+            "word": "京劇",
+            "kana": "きょうげき",
+            "pos": "名",
+            "meaning": "京剧"
+          },
+          "note": ""
+        },
+        {
+          "number": 56,
+          "kana": "ぎょうざ",
+          "word": "餃子",
+          "pos": "名词",
+          "meaning": "饺子",
+          "raw": {
+            "word": "餃子",
+            "kana": "ぎょうざ",
+            "pos": "名",
+            "meaning": "饺子"
+          },
+          "note": ""
+        },
+        {
+          "number": 57,
+          "kana": "きょうしつ",
+          "word": "教室",
+          "pos": "名词",
+          "meaning": "教室;兴趣班",
+          "raw": {
+            "word": "教室",
+            "kana": "きょうしつ",
+            "pos": "名",
+            "meaning": "教室;兴趣班"
+          },
+          "note": ""
+        },
+        {
+          "number": 58,
+          "kana": "きょうと",
+          "word": "京都",
+          "pos": "专名",
+          "meaning": "(日本)京都",
+          "raw": {
+            "word": "京都",
+            "kana": "きょうと",
+            "pos": "专",
+            "meaning": "(日本)京都"
+          },
+          "note": ""
+        },
+        {
+          "number": 59,
+          "kana": "きょねん",
+          "word": "去年",
+          "pos": "名词",
+          "meaning": "去年",
+          "raw": {
+            "word": "去年",
+            "kana": "きょねん",
+            "pos": "名",
+            "meaning": "去年"
+          },
+          "note": ""
+        },
+        {
+          "number": 60,
+          "kana": "きろく",
+          "word": "記録",
+          "pos": "名词・サ变动词",
+          "meaning": "记录",
+          "raw": {
+            "word": "記録",
+            "kana": "きろく",
+            "pos": "名·动3他",
+            "meaning": "记录"
+          },
+          "note": ""
+        },
+        {
+          "number": 61,
+          "kana": "きんじょ",
+          "word": "近所",
+          "pos": "名词",
+          "meaning": "近处,附近",
+          "raw": {
+            "word": "近所",
+            "kana": "きんじょ",
+            "pos": "名",
+            "meaning": "近处,附近"
+          },
+          "note": ""
+        },
+        {
+          "number": 62,
+          "kana": "きんようび",
+          "word": "金曜日",
+          "pos": "名词",
+          "meaning": "星期五",
+          "raw": {
+            "word": "金曜日",
+            "kana": "きんようび",
+            "pos": "名",
+            "meaning": "星期五"
+          },
+          "note": ""
+        },
+        {
+          "number": 63,
+          "kana": "くうき",
+          "word": "空気",
+          "pos": "名词",
+          "meaning": "空气",
+          "raw": {
+            "word": "空気",
+            "kana": "くうき",
+            "pos": "名",
+            "meaning": "空气"
+          },
+          "note": ""
+        },
+        {
+          "number": 64,
+          "kana": "くうこう",
+          "word": "空港",
+          "pos": "名词",
+          "meaning": "机场",
+          "raw": {
+            "word": "空港",
+            "kana": "くうこう",
+            "pos": "名",
+            "meaning": "机场"
+          },
+          "note": ""
+        },
+        {
+          "number": 65,
+          "kana": "けいかく",
+          "word": "計画",
+          "pos": "名词・サ变动词",
+          "meaning": "计划",
+          "raw": {
+            "word": "計画",
+            "kana": "けいかく",
+            "pos": "名·动3他",
+            "meaning": "计划"
+          },
+          "note": ""
+        },
+        {
+          "number": 66,
+          "kana": "けいけん",
+          "word": "経験",
+          "pos": "名词・サ变动词",
+          "meaning": "经历,经验",
+          "raw": {
+            "word": "経験",
+            "kana": "けいけん",
+            "pos": "名·动3他",
+            "meaning": "经历,经验"
+          },
+          "note": ""
+        },
+        {
+          "number": 67,
+          "kana": "けいさつかん",
+          "word": "警察官",
+          "pos": "名词",
+          "meaning": "警察",
+          "raw": {
+            "word": "警察官",
+            "kana": "けいさつかん",
+            "pos": "名",
+            "meaning": "警察"
+          },
+          "note": ""
+        },
+        {
+          "number": 68,
+          "kana": "けいたい",
+          "word": "携帯",
+          "pos": "名词・サ变动词",
+          "meaning": "手机;携带",
+          "raw": {
+            "word": "携帯",
+            "kana": "けいたい",
+            "pos": "名·动3他",
+            "meaning": "手机;携带"
+          },
+          "note": ""
+        },
+        {
+          "number": 69,
+          "kana": "けいたいでんわ",
+          "word": "携帯電話",
+          "pos": "名词",
+          "meaning": "手机",
+          "raw": {
+            "word": "携帯電話",
+            "kana": "けいたいでんわ",
+            "pos": "名",
+            "meaning": "手机"
+          },
+          "note": ""
+        },
+        {
+          "number": 70,
+          "kana": "けが",
+          "word": "けが",
+          "pos": "名词・サ变动词",
+          "meaning": "伤,受伤",
+          "raw": {
+            "word": "名·动3自",
+            "kana": "けが",
+            "pos": "伤,受伤",
+            "meaning": "4-2"
+          },
+          "note": "原表此行单词栏缺项，词性、释义和课次左移；按假名词条复位。"
+        },
+        {
+          "number": 71,
+          "kana": "けさ",
+          "word": "今朝",
+          "pos": "名词",
+          "meaning": "今天早晨",
+          "raw": {
+            "word": "今朝",
+            "kana": "けさ",
+            "pos": "名",
+            "meaning": "今天早晨"
+          },
+          "note": ""
+        },
+        {
+          "number": 72,
+          "kana": "けっか",
+          "word": "結果",
+          "pos": "名词",
+          "meaning": "结果",
+          "raw": {
+            "word": "結果",
+            "kana": "けっか",
+            "pos": "名",
+            "meaning": "结果"
+          },
+          "note": ""
+        },
+        {
+          "number": 73,
+          "kana": "けっこん",
+          "word": "結婚",
+          "pos": "名词・サ变动词",
+          "meaning": "结婚",
+          "raw": {
+            "word": "結婚",
+            "kana": "けっこん",
+            "pos": "名·动3自",
+            "meaning": "结婚"
+          },
+          "note": ""
+        },
+        {
+          "number": 74,
+          "kana": "げつようび",
+          "word": "月曜日",
+          "pos": "名词",
+          "meaning": "星期一",
+          "raw": {
+            "word": "月曜日",
+            "kana": "げつようび",
+            "pos": "名",
+            "meaning": "星期一"
+          },
+          "note": ""
+        },
+        {
+          "number": 75,
+          "kana": "げんいん",
+          "word": "原因",
+          "pos": "名词",
+          "meaning": "原因",
+          "raw": {
+            "word": "原因",
+            "kana": "げんいん",
+            "pos": "名",
+            "meaning": "原因"
+          },
+          "note": ""
+        },
+        {
+          "number": 76,
+          "kana": "けんがく",
+          "word": "見学",
+          "pos": "名词・サ变动词",
+          "meaning": "参观",
+          "raw": {
+            "word": "見学",
+            "kana": "けんがく",
+            "pos": "名·动3他",
+            "meaning": "参观"
+          },
+          "note": ""
+        },
+        {
+          "number": 77,
+          "kana": "けんこう",
+          "word": "健康",
+          "pos": "名词・二类形容词",
+          "meaning": "健康",
+          "raw": {
+            "word": "健康",
+            "kana": "けんこう",
+            "pos": "名·形2",
+            "meaning": "健康"
+          },
+          "note": ""
+        },
+        {
+          "number": 78,
+          "kana": "けんさ",
+          "word": "検査",
+          "pos": "名词・サ变动词",
+          "meaning": "检查",
+          "raw": {
+            "word": "検査",
+            "kana": "けんさ",
+            "pos": "名·动3他",
+            "meaning": "检查"
+          },
+          "note": ""
+        },
+        {
+          "number": 79,
+          "kana": "げんだい",
+          "word": "現代",
+          "pos": "名词",
+          "meaning": "现代",
+          "raw": {
+            "word": "現代",
+            "kana": "げんだい",
+            "pos": "名",
+            "meaning": "现代"
+          },
+          "note": ""
+        },
+        {
+          "number": 80,
+          "kana": "げんば",
+          "word": "現場",
+          "pos": "名词",
+          "meaning": "现场",
+          "raw": {
+            "word": "現場",
+            "kana": "げんば",
+            "pos": "名",
+            "meaning": "现场"
+          },
+          "note": ""
+        },
+        {
+          "number": 81,
+          "kana": "けんぶつ",
+          "word": "見物",
+          "pos": "名词・サ变动词",
+          "meaning": "游览,参观",
+          "raw": {
+            "word": "見物",
+            "kana": "けんぶつ",
+            "pos": "名·动3他",
+            "meaning": "游览,参观"
+          },
+          "note": ""
+        },
+        {
+          "number": 82,
+          "kana": "こうえん",
+          "word": "公園",
+          "pos": "名词",
+          "meaning": "公园",
+          "raw": {
+            "word": "公園",
+            "kana": "こうえん",
+            "pos": "名",
+            "meaning": "公园"
+          },
+          "note": ""
+        },
+        {
+          "number": 83,
+          "kana": "ごうかく",
+          "word": "合格",
+          "pos": "名词・サ变动词",
+          "meaning": "合格,通过(考试等)",
+          "raw": {
+            "word": "合格",
+            "kana": "ごうかく",
+            "pos": "名·动3自",
+            "meaning": "合格,通过(考试等)"
+          },
+          "note": ""
+        },
+        {
+          "number": 84,
+          "kana": "こうこうせい",
+          "word": "高校生",
+          "pos": "名词",
+          "meaning": "高中生",
+          "raw": {
+            "word": "高校生",
+            "kana": "こうこうせい",
+            "pos": "名",
+            "meaning": "高中生"
+          },
+          "note": ""
+        },
+        {
+          "number": 85,
+          "kana": "こうざん",
+          "word": "香山",
+          "pos": "专名",
+          "meaning": "香山",
+          "raw": {
+            "word": "香山",
+            "kana": "こうざん",
+            "pos": "专",
+            "meaning": "香山"
+          },
+          "note": ""
+        },
+        {
+          "number": 86,
+          "kana": "こうざんりゅうすい",
+          "word": "高山流水",
+          "pos": "专名",
+          "meaning": "《高山流水》",
+          "raw": {
+            "word": "高山流水",
+            "kana": "こうざんりゅうすい",
+            "pos": "专",
+            "meaning": "《高山流水》"
+          },
+          "note": ""
+        },
+        {
+          "number": 87,
+          "kana": "こうしゅう",
+          "word": "広州",
+          "pos": "专名",
+          "meaning": "广州",
+          "raw": {
+            "word": "広州",
+            "kana": "こうしゅう",
+            "pos": "专",
+            "meaning": "广州"
+          },
+          "note": ""
+        },
+        {
+          "number": 88,
+          "kana": "こうばん",
+          "word": "交番",
+          "pos": "名词",
+          "meaning": "岗亭,警务工作站",
+          "raw": {
+            "word": "交番",
+            "kana": "こうばん",
+            "pos": "名",
+            "meaning": "岗亭,警务工作站"
+          },
+          "note": ""
+        },
+        {
+          "number": 89,
+          "kana": "こうもく",
+          "word": "項目",
+          "pos": "名词",
+          "meaning": "项目",
+          "raw": {
+            "word": "項目",
+            "kana": "こうもく",
+            "pos": "名",
+            "meaning": "项目"
+          },
+          "note": ""
+        },
+        {
+          "number": 90,
+          "kana": "こうりゅう",
+          "word": "交流",
+          "pos": "名词・サ变动词",
+          "meaning": "交流",
+          "raw": {
+            "word": "交流",
+            "kana": "こうりゅう",
+            "pos": "名·动3自",
+            "meaning": "交流"
+          },
+          "note": ""
+        },
+        {
+          "number": 91,
+          "kana": "こくばん",
+          "word": "黒板",
+          "pos": "名词",
+          "meaning": "黑板",
+          "raw": {
+            "word": "黒板",
+            "kana": "こくばん",
+            "pos": "名",
+            "meaning": "黑板"
+          },
+          "note": ""
+        },
+        {
+          "number": 92,
+          "kana": "ごじゅうおん",
+          "word": "五十音",
+          "pos": "名词",
+          "meaning": "五十音",
+          "raw": {
+            "word": "五十音",
+            "kana": "ごじゅうおん",
+            "pos": "名",
+            "meaning": "五十音"
+          },
+          "note": ""
+        },
+        {
+          "number": 93,
+          "kana": "こする",
+          "word": "擦る",
+          "pos": "一类动词",
+          "meaning": "揉,擦",
+          "raw": {
+            "word": "擦る",
+            "kana": "こする",
+            "pos": "动1他",
+            "meaning": "揉,擦"
+          },
+          "note": ""
+        },
+        {
+          "number": 94,
+          "kana": "ごぜん",
+          "word": "午前",
+          "pos": "名词",
+          "meaning": "上午",
+          "raw": {
+            "word": "午前",
+            "kana": "ごぜん",
+            "pos": "名",
+            "meaning": "上午"
+          },
+          "note": ""
+        },
+        {
+          "number": 95,
+          "kana": "こだい",
+          "word": "古代",
+          "pos": "名词",
+          "meaning": "古代",
+          "raw": {
+            "word": "古代",
+            "kana": "こだい",
+            "pos": "名",
+            "meaning": "古代"
+          },
+          "note": ""
+        },
+        {
+          "number": 96,
+          "kana": "こたえる",
+          "word": "答える",
+          "pos": "二类动词",
+          "meaning": "回答",
+          "raw": {
+            "word": "答える",
+            "kana": "こたえる",
+            "pos": "动2自",
+            "meaning": "回答"
+          },
+          "note": ""
+        },
+        {
+          "number": 97,
+          "kana": "こっき",
+          "word": "国旗",
+          "pos": "名词",
+          "meaning": "国旗",
+          "raw": {
+            "word": "国旗",
+            "kana": "こっき",
+            "pos": "名",
+            "meaning": "国旗"
+          },
+          "note": ""
+        },
+        {
+          "number": 98,
+          "kana": "こっけいせつ",
+          "word": "国慶節",
+          "pos": "专名",
+          "meaning": "(中国)国庆节",
+          "raw": {
+            "word": "国慶節",
+            "kana": "こっけいせつ",
+            "pos": "专",
+            "meaning": "(中国)国庆节"
+          },
+          "note": ""
+        },
+        {
+          "number": 99,
+          "kana": "ことし",
+          "word": "今年",
+          "pos": "名词",
+          "meaning": "今年",
+          "raw": {
+            "word": "今年",
+            "kana": "ことし",
+            "pos": "名",
+            "meaning": "今年"
+          },
+          "note": ""
+        },
+        {
+          "number": 100,
+          "kana": "こども",
+          "word": "子供",
+          "pos": "名词",
+          "meaning": "孩子,子女;儿童",
+          "raw": {
+            "word": "子供",
+            "kana": "こども",
+            "pos": "名",
+            "meaning": "孩子,子女;儿童"
+          },
+          "note": ""
+        },
+        {
+          "number": 101,
+          "kana": "さいきん",
+          "word": "最近",
+          "pos": "名词",
+          "meaning": "最近",
+          "raw": {
+            "word": "最近",
+            "kana": "さいきん",
+            "pos": "名",
+            "meaning": "最近"
+          },
+          "note": ""
+        },
+        {
+          "number": 102,
+          "kana": "さいご",
+          "word": "最後",
+          "pos": "名词",
+          "meaning": "最后",
+          "raw": {
+            "word": "最後",
+            "kana": "さいご",
+            "pos": "名",
+            "meaning": "最后"
+          },
+          "note": ""
+        },
+        {
+          "number": 103,
+          "kana": "さいしょ",
+          "word": "最初",
+          "pos": "名词",
+          "meaning": "最初，起初",
+          "raw": {
+            "word": "最初",
+            "kana": "さいしょ",
+            "pos": "名",
+            "meaning": "最初，起初"
+          },
+          "note": ""
+        },
+        {
+          "number": 104,
+          "kana": "さいふ",
+          "word": "財布",
+          "pos": "名词",
+          "meaning": "钱包",
+          "raw": {
+            "word": "財布",
+            "kana": "さいふ",
+            "pos": "名",
+            "meaning": "钱包"
+          },
+          "note": ""
+        },
+        {
+          "number": 105,
+          "kana": "ざいりょう",
+          "word": "材料",
+          "pos": "名词",
+          "meaning": "原料，材料",
+          "raw": {
+            "word": "材料",
+            "kana": "ざいりょう",
+            "pos": "名",
+            "meaning": "原料，材料"
+          },
+          "note": ""
+        },
+        {
+          "number": 106,
+          "kana": "さかな",
+          "word": "魚",
+          "pos": "名词",
+          "meaning": "鱼；鱼类",
+          "raw": {
+            "word": "魚",
+            "kana": "さかな",
+            "pos": "名",
+            "meaning": "鱼；鱼类"
+          },
+          "note": ""
+        },
+        {
+          "number": 107,
+          "kana": "さくひん",
+          "word": "作品",
+          "pos": "名词",
+          "meaning": "作品",
+          "raw": {
+            "word": "作品",
+            "kana": "さくひん",
+            "pos": "名",
+            "meaning": "作品"
+          },
+          "note": ""
+        },
+        {
+          "number": 108,
+          "kana": "さしみ",
+          "word": "刺身",
+          "pos": "名词",
+          "meaning": "生鱼片",
+          "raw": {
+            "word": "刺身",
+            "kana": "さしみ",
+            "pos": "名",
+            "meaning": "生鱼片"
+          },
+          "note": ""
+        },
+        {
+          "number": 109,
+          "kana": "さっか",
+          "word": "作家",
+          "pos": "名词",
+          "meaning": "作家",
+          "raw": {
+            "word": "作家",
+            "kana": "さっか",
+            "pos": "名",
+            "meaning": "作家"
+          },
+          "note": ""
+        },
+        {
+          "number": 110,
+          "kana": "ざっし",
+          "word": "雑誌",
+          "pos": "名词",
+          "meaning": "杂志",
+          "raw": {
+            "word": "雑誌",
+            "kana": "ざっし",
+            "pos": "名",
+            "meaning": "杂志"
+          },
+          "note": ""
+        },
+        {
+          "number": 111,
+          "kana": "さんか",
+          "word": "参加",
+          "pos": "名词・サ变动词",
+          "meaning": "参加",
+          "raw": {
+            "word": "参加",
+            "kana": "さんか",
+            "pos": "名・动 3 自",
+            "meaning": "参加"
+          },
+          "note": ""
+        },
+        {
+          "number": 112,
+          "kana": "ざんねん",
+          "word": "残念",
+          "pos": "二类形容词",
+          "meaning": "遗憾，可惜",
+          "raw": {
+            "word": "残念",
+            "kana": "ざんねん",
+            "pos": "形 2",
+            "meaning": "遗憾，可惜"
+          },
+          "note": ""
+        },
+        {
+          "number": 113,
+          "kana": "しあい",
+          "word": "試合",
+          "pos": "名词",
+          "meaning": "比赛",
+          "raw": {
+            "word": "試合",
+            "kana": "しあい",
+            "pos": "名",
+            "meaning": "比赛"
+          },
+          "note": ""
+        },
+        {
+          "number": 114,
+          "kana": "しかい",
+          "word": "司会",
+          "pos": "名词",
+          "meaning": "主持人",
+          "raw": {
+            "word": "司会",
+            "kana": "しかい",
+            "pos": "名",
+            "meaning": "主持人"
+          },
+          "note": ""
+        },
+        {
+          "number": 115,
+          "kana": "しかた",
+          "word": "仕方",
+          "pos": "名词",
+          "meaning": "做法,办法",
+          "raw": {
+            "word": "仕方",
+            "kana": "しかた",
+            "pos": "名",
+            "meaning": "做法,办法"
+          },
+          "note": ""
+        },
+        {
+          "number": 116,
+          "kana": "じかん",
+          "word": "時間",
+          "pos": "名词",
+          "meaning": "课时;时间;小时",
+          "raw": {
+            "word": "時間",
+            "kana": "じかん",
+            "pos": "名",
+            "meaning": "课时;时间;小时"
+          },
+          "note": ""
+        },
+        {
+          "number": 117,
+          "kana": "しけん",
+          "word": "試験",
+          "pos": "名词",
+          "meaning": "考试;试验",
+          "raw": {
+            "word": "試験",
+            "kana": "しけん",
+            "pos": "名",
+            "meaning": "考试;试验"
+          },
+          "note": ""
+        },
+        {
+          "number": 118,
+          "kana": "じけん",
+          "word": "事件",
+          "pos": "名词",
+          "meaning": "事件,案件",
+          "raw": {
+            "word": "事件",
+            "kana": "じけん",
+            "pos": "名",
+            "meaning": "事件,案件"
+          },
+          "note": ""
+        },
+        {
+          "number": 119,
+          "kana": "じこ",
+          "word": "事故",
+          "pos": "名词",
+          "meaning": "事故",
+          "raw": {
+            "word": "事故",
+            "kana": "じこ",
+            "pos": "名",
+            "meaning": "事故"
+          },
+          "note": ""
+        },
+        {
+          "number": 120,
+          "kana": "じこしょうかい",
+          "word": "自己紹介",
+          "pos": "名词・サ变动词",
+          "meaning": "自我介绍",
+          "raw": {
+            "word": "自己紹介",
+            "kana": "じこしょうかい",
+            "pos": "名·动3自",
+            "meaning": "自我介绍"
+          },
+          "note": ""
+        },
+        {
+          "number": 121,
+          "kana": "しごと",
+          "word": "仕事",
+          "pos": "名词",
+          "meaning": "工作;职业",
+          "raw": {
+            "word": "仕事",
+            "kana": "しごと",
+            "pos": "名",
+            "meaning": "工作;职业"
+          },
+          "note": ""
+        },
+        {
+          "number": 122,
+          "kana": "じしゅう",
+          "word": "自習",
+          "pos": "名词・サ变动词",
+          "meaning": "自习",
+          "raw": {
+            "word": "自習",
+            "kana": "じしゅう",
+            "pos": "名·动3他",
+            "meaning": "自习"
+          },
+          "note": ""
+        },
+        {
+          "number": 123,
+          "kana": "じしょ",
+          "word": "辞書",
+          "pos": "名词",
+          "meaning": "词典,辞典",
+          "raw": {
+            "word": "辞書",
+            "kana": "じしょ",
+            "pos": "名",
+            "meaning": "词典,辞典"
+          },
+          "note": ""
+        },
+        {
+          "number": 124,
+          "kana": "じしん",
+          "word": "自信",
+          "pos": "名词",
+          "meaning": "自信,信心",
+          "raw": {
+            "word": "自信",
+            "kana": "じしん",
+            "pos": "名",
+            "meaning": "自信,信心"
+          },
+          "note": ""
+        },
+        {
+          "number": 125,
+          "kana": "じしん",
+          "word": "地震",
+          "pos": "名词",
+          "meaning": "地震",
+          "raw": {
+            "word": "地震",
+            "kana": "じしん",
+            "pos": "名",
+            "meaning": "地震"
+          },
+          "note": ""
+        },
+        {
+          "number": 126,
+          "kana": "しせい",
+          "word": "姿勢",
+          "pos": "名词",
+          "meaning": "姿势;态度",
+          "raw": {
+            "word": "姿勢",
+            "kana": "しせい",
+            "pos": "名",
+            "meaning": "姿势;态度"
+          },
+          "note": ""
+        },
+        {
+          "number": 127,
+          "kana": "じてんしゃ",
+          "word": "自転車",
+          "pos": "名词",
+          "meaning": "自行车",
+          "raw": {
+            "word": "自転車",
+            "kana": "じてんしゃ",
+            "pos": "名",
+            "meaning": "自行车"
+          },
+          "note": ""
+        },
+        {
+          "number": 128,
+          "kana": "しどう",
+          "word": "指導",
+          "pos": "名词・サ变动词",
+          "meaning": "指导",
+          "raw": {
+            "word": "指導",
+            "kana": "しどう",
+            "pos": "名·动3他",
+            "meaning": "指导"
+          },
+          "note": ""
+        },
+        {
+          "number": 129,
+          "kana": "じぶん",
+          "word": "自分",
+          "pos": "名词",
+          "meaning": "自己,自身",
+          "raw": {
+            "word": "自分",
+            "kana": "じぶん",
+            "pos": "名",
+            "meaning": "自己,自身"
+          },
+          "note": ""
+        },
+        {
+          "number": 130,
+          "kana": "しゃしん",
+          "word": "写真",
+          "pos": "名词",
+          "meaning": "照片",
+          "raw": {
+            "word": "写真",
+            "kana": "しゃしん",
+            "pos": "名",
+            "meaning": "照片"
+          },
+          "note": ""
+        },
+        {
+          "number": 131,
+          "kana": "しゅうかく",
+          "word": "収穫",
+          "pos": "名词・サ变动词",
+          "meaning": "收获;收割",
+          "raw": {
+            "word": "収穫",
+            "kana": "しゅうかく",
+            "pos": "名·动3他",
+            "meaning": "收获;收割"
+          },
+          "note": ""
+        },
+        {
+          "number": 132,
+          "kana": "しゅうかん",
+          "word": "週間",
+          "pos": "名词",
+          "meaning": "周,星期",
+          "raw": {
+            "word": "週間",
+            "kana": "しゅうかん",
+            "pos": "名",
+            "meaning": "周,星期"
+          },
+          "note": ""
+        },
+        {
+          "number": 133,
+          "kana": "しゅうかん",
+          "word": "習慣",
+          "pos": "名词",
+          "meaning": "习惯",
+          "raw": {
+            "word": "習慣",
+            "kana": "しゅうかん",
+            "pos": "名",
+            "meaning": "习惯"
+          },
+          "note": ""
+        },
+        {
+          "number": 134,
+          "kana": "じゅうぶん",
+          "word": "十分",
+          "pos": "二类形容词",
+          "meaning": "充分,足够",
+          "raw": {
+            "word": "十分",
+            "kana": "じゅうぶん",
+            "pos": "形2",
+            "meaning": "充分,足够"
+          },
+          "note": ""
+        },
+        {
+          "number": 135,
+          "kana": "しゅうまつ",
+          "word": "週末",
+          "pos": "名词",
+          "meaning": "周末",
+          "raw": {
+            "word": "週末",
+            "kana": "しゅうまつ",
+            "pos": "名",
+            "meaning": "周末"
+          },
+          "note": ""
+        },
+        {
+          "number": 136,
+          "kana": "じゅうみん",
+          "word": "住民",
+          "pos": "名词",
+          "meaning": "居民",
+          "raw": {
+            "word": "住民",
+            "kana": "じゅうみん",
+            "pos": "名",
+            "meaning": "居民"
+          },
+          "note": ""
+        },
+        {
+          "number": 137,
+          "kana": "じゅうよう",
+          "word": "重要",
+          "pos": "名词・二类形容词",
+          "meaning": "重要",
+          "raw": {
+            "word": "重要",
+            "kana": "じゅうよう",
+            "pos": "名·形2",
+            "meaning": "重要"
+          },
+          "note": ""
+        },
+        {
+          "number": 138,
+          "kana": "じゅぎょう",
+          "word": "授業",
+          "pos": "名词",
+          "meaning": "课,上课",
+          "raw": {
+            "word": "授業",
+            "kana": "じゅぎょう",
+            "pos": "名",
+            "meaning": "课,上课"
+          },
+          "note": ""
+        },
+        {
+          "number": 139,
+          "kana": "しゅくだい",
+          "word": "宿題",
+          "pos": "名词",
+          "meaning": "作业,课后作业",
+          "raw": {
+            "word": "宿題",
+            "kana": "しゅくだい",
+            "pos": "名",
+            "meaning": "作业,课后作业"
+          },
+          "note": ""
+        },
+        {
+          "number": 140,
+          "kana": "しゅっせき",
+          "word": "出席",
+          "pos": "名词・サ变动词",
+          "meaning": "出席",
+          "raw": {
+            "word": "出席",
+            "kana": "しゅっせき",
+            "pos": "名·动3自",
+            "meaning": "出席"
+          },
+          "note": ""
+        },
+        {
+          "number": 141,
+          "kana": "しゅふ",
+          "word": "主婦",
+          "pos": "名词",
+          "meaning": "主妇",
+          "raw": {
+            "word": "主婦",
+            "kana": "しゅふ",
+            "pos": "名",
+            "meaning": "主妇"
+          },
+          "note": ""
+        },
+        {
+          "number": 142,
+          "kana": "しゅみ",
+          "word": "趣味",
+          "pos": "名词",
+          "meaning": "爱好",
+          "raw": {
+            "word": "趣味",
+            "kana": "しゅみ",
+            "pos": "名",
+            "meaning": "爱好"
+          },
+          "note": ""
+        },
+        {
+          "number": 143,
+          "kana": "しゅもく",
+          "word": "種目",
+          "pos": "名词",
+          "meaning": "项目",
+          "raw": {
+            "word": "種目",
+            "kana": "しゅもく",
+            "pos": "名",
+            "meaning": "项目"
+          },
+          "note": ""
+        },
+        {
+          "number": 144,
+          "kana": "じゅんび",
+          "word": "準備",
+          "pos": "名词・サ变动词",
+          "meaning": "准备",
+          "raw": {
+            "word": "準備",
+            "kana": "じゅんび",
+            "pos": "名·动3他",
+            "meaning": "准备"
+          },
+          "note": ""
+        },
+        {
+          "number": 145,
+          "kana": "しよう",
+          "word": "使用",
+          "pos": "名词・サ变动词",
+          "meaning": "使用",
+          "raw": {
+            "word": "使用",
+            "kana": "しよう",
+            "pos": "名·动3他",
+            "meaning": "使用"
+          },
+          "note": ""
+        },
+        {
+          "number": 146,
+          "kana": "しょうかい",
+          "word": "紹介",
+          "pos": "名词・サ变动词",
+          "meaning": "介绍",
+          "raw": {
+            "word": "紹介",
+            "kana": "しょうかい",
+            "pos": "名·动3他",
+            "meaning": "介绍"
+          },
+          "note": ""
+        },
+        {
+          "number": 147,
+          "kana": "じょうきょう",
+          "word": "状況",
+          "pos": "名词",
+          "meaning": "情况,状况",
+          "raw": {
+            "word": "状況",
+            "kana": "じょうきょう",
+            "pos": "名",
+            "meaning": "情况,状况"
+          },
+          "note": ""
+        },
+        {
+          "number": 148,
+          "kana": "しょうせつ",
+          "word": "小説",
+          "pos": "名词",
+          "meaning": "小说",
+          "raw": {
+            "word": "小説",
+            "kana": "しょうせつ",
+            "pos": "名",
+            "meaning": "小说"
+          },
+          "note": ""
+        },
+        {
+          "number": 149,
+          "kana": "じょうだん",
+          "word": "冗談",
+          "pos": "名词",
+          "meaning": "玩笑,笑话",
+          "raw": {
+            "word": "冗談",
+            "kana": "じょうだん",
+            "pos": "名",
+            "meaning": "玩笑,笑话"
+          },
+          "note": ""
+        },
+        {
+          "number": 150,
+          "kana": "じょうぶ",
+          "word": "丈夫",
+          "pos": "二类形容词",
+          "meaning": "结实,健康",
+          "raw": {
+            "word": "丈夫",
+            "kana": "じょうぶ",
+            "pos": "形2",
+            "meaning": "结实,健康"
+          },
+          "note": ""
+        },
+        {
+          "number": 151,
+          "kana": "しょくざい",
+          "word": "食材",
+          "pos": "名词",
+          "meaning": "食材",
+          "raw": {
+            "word": "食材",
+            "kana": "しょくざい",
+            "pos": "名",
+            "meaning": "食材"
+          },
+          "note": ""
+        },
+        {
+          "number": 152,
+          "kana": "しょくじ",
+          "word": "食事",
+          "pos": "名词・サ变动词",
+          "meaning": "用餐",
+          "raw": {
+            "word": "食事",
+            "kana": "しょくじ",
+            "pos": "名·动3自",
+            "meaning": "用餐"
+          },
+          "note": ""
+        },
+        {
+          "number": 153,
+          "kana": "しょくどう",
+          "word": "食堂",
+          "pos": "名词",
+          "meaning": "食堂",
+          "raw": {
+            "word": "食堂",
+            "kana": "しょくどう",
+            "pos": "名",
+            "meaning": "食堂"
+          },
+          "note": ""
+        },
+        {
+          "number": 154,
+          "kana": "じょせい",
+          "word": "女性",
+          "pos": "名词",
+          "meaning": "女性,女士",
+          "raw": {
+            "word": "女性",
+            "kana": "じょせい",
+            "pos": "名",
+            "meaning": "女性,女士"
+          },
+          "note": ""
+        },
+        {
+          "number": 155,
+          "kana": "しょどう",
+          "word": "書道",
+          "pos": "名词",
+          "meaning": "书法",
+          "raw": {
+            "word": "書道",
+            "kana": "しょどう",
+            "pos": "名",
+            "meaning": "书法"
+          },
+          "note": ""
+        },
+        {
+          "number": 156,
+          "kana": "しりょく",
+          "word": "視力",
+          "pos": "名词",
+          "meaning": "视力",
+          "raw": {
+            "word": "視力",
+            "kana": "しりょく",
+            "pos": "名",
+            "meaning": "视力"
+          },
+          "note": ""
+        },
+        {
+          "number": 157,
+          "kana": "しんちょう",
+          "word": "身長",
+          "pos": "名词",
+          "meaning": "身高,身长",
+          "raw": {
+            "word": "身長",
+            "kana": "しんちょう",
+            "pos": "名",
+            "meaning": "身高,身长"
+          },
+          "note": ""
+        },
+        {
+          "number": 158,
+          "kana": "しんぱい",
+          "word": "心配",
+          "pos": "名词・サ变动词・二类形容词",
+          "meaning": "担心,挂念;操心",
+          "raw": {
+            "word": "心配",
+            "kana": "しんぱい",
+            "pos": "名·动3自他·形2",
+            "meaning": "担心,挂念;操心"
+          },
+          "note": ""
+        },
+        {
+          "number": 159,
+          "kana": "じんぶつ",
+          "word": "人物",
+          "pos": "名词",
+          "meaning": "人物",
+          "raw": {
+            "word": "人物",
+            "kana": "じんぶつ",
+            "pos": "名",
+            "meaning": "人物"
+          },
+          "note": ""
+        },
+        {
+          "number": 160,
+          "kana": "しんぶん",
+          "word": "新聞",
+          "pos": "名词",
+          "meaning": "报纸,新闻",
+          "raw": {
+            "word": "新聞",
+            "kana": "しんぶん",
+            "pos": "名",
+            "meaning": "报纸,新闻"
+          },
+          "note": ""
+        },
+        {
+          "number": 161,
+          "kana": "すいえい",
+          "word": "水泳",
+          "pos": "名词",
+          "meaning": "游泳",
+          "raw": {
+            "word": "水泳",
+            "kana": "すいえい",
+            "pos": "名",
+            "meaning": "游泳"
+          },
+          "note": ""
+        },
+        {
+          "number": 162,
+          "kana": "すいみん",
+          "word": "睡眠",
+          "pos": "名词",
+          "meaning": "睡眠",
+          "raw": {
+            "word": "睡眠",
+            "kana": "すいみん",
+            "pos": "名",
+            "meaning": "睡眠"
+          },
+          "note": ""
+        },
+        {
+          "number": 163,
+          "kana": "すうがく",
+          "word": "数学",
+          "pos": "名词",
+          "meaning": "数学",
+          "raw": {
+            "word": "数学",
+            "kana": "すうがく",
+            "pos": "名",
+            "meaning": "数学"
+          },
+          "note": ""
+        },
+        {
+          "number": 164,
+          "kana": "せいかつ",
+          "word": "生活",
+          "pos": "名词・サ变动词",
+          "meaning": "生活",
+          "raw": {
+            "word": "生活",
+            "kana": "せいかつ",
+            "pos": "名·动3自",
+            "meaning": "生活"
+          },
+          "note": ""
+        },
+        {
+          "number": 165,
+          "kana": "せいこう",
+          "word": "成功",
+          "pos": "名词・サ变动词",
+          "meaning": "成功",
+          "raw": {
+            "word": "成功",
+            "kana": "せいこう",
+            "pos": "名·动3自",
+            "meaning": "成功"
+          },
+          "note": ""
+        },
+        {
+          "number": 166,
+          "kana": "せいしん",
+          "word": "精神",
+          "pos": "名词",
+          "meaning": "精神",
+          "raw": {
+            "word": "精神",
+            "kana": "せいしん",
+            "pos": "名",
+            "meaning": "精神"
+          },
+          "note": ""
+        },
+        {
+          "number": 167,
+          "kana": "せいせき",
+          "word": "成績",
+          "pos": "名词",
+          "meaning": "成绩",
+          "raw": {
+            "word": "成績",
+            "kana": "せいせき",
+            "pos": "名",
+            "meaning": "成绩"
+          },
+          "note": ""
+        },
+        {
+          "number": 168,
+          "kana": "せいちょう",
+          "word": "成長",
+          "pos": "名词・サ变动词",
+          "meaning": "成长",
+          "raw": {
+            "word": "成長",
+            "kana": "せいちょう",
+            "pos": "名·动3自",
+            "meaning": "成长"
+          },
+          "note": ""
+        },
+        {
+          "number": 169,
+          "kana": "せいと",
+          "word": "生徒",
+          "pos": "名词",
+          "meaning": "(初高中)学生",
+          "raw": {
+            "word": "生徒",
+            "kana": "せいと",
+            "pos": "名",
+            "meaning": "(初高中)学生"
+          },
+          "note": ""
+        },
+        {
+          "number": 170,
+          "kana": "せかい",
+          "word": "世界",
+          "pos": "名词",
+          "meaning": "世界",
+          "raw": {
+            "word": "世界",
+            "kana": "せかい",
+            "pos": "名",
+            "meaning": "世界"
+          },
+          "note": ""
+        },
+        {
+          "number": 171,
+          "kana": "せつめい",
+          "word": "説明",
+          "pos": "名词・サ变动词",
+          "meaning": "说明",
+          "raw": {
+            "word": "説明",
+            "kana": "せつめい",
+            "pos": "名·动3他",
+            "meaning": "说明"
+          },
+          "note": ""
+        },
+        {
+          "number": 172,
+          "kana": "ぜんいん",
+          "word": "全員",
+          "pos": "名词",
+          "meaning": "全体人员",
+          "raw": {
+            "word": "全員",
+            "kana": "ぜんいん",
+            "pos": "名",
+            "meaning": "全体人员"
+          },
+          "note": ""
+        },
+        {
+          "number": 173,
+          "kana": "せんげつ",
+          "word": "先月",
+          "pos": "名词",
+          "meaning": "上个月",
+          "raw": {
+            "word": "先月",
+            "kana": "せんげつ",
+            "pos": "名",
+            "meaning": "上个月"
+          },
+          "note": ""
+        },
+        {
+          "number": 174,
+          "kana": "せんしゅう",
+          "word": "先週",
+          "pos": "名词",
+          "meaning": "上星期,上周",
+          "raw": {
+            "word": "先週",
+            "kana": "せんしゅう",
+            "pos": "名",
+            "meaning": "上星期,上周"
+          },
+          "note": ""
+        },
+        {
+          "number": 175,
+          "kana": "せんせい",
+          "word": "先生",
+          "pos": "名词",
+          "meaning": "老师;大夫",
+          "raw": {
+            "word": "先生",
+            "kana": "せんせい",
+            "pos": "名",
+            "meaning": "老师;大夫"
+          },
+          "note": ""
+        },
+        {
+          "number": 176,
+          "kana": "そうだん",
+          "word": "相談",
+          "pos": "名词・サ变动词",
+          "meaning": "商量,协商",
+          "raw": {
+            "word": "相談",
+            "kana": "そうだん",
+            "pos": "名·动3他",
+            "meaning": "商量,协商"
+          },
+          "note": ""
+        },
+        {
+          "number": 177,
+          "kana": "そふ",
+          "word": "祖父",
+          "pos": "名词",
+          "meaning": "(我)祖父,(我)外祖父",
+          "raw": {
+            "word": "祖父",
+            "kana": "そふ",
+            "pos": "名",
+            "meaning": "(我)祖父,(我)外祖父"
+          },
+          "note": ""
+        },
+        {
+          "number": 178,
+          "kana": "そぼ",
+          "word": "祖母",
+          "pos": "名词",
+          "meaning": "(我)祖母,(我)外祖母",
+          "raw": {
+            "word": "祖母",
+            "kana": "そぼ",
+            "pos": "名",
+            "meaning": "(我)祖母,(我)外祖母"
+          },
+          "note": ""
+        },
+        {
+          "number": 179,
+          "kana": "たいいくかん",
+          "word": "体育館",
+          "pos": "名词",
+          "meaning": "体育馆",
+          "raw": {
+            "word": "体育館",
+            "kana": "たいいくかん",
+            "pos": "名",
+            "meaning": "体育馆"
+          },
+          "note": ""
+        },
+        {
+          "number": 180,
+          "kana": "たいおう",
+          "word": "対応",
+          "pos": "名词・サ变动词",
+          "meaning": "应对",
+          "raw": {
+            "word": "対応",
+            "kana": "たいおう",
+            "pos": "名·动3自",
+            "meaning": "应对"
+          },
+          "note": ""
+        },
+        {
+          "number": 181,
+          "kana": "たいかい",
+          "word": "大会",
+          "pos": "名词",
+          "meaning": "大赛;大会",
+          "raw": {
+            "word": "大会",
+            "kana": "たいかい",
+            "pos": "名",
+            "meaning": "大赛;大会"
+          },
+          "note": ""
+        },
+        {
+          "number": 182,
+          "kana": "だいがくせい",
+          "word": "大学生",
+          "pos": "名词",
+          "meaning": "大学生",
+          "raw": {
+            "word": "大学生",
+            "kana": "だいがくせい",
+            "pos": "名",
+            "meaning": "大学生"
+          },
+          "note": ""
+        },
+        {
+          "number": 183,
+          "kana": "だいじ",
+          "word": "大事",
+          "pos": "二类形容词",
+          "meaning": "重要;珍惜",
+          "raw": {
+            "word": "大事",
+            "kana": "だいじ",
+            "pos": "形2",
+            "meaning": "重要;珍惜"
+          },
+          "note": ""
+        },
+        {
+          "number": 184,
+          "kana": "たいじゅう",
+          "word": "体重",
+          "pos": "名词",
+          "meaning": "体重",
+          "raw": {
+            "word": "体重",
+            "kana": "たいじゅう",
+            "pos": "名",
+            "meaning": "体重"
+          },
+          "note": ""
+        },
+        {
+          "number": 185,
+          "kana": "だいじょうぶ",
+          "word": "大丈夫",
+          "pos": "二类形容词",
+          "meaning": "不要紧",
+          "raw": {
+            "word": "大丈夫",
+            "kana": "だいじょうぶ",
+            "pos": "形2",
+            "meaning": "不要紧"
+          },
+          "note": ""
+        },
+        {
+          "number": 186,
+          "kana": "たいへん",
+          "word": "大変",
+          "pos": "名词・二类形容词・副词",
+          "meaning": "不得了,严重;非常",
+          "raw": {
+            "word": "大変",
+            "kana": "たいへん",
+            "pos": "名·形2·副",
+            "meaning": "不得了,严重;非常"
+          },
+          "note": ""
+        },
+        {
+          "number": 187,
+          "kana": "たいよう",
+          "word": "太陽",
+          "pos": "名词",
+          "meaning": "太阳",
+          "raw": {
+            "word": "太陽",
+            "kana": "たいよう",
+            "pos": "名",
+            "meaning": "太阳"
+          },
+          "note": ""
+        },
+        {
+          "number": 188,
+          "kana": "たっきゅう",
+          "word": "卓球",
+          "pos": "名词",
+          "meaning": "乒乓球",
+          "raw": {
+            "word": "卓球",
+            "kana": "たっきゅう",
+            "pos": "名",
+            "meaning": "乒乓球"
+          },
+          "note": ""
+        },
+        {
+          "number": 189,
+          "kana": "たんじょうび",
+          "word": "誕生日",
+          "pos": "名词",
+          "meaning": "生日",
+          "raw": {
+            "word": "誕生日",
+            "kana": "たんじょうび",
+            "pos": "名",
+            "meaning": "生日"
+          },
+          "note": ""
+        },
+        {
+          "number": 190,
+          "kana": "ちかてつ",
+          "word": "地下鉄",
+          "pos": "名词",
+          "meaning": "地铁",
+          "raw": {
+            "word": "地下鉄",
+            "kana": "ちかてつ",
+            "pos": "名",
+            "meaning": "地铁"
+          },
+          "note": ""
+        },
+        {
+          "number": 191,
+          "kana": "ちず",
+          "word": "地図",
+          "pos": "名词",
+          "meaning": "地图",
+          "raw": {
+            "word": "地図",
+            "kana": "ちず",
+            "pos": "名",
+            "meaning": "地图"
+          },
+          "note": ""
+        },
+        {
+          "number": 192,
+          "kana": "ちゅうかりょうり",
+          "word": "中華料理",
+          "pos": "名词",
+          "meaning": "中国菜",
+          "raw": {
+            "word": "中華料理",
+            "kana": "ちゅうかりょうり",
+            "pos": "名",
+            "meaning": "中国菜"
+          },
+          "note": ""
+        },
+        {
+          "number": 193,
+          "kana": "ちゅうごく",
+          "word": "中国",
+          "pos": "专名",
+          "meaning": "中国",
+          "raw": {
+            "word": "中国",
+            "kana": "ちゅうごく",
+            "pos": "专",
+            "meaning": "中国"
+          },
+          "note": ""
+        },
+        {
+          "number": 194,
+          "kana": "ちゅうごくご",
+          "word": "中国語",
+          "pos": "专名",
+          "meaning": "中文,汉语",
+          "raw": {
+            "word": "中国語",
+            "kana": "ちゅうごくご",
+            "pos": "专",
+            "meaning": "中文,汉语"
+          },
+          "note": ""
+        },
+        {
+          "number": 195,
+          "kana": "ちゅうごくじん",
+          "word": "中国人",
+          "pos": "专名",
+          "meaning": "中国人",
+          "raw": {
+            "word": "中国人",
+            "kana": "ちゅうごくじん",
+            "pos": "专",
+            "meaning": "中国人"
+          },
+          "note": ""
+        },
+        {
+          "number": 196,
+          "kana": "ちゅうし",
+          "word": "中止",
+          "pos": "名词・サ变动词",
+          "meaning": "中止,停止",
+          "raw": {
+            "word": "中止",
+            "kana": "ちゅうし",
+            "pos": "名·动3他",
+            "meaning": "中止,停止"
+          },
+          "note": ""
+        },
+        {
+          "number": 197,
+          "kana": "ちょうじかん",
+          "word": "長時間",
+          "pos": "名词・副词",
+          "meaning": "长时间",
+          "raw": {
+            "word": "長時間",
+            "kana": "ちょうじかん",
+            "pos": "名·副",
+            "meaning": "长时间"
+          },
+          "note": ""
+        },
+        {
+          "number": 198,
+          "kana": "つうきん",
+          "word": "通勤",
+          "pos": "名词・サ变动词",
+          "meaning": "上下班,通勤",
+          "raw": {
+            "word": "通勤",
+            "kana": "つうきん",
+            "pos": "名·动3自",
+            "meaning": "上下班,通勤"
+          },
+          "note": ""
+        },
+        {
+          "number": 199,
+          "kana": "ていど",
+          "word": "程度",
+          "pos": "名词",
+          "meaning": "程度;左右",
+          "raw": {
+            "word": "程度",
+            "kana": "ていど",
+            "pos": "名",
+            "meaning": "程度;左右"
+          },
+          "note": ""
+        },
+        {
+          "number": 200,
+          "kana": "てがみ",
+          "word": "手紙",
+          "pos": "名词",
+          "meaning": "信",
+          "raw": {
+            "word": "手紙",
+            "kana": "てがみ",
+            "pos": "名",
+            "meaning": "信"
+          },
+          "note": ""
+        },
+        {
+          "number": 201,
+          "kana": "でぐち",
+          "word": "出口",
+          "pos": "名词",
+          "meaning": "出口",
+          "raw": {
+            "word": "出口",
+            "kana": "でぐち",
+            "pos": "名",
+            "meaning": "出口"
+          },
+          "note": ""
+        },
+        {
+          "number": 202,
+          "kana": "てんいん",
+          "word": "店員",
+          "pos": "名词",
+          "meaning": "店员",
+          "raw": {
+            "word": "店員",
+            "kana": "てんいん",
+            "pos": "名",
+            "meaning": "店员"
+          },
+          "note": ""
+        },
+        {
+          "number": 203,
+          "kana": "てんき",
+          "word": "天気",
+          "pos": "名词",
+          "meaning": "天气",
+          "raw": {
+            "word": "天気",
+            "kana": "てんき",
+            "pos": "名",
+            "meaning": "天气"
+          },
+          "note": ""
+        },
+        {
+          "number": 204,
+          "kana": "でんき",
+          "word": "電気",
+          "pos": "名词",
+          "meaning": "电,电力;电灯",
+          "raw": {
+            "word": "電気",
+            "kana": "でんき",
+            "pos": "名",
+            "meaning": "电,电力;电灯"
+          },
+          "note": ""
+        },
+        {
+          "number": 205,
+          "kana": "でんわ",
+          "word": "電話",
+          "pos": "名词・サ变动词",
+          "meaning": "(打)电话",
+          "raw": {
+            "word": "電話",
+            "kana": "でんわ",
+            "pos": "名·动3自",
+            "meaning": "(打)电话"
+          },
+          "note": ""
+        },
+        {
+          "number": 206,
+          "kana": "とうきょう",
+          "word": "東京",
+          "pos": "专名",
+          "meaning": "东京",
+          "raw": {
+            "word": "東京",
+            "kana": "とうきょう",
+            "pos": "专",
+            "meaning": "东京"
+          },
+          "note": ""
+        },
+        {
+          "number": 207,
+          "kana": "どうぶつ",
+          "word": "動物",
+          "pos": "名词",
+          "meaning": "动物",
+          "raw": {
+            "word": "動物",
+            "kana": "どうぶつ",
+            "pos": "名",
+            "meaning": "动物"
+          },
+          "note": ""
+        },
+        {
+          "number": 208,
+          "kana": "とおか",
+          "word": "十日",
+          "pos": "名词",
+          "meaning": "十日",
+          "raw": {
+            "word": "十日",
+            "kana": "とおか",
+            "pos": "名",
+            "meaning": "十日"
+          },
+          "note": ""
+        },
+        {
+          "number": 209,
+          "kana": "とかい",
+          "word": "都会",
+          "pos": "名词",
+          "meaning": "都市,大城市",
+          "raw": {
+            "word": "都会",
+            "kana": "とかい",
+            "pos": "名",
+            "meaning": "都市,大城市"
+          },
+          "note": ""
+        },
+        {
+          "number": 210,
+          "kana": "とくい",
+          "word": "得意",
+          "pos": "二类形容词",
+          "meaning": "拿手,擅长",
+          "raw": {
+            "word": "得意",
+            "kana": "とくい",
+            "pos": "形2",
+            "meaning": "拿手,擅长"
+          },
+          "note": ""
+        },
+        {
+          "number": 211,
+          "kana": "どくしょ",
+          "word": "読書",
+          "pos": "名词・サ变动词",
+          "meaning": "读书",
+          "raw": {
+            "word": "読書",
+            "kana": "どくしょ",
+            "pos": "名·动3自",
+            "meaning": "读书"
+          },
+          "note": ""
+        },
+        {
+          "number": 212,
+          "kana": "とくちょう",
+          "word": "特徴",
+          "pos": "名词",
+          "meaning": "特点,特征",
+          "raw": {
+            "word": "特徴",
+            "kana": "とくちょう",
+            "pos": "名",
+            "meaning": "特点,特征"
+          },
+          "note": ""
+        },
+        {
+          "number": 213,
+          "kana": "とけい",
+          "word": "時計",
+          "pos": "名词",
+          "meaning": "钟表",
+          "raw": {
+            "word": "時計",
+            "kana": "とけい",
+            "pos": "名",
+            "meaning": "钟表"
+          },
+          "note": ""
+        },
+        {
+          "number": 214,
+          "kana": "としょかん",
+          "word": "図書館",
+          "pos": "名词",
+          "meaning": "图书馆",
+          "raw": {
+            "word": "図書館",
+            "kana": "としょかん",
+            "pos": "名",
+            "meaning": "图书馆"
+          },
+          "note": ""
+        },
+        {
+          "number": 215,
+          "kana": "としょしつ",
+          "word": "図書室",
+          "pos": "名词",
+          "meaning": "图书室",
+          "raw": {
+            "word": "図書室",
+            "kana": "としょしつ",
+            "pos": "名",
+            "meaning": "图书室"
+          },
+          "note": ""
+        },
+        {
+          "number": 216,
+          "kana": "ともだち",
+          "word": "友達",
+          "pos": "名词",
+          "meaning": "朋友",
+          "raw": {
+            "word": "友達",
+            "kana": "ともだち",
+            "pos": "名",
+            "meaning": "朋友"
+          },
+          "note": ""
+        },
+        {
+          "number": 217,
+          "kana": "どようび",
+          "word": "土曜日",
+          "pos": "名词",
+          "meaning": "星期六",
+          "raw": {
+            "word": "土曜日",
+            "kana": "どようび",
+            "pos": "名",
+            "meaning": "星期六"
+          },
+          "note": ""
+        },
+        {
+          "number": 218,
+          "kana": "ないよう",
+          "word": "内容",
+          "pos": "名词",
+          "meaning": "内容",
+          "raw": {
+            "word": "内容",
+            "kana": "ないよう",
+            "pos": "名",
+            "meaning": "内容"
+          },
+          "note": ""
+        },
+        {
+          "number": 219,
+          "kana": "なのか",
+          "word": "七日",
+          "pos": "名词",
+          "meaning": "七日",
+          "raw": {
+            "word": "七日",
+            "kana": "なのか",
+            "pos": "名",
+            "meaning": "七日"
+          },
+          "note": ""
+        },
+        {
+          "number": 220,
+          "kana": "なまえ",
+          "word": "名前",
+          "pos": "名词",
+          "meaning": "名字,姓名",
+          "raw": {
+            "word": "名前",
+            "kana": "なまえ",
+            "pos": "名",
+            "meaning": "名字,姓名"
+          },
+          "note": ""
+        },
+        {
+          "number": 221,
+          "kana": "にがて",
+          "word": "苦手",
+          "pos": "名词・二类形容词",
+          "meaning": "不擅长;难对付的人",
+          "raw": {
+            "word": "苦手",
+            "kana": "にがて",
+            "pos": "名·形2",
+            "meaning": "不擅长;难对付的人"
+          },
+          "note": ""
+        },
+        {
+          "number": 222,
+          "kana": "にっき",
+          "word": "日記",
+          "pos": "名词",
+          "meaning": "日记",
+          "raw": {
+            "word": "日記",
+            "kana": "にっき",
+            "pos": "名",
+            "meaning": "日记"
+          },
+          "note": ""
+        },
+        {
+          "number": 223,
+          "kana": "にほん",
+          "word": "日本",
+          "pos": "专名",
+          "meaning": "日本",
+          "raw": {
+            "word": "日本",
+            "kana": "にほん",
+            "pos": "专",
+            "meaning": "日本"
+          },
+          "note": ""
+        },
+        {
+          "number": 224,
+          "kana": "にほんご",
+          "word": "日本語",
+          "pos": "专名",
+          "meaning": "日语,日文",
+          "raw": {
+            "word": "日本語",
+            "kana": "にほんご",
+            "pos": "专",
+            "meaning": "日语,日文"
+          },
+          "note": ""
+        },
+        {
+          "number": 225,
+          "kana": "にほんじん",
+          "word": "日本人",
+          "pos": "专名",
+          "meaning": "日本人",
+          "raw": {
+            "word": "日本人",
+            "kana": "にほんじん",
+            "pos": "专",
+            "meaning": "日本人"
+          },
+          "note": ""
+        },
+        {
+          "number": 226,
+          "kana": "にもつ",
+          "word": "荷物",
+          "pos": "名词",
+          "meaning": "行李;负担",
+          "raw": {
+            "word": "荷物",
+            "kana": "にもつ",
+            "pos": "名",
+            "meaning": "行李;负担"
+          },
+          "note": ""
+        },
+        {
+          "number": 227,
+          "kana": "にんき",
+          "word": "人気",
+          "pos": "名词",
+          "meaning": "人气,声望",
+          "raw": {
+            "word": "人気",
+            "kana": "にんき",
+            "pos": "名",
+            "meaning": "人气,声望"
+          },
+          "note": ""
+        },
+        {
+          "number": 228,
+          "kana": "にんじん",
+          "word": "人参",
+          "pos": "名词",
+          "meaning": "胡萝卜",
+          "raw": {
+            "word": "人参",
+            "kana": "にんじん",
+            "pos": "名",
+            "meaning": "胡萝卜"
+          },
+          "note": ""
+        },
+        {
+          "number": 229,
+          "kana": "にんずう",
+          "word": "人数",
+          "pos": "名词",
+          "meaning": "人数",
+          "raw": {
+            "word": "人数",
+            "kana": "にんずう",
+            "pos": "名",
+            "meaning": "人数"
+          },
+          "note": ""
+        },
+        {
+          "number": 230,
+          "kana": "ねんかん",
+          "word": "年間",
+          "pos": "名词",
+          "meaning": "年间;年代;一年",
+          "raw": {
+            "word": "年間",
+            "kana": "ねんかん",
+            "pos": "名",
+            "meaning": "年间;年代;一年"
+          },
+          "note": ""
+        },
+        {
+          "number": 231,
+          "kana": "はいたつ",
+          "word": "配達",
+          "pos": "名词・サ变动词",
+          "meaning": "送,投递",
+          "raw": {
+            "word": "配達",
+            "kana": "はいたつ",
+            "pos": "名·动3他",
+            "meaning": "送,投递"
+          },
+          "note": ""
+        },
+        {
+          "number": 232,
+          "kana": "はいたついん",
+          "word": "配達員",
+          "pos": "名词",
+          "meaning": "快递员",
+          "raw": {
+            "word": "配達員",
+            "kana": "はいたついん",
+            "pos": "名",
+            "meaning": "快递员"
+          },
+          "note": ""
+        },
+        {
+          "number": 233,
+          "kana": "はいる",
+          "word": "入る",
+          "pos": "一类动词",
+          "meaning": "进,入",
+          "raw": {
+            "word": "入る",
+            "kana": "はいる",
+            "pos": "动1自",
+            "meaning": "进,入"
+          },
+          "note": ""
+        },
+        {
+          "number": 234,
+          "kana": "はくぶつかん",
+          "word": "博物館",
+          "pos": "名词",
+          "meaning": "博物馆",
+          "raw": {
+            "word": "博物館",
+            "kana": "はくぶつかん",
+            "pos": "名",
+            "meaning": "博物馆"
+          },
+          "note": ""
+        },
+        {
+          "number": 235,
+          "kana": "はつおん",
+          "word": "発音",
+          "pos": "名词",
+          "meaning": "发音",
+          "raw": {
+            "word": "発音",
+            "kana": "はつおん",
+            "pos": "名",
+            "meaning": "发音"
+          },
+          "note": ""
+        },
+        {
+          "number": 236,
+          "kana": "はつか",
+          "word": "二十日",
+          "pos": "名词",
+          "meaning": "二十日",
+          "raw": {
+            "word": "二十日",
+            "kana": "はつか",
+            "pos": "名",
+            "meaning": "二十日"
+          },
+          "note": ""
+        },
+        {
+          "number": 237,
+          "kana": "はっぴょう",
+          "word": "発表",
+          "pos": "名词・サ变动词",
+          "meaning": "发言,汇报;发表",
+          "raw": {
+            "word": "発表",
+            "kana": "はっぴょう",
+            "pos": "名·动3他",
+            "meaning": "发言,汇报;发表"
+          },
+          "note": ""
+        },
+        {
+          "number": 238,
+          "kana": "はんたい",
+          "word": "反対",
+          "pos": "名词・サ变动词",
+          "meaning": "相反;反对",
+          "raw": {
+            "word": "反対",
+            "kana": "はんたい",
+            "pos": "名·动3自",
+            "meaning": "相反;反对"
+          },
+          "note": ""
+        },
+        {
+          "number": 239,
+          "kana": "びじゅつかん",
+          "word": "美術館",
+          "pos": "名词",
+          "meaning": "美术馆",
+          "raw": {
+            "word": "美術館",
+            "kana": "びじゅつかん",
+            "pos": "名",
+            "meaning": "美术馆"
+          },
+          "note": ""
+        },
+        {
+          "number": 240,
+          "kana": "びょういん",
+          "word": "病院",
+          "pos": "名词",
+          "meaning": "医院",
+          "raw": {
+            "word": "病院",
+            "kana": "びょういん",
+            "pos": "名",
+            "meaning": "医院"
+          },
+          "note": ""
+        },
+        {
+          "number": 241,
+          "kana": "ひょうか",
+          "word": "評価",
+          "pos": "名词・サ变动词",
+          "meaning": "评价;赞许",
+          "raw": {
+            "word": "評価",
+            "kana": "ひょうか",
+            "pos": "名·动3他",
+            "meaning": "评价;赞许"
+          },
+          "note": ""
+        },
+        {
+          "number": 242,
+          "kana": "びょうき",
+          "word": "病気",
+          "pos": "名词",
+          "meaning": "疾病",
+          "raw": {
+            "word": "病気",
+            "kana": "びょうき",
+            "pos": "名",
+            "meaning": "疾病"
+          },
+          "note": ""
+        },
+        {
+          "number": 243,
+          "kana": "ひろば",
+          "word": "広場",
+          "pos": "名词",
+          "meaning": "广场",
+          "raw": {
+            "word": "広場",
+            "kana": "ひろば",
+            "pos": "名",
+            "meaning": "广场"
+          },
+          "note": ""
+        },
+        {
+          "number": 244,
+          "kana": "ひんど",
+          "word": "頻度",
+          "pos": "名词",
+          "meaning": "频率",
+          "raw": {
+            "word": "頻度",
+            "kana": "ひんど",
+            "pos": "名",
+            "meaning": "频率"
+          },
+          "note": ""
+        },
+        {
+          "number": 245,
+          "kana": "ぶかつどう",
+          "word": "部活動",
+          "pos": "名词",
+          "meaning": "社团活动",
+          "raw": {
+            "word": "部活動",
+            "kana": "ぶかつどう",
+            "pos": "名",
+            "meaning": "社团活动"
+          },
+          "note": ""
+        },
+        {
+          "number": 246,
+          "kana": "ふじさん",
+          "word": "富士山",
+          "pos": "专名",
+          "meaning": "富士山",
+          "raw": {
+            "word": "富士山",
+            "kana": "ふじさん",
+            "pos": "专",
+            "meaning": "富士山"
+          },
+          "note": ""
+        },
+        {
+          "number": 247,
+          "kana": "ぶじゅつ",
+          "word": "武術",
+          "pos": "名词",
+          "meaning": "武术",
+          "raw": {
+            "word": "武術",
+            "kana": "ぶじゅつ",
+            "pos": "名",
+            "meaning": "武术"
+          },
+          "note": ""
+        },
+        {
+          "number": 248,
+          "kana": "ぶたい",
+          "word": "舞台",
+          "pos": "名词",
+          "meaning": "舞台",
+          "raw": {
+            "word": "舞台",
+            "kana": "ぶたい",
+            "pos": "名",
+            "meaning": "舞台"
+          },
+          "note": ""
+        },
+        {
+          "number": 249,
+          "kana": "ぶたにく",
+          "word": "豚肉",
+          "pos": "名词",
+          "meaning": "猪肉",
+          "raw": {
+            "word": "豚肉",
+            "kana": "ぶたにく",
+            "pos": "名",
+            "meaning": "猪肉"
+          },
+          "note": ""
+        },
+        {
+          "number": 250,
+          "kana": "ふつか",
+          "word": "二日",
+          "pos": "名词",
+          "meaning": "二日",
+          "raw": {
+            "word": "二日",
+            "kana": "ふつか",
+            "pos": "名",
+            "meaning": "二日"
+          },
+          "note": ""
+        },
+        {
+          "number": 251,
+          "kana": "ぶんしょう",
+          "word": "文章",
+          "pos": "名词",
+          "meaning": "文章",
+          "raw": {
+            "word": "文章",
+            "kana": "ぶんしょう",
+            "pos": "名",
+            "meaning": "文章"
+          },
+          "note": ""
+        },
+        {
+          "number": 252,
+          "kana": "へや",
+          "word": "部屋",
+          "pos": "名词",
+          "meaning": "房间",
+          "raw": {
+            "word": "部屋",
+            "kana": "へや",
+            "pos": "名",
+            "meaning": "房间"
+          },
+          "note": ""
+        },
+        {
+          "number": 253,
+          "kana": "へんか",
+          "word": "変化",
+          "pos": "名词・サ变动词",
+          "meaning": "变化",
+          "raw": {
+            "word": "変化",
+            "kana": "へんか",
+            "pos": "名·动3自",
+            "meaning": "变化"
+          },
+          "note": ""
+        },
+        {
+          "number": 254,
+          "kana": "べんきょう",
+          "word": "勉強",
+          "pos": "名词・サ变动词",
+          "meaning": "学习;用功",
+          "raw": {
+            "word": "勉強",
+            "kana": "べんきょう",
+            "pos": "名·动3他",
+            "meaning": "学习;用功"
+          },
+          "note": ""
+        },
+        {
+          "number": 255,
+          "kana": "べんとう",
+          "word": "弁当",
+          "pos": "名词",
+          "meaning": "盒饭",
+          "raw": {
+            "word": "弁当",
+            "kana": "べんとう",
+            "pos": "名",
+            "meaning": "盒饭"
+          },
+          "note": ""
+        },
+        {
+          "number": 256,
+          "kana": "べんり",
+          "word": "便利",
+          "pos": "二类形容词",
+          "meaning": "便利,方便",
+          "raw": {
+            "word": "便利",
+            "kana": "べんり",
+            "pos": "形2",
+            "meaning": "便利,方便"
+          },
+          "note": ""
+        },
+        {
+          "number": 257,
+          "kana": "ぼうし",
+          "word": "帽子",
+          "pos": "名词",
+          "meaning": "帽子",
+          "raw": {
+            "word": "帽子",
+            "kana": "ぼうし",
+            "pos": "名",
+            "meaning": "帽子"
+          },
+          "note": ""
+        },
+        {
+          "number": 258,
+          "kana": "ほうちょう",
+          "word": "包丁",
+          "pos": "名词",
+          "meaning": "菜刀",
+          "raw": {
+            "word": "包丁",
+            "kana": "ほうちょう",
+            "pos": "名",
+            "meaning": "菜刀"
+          },
+          "note": ""
+        },
+        {
+          "number": 259,
+          "kana": "ほうどう",
+          "word": "報道",
+          "pos": "名词・サ变动词",
+          "meaning": "报道",
+          "raw": {
+            "word": "報道",
+            "kana": "ほうどう",
+            "pos": "名·动3他",
+            "meaning": "报道"
+          },
+          "note": ""
+        },
+        {
+          "number": 260,
+          "kana": "ほうふ",
+          "word": "豊富",
+          "pos": "名词・二类形容词",
+          "meaning": "丰富",
+          "raw": {
+            "word": "豊富",
+            "kana": "ほうふ",
+            "pos": "名·形2",
+            "meaning": "丰富"
+          },
+          "note": ""
+        },
+        {
+          "number": 261,
+          "kana": "ほうほう",
+          "word": "方法",
+          "pos": "名词",
+          "meaning": "方法",
+          "raw": {
+            "word": "方法",
+            "kana": "ほうほう",
+            "pos": "名",
+            "meaning": "方法"
+          },
+          "note": ""
+        },
+        {
+          "number": 262,
+          "kana": "まいあさ",
+          "word": "毎朝",
+          "pos": "名词",
+          "meaning": "每天早晨",
+          "raw": {
+            "word": "毎朝",
+            "kana": "まいあさ",
+            "pos": "名",
+            "meaning": "每天早晨"
+          },
+          "note": ""
+        },
+        {
+          "number": 263,
+          "kana": "まいしゅう",
+          "word": "毎週",
+          "pos": "名词",
+          "meaning": "每周,每星期",
+          "raw": {
+            "word": "毎週",
+            "kana": "まいしゅう",
+            "pos": "名",
+            "meaning": "每周,每星期"
+          },
+          "note": ""
+        },
+        {
+          "number": 264,
+          "kana": "まいつき",
+          "word": "毎月",
+          "pos": "名词",
+          "meaning": "每月",
+          "raw": {
+            "word": "毎月",
+            "kana": "まいつき",
+            "pos": "名",
+            "meaning": "每月"
+          },
+          "note": ""
+        },
+        {
+          "number": 265,
+          "kana": "まいねん",
+          "word": "毎年",
+          "pos": "名词",
+          "meaning": "每年",
+          "raw": {
+            "word": "毎年",
+            "kana": "まいねん",
+            "pos": "名",
+            "meaning": "每年"
+          },
+          "note": ""
+        },
+        {
+          "number": 266,
+          "kana": "まいにち",
+          "word": "毎日",
+          "pos": "名词",
+          "meaning": "每天",
+          "raw": {
+            "word": "毎日",
+            "kana": "まいにち",
+            "pos": "名",
+            "meaning": "每天"
+          },
+          "note": ""
+        },
+        {
+          "number": 267,
+          "kana": "まいばん",
+          "word": "毎晩",
+          "pos": "名词",
+          "meaning": "每天晚上",
+          "raw": {
+            "word": "毎晩",
+            "kana": "まいばん",
+            "pos": "名",
+            "meaning": "每天晚上"
+          },
+          "note": ""
+        },
+        {
+          "number": 268,
+          "kana": "めがね",
+          "word": "眼鏡",
+          "pos": "名词",
+          "meaning": "眼镜",
+          "raw": {
+            "word": "眼鏡",
+            "kana": "めがね",
+            "pos": "名",
+            "meaning": "眼镜"
+          },
+          "note": ""
+        },
+        {
+          "number": 269,
+          "kana": "ものがたり",
+          "word": "物語",
+          "pos": "名词",
+          "meaning": "故事",
+          "raw": {
+            "word": "物語",
+            "kana": "ものがたり",
+            "pos": "名",
+            "meaning": "故事"
+          },
+          "note": ""
+        },
+        {
+          "number": 270,
+          "kana": "やおや",
+          "word": "八百屋",
+          "pos": "名词",
+          "meaning": "果蔬店",
+          "raw": {
+            "word": "八百屋",
+            "kana": "やおや",
+            "pos": "名",
+            "meaning": "果蔬店"
+          },
+          "note": ""
+        },
+        {
+          "number": 271,
+          "kana": "やきゅう",
+          "word": "野球",
+          "pos": "名词",
+          "meaning": "棒球",
+          "raw": {
+            "word": "野球",
+            "kana": "やきゅう",
+            "pos": "名",
+            "meaning": "棒球"
+          },
+          "note": ""
+        },
+        {
+          "number": 272,
+          "kana": "やくそく",
+          "word": "約束",
+          "pos": "名词・サ变动词",
+          "meaning": "约定",
+          "raw": {
+            "word": "約束",
+            "kana": "やくそく",
+            "pos": "名·动3他",
+            "meaning": "约定"
+          },
+          "note": ""
+        },
+        {
+          "number": 273,
+          "kana": "やくだつ",
+          "word": "役立つ",
+          "pos": "一类动词",
+          "meaning": "有用,有益",
+          "raw": {
+            "word": "役立つ",
+            "kana": "やくだつ",
+            "pos": "动1自",
+            "meaning": "有用,有益"
+          },
+          "note": ""
+        },
+        {
+          "number": 274,
+          "kana": "やさい",
+          "word": "野菜",
+          "pos": "名词",
+          "meaning": "蔬菜",
+          "raw": {
+            "word": "野菜",
+            "kana": "やさい",
+            "pos": "名",
+            "meaning": "蔬菜"
+          },
+          "note": ""
+        },
+        {
+          "number": 275,
+          "kana": "かち",
+          "word": "価値",
+          "pos": "名词",
+          "meaning": "价值",
+          "raw": {
+            "word": "価値",
+            "kana": "やち",
+            "pos": "名",
+            "meaning": "价值"
+          },
+          "note": "原表「やち」误写，规范读音为「かち」。"
+        },
+        {
+          "number": 276,
+          "kana": "ゆうがた",
+          "word": "夕方",
+          "pos": "名词",
+          "meaning": "傍晚",
+          "raw": {
+            "word": "夕方",
+            "kana": "ゆうがた",
+            "pos": "名",
+            "meaning": "傍晚"
+          },
+          "note": ""
+        },
+        {
+          "number": 277,
+          "kana": "ゆうき",
+          "word": "勇気",
+          "pos": "名词",
+          "meaning": "勇气",
+          "raw": {
+            "word": "勇気",
+            "kana": "ゆうき",
+            "pos": "名",
+            "meaning": "勇气"
+          },
+          "note": ""
+        },
+        {
+          "number": 278,
+          "kana": "ゆうしょう",
+          "word": "優勝",
+          "pos": "名词・サ变动词",
+          "meaning": "冠军,第一名",
+          "raw": {
+            "word": "優勝",
+            "kana": "ゆうしょう",
+            "pos": "名·动3自",
+            "meaning": "冠军,第一名"
+          },
+          "note": ""
+        },
+        {
+          "number": 279,
+          "kana": "ゆうめい",
+          "word": "有名",
+          "pos": "二类形容词",
+          "meaning": "有名",
+          "raw": {
+            "word": "有名",
+            "kana": "ゆうめい",
+            "pos": "形2",
+            "meaning": "有名"
+          },
+          "note": ""
+        },
+        {
+          "number": 280,
+          "kana": "よか",
+          "word": "余暇",
+          "pos": "名词",
+          "meaning": "余暇,业余时间",
+          "raw": {
+            "word": "余暇",
+            "kana": "よか",
+            "pos": "名",
+            "meaning": "余暇,业余时间"
+          },
+          "note": ""
+        },
+        {
+          "number": 281,
+          "kana": "よく",
+          "word": "よく",
+          "pos": "副词",
+          "meaning": "常常;好好地",
+          "raw": {
+            "word": "副",
+            "kana": "よく",
+            "pos": "常常;好好地",
+            "meaning": "5-2"
+          },
+          "note": "原表此行单词栏缺项，词性、释义和课次左移；按假名词条复位。"
+        },
+        {
+          "number": 282,
+          "kana": "よっか",
+          "word": "四日",
+          "pos": "名词",
+          "meaning": "四日",
+          "raw": {
+            "word": "四日",
+            "kana": "よっか",
+            "pos": "名",
+            "meaning": "四日"
+          },
+          "note": ""
+        },
+        {
+          "number": 283,
+          "kana": "りっぱ",
+          "word": "立派",
+          "pos": "二类形容词",
+          "meaning": "漂亮,宏伟;优秀",
+          "raw": {
+            "word": "立派",
+            "kana": "りっぱ",
+            "pos": "形2",
+            "meaning": "漂亮,宏伟;优秀"
+          },
+          "note": ""
+        },
+        {
+          "number": 284,
+          "kana": "りゆう",
+          "word": "理由",
+          "pos": "名词",
+          "meaning": "理由",
+          "raw": {
+            "word": "理由",
+            "kana": "りゆう",
+            "pos": "名",
+            "meaning": "理由"
+          },
+          "note": ""
+        },
+        {
+          "number": 285,
+          "kana": "りょう",
+          "word": "寮",
+          "pos": "名词",
+          "meaning": "宿舍",
+          "raw": {
+            "word": "寮",
+            "kana": "りょう",
+            "pos": "名",
+            "meaning": "宿舍"
+          },
+          "note": ""
+        },
+        {
+          "number": 286,
+          "kana": "りょうしん",
+          "word": "両親",
+          "pos": "名词",
+          "meaning": "父母,双亲",
+          "raw": {
+            "word": "両親",
+            "kana": "りょうしん",
+            "pos": "名",
+            "meaning": "父母,双亲"
+          },
+          "note": ""
+        },
+        {
+          "number": 287,
+          "kana": "りょうり",
+          "word": "料理",
+          "pos": "名词・サ变动词",
+          "meaning": "菜肴;做菜",
+          "raw": {
+            "word": "料理",
+            "kana": "りょうり",
+            "pos": "名·动3他",
+            "meaning": "菜肴;做菜"
+          },
+          "note": ""
+        },
+        {
+          "number": 288,
+          "kana": "りょこう",
+          "word": "旅行",
+          "pos": "名词・サ变动词",
+          "meaning": "旅行,旅游",
+          "raw": {
+            "word": "旅行",
+            "kana": "りょこう",
+            "pos": "名·动3自",
+            "meaning": "旅行,旅游"
+          },
+          "note": ""
+        },
+        {
+          "number": 289,
+          "kana": "リラックス",
+          "word": "リラックス",
+          "pos": "名词・サ变动词",
+          "meaning": "放松,松弛",
+          "raw": {
+            "word": "名·动3自",
+            "kana": "リラックス",
+            "pos": "放松,松弛",
+            "meaning": "4-1"
+          },
+          "note": "原表此行单词栏缺项，词性、释义和课次左移；按假名词条复位。"
+        },
+        {
+          "number": 291,
+          "kana": "れいぞうこ",
+          "word": "冷蔵庫",
+          "pos": "名词",
+          "meaning": "冰箱;冷库",
+          "raw": {
+            "word": "冷蔵庫",
+            "kana": "れいぞうこ",
+            "pos": "名",
+            "meaning": "冰箱;冷库"
+          },
+          "note": ""
+        },
+        {
+          "number": 292,
+          "kana": "れきし",
+          "word": "歴史",
+          "pos": "名词",
+          "meaning": "历史",
+          "raw": {
+            "word": "歴史",
+            "kana": "れきし",
+            "pos": "名",
+            "meaning": "历史"
+          },
+          "note": ""
+        },
+        {
+          "number": 293,
+          "kana": "れんしゅう",
+          "word": "練習",
+          "pos": "名词・サ变动词",
+          "meaning": "练习",
+          "raw": {
+            "word": "練習",
+            "kana": "れんしゅう",
+            "pos": "名·动3他",
+            "meaning": "练习"
+          },
+          "note": ""
+        },
+        {
+          "number": 294,
+          "kana": "ろうどう",
+          "word": "労働",
+          "pos": "名词・サ变动词",
+          "meaning": "劳动",
+          "raw": {
+            "word": "労働",
+            "kana": "ろうどう",
+            "pos": "名·动3自",
+            "meaning": "劳动"
+          },
+          "note": ""
+        },
+        {
+          "number": 295,
+          "kana": "ろうどく",
+          "word": "朗読",
+          "pos": "名词・サ变动词",
+          "meaning": "朗读",
+          "raw": {
+            "word": "朗読",
+            "kana": "ろうどく",
+            "pos": "名·动3他",
+            "meaning": "朗读"
+          },
+          "note": ""
+        },
+        {
+          "number": 296,
+          "kana": "ろくおん",
+          "word": "録音",
+          "pos": "名词・サ变动词",
+          "meaning": "录音",
+          "raw": {
+            "word": "録音",
+            "kana": "ろくおん",
+            "pos": "名·动3他",
+            "meaning": "录音"
+          },
+          "note": ""
+        }
+      ]
+    },
+    {
+      "collection": "docIntermediate",
+      "label": "中级补充词表",
+      "document": "大学标准日语 中级词汇(2).docx",
+      "rows": [
+        {
+          "number": 1,
+          "kana": "あいて",
+          "word": "相手",
+          "pos": "名词",
+          "meaning": "对方",
+          "raw": {
+            "word": "相手",
+            "kana": "あいて",
+            "pos": "名",
+            "meaning": "对方"
+          },
+          "note": ""
+        },
+        {
+          "number": 2,
+          "kana": "あんしん",
+          "word": "安心",
+          "pos": "名词・サ变动词",
+          "meaning": "放心,安心",
+          "raw": {
+            "word": "安心",
+            "kana": "あんしん",
+            "pos": "名·动3自",
+            "meaning": "放心,安心"
+          },
+          "note": ""
+        },
+        {
+          "number": 3,
+          "kana": "いがくしゃ",
+          "word": "医学者",
+          "pos": "名词",
+          "meaning": "医学家",
+          "raw": {
+            "word": "医学者",
+            "kana": "いがくしゃ",
+            "pos": "名",
+            "meaning": "医学家"
+          },
+          "note": ""
+        },
+        {
+          "number": 4,
+          "kana": "いきもの",
+          "word": "生物",
+          "pos": "名词",
+          "meaning": "生物",
+          "raw": {
+            "word": "生物",
+            "kana": "いきもの",
+            "pos": "名",
+            "meaning": "生物"
+          },
+          "note": ""
+        },
+        {
+          "number": 5,
+          "kana": "いけん",
+          "word": "意見",
+          "pos": "名词",
+          "meaning": "意见,见解",
+          "raw": {
+            "word": "意見",
+            "kana": "いけん",
+            "pos": "名",
+            "meaning": "意见,见解"
+          },
+          "note": ""
+        },
+        {
+          "number": 6,
+          "kana": "いしき",
+          "word": "意識",
+          "pos": "名词・サ变动词",
+          "meaning": "意识;察觉",
+          "raw": {
+            "word": "意識",
+            "kana": "いしき",
+            "pos": "名·动3他",
+            "meaning": "意识;察觉"
+          },
+          "note": ""
+        },
+        {
+          "number": 7,
+          "kana": "いぜん",
+          "word": "以前",
+          "pos": "名词",
+          "meaning": "以前",
+          "raw": {
+            "word": "以前",
+            "kana": "いぜん",
+            "pos": "名",
+            "meaning": "以前"
+          },
+          "note": ""
+        },
+        {
+          "number": 8,
+          "kana": "いみ",
+          "word": "意味",
+          "pos": "名词",
+          "meaning": "意思,意义",
+          "raw": {
+            "word": "意味",
+            "kana": "いみ",
+            "pos": "名",
+            "meaning": "意思,意义"
+          },
+          "note": ""
+        },
+        {
+          "number": 9,
+          "kana": "いりぐち",
+          "word": "入口",
+          "pos": "名词",
+          "meaning": "入口",
+          "raw": {
+            "word": "入口",
+            "kana": "いりぐち",
+            "pos": "名",
+            "meaning": "入口"
+          },
+          "note": ""
+        },
+        {
+          "number": 10,
+          "kana": "えいがかん",
+          "word": "映画館",
+          "pos": "名词",
+          "meaning": "电影院",
+          "raw": {
+            "word": "映画館",
+            "kana": "えいがかん",
+            "pos": "名",
+            "meaning": "电影院"
+          },
+          "note": ""
+        },
+        {
+          "number": 11,
+          "kana": "えいきょう",
+          "word": "影響",
+          "pos": "名词・サ变动词",
+          "meaning": "影响",
+          "raw": {
+            "word": "影響",
+            "kana": "えいきょう",
+            "pos": "名·动3自",
+            "meaning": "影响"
+          },
+          "note": ""
+        },
+        {
+          "number": 12,
+          "kana": "えいぎょう",
+          "word": "営業",
+          "pos": "名词・サ变动词",
+          "meaning": "营业",
+          "raw": {
+            "word": "営業",
+            "kana": "えいぎょう",
+            "pos": "名·动3他",
+            "meaning": "营业"
+          },
+          "note": ""
+        },
+        {
+          "number": 13,
+          "kana": "えんそく",
+          "word": "遠足",
+          "pos": "名词",
+          "meaning": "郊游,徒步旅行",
+          "raw": {
+            "word": "遠足",
+            "kana": "えんそく",
+            "pos": "名·动3自",
+            "meaning": "郊游,徒步旅行"
+          },
+          "note": "常见搭配为「遠足に行く」。"
+        },
+        {
+          "number": 14,
+          "kana": "おおぜい",
+          "word": "大勢",
+          "pos": "名词・副词",
+          "meaning": "众多(人)",
+          "raw": {
+            "word": "大勢",
+            "kana": "おおぜい",
+            "pos": "名·副",
+            "meaning": "众多(人)"
+          },
+          "note": ""
+        },
+        {
+          "number": 15,
+          "kana": "おみやげ",
+          "word": "お土産",
+          "pos": "名词",
+          "meaning": "礼物,土特产",
+          "raw": {
+            "word": "お土産",
+            "kana": "おみやげ",
+            "pos": "名",
+            "meaning": "礼物,土特产"
+          },
+          "note": ""
+        },
+        {
+          "number": 16,
+          "kana": "おんだんか",
+          "word": "温暖化",
+          "pos": "名词",
+          "meaning": "气候变暖",
+          "raw": {
+            "word": "温暖化",
+            "kana": "おんだんか",
+            "pos": "名",
+            "meaning": "气候变暖"
+          },
+          "note": ""
+        },
+        {
+          "number": 17,
+          "kana": "かいがい",
+          "word": "海外",
+          "pos": "名词",
+          "meaning": "海外,国外",
+          "raw": {
+            "word": "海外",
+            "kana": "かいがい",
+            "pos": "名",
+            "meaning": "海外,国外"
+          },
+          "note": ""
+        },
+        {
+          "number": 18,
+          "kana": "かいがんせん",
+          "word": "海岸線",
+          "pos": "名词",
+          "meaning": "海岸线",
+          "raw": {
+            "word": "海岸線",
+            "kana": "かいがんせん",
+            "pos": "名",
+            "meaning": "海岸线"
+          },
+          "note": ""
+        },
+        {
+          "number": 19,
+          "kana": "かいけつ",
+          "word": "解決",
+          "pos": "名词・サ变动词",
+          "meaning": "解决",
+          "raw": {
+            "word": "解決",
+            "kana": "かいけつ",
+            "pos": "名·动3自他",
+            "meaning": "解决"
+          },
+          "note": ""
+        },
+        {
+          "number": 20,
+          "kana": "がいこくご",
+          "word": "外国語",
+          "pos": "名词",
+          "meaning": "外语,外文",
+          "raw": {
+            "word": "外国語",
+            "kana": "がいこくご",
+            "pos": "名",
+            "meaning": "外语,外文"
+          },
+          "note": ""
+        },
+        {
+          "number": 21,
+          "kana": "かいさい",
+          "word": "開催",
+          "pos": "名词・サ变动词",
+          "meaning": "举办,召开",
+          "raw": {
+            "word": "開催",
+            "kana": "かいさい",
+            "pos": "名·动3他",
+            "meaning": "举办,召开"
+          },
+          "note": ""
+        },
+        {
+          "number": 22,
+          "kana": "がいしゅつ",
+          "word": "外出",
+          "pos": "名词・サ变动词",
+          "meaning": "出门,外出",
+          "raw": {
+            "word": "外出",
+            "kana": "かいしゅつ",
+            "pos": "名·动3自",
+            "meaning": "出门,外出"
+          },
+          "note": "原表「かいしゅつ」漏浊点，规范读音为「がいしゅつ」。"
+        },
+        {
+          "number": 23,
+          "kana": "かいぜん",
+          "word": "改善",
+          "pos": "名词・サ变动词",
+          "meaning": "改善",
+          "raw": {
+            "word": "改善",
+            "kana": "かいぜん",
+            "pos": "名·动3他",
+            "meaning": "改善"
+          },
+          "note": ""
+        },
+        {
+          "number": 24,
+          "kana": "かいだん",
+          "word": "階段",
+          "pos": "名词",
+          "meaning": "台阶,楼梯",
+          "raw": {
+            "word": "階段",
+            "kana": "かいだん",
+            "pos": "名",
+            "meaning": "台阶,楼梯"
+          },
+          "note": ""
+        },
+        {
+          "number": 25,
+          "kana": "がいらい",
+          "word": "外来",
+          "pos": "名词",
+          "meaning": "外来",
+          "raw": {
+            "word": "外来",
+            "kana": "がいらい",
+            "pos": "名",
+            "meaning": "外来"
+          },
+          "note": ""
+        },
+        {
+          "number": 26,
+          "kana": "がいらいご",
+          "word": "外来語",
+          "pos": "名词",
+          "meaning": "外来词",
+          "raw": {
+            "word": "外来語",
+            "kana": "がいらいご",
+            "pos": "名",
+            "meaning": "外来词"
+          },
+          "note": ""
+        },
+        {
+          "number": 27,
+          "kana": "かがく",
+          "word": "科学",
+          "pos": "名词",
+          "meaning": "科学",
+          "raw": {
+            "word": "科学",
+            "kana": "かがく",
+            "pos": "名",
+            "meaning": "科学"
+          },
+          "note": ""
+        },
+        {
+          "number": 28,
+          "kana": "かこ",
+          "word": "過去",
+          "pos": "名词",
+          "meaning": "过去",
+          "raw": {
+            "word": "過去",
+            "kana": "かこ",
+            "pos": "名",
+            "meaning": "过去"
+          },
+          "note": ""
+        },
+        {
+          "number": 29,
+          "kana": "かじ",
+          "word": "火事",
+          "pos": "名词",
+          "meaning": "火灾",
+          "raw": {
+            "word": "火事",
+            "kana": "かじ",
+            "pos": "名",
+            "meaning": "火灾"
+          },
+          "note": ""
+        },
+        {
+          "number": 30,
+          "kana": "がっき",
+          "word": "楽器",
+          "pos": "名词",
+          "meaning": "乐器",
+          "raw": {
+            "word": "楽器",
+            "kana": "がっき",
+            "pos": "名",
+            "meaning": "乐器"
+          },
+          "note": ""
+        },
+        {
+          "number": 31,
+          "kana": "かつじ",
+          "word": "活字",
+          "pos": "名词",
+          "meaning": "活字",
+          "raw": {
+            "word": "活字",
+            "kana": "かつじ",
+            "pos": "名",
+            "meaning": "活字"
+          },
+          "note": ""
+        },
+        {
+          "number": 32,
+          "kana": "がっしょう",
+          "word": "合唱",
+          "pos": "名词・サ变动词",
+          "meaning": "合唱",
+          "raw": {
+            "word": "合唱",
+            "kana": "がっしょう",
+            "pos": "名·动3他",
+            "meaning": "合唱"
+          },
+          "note": ""
+        },
+        {
+          "number": 33,
+          "kana": "かてい",
+          "word": "家庭",
+          "pos": "名词",
+          "meaning": "家庭",
+          "raw": {
+            "word": "家庭",
+            "kana": "かてい",
+            "pos": "名",
+            "meaning": "家庭"
+          },
+          "note": ""
+        },
+        {
+          "number": 34,
+          "kana": "かていか",
+          "word": "家庭科",
+          "pos": "名词",
+          "meaning": "家政课",
+          "raw": {
+            "word": "家庭科",
+            "kana": "かていか",
+            "pos": "名",
+            "meaning": "家政课"
+          },
+          "note": ""
+        },
+        {
+          "number": 35,
+          "kana": "かどう",
+          "word": "華道",
+          "pos": "名词",
+          "meaning": "花道",
+          "raw": {
+            "word": "華道",
+            "kana": "かどう",
+            "pos": "名",
+            "meaning": "花道"
+          },
+          "note": ""
+        },
+        {
+          "number": 36,
+          "kana": "かな",
+          "word": "仮名",
+          "pos": "名词",
+          "meaning": "假名",
+          "raw": {
+            "word": "仮名",
+            "kana": "かな",
+            "pos": "名",
+            "meaning": "假名"
+          },
+          "note": ""
+        },
+        {
+          "number": 37,
+          "kana": "かのうせい",
+          "word": "可能性",
+          "pos": "名词",
+          "meaning": "可能性",
+          "raw": {
+            "word": "可能性",
+            "kana": "かのうせい",
+            "pos": "名",
+            "meaning": "可能性"
+          },
+          "note": ""
+        },
+        {
+          "number": 38,
+          "kana": "かのじょ",
+          "word": "彼女",
+          "pos": "名词",
+          "meaning": "她;女朋友",
+          "raw": {
+            "word": "彼女",
+            "kana": "かのじょ",
+            "pos": "名",
+            "meaning": "她;女朋友"
+          },
+          "note": ""
+        },
+        {
+          "number": 39,
+          "kana": "がまん",
+          "word": "我慢",
+          "pos": "名词・サ变动词",
+          "meaning": "忍耐,忍受",
+          "raw": {
+            "word": "我慢",
+            "kana": "がまん",
+            "pos": "名·动3他",
+            "meaning": "忍耐,忍受"
+          },
+          "note": ""
+        },
+        {
+          "number": 40,
+          "kana": "かみくず",
+          "word": "紙屑",
+          "pos": "名词",
+          "meaning": "废纸,纸屑",
+          "raw": {
+            "word": "紙屑",
+            "kana": "かみくず",
+            "pos": "名",
+            "meaning": "废纸,纸屑"
+          },
+          "note": ""
+        },
+        {
+          "number": 41,
+          "kana": "かんきょう",
+          "word": "環境",
+          "pos": "名词",
+          "meaning": "环境",
+          "raw": {
+            "word": "環境",
+            "kana": "かんきょう",
+            "pos": "名",
+            "meaning": "环境"
+          },
+          "note": ""
+        },
+        {
+          "number": 42,
+          "kana": "かんさつ",
+          "word": "観察",
+          "pos": "名词・サ变动词",
+          "meaning": "观察",
+          "raw": {
+            "word": "観察",
+            "kana": "かんさつ",
+            "pos": "名·动3他",
+            "meaning": "观察"
+          },
+          "note": ""
+        },
+        {
+          "number": 43,
+          "kana": "かんじょう",
+          "word": "感情",
+          "pos": "名词",
+          "meaning": "感情,情绪",
+          "raw": {
+            "word": "感情",
+            "kana": "かんじょう",
+            "pos": "名",
+            "meaning": "感情,情绪"
+          },
+          "note": ""
+        },
+        {
+          "number": 44,
+          "kana": "かんせい",
+          "word": "完成",
+          "pos": "名词・サ变动词",
+          "meaning": "完成",
+          "raw": {
+            "word": "完成",
+            "kana": "かんせい",
+            "pos": "名·动3自他",
+            "meaning": "完成"
+          },
+          "note": ""
+        },
+        {
+          "number": 45,
+          "kana": "かんせん",
+          "word": "感染",
+          "pos": "名词・サ变动词",
+          "meaning": "感染",
+          "raw": {
+            "word": "感染",
+            "kana": "かんせん",
+            "pos": "名·动3自",
+            "meaning": "感染"
+          },
+          "note": ""
+        },
+        {
+          "number": 46,
+          "kana": "かんどう",
+          "word": "感動",
+          "pos": "名词・サ变动词",
+          "meaning": "感动",
+          "raw": {
+            "word": "感動",
+            "kana": "かんどう",
+            "pos": "名·动3自",
+            "meaning": "感动"
+          },
+          "note": ""
+        },
+        {
+          "number": 47,
+          "kana": "かんぽうやく",
+          "word": "漢方薬",
+          "pos": "名词",
+          "meaning": "中药",
+          "raw": {
+            "word": "漢方薬",
+            "kana": "かんぽうやく",
+            "pos": "名",
+            "meaning": "中药"
+          },
+          "note": ""
+        },
+        {
+          "number": 48,
+          "kana": "きおん",
+          "word": "気温",
+          "pos": "名词",
+          "meaning": "气温",
+          "raw": {
+            "word": "気温",
+            "kana": "きおん",
+            "pos": "名",
+            "meaning": "气温"
+          },
+          "note": ""
+        },
+        {
+          "number": 49,
+          "kana": "きじ",
+          "word": "生地",
+          "pos": "名词",
+          "meaning": "面团;布料,质地",
+          "raw": {
+            "word": "生地",
+            "kana": "きじ",
+            "pos": "名",
+            "meaning": "面团;布料,质地"
+          },
+          "note": ""
+        },
+        {
+          "number": 50,
+          "kana": "きせつ",
+          "word": "季節",
+          "pos": "名词",
+          "meaning": "季节",
+          "raw": {
+            "word": "季節",
+            "kana": "きせつ",
+            "pos": "名",
+            "meaning": "季节"
+          },
+          "note": ""
+        },
+        {
+          "number": 51,
+          "kana": "きたい",
+          "word": "期待",
+          "pos": "名词・サ变动词",
+          "meaning": "期待",
+          "raw": {
+            "word": "期待",
+            "kana": "きたい",
+            "pos": "名·动3他",
+            "meaning": "期待"
+          },
+          "note": ""
+        },
+        {
+          "number": 52,
+          "kana": "きちょう",
+          "word": "貴重",
+          "pos": "二类形容词",
+          "meaning": "贵重",
+          "raw": {
+            "word": "貴重",
+            "kana": "きちょう",
+            "pos": "形2",
+            "meaning": "贵重"
+          },
+          "note": ""
+        },
+        {
+          "number": 53,
+          "kana": "きっぷ",
+          "word": "切符",
+          "pos": "名词",
+          "meaning": "票",
+          "raw": {
+            "word": "切符",
+            "kana": "きっぷ",
+            "pos": "名",
+            "meaning": "票"
+          },
+          "note": ""
+        },
+        {
+          "number": 54,
+          "kana": "きのう",
+          "word": "機能",
+          "pos": "名词・サ变动词",
+          "meaning": "功能",
+          "raw": {
+            "word": "機能",
+            "kana": "きのう",
+            "pos": "名·动3自",
+            "meaning": "功能"
+          },
+          "note": ""
+        },
+        {
+          "number": 55,
+          "kana": "きほん",
+          "word": "基本",
+          "pos": "名词",
+          "meaning": "基本",
+          "raw": {
+            "word": "基本",
+            "kana": "きほん",
+            "pos": "名",
+            "meaning": "基本"
+          },
+          "note": ""
+        },
+        {
+          "number": 56,
+          "kana": "きほんてき",
+          "word": "基本的",
+          "pos": "二类形容词",
+          "meaning": "基本的",
+          "raw": {
+            "word": "基本的",
+            "kana": "きほんてき",
+            "pos": "形2",
+            "meaning": "基本的"
+          },
+          "note": ""
+        },
+        {
+          "number": 57,
+          "kana": "きまつ",
+          "word": "期末",
+          "pos": "名词",
+          "meaning": "期末",
+          "raw": {
+            "word": "期末",
+            "kana": "きまつ",
+            "pos": "名",
+            "meaning": "期末"
+          },
+          "note": ""
+        },
+        {
+          "number": 58,
+          "kana": "ぎゅうにく",
+          "word": "牛肉",
+          "pos": "名词",
+          "meaning": "牛肉",
+          "raw": {
+            "word": "牛肉",
+            "kana": "ぎゅうにく",
+            "pos": "名",
+            "meaning": "牛肉"
+          },
+          "note": ""
+        },
+        {
+          "number": 59,
+          "kana": "きょうかしょ",
+          "word": "教科書",
+          "pos": "名词",
+          "meaning": "教科书",
+          "raw": {
+            "word": "教科書",
+            "kana": "きょうかしょ",
+            "pos": "名",
+            "meaning": "教科书"
+          },
+          "note": ""
+        },
+        {
+          "number": 60,
+          "kana": "きょうし",
+          "word": "教師",
+          "pos": "名词",
+          "meaning": "教师",
+          "raw": {
+            "word": "教師",
+            "kana": "きょうし",
+            "pos": "名",
+            "meaning": "教师"
+          },
+          "note": ""
+        },
+        {
+          "number": 61,
+          "kana": "きょうせい",
+          "word": "共生",
+          "pos": "名词・サ变动词",
+          "meaning": "共生",
+          "raw": {
+            "word": "共生",
+            "kana": "きょうせい",
+            "pos": "名・动 3",
+            "meaning": "共生"
+          },
+          "note": ""
+        },
+        {
+          "number": 62,
+          "kana": "きょうつうてん",
+          "word": "共通点",
+          "pos": "名词",
+          "meaning": "相通之处",
+          "raw": {
+            "word": "共通点",
+            "kana": "きょうつうてん",
+            "pos": "名",
+            "meaning": "相通之处"
+          },
+          "note": ""
+        },
+        {
+          "number": 63,
+          "kana": "きょうみ",
+          "word": "興味",
+          "pos": "名词",
+          "meaning": "兴趣",
+          "raw": {
+            "word": "興味",
+            "kana": "きょうみ",
+            "pos": "名",
+            "meaning": "兴趣"
+          },
+          "note": ""
+        },
+        {
+          "number": 64,
+          "kana": "きょうりょく",
+          "word": "協力",
+          "pos": "名词・サ变动词",
+          "meaning": "协助，合作",
+          "raw": {
+            "word": "協力",
+            "kana": "きょうりょく",
+            "pos": "名・动 3",
+            "meaning": "协助，合作"
+          },
+          "note": ""
+        },
+        {
+          "number": 65,
+          "kana": "きんし",
+          "word": "禁止",
+          "pos": "名词・サ变动词",
+          "meaning": "禁止",
+          "raw": {
+            "word": "禁止",
+            "kana": "きんし",
+            "pos": "名・动 3",
+            "meaning": "禁止"
+          },
+          "note": ""
+        },
+        {
+          "number": 66,
+          "kana": "きんねん",
+          "word": "近年",
+          "pos": "名词",
+          "meaning": "近年",
+          "raw": {
+            "word": "近年",
+            "kana": "きんねん",
+            "pos": "名",
+            "meaning": "近年"
+          },
+          "note": ""
+        },
+        {
+          "number": 67,
+          "kana": "ぐたいてき",
+          "word": "具体的",
+          "pos": "二类形容词",
+          "meaning": "具体的",
+          "raw": {
+            "word": "具体的",
+            "kana": "ぐたいてき",
+            "pos": "形 2",
+            "meaning": "具体的"
+          },
+          "note": ""
+        },
+        {
+          "number": 68,
+          "kana": "くつした",
+          "word": "靴下",
+          "pos": "名词",
+          "meaning": "袜子",
+          "raw": {
+            "word": "靴下",
+            "kana": "くつした",
+            "pos": "名",
+            "meaning": "袜子"
+          },
+          "note": ""
+        },
+        {
+          "number": 69,
+          "kana": "くふう",
+          "word": "工夫",
+          "pos": "名词・サ变动词",
+          "meaning": "设法，动脑筋",
+          "raw": {
+            "word": "工夫",
+            "kana": "くふう",
+            "pos": "名・动 3",
+            "meaning": "设法，动脑筋"
+          },
+          "note": ""
+        },
+        {
+          "number": 70,
+          "kana": "くろう",
+          "word": "苦労",
+          "pos": "名词・サ变动词",
+          "meaning": "辛苦，吃苦",
+          "raw": {
+            "word": "苦労",
+            "kana": "くろう",
+            "pos": "名・动 3",
+            "meaning": "辛苦，吃苦"
+          },
+          "note": ""
+        },
+        {
+          "number": 71,
+          "kana": "くんれん",
+          "word": "訓練",
+          "pos": "名词・サ变动词",
+          "meaning": "训练",
+          "raw": {
+            "word": "訓練",
+            "kana": "くんれん",
+            "pos": "名・动 3",
+            "meaning": "训练"
+          },
+          "note": ""
+        },
+        {
+          "number": 72,
+          "kana": "けいい",
+          "word": "経緯",
+          "pos": "名词",
+          "meaning": "（事情的）原委，经过",
+          "raw": {
+            "word": "経緯",
+            "kana": "けいい",
+            "pos": "名",
+            "meaning": "（事情的）原委，经过"
+          },
+          "note": ""
+        },
+        {
+          "number": 73,
+          "kana": "けいい",
+          "word": "敬意",
+          "pos": "名词",
+          "meaning": "敬意",
+          "raw": {
+            "word": "敬意",
+            "kana": "けいい",
+            "pos": "名",
+            "meaning": "敬意"
+          },
+          "note": ""
+        },
+        {
+          "number": 74,
+          "kana": "けいこ",
+          "word": "稽古",
+          "pos": "名词・サ变动词",
+          "meaning": "练习",
+          "raw": {
+            "word": "稽古",
+            "kana": "けいこ",
+            "pos": "名・动 3",
+            "meaning": "练习"
+          },
+          "note": ""
+        },
+        {
+          "number": 75,
+          "kana": "けっこう",
+          "word": "結構",
+          "pos": "名词・二类形容词",
+          "meaning": "相当，非常",
+          "raw": {
+            "word": "結構",
+            "kana": "けっこう",
+            "pos": "名・形 2・",
+            "meaning": "相当，非常"
+          },
+          "note": ""
+        },
+        {
+          "number": 76,
+          "kana": "けっしょう",
+          "word": "結晶",
+          "pos": "名词・サ变动词",
+          "meaning": "结晶，结果；晶体",
+          "raw": {
+            "word": "結晶",
+            "kana": "けっしょう",
+            "pos": "名・动 3",
+            "meaning": "结晶，结果；晶体"
+          },
+          "note": ""
+        },
+        {
+          "number": 77,
+          "kana": "けっしん",
+          "word": "決心",
+          "pos": "名词・サ变动词",
+          "meaning": "决心，决意",
+          "raw": {
+            "word": "決心",
+            "kana": "けっしん",
+            "pos": "名・动 3",
+            "meaning": "决心，决意"
+          },
+          "note": ""
+        },
+        {
+          "number": 79,
+          "kana": "げんき",
+          "word": "元気",
+          "pos": "名词・二类形容词",
+          "meaning": "有精神，健康",
+          "raw": {
+            "word": "元気",
+            "kana": "げんき",
+            "pos": "名・形 2",
+            "meaning": "有精神，健康"
+          },
+          "note": ""
+        },
+        {
+          "number": 80,
+          "kana": "けんきゅう",
+          "word": "研究",
+          "pos": "名词・サ变动词",
+          "meaning": "研究",
+          "raw": {
+            "word": "研究",
+            "kana": "けんきゅう",
+            "pos": "名・动 3",
+            "meaning": "研究"
+          },
+          "note": ""
+        },
+        {
+          "number": 81,
+          "kana": "げんざい",
+          "word": "現在",
+          "pos": "名词",
+          "meaning": "现在，目前",
+          "raw": {
+            "word": "現在",
+            "kana": "げんざい",
+            "pos": "名",
+            "meaning": "现在，目前"
+          },
+          "note": ""
+        },
+        {
+          "number": 82,
+          "kana": "げんしょう",
+          "word": "減少",
+          "pos": "名词・サ变动词",
+          "meaning": "减少",
+          "raw": {
+            "word": "減少",
+            "kana": "げんしょう",
+            "pos": "名・动 3",
+            "meaning": "减少"
+          },
+          "note": ""
+        },
+        {
+          "number": 83,
+          "kana": "けんとう",
+          "word": "検討",
+          "pos": "名词・サ变动词",
+          "meaning": "研讨，探讨",
+          "raw": {
+            "word": "検討",
+            "kana": "けんとう",
+            "pos": "名・动 3",
+            "meaning": "研讨，探讨"
+          },
+          "note": ""
+        },
+        {
+          "number": 84,
+          "kana": "げんりょう",
+          "word": "原料",
+          "pos": "名词",
+          "meaning": "原料",
+          "raw": {
+            "word": "原料",
+            "kana": "げんりょう",
+            "pos": "名",
+            "meaning": "原料"
+          },
+          "note": ""
+        },
+        {
+          "number": 85,
+          "kana": "こうがい",
+          "word": "郊外",
+          "pos": "名词",
+          "meaning": "郊外",
+          "raw": {
+            "word": "郊外",
+            "kana": "こうがい",
+            "pos": "名",
+            "meaning": "郊外"
+          },
+          "note": ""
+        },
+        {
+          "number": 86,
+          "kana": "こうかてき",
+          "word": "効果的",
+          "pos": "二类形容词",
+          "meaning": "有效的",
+          "raw": {
+            "word": "効果的",
+            "kana": "こうかてき",
+            "pos": "形 2",
+            "meaning": "有效的"
+          },
+          "note": ""
+        },
+        {
+          "number": 87,
+          "kana": "こうけん",
+          "word": "貢献",
+          "pos": "名词・サ变动词",
+          "meaning": "贡献",
+          "raw": {
+            "word": "貢献",
+            "kana": "こうけん",
+            "pos": "名・动 3",
+            "meaning": "贡献"
+          },
+          "note": ""
+        },
+        {
+          "number": 88,
+          "kana": "こうこう",
+          "word": "高校",
+          "pos": "名词",
+          "meaning": "高中",
+          "raw": {
+            "word": "高校",
+            "kana": "こうこう",
+            "pos": "名",
+            "meaning": "高中"
+          },
+          "note": ""
+        },
+        {
+          "number": 89,
+          "kana": "こうざ",
+          "word": "講座",
+          "pos": "名词",
+          "meaning": "讲座",
+          "raw": {
+            "word": "講座",
+            "kana": "こうざ",
+            "pos": "名",
+            "meaning": "讲座"
+          },
+          "note": ""
+        },
+        {
+          "number": 90,
+          "kana": "こうじょう",
+          "word": "工場",
+          "pos": "名词",
+          "meaning": "工厂",
+          "raw": {
+            "word": "工場",
+            "kana": "こうじょう",
+            "pos": "名",
+            "meaning": "工厂"
+          },
+          "note": ""
+        },
+        {
+          "number": 91,
+          "kana": "こうせき",
+          "word": "功績",
+          "pos": "名词",
+          "meaning": "功绩，功劳",
+          "raw": {
+            "word": "功績",
+            "kana": "こうせき",
+            "pos": "名",
+            "meaning": "功绩，功劳"
+          },
+          "note": ""
+        },
+        {
+          "number": 92,
+          "kana": "こうぞう",
+          "word": "構造",
+          "pos": "名词",
+          "meaning": "结构，构造",
+          "raw": {
+            "word": "構造",
+            "kana": "こうぞう",
+            "pos": "名",
+            "meaning": "结构，构造"
+          },
+          "note": ""
+        },
+        {
+          "number": 93,
+          "kana": "こうつう",
+          "word": "交通",
+          "pos": "名词",
+          "meaning": "交通",
+          "raw": {
+            "word": "交通",
+            "kana": "こうつう",
+            "pos": "名",
+            "meaning": "交通"
+          },
+          "note": ""
+        },
+        {
+          "number": 94,
+          "kana": "こうどう",
+          "word": "行動",
+          "pos": "名词・サ变动词",
+          "meaning": "行动，行为",
+          "raw": {
+            "word": "行動",
+            "kana": "こうどう",
+            "pos": "名・动 3 自",
+            "meaning": "行动，行为"
+          },
+          "note": ""
+        },
+        {
+          "number": 95,
+          "kana": "こうよう・もみじ",
+          "word": "紅葉",
+          "pos": "名词",
+          "meaning": "红叶",
+          "raw": {
+            "word": "紅葉",
+            "kana": "こうよう・もみじ",
+            "pos": "名",
+            "meaning": "红叶"
+          },
+          "note": ""
+        },
+        {
+          "number": 96,
+          "kana": "こえ",
+          "word": "声",
+          "pos": "名词",
+          "meaning": "（人，动物等的）声音",
+          "raw": {
+            "word": "声",
+            "kana": "こえ",
+            "pos": "名",
+            "meaning": "（人，动物等的）声音"
+          },
+          "note": ""
+        },
+        {
+          "number": 97,
+          "kana": "こくさい",
+          "word": "国際",
+          "pos": "名词",
+          "meaning": "国际",
+          "raw": {
+            "word": "国際",
+            "kana": "こくさい",
+            "pos": "名",
+            "meaning": "国际"
+          },
+          "note": ""
+        },
+        {
+          "number": 98,
+          "kana": "こじん",
+          "word": "個人",
+          "pos": "名词",
+          "meaning": "个人",
+          "raw": {
+            "word": "個人",
+            "kana": "こじん",
+            "pos": "名",
+            "meaning": "个人"
+          },
+          "note": ""
+        },
+        {
+          "number": 99,
+          "kana": "こっか",
+          "word": "国家",
+          "pos": "名词",
+          "meaning": "国家",
+          "raw": {
+            "word": "国家",
+            "kana": "こっか",
+            "pos": "名",
+            "meaning": "国家"
+          },
+          "note": ""
+        },
+        {
+          "number": 100,
+          "kana": "ことば",
+          "word": "言葉",
+          "pos": "名词",
+          "meaning": "话语；词语；语言",
+          "raw": {
+            "word": "言葉",
+            "kana": "ことば",
+            "pos": "名",
+            "meaning": "话语；词语；语言"
+          },
+          "note": ""
+        },
+        {
+          "number": 101,
+          "kana": "こんや",
+          "word": "今夜",
+          "pos": "名词",
+          "meaning": "今晚",
+          "raw": {
+            "word": "今夜",
+            "kana": "こんや",
+            "pos": "名",
+            "meaning": "今晚"
+          },
+          "note": ""
+        },
+        {
+          "number": 102,
+          "kana": "さいがい",
+          "word": "災害",
+          "pos": "名词",
+          "meaning": "灾害",
+          "raw": {
+            "word": "災害",
+            "kana": "さいがい",
+            "pos": "名",
+            "meaning": "灾害"
+          },
+          "note": ""
+        },
+        {
+          "number": 103,
+          "kana": "さいしん",
+          "word": "最新",
+          "pos": "名词",
+          "meaning": "最新",
+          "raw": {
+            "word": "最新",
+            "kana": "さいしん",
+            "pos": "名",
+            "meaning": "最新"
+          },
+          "note": ""
+        },
+        {
+          "number": 104,
+          "kana": "さいばい",
+          "word": "栽培",
+          "pos": "名词・サ变动词",
+          "meaning": "栽培，种植",
+          "raw": {
+            "word": "栽培",
+            "kana": "さいばい",
+            "pos": "名・动 3",
+            "meaning": "栽培，种植"
+          },
+          "note": ""
+        },
+        {
+          "number": 105,
+          "kana": "さくしゃ",
+          "word": "作者",
+          "pos": "名词",
+          "meaning": "作者",
+          "raw": {
+            "word": "作者",
+            "kana": "さくしゃ",
+            "pos": "名",
+            "meaning": "作者"
+          },
+          "note": ""
+        },
+        {
+          "number": 106,
+          "kana": "さくら",
+          "word": "桜",
+          "pos": "名词",
+          "meaning": "樱花",
+          "raw": {
+            "word": "桜",
+            "kana": "さくら",
+            "pos": "名",
+            "meaning": "樱花"
+          },
+          "note": ""
+        },
+        {
+          "number": 107,
+          "kana": "さとう",
+          "word": "砂糖",
+          "pos": "名词",
+          "meaning": "白糖",
+          "raw": {
+            "word": "砂糖",
+            "kana": "さとう",
+            "pos": "名",
+            "meaning": "白糖"
+          },
+          "note": ""
+        },
+        {
+          "number": 108,
+          "kana": "さどう",
+          "word": "茶道",
+          "pos": "名词",
+          "meaning": "茶道",
+          "raw": {
+            "word": "茶道",
+            "kana": "さどう",
+            "pos": "名",
+            "meaning": "茶道"
+          },
+          "note": ""
+        },
+        {
+          "number": 109,
+          "kana": "さばく",
+          "word": "砂漠",
+          "pos": "名词",
+          "meaning": "沙漠",
+          "raw": {
+            "word": "砂漠",
+            "kana": "さばく",
+            "pos": "名",
+            "meaning": "沙漠"
+          },
+          "note": ""
+        },
+        {
+          "number": 110,
+          "kana": "さほう",
+          "word": "作法",
+          "pos": "名词",
+          "meaning": "礼法；做法",
+          "raw": {
+            "word": "作法",
+            "kana": "さほう",
+            "pos": "名",
+            "meaning": "礼法；做法"
+          },
+          "note": ""
+        },
+        {
+          "number": 111,
+          "kana": "さんこう",
+          "word": "参考",
+          "pos": "名词・サ变动词",
+          "meaning": "参考",
+          "raw": {
+            "word": "参考",
+            "kana": "さんこう",
+            "pos": "名・动 3 他",
+            "meaning": "参考"
+          },
+          "note": ""
+        },
+        {
+          "number": 113,
+          "kana": "さんそ",
+          "word": "酸素",
+          "pos": "名词",
+          "meaning": "氧",
+          "raw": {
+            "word": "酸素",
+            "kana": "さんそ",
+            "pos": "名",
+            "meaning": "氧"
+          },
+          "note": ""
+        },
+        {
+          "number": 114,
+          "kana": "さんぽ",
+          "word": "散歩",
+          "pos": "名词・サ变动词",
+          "meaning": "散步",
+          "raw": {
+            "word": "散歩",
+            "kana": "さんぽ",
+            "pos": "名・动 3",
+            "meaning": "散步"
+          },
+          "note": ""
+        },
+        {
+          "number": 115,
+          "kana": "しき",
+          "word": "四季",
+          "pos": "名词",
+          "meaning": "四季",
+          "raw": {
+            "word": "四季",
+            "kana": "しき",
+            "pos": "名",
+            "meaning": "四季"
+          },
+          "note": ""
+        },
+        {
+          "number": 116,
+          "kana": "じき",
+          "word": "時期",
+          "pos": "名词",
+          "meaning": "时期",
+          "raw": {
+            "word": "時期",
+            "kana": "じき",
+            "pos": "名",
+            "meaning": "时期"
+          },
+          "note": ""
+        },
+        {
+          "number": 117,
+          "kana": "しげん",
+          "word": "資源",
+          "pos": "名词",
+          "meaning": "资源",
+          "raw": {
+            "word": "資源",
+            "kana": "しげん",
+            "pos": "名",
+            "meaning": "资源"
+          },
+          "note": ""
+        },
+        {
+          "number": 118,
+          "kana": "しじ",
+          "word": "指示",
+          "pos": "名词・サ变动词",
+          "meaning": "指示，吩咐",
+          "raw": {
+            "word": "指示",
+            "kana": "しじ",
+            "pos": "名・动 3",
+            "meaning": "指示，吩咐"
+          },
+          "note": ""
+        },
+        {
+          "number": 119,
+          "kana": "しじん",
+          "word": "詩人",
+          "pos": "名词",
+          "meaning": "诗人",
+          "raw": {
+            "word": "詩人",
+            "kana": "しじん",
+            "pos": "名",
+            "meaning": "诗人"
+          },
+          "note": ""
+        },
+        {
+          "number": 120,
+          "kana": "じしん",
+          "word": "自身",
+          "pos": "名词",
+          "meaning": "自身，自己",
+          "raw": {
+            "word": "自身",
+            "kana": "じしん",
+            "pos": "名",
+            "meaning": "自身，自己"
+          },
+          "note": ""
+        },
+        {
+          "number": 121,
+          "kana": "しせつ",
+          "word": "施設",
+          "pos": "名词",
+          "meaning": "设施",
+          "raw": {
+            "word": "施設",
+            "kana": "しせつ",
+            "pos": "名",
+            "meaning": "设施"
+          },
+          "note": ""
+        },
+        {
+          "number": 122,
+          "kana": "しぜん",
+          "word": "自然",
+          "pos": "名词",
+          "meaning": "自然",
+          "raw": {
+            "word": "自然",
+            "kana": "しぜん",
+            "pos": "名",
+            "meaning": "自然"
+          },
+          "note": ""
+        },
+        {
+          "number": 123,
+          "kana": "じぞくてき",
+          "word": "持続的",
+          "pos": "二类形容词",
+          "meaning": "持续的",
+          "raw": {
+            "word": "持続的",
+            "kana": "じぞくてき",
+            "pos": "形 2",
+            "meaning": "持续的"
+          },
+          "note": ""
+        },
+        {
+          "number": 124,
+          "kana": "じだい",
+          "word": "時代",
+          "pos": "名词",
+          "meaning": "时代",
+          "raw": {
+            "word": "時代",
+            "kana": "じだい",
+            "pos": "名",
+            "meaning": "时代"
+          },
+          "note": ""
+        },
+        {
+          "number": 125,
+          "kana": "じっかん",
+          "word": "実感",
+          "pos": "名词・サ变动词",
+          "meaning": "真实感受",
+          "raw": {
+            "word": "実感",
+            "kana": "じっかん",
+            "pos": "名・动 3",
+            "meaning": "真实感受"
+          },
+          "note": ""
+        },
+        {
+          "number": 126,
+          "kana": "じっけん",
+          "word": "実験",
+          "pos": "名词・サ变动词",
+          "meaning": "实验",
+          "raw": {
+            "word": "実験",
+            "kana": "じっけん",
+            "pos": "名・动 3",
+            "meaning": "实验"
+          },
+          "note": ""
+        },
+        {
+          "number": 127,
+          "kana": "じっさい",
+          "word": "実際",
+          "pos": "名词",
+          "meaning": "实际",
+          "raw": {
+            "word": "実際",
+            "kana": "じっさい",
+            "pos": "名",
+            "meaning": "实际"
+          },
+          "note": ""
+        },
+        {
+          "number": 128,
+          "kana": "じっせん",
+          "word": "実践",
+          "pos": "名词・サ变动词",
+          "meaning": "实践",
+          "raw": {
+            "word": "実践",
+            "kana": "じっせん",
+            "pos": "名・动 3",
+            "meaning": "实践"
+          },
+          "note": ""
+        },
+        {
+          "number": 129,
+          "kana": "しっぱい",
+          "word": "失敗",
+          "pos": "名词・サ变动词",
+          "meaning": "失败",
+          "raw": {
+            "word": "失敗",
+            "kana": "しっぱい",
+            "pos": "名・动 3",
+            "meaning": "失败"
+          },
+          "note": ""
+        },
+        {
+          "number": 130,
+          "kana": "しつもん",
+          "word": "質問",
+          "pos": "名词・サ变动词",
+          "meaning": "提问；问题",
+          "raw": {
+            "word": "質問",
+            "kana": "しつもん",
+            "pos": "名・动 3",
+            "meaning": "提问；问题"
+          },
+          "note": ""
+        },
+        {
+          "number": 131,
+          "kana": "しつれい",
+          "word": "失礼",
+          "pos": "名词・二类形容词",
+          "meaning": "失礼；告辞",
+          "raw": {
+            "word": "失礼",
+            "kana": "しつれい",
+            "pos": "名・形 2・",
+            "meaning": "失礼；告辞"
+          },
+          "note": ""
+        },
+        {
+          "number": 132,
+          "kana": "しばふ",
+          "word": "芝生",
+          "pos": "名词",
+          "meaning": "草坪",
+          "raw": {
+            "word": "芝生",
+            "kana": "しばふ",
+            "pos": "名",
+            "meaning": "草坪"
+          },
+          "note": ""
+        },
+        {
+          "number": 133,
+          "kana": "しや",
+          "word": "視野",
+          "pos": "名词",
+          "meaning": "眼界；视野",
+          "raw": {
+            "word": "視野",
+            "kana": "しや",
+            "pos": "名",
+            "meaning": "眼界；视野"
+          },
+          "note": ""
+        },
+        {
+          "number": 134,
+          "kana": "しゃかい",
+          "word": "社会",
+          "pos": "名词",
+          "meaning": "社会",
+          "raw": {
+            "word": "社会",
+            "kana": "しゃかい",
+            "pos": "名",
+            "meaning": "社会"
+          },
+          "note": ""
+        },
+        {
+          "number": 135,
+          "kana": "しゅうちゅう",
+          "word": "集中",
+          "pos": "名词・サ变动词",
+          "meaning": "集中",
+          "raw": {
+            "word": "集中",
+            "kana": "しゅうちゅう",
+            "pos": "名・动 3",
+            "meaning": "集中"
+          },
+          "note": ""
+        },
+        {
+          "number": 136,
+          "kana": "しゅうり",
+          "word": "修理",
+          "pos": "名词・サ变动词",
+          "meaning": "修理",
+          "raw": {
+            "word": "修理",
+            "kana": "しゅうり",
+            "pos": "名・动 3",
+            "meaning": "修理"
+          },
+          "note": ""
+        },
+        {
+          "number": 137,
+          "kana": "しゅっちょう",
+          "word": "出張",
+          "pos": "名词・サ变动词",
+          "meaning": "出差",
+          "raw": {
+            "word": "出張",
+            "kana": "しゅっちょう",
+            "pos": "名・动 3",
+            "meaning": "出差"
+          },
+          "note": ""
+        },
+        {
+          "number": 138,
+          "kana": "じゅみょう",
+          "word": "寿命",
+          "pos": "名词",
+          "meaning": "寿命",
+          "raw": {
+            "word": "寿命",
+            "kana": "じゅみょう",
+            "pos": "名",
+            "meaning": "寿命"
+          },
+          "note": ""
+        },
+        {
+          "number": 139,
+          "kana": "しゅるい",
+          "word": "種類",
+          "pos": "名词",
+          "meaning": "种类",
+          "raw": {
+            "word": "種類",
+            "kana": "しゅるい",
+            "pos": "名",
+            "meaning": "种类"
+          },
+          "note": ""
+        },
+        {
+          "number": 140,
+          "kana": "じゅんばん",
+          "word": "順番",
+          "pos": "名词",
+          "meaning": "顺序，次序",
+          "raw": {
+            "word": "順番",
+            "kana": "じゅんばん",
+            "pos": "名",
+            "meaning": "顺序，次序"
+          },
+          "note": ""
+        },
+        {
+          "number": 143,
+          "kana": "しょうじょう",
+          "word": "賞状",
+          "pos": "名词",
+          "meaning": "奖状",
+          "raw": {
+            "word": "賞状",
+            "kana": "しょうじょう",
+            "pos": "名",
+            "meaning": "奖状"
+          },
+          "note": ""
+        },
+        {
+          "number": 144,
+          "kana": "じょうず",
+          "word": "上手",
+          "pos": "二类形容词",
+          "meaning": "擅长，拿手",
+          "raw": {
+            "word": "上手",
+            "kana": "じょうず",
+            "pos": "形 2",
+            "meaning": "擅长，拿手"
+          },
+          "note": ""
+        },
+        {
+          "number": 145,
+          "kana": "じょうたい",
+          "word": "状態",
+          "pos": "名词",
+          "meaning": "状态",
+          "raw": {
+            "word": "状態",
+            "kana": "じょうたい",
+            "pos": "名",
+            "meaning": "状态"
+          },
+          "note": ""
+        },
+        {
+          "number": 146,
+          "kana": "しょうちょう",
+          "word": "象徴",
+          "pos": "名词・サ变动词",
+          "meaning": "象征",
+          "raw": {
+            "word": "象徴",
+            "kana": "しょうちょう",
+            "pos": "名・动 3 他",
+            "meaning": "象征"
+          },
+          "note": ""
+        },
+        {
+          "number": 147,
+          "kana": "しょうどく",
+          "word": "消毒",
+          "pos": "名词・サ变动词",
+          "meaning": "消毒，杀菌",
+          "raw": {
+            "word": "消毒",
+            "kana": "しょうどく",
+            "pos": "名・动 3 他",
+            "meaning": "消毒，杀菌"
+          },
+          "note": ""
+        },
+        {
+          "number": 148,
+          "kana": "しょうぼう",
+          "word": "消防",
+          "pos": "名词",
+          "meaning": "消防",
+          "raw": {
+            "word": "消防",
+            "kana": "しょうぼう",
+            "pos": "名",
+            "meaning": "消防"
+          },
+          "note": ""
+        },
+        {
+          "number": 149,
+          "kana": "じょうほう",
+          "word": "情報",
+          "pos": "名词",
+          "meaning": "信息，消息",
+          "raw": {
+            "word": "情報",
+            "kana": "じょうほう",
+            "pos": "名",
+            "meaning": "信息，消息"
+          },
+          "note": ""
+        },
+        {
+          "number": 150,
+          "kana": "しょうめいしょ",
+          "word": "証明書",
+          "pos": "名词",
+          "meaning": "证明书；证明文件",
+          "raw": {
+            "word": "証明書",
+            "kana": "しょうめいしょ",
+            "pos": "",
+            "meaning": "证明"
+          },
+          "note": "原表词性缺失，补为名词；証明書指证明文件。"
+        },
+        {
+          "number": 151,
+          "kana": "しょうゆ",
+          "word": "醤油",
+          "pos": "名词",
+          "meaning": "酱油",
+          "raw": {
+            "word": "醤油",
+            "kana": "しょうゆ",
+            "pos": "名",
+            "meaning": "酱油"
+          },
+          "note": ""
+        },
+        {
+          "number": 152,
+          "kana": "しょうらい",
+          "word": "将来",
+          "pos": "名词",
+          "meaning": "将来，未来",
+          "raw": {
+            "word": "将来",
+            "kana": "しょうらい",
+            "pos": "名",
+            "meaning": "将来，未来"
+          },
+          "note": ""
+        },
+        {
+          "number": 153,
+          "kana": "しゅうかん",
+          "word": "習慣",
+          "pos": "名词",
+          "meaning": "习惯",
+          "raw": {
+            "word": "習慣",
+            "kana": "しゅうかん",
+            "pos": "名",
+            "meaning": "习惯"
+          },
+          "note": ""
+        },
+        {
+          "number": 154,
+          "kana": "しょくぶつ",
+          "word": "植物",
+          "pos": "名词",
+          "meaning": "植物",
+          "raw": {
+            "word": "植物",
+            "kana": "しょくぶつ",
+            "pos": "名",
+            "meaning": "植物"
+          },
+          "note": ""
+        },
+        {
+          "number": 155,
+          "kana": "しょっき",
+          "word": "食器",
+          "pos": "名词",
+          "meaning": "餐具",
+          "raw": {
+            "word": "食器",
+            "kana": "しょっき",
+            "pos": "名",
+            "meaning": "餐具"
+          },
+          "note": ""
+        },
+        {
+          "number": 156,
+          "kana": "しりょう",
+          "word": "資料",
+          "pos": "名词",
+          "meaning": "资料",
+          "raw": {
+            "word": "資料",
+            "kana": "しりょう",
+            "pos": "名",
+            "meaning": "资料"
+          },
+          "note": ""
+        },
+        {
+          "number": 157,
+          "kana": "しりょうかん",
+          "word": "資料館",
+          "pos": "名词",
+          "meaning": "资料馆",
+          "raw": {
+            "word": "資料館",
+            "kana": "しりょうかん",
+            "pos": "名",
+            "meaning": "资料馆"
+          },
+          "note": ""
+        },
+        {
+          "number": 158,
+          "kana": "しんごう",
+          "word": "信号",
+          "pos": "名词",
+          "meaning": "信号灯，红绿灯",
+          "raw": {
+            "word": "信号",
+            "kana": "しんごう",
+            "pos": "名",
+            "meaning": "信号灯，红绿灯"
+          },
+          "note": ""
+        },
+        {
+          "number": 159,
+          "kana": "じんこう",
+          "word": "人口",
+          "pos": "名词",
+          "meaning": "人口",
+          "raw": {
+            "word": "人口",
+            "kana": "じんこう",
+            "pos": "名",
+            "meaning": "人口"
+          },
+          "note": ""
+        },
+        {
+          "number": 160,
+          "kana": "しんこく",
+          "word": "深刻",
+          "pos": "二类形容词",
+          "meaning": "严重，严肃",
+          "raw": {
+            "word": "深刻",
+            "kana": "しんこく",
+            "pos": "形 2",
+            "meaning": "严重，严肃"
+          },
+          "note": ""
+        },
+        {
+          "number": 161,
+          "kana": "しんしつ",
+          "word": "寝室",
+          "pos": "名词",
+          "meaning": "卧室，寝室",
+          "raw": {
+            "word": "寝室",
+            "kana": "しんしつ",
+            "pos": "名",
+            "meaning": "卧室，寝室"
+          },
+          "note": ""
+        },
+        {
+          "number": 162,
+          "kana": "しんせつ",
+          "word": "親切",
+          "pos": "二类形容词",
+          "meaning": "亲切，好心",
+          "raw": {
+            "word": "親切",
+            "kana": "しんせつ",
+            "pos": "形 2",
+            "meaning": "亲切，好心"
+          },
+          "note": ""
+        },
+        {
+          "number": 163,
+          "kana": "しんせん",
+          "word": "新鮮",
+          "pos": "名词・二类形容词",
+          "meaning": "新鲜",
+          "raw": {
+            "word": "新鮮",
+            "kana": "しんせん",
+            "pos": "名・形 2",
+            "meaning": "新鲜"
+          },
+          "note": ""
+        },
+        {
+          "number": 164,
+          "kana": "しんにゅう",
+          "word": "侵入",
+          "pos": "名词・サ变动词",
+          "meaning": "侵入，闯入",
+          "raw": {
+            "word": "侵入",
+            "kana": "しんにゅう",
+            "pos": "名・动 3 自",
+            "meaning": "侵入，闯入"
+          },
+          "note": ""
+        },
+        {
+          "number": 165,
+          "kana": "じんみん",
+          "word": "人民",
+          "pos": "名词",
+          "meaning": "人民",
+          "raw": {
+            "word": "人民",
+            "kana": "じんみん",
+            "pos": "名",
+            "meaning": "人民"
+          },
+          "note": ""
+        },
+        {
+          "number": 166,
+          "kana": "じんるい",
+          "word": "人類",
+          "pos": "名词",
+          "meaning": "人类",
+          "raw": {
+            "word": "人類",
+            "kana": "じんるい",
+            "pos": "名",
+            "meaning": "人类"
+          },
+          "note": ""
+        },
+        {
+          "number": 167,
+          "kana": "せいか",
+          "word": "成果",
+          "pos": "名词",
+          "meaning": "成果",
+          "raw": {
+            "word": "成果",
+            "kana": "せいか",
+            "pos": "名",
+            "meaning": "成果"
+          },
+          "note": ""
+        },
+        {
+          "number": 168,
+          "kana": "せいけつ",
+          "word": "清潔",
+          "pos": "名词・二类形容词",
+          "meaning": "干净，清洁",
+          "raw": {
+            "word": "清潔",
+            "kana": "せいけつ",
+            "pos": "名・形 2",
+            "meaning": "干净，清洁"
+          },
+          "note": ""
+        },
+        {
+          "number": 169,
+          "kana": "せいぞん",
+          "word": "生存",
+          "pos": "名词・サ变动词",
+          "meaning": "生存，存活",
+          "raw": {
+            "word": "生存",
+            "kana": "せいぞん",
+            "pos": "名・动 3",
+            "meaning": "生存，存活"
+          },
+          "note": ""
+        },
+        {
+          "number": 170,
+          "kana": "せいちょう",
+          "word": "清聴",
+          "pos": "名词・サ变动词",
+          "meaning": "垂听，倾听",
+          "raw": {
+            "word": "清聴",
+            "kana": "せいちょう",
+            "pos": "名・动 3",
+            "meaning": "垂听，倾听"
+          },
+          "note": ""
+        },
+        {
+          "number": 171,
+          "kana": "せいひん",
+          "word": "製品",
+          "pos": "名词",
+          "meaning": "制品；产品",
+          "raw": {
+            "word": "製品",
+            "kana": "せいひん",
+            "pos": "名",
+            "meaning": "制品；产品"
+          },
+          "note": ""
+        },
+        {
+          "number": 172,
+          "kana": "せいぶつ",
+          "word": "生物",
+          "pos": "名词",
+          "meaning": "生物",
+          "raw": {
+            "word": "生物",
+            "kana": "せいぶつ",
+            "pos": "名",
+            "meaning": "生物"
+          },
+          "note": ""
+        },
+        {
+          "number": 173,
+          "kana": "せいり",
+          "word": "整理",
+          "pos": "名词・サ变动词",
+          "meaning": "整理，整顿",
+          "raw": {
+            "word": "整理",
+            "kana": "せいり",
+            "pos": "名・动 3",
+            "meaning": "整理，整顿"
+          },
+          "note": ""
+        },
+        {
+          "number": 174,
+          "kana": "せきにん",
+          "word": "責任",
+          "pos": "名词",
+          "meaning": "责任",
+          "raw": {
+            "word": "責任",
+            "kana": "せきにん",
+            "pos": "名",
+            "meaning": "责任"
+          },
+          "note": ""
+        },
+        {
+          "number": 175,
+          "kana": "せっきょくてき",
+          "word": "積極的",
+          "pos": "二类形容词",
+          "meaning": "积极的",
+          "raw": {
+            "word": "積極的",
+            "kana": "せっきょくてき",
+            "pos": "形 2",
+            "meaning": "积极的"
+          },
+          "note": ""
+        },
+        {
+          "number": 176,
+          "kana": "せっけん",
+          "word": "石鹸",
+          "pos": "名词",
+          "meaning": "肥皂，香皂",
+          "raw": {
+            "word": "石鹸",
+            "kana": "せっけん",
+            "pos": "名",
+            "meaning": "肥皂，香皂"
+          },
+          "note": ""
+        },
+        {
+          "number": 177,
+          "kana": "せっしゅ",
+          "word": "接種",
+          "pos": "名词・サ变动词",
+          "meaning": "接种，注射",
+          "raw": {
+            "word": "接種",
+            "kana": "せっしゅ",
+            "pos": "名・动 3",
+            "meaning": "接种，注射"
+          },
+          "note": ""
+        },
+        {
+          "number": 178,
+          "kana": "せつび",
+          "word": "設備",
+          "pos": "名词・サ变动词",
+          "meaning": "设备；配备",
+          "raw": {
+            "word": "設備",
+            "kana": "せつび",
+            "pos": "名・动 3",
+            "meaning": "设备；配备"
+          },
+          "note": ""
+        },
+        {
+          "number": 179,
+          "kana": "せつめいしょ",
+          "word": "説明書",
+          "pos": "名词",
+          "meaning": "说明书",
+          "raw": {
+            "word": "説明書",
+            "kana": "せつめいしょ",
+            "pos": "名",
+            "meaning": "说明书"
+          },
+          "note": ""
+        },
+        {
+          "number": 180,
+          "kana": "せわ",
+          "word": "世話",
+          "pos": "名词・サ变动词",
+          "meaning": "照料",
+          "raw": {
+            "word": "世話",
+            "kana": "せわ",
+            "pos": "名・动 3",
+            "meaning": "照料"
+          },
+          "note": ""
+        },
+        {
+          "number": 181,
+          "kana": "せんじつ",
+          "word": "先日",
+          "pos": "名词",
+          "meaning": "前几天",
+          "raw": {
+            "word": "先日",
+            "kana": "せんじつ",
+            "pos": "名",
+            "meaning": "前几天"
+          },
+          "note": ""
+        },
+        {
+          "number": 182,
+          "kana": "せんしゅ",
+          "word": "選手",
+          "pos": "名词",
+          "meaning": "选手，运动员",
+          "raw": {
+            "word": "選手",
+            "kana": "せんしゅ",
+            "pos": "名",
+            "meaning": "选手，运动员"
+          },
+          "note": ""
+        },
+        {
+          "number": 183,
+          "kana": "ぜんたいてき",
+          "word": "全体的",
+          "pos": "二类形容词",
+          "meaning": "整体的，全体的",
+          "raw": {
+            "word": "全体的",
+            "kana": "ぜんたいてき",
+            "pos": "形 2",
+            "meaning": "整体的，全体的"
+          },
+          "note": ""
+        },
+        {
+          "number": 184,
+          "kana": "せんたく",
+          "word": "洗濯",
+          "pos": "名词・サ变动词",
+          "meaning": "洗涤，洗（衣服）",
+          "raw": {
+            "word": "洗濯",
+            "kana": "せんたく",
+            "pos": "名・动 3",
+            "meaning": "洗涤，洗（衣服）"
+          },
+          "note": ""
+        },
+        {
+          "number": 185,
+          "kana": "そうおん",
+          "word": "騒音",
+          "pos": "名词",
+          "meaning": "噪声",
+          "raw": {
+            "word": "騒音",
+            "kana": "そうおん",
+            "pos": "名",
+            "meaning": "噪声"
+          },
+          "note": ""
+        },
+        {
+          "number": 186,
+          "kana": "ぞうか",
+          "word": "増加",
+          "pos": "名词・サ变动词",
+          "meaning": "增加",
+          "raw": {
+            "word": "増加",
+            "kana": "ぞうか",
+            "pos": "名・动 3",
+            "meaning": "增加"
+          },
+          "note": ""
+        },
+        {
+          "number": 187,
+          "kana": "ぞうきん",
+          "word": "雑巾",
+          "pos": "名词",
+          "meaning": "抹布",
+          "raw": {
+            "word": "雑巾",
+            "kana": "ぞうきん",
+            "pos": "名",
+            "meaning": "抹布"
+          },
+          "note": ""
+        },
+        {
+          "number": 188,
+          "kana": "そうさ",
+          "word": "操作",
+          "pos": "名词・サ变动词",
+          "meaning": "操纵，操作",
+          "raw": {
+            "word": "操作",
+            "kana": "そうさ",
+            "pos": "名・动 3",
+            "meaning": "操纵，操作"
+          },
+          "note": ""
+        },
+        {
+          "number": 189,
+          "kana": "そうじ",
+          "word": "掃除",
+          "pos": "名词・サ变动词",
+          "meaning": "打扫，扫除",
+          "raw": {
+            "word": "掃除",
+            "kana": "そうじ",
+            "pos": "名・动 3",
+            "meaning": "打扫，扫除"
+          },
+          "note": ""
+        },
+        {
+          "number": 190,
+          "kana": "そうぞうりょく",
+          "word": "創造力",
+          "pos": "名词",
+          "meaning": "创造力",
+          "raw": {
+            "word": "創造力",
+            "kana": "そうぞうりょく",
+            "pos": "名",
+            "meaning": "创造力"
+          },
+          "note": ""
+        },
+        {
+          "number": 191,
+          "kana": "そつぎょう",
+          "word": "卒業",
+          "pos": "名词・サ变动词",
+          "meaning": "毕业",
+          "raw": {
+            "word": "卒業",
+            "kana": "そつぎょう",
+            "pos": "名・动 3",
+            "meaning": "毕业"
+          },
+          "note": ""
+        },
+        {
+          "number": 192,
+          "kana": "そのた",
+          "word": "その他",
+          "pos": "名词",
+          "meaning": "其他",
+          "raw": {
+            "word": "その他",
+            "kana": "そのた",
+            "pos": "名",
+            "meaning": "其他"
+          },
+          "note": ""
+        },
+        {
+          "number": 193,
+          "kana": "そふぼ",
+          "word": "祖父母",
+          "pos": "名词",
+          "meaning": "（外）祖父母",
+          "raw": {
+            "word": "祖父母",
+            "kana": "そふぼ",
+            "pos": "名",
+            "meaning": "（外）祖父母"
+          },
+          "note": ""
+        },
+        {
+          "number": 194,
+          "kana": "そんけい",
+          "word": "尊敬",
+          "pos": "名词・サ变动词",
+          "meaning": "尊敬",
+          "raw": {
+            "word": "尊敬",
+            "kana": "そんけい",
+            "pos": "名・动 3",
+            "meaning": "尊敬"
+          },
+          "note": ""
+        },
+        {
+          "number": 195,
+          "kana": "だいがく",
+          "word": "大学",
+          "pos": "名词",
+          "meaning": "大学",
+          "raw": {
+            "word": "大学",
+            "kana": "だいがく",
+            "pos": "名",
+            "meaning": "大学"
+          },
+          "note": ""
+        },
+        {
+          "number": 196,
+          "kana": "たいけん",
+          "word": "体験",
+          "pos": "名词・サ变动词",
+          "meaning": "体验",
+          "raw": {
+            "word": "体験",
+            "kana": "たいけん",
+            "pos": "名・动 3",
+            "meaning": "体验"
+          },
+          "note": ""
+        },
+        {
+          "number": 197,
+          "kana": "たいさく",
+          "word": "対策",
+          "pos": "名词",
+          "meaning": "对策",
+          "raw": {
+            "word": "対策",
+            "kana": "たいさく",
+            "pos": "名",
+            "meaning": "对策"
+          },
+          "note": ""
+        },
+        {
+          "number": 198,
+          "kana": "たいする",
+          "word": "対する",
+          "pos": "三类动词",
+          "meaning": "对于，针对",
+          "raw": {
+            "word": "対する",
+            "kana": "たいする",
+            "pos": "动 3 自",
+            "meaning": "对于，针对"
+          },
+          "note": ""
+        },
+        {
+          "number": 199,
+          "kana": "だいどころ",
+          "word": "台所",
+          "pos": "名词",
+          "meaning": "厨房",
+          "raw": {
+            "word": "台所",
+            "kana": "だいどころ",
+            "pos": "名",
+            "meaning": "厨房"
+          },
+          "note": ""
+        },
+        {
+          "number": 200,
+          "kana": "だいひょうてき",
+          "word": "代表的",
+          "pos": "二类形容词",
+          "meaning": "有代表性的",
+          "raw": {
+            "word": "代表的",
+            "kana": "だいひょうてき",
+            "pos": "形 2",
+            "meaning": "有代表性的"
+          },
+          "note": ""
+        },
+        {
+          "number": 201,
+          "kana": "たてもの",
+          "word": "建物",
+          "pos": "名词",
+          "meaning": "房屋，建筑物",
+          "raw": {
+            "word": "建物",
+            "kana": "たてもの",
+            "pos": "名",
+            "meaning": "房屋，建筑物"
+          },
+          "note": ""
+        },
+        {
+          "number": 202,
+          "kana": "たんじょう",
+          "word": "誕生",
+          "pos": "名词・サ变动词",
+          "meaning": "诞生；出生",
+          "raw": {
+            "word": "誕生",
+            "kana": "たんじょう",
+            "pos": "名・动 3",
+            "meaning": "诞生；出生"
+          },
+          "note": ""
+        },
+        {
+          "number": 203,
+          "kana": "だんち",
+          "word": "団地",
+          "pos": "名词",
+          "meaning": "小区，住宅区",
+          "raw": {
+            "word": "地",
+            "kana": "だんち",
+            "pos": "名",
+            "meaning": "小区，住宅区"
+          },
+          "note": "原表汉字栏漏「団」，按读音与住宅区释义补为「団地」。"
+        },
+        {
+          "number": 204,
+          "kana": "たんとう",
+          "word": "担当",
+          "pos": "名词・サ变动词",
+          "meaning": "担当，担任",
+          "raw": {
+            "word": "担当",
+            "kana": "たんとう",
+            "pos": "名・动 3",
+            "meaning": "担当，担任"
+          },
+          "note": ""
+        },
+        {
+          "number": 205,
+          "kana": "たんにん",
+          "word": "担任",
+          "pos": "名词・サ变动词",
+          "meaning": "班主任；担任，担当",
+          "raw": {
+            "word": "担任",
+            "kana": "たんにん",
+            "pos": "名・动 3",
+            "meaning": "班主任；担任，担当"
+          },
+          "note": ""
+        },
+        {
+          "number": 206,
+          "kana": "だんらく",
+          "word": "段落",
+          "pos": "名词",
+          "meaning": "段落",
+          "raw": {
+            "word": "段落",
+            "kana": "だんらく",
+            "pos": "名",
+            "meaning": "段落"
+          },
+          "note": ""
+        },
+        {
+          "number": 207,
+          "kana": "ちいき",
+          "word": "地域",
+          "pos": "名词",
+          "meaning": "地域，地区",
+          "raw": {
+            "word": "地域",
+            "kana": "ちいき",
+            "pos": "名",
+            "meaning": "地域，地区"
+          },
+          "note": ""
+        },
+        {
+          "number": 208,
+          "kana": "ちえ",
+          "word": "知恵",
+          "pos": "名词",
+          "meaning": "智慧；智能",
+          "raw": {
+            "word": "知恵",
+            "kana": "ちえ",
+            "pos": "名",
+            "meaning": "智慧；智能"
+          },
+          "note": ""
+        },
+        {
+          "number": 209,
+          "kana": "ちきゅう",
+          "word": "地球",
+          "pos": "名词",
+          "meaning": "地球",
+          "raw": {
+            "word": "地球",
+            "kana": "ちきゅう",
+            "pos": "名",
+            "meaning": "地球"
+          },
+          "note": ""
+        },
+        {
+          "number": 210,
+          "kana": "ちこく",
+          "word": "遅刻",
+          "pos": "名词・サ变动词",
+          "meaning": "迟到",
+          "raw": {
+            "word": "遅刻",
+            "kana": "ちこく",
+            "pos": "名・动 3",
+            "meaning": "迟到"
+          },
+          "note": ""
+        },
+        {
+          "number": 211,
+          "kana": "ちしき",
+          "word": "知識",
+          "pos": "名词",
+          "meaning": "知识",
+          "raw": {
+            "word": "知識",
+            "kana": "ちしき",
+            "pos": "名",
+            "meaning": "知识"
+          },
+          "note": ""
+        },
+        {
+          "number": 212,
+          "kana": "ちゃくよう",
+          "word": "着用",
+          "pos": "名词・サ变动词",
+          "meaning": "戴（口罩），穿（衣服），系",
+          "raw": {
+            "word": "着用",
+            "kana": "ちゃくよう",
+            "pos": "名・动 3",
+            "meaning": "戴（口罩），穿（衣服），系"
+          },
+          "note": ""
+        },
+        {
+          "number": 213,
+          "kana": "ちゃわん",
+          "word": "茶碗",
+          "pos": "名词",
+          "meaning": "碗",
+          "raw": {
+            "word": "茶碗",
+            "kana": "ちゃわん",
+            "pos": "名",
+            "meaning": "碗"
+          },
+          "note": ""
+        },
+        {
+          "number": 214,
+          "kana": "ちゅうい",
+          "word": "注意",
+          "pos": "名词・サ变动词",
+          "meaning": "注意；提醒",
+          "raw": {
+            "word": "注意",
+            "kana": "ちゅうい",
+            "pos": "名・动 3",
+            "meaning": "注意；提醒"
+          },
+          "note": ""
+        },
+        {
+          "number": 215,
+          "kana": "ちゅういじこう",
+          "word": "注意事項",
+          "pos": "名词",
+          "meaning": "注意事项",
+          "raw": {
+            "word": "注意事項",
+            "kana": "ちゅういじこう",
+            "pos": "名",
+            "meaning": "注意事项"
+          },
+          "note": ""
+        },
+        {
+          "number": 216,
+          "kana": "ちゅうしゅうせつ",
+          "word": "中秋節",
+          "pos": "名词",
+          "meaning": "中秋节",
+          "raw": {
+            "word": "中秋節",
+            "kana": "ちゅうしゅうせつ",
+            "pos": "名",
+            "meaning": "中秋节"
+          },
+          "note": ""
+        },
+        {
+          "number": 217,
+          "kana": "ちょくせつ",
+          "word": "直接",
+          "pos": "名词・二类形容词",
+          "meaning": "直接",
+          "raw": {
+            "word": "直接",
+            "kana": "ちょくせつ",
+            "pos": "名・形 2",
+            "meaning": "直接"
+          },
+          "note": ""
+        },
+        {
+          "number": 218,
+          "kana": "ちょさく",
+          "word": "著作",
+          "pos": "名词・サ变动词",
+          "meaning": "著作",
+          "raw": {
+            "word": "著作",
+            "kana": "ちょさく",
+            "pos": "名・动 3",
+            "meaning": "著作"
+          },
+          "note": ""
+        },
+        {
+          "number": 219,
+          "kana": "ちりょう",
+          "word": "治療",
+          "pos": "名词・サ变动词",
+          "meaning": "治疗，医疗",
+          "raw": {
+            "word": "治療",
+            "kana": "ちりょう",
+            "pos": "名・动 3",
+            "meaning": "治疗，医疗"
+          },
+          "note": ""
+        },
+        {
+          "number": 220,
+          "kana": "ちりょうほう",
+          "word": "治療法",
+          "pos": "名词",
+          "meaning": "治疗方法",
+          "raw": {
+            "word": "治療法",
+            "kana": "ちりょうほう",
+            "pos": "名",
+            "meaning": "治疗方法"
+          },
+          "note": ""
+        },
+        {
+          "number": 221,
+          "kana": "ていあん",
+          "word": "提案",
+          "pos": "名词・サ变动词",
+          "meaning": "提案",
+          "raw": {
+            "word": "提案",
+            "kana": "ていあん",
+            "pos": "名・动 3",
+            "meaning": "提案"
+          },
+          "note": ""
+        },
+        {
+          "number": 222,
+          "kana": "ていげん",
+          "word": "提言",
+          "pos": "名词・サ变动词",
+          "meaning": "建议，提议",
+          "raw": {
+            "word": "提言",
+            "kana": "ていげん",
+            "pos": "名・动 3",
+            "meaning": "建议，提议"
+          },
+          "note": ""
+        },
+        {
+          "number": 223,
+          "kana": "ていねい",
+          "word": "丁寧",
+          "pos": "二类形容词",
+          "meaning": "仔细，认真；客气",
+          "raw": {
+            "word": "丁寧",
+            "kana": "ていねい",
+            "pos": "形 2",
+            "meaning": "仔细，认真；客气"
+          },
+          "note": ""
+        },
+        {
+          "number": 224,
+          "kana": "てきとう",
+          "word": "適当",
+          "pos": "二类形容词",
+          "meaning": "适当，恰好；随便，敷衍",
+          "raw": {
+            "word": "適当",
+            "kana": "てきとう",
+            "pos": "形 2",
+            "meaning": "适当，恰好；随便，敷衍"
+          },
+          "note": ""
+        },
+        {
+          "number": 225,
+          "kana": "てんじ",
+          "word": "展示",
+          "pos": "名词・サ变动词",
+          "meaning": "展示，展出",
+          "raw": {
+            "word": "展示",
+            "kana": "てんじ",
+            "pos": "名・动 3",
+            "meaning": "展示，展出"
+          },
+          "note": ""
+        },
+        {
+          "number": 226,
+          "kana": "でんしけっさい",
+          "word": "電子決済",
+          "pos": "名词",
+          "meaning": "电子支付",
+          "raw": {
+            "word": "電子決済",
+            "kana": "でんしけっさい",
+            "pos": "名",
+            "meaning": "电子支付"
+          },
+          "note": ""
+        },
+        {
+          "number": 227,
+          "kana": "でんしゃ",
+          "word": "電車",
+          "pos": "名词",
+          "meaning": "电气列车",
+          "raw": {
+            "word": "電車",
+            "kana": "でんしゃ",
+            "pos": "名",
+            "meaning": "电气列车"
+          },
+          "note": ""
+        },
+        {
+          "number": 228,
+          "kana": "でんしょう",
+          "word": "伝承",
+          "pos": "名词・サ变动词",
+          "meaning": "传承",
+          "raw": {
+            "word": "伝承",
+            "kana": "でんしょう",
+            "pos": "名・动 3",
+            "meaning": "传承"
+          },
+          "note": ""
+        },
+        {
+          "number": 229,
+          "kana": "てんてき",
+          "word": "天敵",
+          "pos": "名词",
+          "meaning": "天敌",
+          "raw": {
+            "word": "天敵",
+            "kana": "でんてき",
+            "pos": "名",
+            "meaning": "天敌"
+          },
+          "note": "原表「でんてき」误加浊点，规范读音为「てんてき」。"
+        },
+        {
+          "number": 230,
+          "kana": "でんわばんごう",
+          "word": "電話番号",
+          "pos": "名词",
+          "meaning": "电话号码",
+          "raw": {
+            "word": "電話番号",
+            "kana": "でんわばんごう",
+            "pos": "名",
+            "meaning": "电话号码"
+          },
+          "note": ""
+        },
+        {
+          "number": 231,
+          "kana": "どうぐ",
+          "word": "道具",
+          "pos": "名词",
+          "meaning": "道具",
+          "raw": {
+            "word": "道具",
+            "kana": "どうぐ",
+            "pos": "名",
+            "meaning": "道具"
+          },
+          "note": ""
+        },
+        {
+          "number": 232,
+          "kana": "どうぶつえん",
+          "word": "動物園",
+          "pos": "名词",
+          "meaning": "动物园",
+          "raw": {
+            "word": "動物園",
+            "kana": "どうぶつえん",
+            "pos": "名",
+            "meaning": "动物园"
+          },
+          "note": ""
+        },
+        {
+          "number": 233,
+          "kana": "とくちょうてき",
+          "word": "特徴的",
+          "pos": "二类形容词",
+          "meaning": "有特点",
+          "raw": {
+            "word": "特徴的",
+            "kana": "とくちょうてき",
+            "pos": "形 2",
+            "meaning": "有特点"
+          },
+          "note": ""
+        },
+        {
+          "number": 234,
+          "kana": "どくとく",
+          "word": "独特",
+          "pos": "名词・二类形容词",
+          "meaning": "独特，特有",
+          "raw": {
+            "word": "独特",
+            "kana": "どくとく",
+            "pos": "名・形 2",
+            "meaning": "独特，特有"
+          },
+          "note": ""
+        },
+        {
+          "number": 235,
+          "kana": "どりょく",
+          "word": "努力",
+          "pos": "名词・サ变动词",
+          "meaning": "努力",
+          "raw": {
+            "word": "努力",
+            "kana": "どりょく",
+            "pos": "名・动 3",
+            "meaning": "努力"
+          },
+          "note": ""
+        },
+        {
+          "number": 236,
+          "kana": "にくるい",
+          "word": "肉類",
+          "pos": "名词",
+          "meaning": "肉类",
+          "raw": {
+            "word": "肉類",
+            "kana": "にくるい",
+            "pos": "名",
+            "meaning": "肉类"
+          },
+          "note": ""
+        },
+        {
+          "number": 237,
+          "kana": "にゅうせいひん",
+          "word": "乳製品",
+          "pos": "名词",
+          "meaning": "乳制品",
+          "raw": {
+            "word": "乳製品",
+            "kana": "にゅうせいひん",
+            "pos": "名",
+            "meaning": "乳制品"
+          },
+          "note": ""
+        },
+        {
+          "number": 238,
+          "kana": "にんげん",
+          "word": "人間",
+          "pos": "名词",
+          "meaning": "人,人类",
+          "raw": {
+            "word": "人間",
+            "kana": "にんげん",
+            "pos": "名",
+            "meaning": "人,人类"
+          },
+          "note": ""
+        },
+        {
+          "number": 239,
+          "kana": "ねだん",
+          "word": "値段",
+          "pos": "名词",
+          "meaning": "价格",
+          "raw": {
+            "word": "値段",
+            "kana": "ねだん",
+            "pos": "名",
+            "meaning": "价格"
+          },
+          "note": ""
+        },
+        {
+          "number": 240,
+          "kana": "ねっしん",
+          "word": "熱心",
+          "pos": "名词・二类形容词",
+          "meaning": "投入,热忱",
+          "raw": {
+            "word": "熱心",
+            "kana": "ねっしん",
+            "pos": "名·形2",
+            "meaning": "投入,热忱"
+          },
+          "note": ""
+        },
+        {
+          "number": 241,
+          "kana": "はいき",
+          "word": "排気",
+          "pos": "名词・サ变动词",
+          "meaning": "排气",
+          "raw": {
+            "word": "排気",
+            "kana": "はいき",
+            "pos": "名·动3自",
+            "meaning": "排气"
+          },
+          "note": ""
+        },
+        {
+          "number": 242,
+          "kana": "ばしょ",
+          "word": "場所",
+          "pos": "名词",
+          "meaning": "地方,场所",
+          "raw": {
+            "word": "場所",
+            "kana": "ばしょ",
+            "pos": "名",
+            "meaning": "地方,场所"
+          },
+          "note": ""
+        },
+        {
+          "number": 243,
+          "kana": "はっけん",
+          "word": "発見",
+          "pos": "名词・サ变动词",
+          "meaning": "发现",
+          "raw": {
+            "word": "発見",
+            "kana": "はっけん",
+            "pos": "名·动3他",
+            "meaning": "发现"
+          },
+          "note": ""
+        },
+        {
+          "number": 244,
+          "kana": "はっそう",
+          "word": "発想",
+          "pos": "名词・サ变动词",
+          "meaning": "主意,想法;构思,立意",
+          "raw": {
+            "word": "発想",
+            "kana": "はっそう",
+            "pos": "名·动3他",
+            "meaning": "主意,想法;构思,立意"
+          },
+          "note": ""
+        },
+        {
+          "number": 245,
+          "kana": "はってん",
+          "word": "発展",
+          "pos": "名词・サ变动词",
+          "meaning": "发展",
+          "raw": {
+            "word": "発展",
+            "kana": "はってん",
+            "pos": "名·动3自",
+            "meaning": "发展"
+          },
+          "note": ""
+        },
+        {
+          "number": 246,
+          "kana": "はつめい",
+          "word": "発明",
+          "pos": "名词・サ变动词",
+          "meaning": "发明",
+          "raw": {
+            "word": "発明",
+            "kana": "はつめい",
+            "pos": "名·动3他",
+            "meaning": "发明"
+          },
+          "note": ""
+        },
+        {
+          "number": 247,
+          "kana": "はなび",
+          "word": "花火",
+          "pos": "名词",
+          "meaning": "烟火,焰火",
+          "raw": {
+            "word": "花火",
+            "kana": "はなび",
+            "pos": "名",
+            "meaning": "烟火,焰火"
+          },
+          "note": ""
+        },
+        {
+          "number": 248,
+          "kana": "ばんごう",
+          "word": "番号",
+          "pos": "名词",
+          "meaning": "序号,号码",
+          "raw": {
+            "word": "番号",
+            "kana": "ばんごう",
+            "pos": "名",
+            "meaning": "序号,号码"
+          },
+          "note": ""
+        },
+        {
+          "number": 249,
+          "kana": "ばんごはん",
+          "word": "晩ご飯",
+          "pos": "名词",
+          "meaning": "晚饭",
+          "raw": {
+            "word": "晩ご飯",
+            "kana": "ばんごはん",
+            "pos": "名",
+            "meaning": "晚饭"
+          },
+          "note": ""
+        },
+        {
+          "number": 250,
+          "kana": "ひがい",
+          "word": "被害",
+          "pos": "名词",
+          "meaning": "受害,受灾;损失",
+          "raw": {
+            "word": "被害",
+            "kana": "ひがい",
+            "pos": "名",
+            "meaning": "受害,受灾;损失"
+          },
+          "note": ""
+        },
+        {
+          "number": 251,
+          "kana": "ひこうき",
+          "word": "飛行機",
+          "pos": "名词",
+          "meaning": "飞机",
+          "raw": {
+            "word": "飛行機",
+            "kana": "ひこうき",
+            "pos": "名",
+            "meaning": "飞机"
+          },
+          "note": ""
+        },
+        {
+          "number": 252,
+          "kana": "ひじょう",
+          "word": "非常",
+          "pos": "名词・二类形容词",
+          "meaning": "紧急；非常（状态）；不同寻常",
+          "raw": {
+            "word": "非常",
+            "kana": "ひじょう",
+            "pos": "名·形2",
+            "meaning": "非常,特别;紧急"
+          },
+          "note": "副词「非常に」表示非常、特别；紧急时用「非常の場合」等表达。"
+        },
+        {
+          "number": 253,
+          "kana": "びせいぶつ",
+          "word": "微生物",
+          "pos": "名词",
+          "meaning": "微生物",
+          "raw": {
+            "word": "微生物",
+            "kana": "びせいぶつ",
+            "pos": "名",
+            "meaning": "微生物"
+          },
+          "note": ""
+        },
+        {
+          "number": 254,
+          "kana": "ひつよう",
+          "word": "必要",
+          "pos": "名词・二类形容词",
+          "meaning": "必要",
+          "raw": {
+            "word": "必要",
+            "kana": "ひつよう",
+            "pos": "名·形2",
+            "meaning": "必要"
+          },
+          "note": ""
+        },
+        {
+          "number": 255,
+          "kana": "ひとびと",
+          "word": "人々",
+          "pos": "名词",
+          "meaning": "人们,人人",
+          "raw": {
+            "word": "人々",
+            "kana": "ひとびと",
+            "pos": "名",
+            "meaning": "人们,人人"
+          },
+          "note": ""
+        },
+        {
+          "number": 256,
+          "kana": "ひとりひとり",
+          "word": "一人一人",
+          "pos": "名词・副词",
+          "meaning": "每人,各自",
+          "raw": {
+            "word": "一人一人",
+            "kana": "ひとりひとり",
+            "pos": "名·副",
+            "meaning": "每人,各自"
+          },
+          "note": ""
+        },
+        {
+          "number": 257,
+          "kana": "びょうしゃ",
+          "word": "描写",
+          "pos": "名词・サ变动词",
+          "meaning": "描写;描绘",
+          "raw": {
+            "word": "描写",
+            "kana": "びょうしゃ",
+            "pos": "名·动3他",
+            "meaning": "描写;描绘"
+          },
+          "note": ""
+        },
+        {
+          "number": 258,
+          "kana": "ふきゅう",
+          "word": "普及",
+          "pos": "名词・サ变动词",
+          "meaning": "普及",
+          "raw": {
+            "word": "普及",
+            "kana": "ふきゅう",
+            "pos": "名·动3自他",
+            "meaning": "普及"
+          },
+          "note": ""
+        },
+        {
+          "number": 259,
+          "kana": "ふくざつ",
+          "word": "複雑",
+          "pos": "二类形容词",
+          "meaning": "复杂",
+          "raw": {
+            "word": "複雑",
+            "kana": "ふくざつ",
+            "pos": "形2",
+            "meaning": "复杂"
+          },
+          "note": ""
+        },
+        {
+          "number": 260,
+          "kana": "ふくしゅう",
+          "word": "復習",
+          "pos": "名词・サ变动词",
+          "meaning": "复习",
+          "raw": {
+            "word": "復習",
+            "kana": "ふくしゅう",
+            "pos": "名·动3他",
+            "meaning": "复习"
+          },
+          "note": ""
+        },
+        {
+          "number": 261,
+          "kana": "ふつう",
+          "word": "普通",
+          "pos": "名词・二类形容词・副词",
+          "meaning": "普通",
+          "raw": {
+            "word": "普通",
+            "kana": "ふつう",
+            "pos": "名·形2·副",
+            "meaning": "普通"
+          },
+          "note": ""
+        },
+        {
+          "number": 262,
+          "kana": "ふつうたい",
+          "word": "普通体",
+          "pos": "名词",
+          "meaning": "(日语)简体",
+          "raw": {
+            "word": "普通体",
+            "kana": "ふつうたい",
+            "pos": "名",
+            "meaning": "(日语)简体"
+          },
+          "note": ""
+        },
+        {
+          "number": 263,
+          "kana": "ぶぶん",
+          "word": "部分",
+          "pos": "名词",
+          "meaning": "部分",
+          "raw": {
+            "word": "部分",
+            "kana": "ぶぶん",
+            "pos": "名",
+            "meaning": "部分"
+          },
+          "note": ""
+        },
+        {
+          "number": 264,
+          "kana": "ふべん",
+          "word": "不便",
+          "pos": "二类形容词",
+          "meaning": "不便",
+          "raw": {
+            "word": "不便",
+            "kana": "ふべん",
+            "pos": "形2",
+            "meaning": "不便"
+          },
+          "note": ""
+        },
+        {
+          "number": 265,
+          "kana": "ふゆやすみ",
+          "word": "冬休み",
+          "pos": "名词",
+          "meaning": "寒假",
+          "raw": {
+            "word": "冬休み",
+            "kana": "ふゆやすみ",
+            "pos": "名",
+            "meaning": "寒假"
+          },
+          "note": ""
+        },
+        {
+          "number": 266,
+          "kana": "ふるさと",
+          "word": "故郷",
+          "pos": "名词",
+          "meaning": "故乡",
+          "raw": {
+            "word": "故郷",
+            "kana": "ふるさと",
+            "pos": "名",
+            "meaning": "故乡"
+          },
+          "note": ""
+        },
+        {
+          "number": 267,
+          "kana": "ふろ",
+          "word": "風呂",
+          "pos": "名词",
+          "meaning": "浴室;浴池",
+          "raw": {
+            "word": "風呂",
+            "kana": "ふろ",
+            "pos": "名",
+            "meaning": "浴室;浴池"
+          },
+          "note": ""
+        },
+        {
+          "number": 268,
+          "kana": "ぶんか",
+          "word": "文化",
+          "pos": "名词",
+          "meaning": "文化",
+          "raw": {
+            "word": "文化",
+            "kana": "ぶんか",
+            "pos": "名",
+            "meaning": "文化"
+          },
+          "note": ""
+        },
+        {
+          "number": 269,
+          "kana": "ぶんべつ",
+          "word": "分別",
+          "pos": "名词・サ变动词",
+          "meaning": "分类,区分",
+          "raw": {
+            "word": "分別",
+            "kana": "ぶんべつ",
+            "pos": "名·动3他",
+            "meaning": "分类,区分"
+          },
+          "note": ""
+        },
+        {
+          "number": 270,
+          "kana": "ぶんぽう",
+          "word": "文法",
+          "pos": "名词",
+          "meaning": "语法,句法",
+          "raw": {
+            "word": "文法",
+            "kana": "ぶんぽう",
+            "pos": "名",
+            "meaning": "语法,句法"
+          },
+          "note": ""
+        },
+        {
+          "number": 271,
+          "kana": "ぶんるい",
+          "word": "分類",
+          "pos": "名词・サ变动词",
+          "meaning": "分类",
+          "raw": {
+            "word": "分類",
+            "kana": "ぶんるい",
+            "pos": "名·动3他",
+            "meaning": "分类"
+          },
+          "note": ""
+        },
+        {
+          "number": 272,
+          "kana": "へいきん",
+          "word": "平均",
+          "pos": "名词・サ变动词",
+          "meaning": "平均",
+          "raw": {
+            "word": "平均",
+            "kana": "へいきん",
+            "pos": "名·动3自他",
+            "meaning": "平均"
+          },
+          "note": ""
+        },
+        {
+          "number": 273,
+          "kana": "へんこう",
+          "word": "変更",
+          "pos": "名词・サ变动词",
+          "meaning": "变更,变动",
+          "raw": {
+            "word": "変更",
+            "kana": "へんこう",
+            "pos": "名·动3他",
+            "meaning": "变更,变动"
+          },
+          "note": ""
+        },
+        {
+          "number": 274,
+          "kana": "へんしゅう",
+          "word": "編集",
+          "pos": "名词・サ变动词",
+          "meaning": "编辑",
+          "raw": {
+            "word": "編集",
+            "kana": "へんしゅう",
+            "pos": "名·动3他",
+            "meaning": "编辑"
+          },
+          "note": ""
+        },
+        {
+          "number": 275,
+          "kana": "ほうげん",
+          "word": "方言",
+          "pos": "名词",
+          "meaning": "方言",
+          "raw": {
+            "word": "方言",
+            "kana": "ほうげん",
+            "pos": "名",
+            "meaning": "方言"
+          },
+          "note": ""
+        },
+        {
+          "number": 276,
+          "kana": "ぼうさい",
+          "word": "防災",
+          "pos": "名词",
+          "meaning": "防灾",
+          "raw": {
+            "word": "防災",
+            "kana": "ぼうさい",
+            "pos": "名",
+            "meaning": "防灾"
+          },
+          "note": ""
+        },
+        {
+          "number": 277,
+          "kana": "ほご",
+          "word": "保護",
+          "pos": "名词・サ变动词",
+          "meaning": "保护",
+          "raw": {
+            "word": "保護",
+            "kana": "ほご",
+            "pos": "名·动3他",
+            "meaning": "保护"
+          },
+          "note": ""
+        },
+        {
+          "number": 278,
+          "kana": "ほんだな",
+          "word": "本棚",
+          "pos": "名词",
+          "meaning": "书架",
+          "raw": {
+            "word": "本棚",
+            "kana": "ほんだな",
+            "pos": "名",
+            "meaning": "书架"
+          },
+          "note": ""
+        },
+        {
+          "number": 279,
+          "kana": "ほんぶん",
+          "word": "本文",
+          "pos": "名词",
+          "meaning": "原文；正文",
+          "raw": {
+            "word": "本文",
+            "kana": "ほんぶん",
+            "pos": "名",
+            "meaning": "原文；正文"
+          },
+          "note": ""
+        },
+        {
+          "number": 280,
+          "kana": "まちかど",
+          "word": "街角",
+          "pos": "名词",
+          "meaning": "街角；街头",
+          "raw": {
+            "word": "街角",
+            "kana": "まちかど",
+            "pos": "名",
+            "meaning": "街角；街头"
+          },
+          "note": ""
+        },
+        {
+          "number": 281,
+          "kana": "まんぞく",
+          "word": "満足",
+          "pos": "名词・サ变动词",
+          "meaning": "满足",
+          "raw": {
+            "word": "満足",
+            "kana": "まんぞく",
+            "pos": "名・动 3 自他",
+            "meaning": "满足"
+          },
+          "note": ""
+        },
+        {
+          "number": 282,
+          "word": "麻花",
+          "kana": "マーホア",
+          "pos": "名词",
+          "meaning": "麻花（中式油炸点心）",
+          "note": "该词仅见于原表的第二张练习表，读音栏留空；补充常用日语音译「マーホア」。",
+          "raw": {
+            "word": "麻花",
+            "kana": "",
+            "pos": "名",
+            "meaning": "麻花儿"
+          },
+          "table": 2
+        },
+        {
+          "number": 283,
+          "kana": "みそ",
+          "word": "味噌",
+          "pos": "名词",
+          "meaning": "酱，黄酱",
+          "raw": {
+            "word": "味噌",
+            "kana": "みそ",
+            "pos": "名",
+            "meaning": "酱，黄酱"
+          },
+          "note": ""
+        },
+        {
+          "number": 284,
+          "kana": "みそしる",
+          "word": "味噌汁",
+          "pos": "名词",
+          "meaning": "（日式）酱汤",
+          "raw": {
+            "word": "味噌汁",
+            "kana": "みそしる",
+            "pos": "名",
+            "meaning": "（日式）酱汤"
+          },
+          "note": ""
+        },
+        {
+          "number": 285,
+          "kana": "みらい",
+          "word": "未来",
+          "pos": "名词",
+          "meaning": "未来",
+          "raw": {
+            "word": "未来",
+            "kana": "みらい",
+            "pos": "名",
+            "meaning": "未来"
+          },
+          "note": ""
+        },
+        {
+          "number": 286,
+          "kana": "みりょく",
+          "word": "魅力",
+          "pos": "名词",
+          "meaning": "魅力，吸引力",
+          "raw": {
+            "word": "魅力",
+            "kana": "みりょく",
+            "pos": "名",
+            "meaning": "魅力，吸引力"
+          },
+          "note": ""
+        },
+        {
+          "number": 287,
+          "kana": "みりょくてき",
+          "word": "魅力的",
+          "pos": "二类形容词",
+          "meaning": "有魅力的",
+          "raw": {
+            "word": "魅力的",
+            "kana": "みりょくてき",
+            "pos": "形 2",
+            "meaning": "有魅力的"
+          },
+          "note": ""
+        },
+        {
+          "number": 288,
+          "kana": "めいわく",
+          "word": "迷惑",
+          "pos": "名词・サ变动词",
+          "meaning": "麻烦，打搅",
+          "raw": {
+            "word": "迷惑",
+            "kana": "めいわく",
+            "pos": "名・动 3",
+            "meaning": "麻烦，打搅"
+          },
+          "note": ""
+        },
+        {
+          "number": 289,
+          "kana": "めんせき",
+          "word": "面積",
+          "pos": "名词",
+          "meaning": "面积",
+          "raw": {
+            "word": "面積",
+            "kana": "めんせき",
+            "pos": "名",
+            "meaning": "面积"
+          },
+          "note": ""
+        },
+        {
+          "number": 290,
+          "kana": "もじ",
+          "word": "文字",
+          "pos": "名词",
+          "meaning": "文字",
+          "raw": {
+            "word": "文字",
+            "kana": "もじ",
+            "pos": "名",
+            "meaning": "文字"
+          },
+          "note": ""
+        },
+        {
+          "number": 291,
+          "kana": "もんだい",
+          "word": "問題",
+          "pos": "名词",
+          "meaning": "问题；试题",
+          "raw": {
+            "word": "問題",
+            "kana": "もんだい",
+            "pos": "名",
+            "meaning": "问题；试题"
+          },
+          "note": ""
+        },
+        {
+          "number": 292,
+          "kana": "やくひん",
+          "word": "薬品",
+          "pos": "名词",
+          "meaning": "药物",
+          "raw": {
+            "word": "薬品",
+            "kana": "やくひん",
+            "pos": "名",
+            "meaning": "药物"
+          },
+          "note": ""
+        },
+        {
+          "number": 293,
+          "kana": "やくわり",
+          "word": "役割",
+          "pos": "名词",
+          "meaning": "作用；任务；职务",
+          "raw": {
+            "word": "役割",
+            "kana": "やくわり",
+            "pos": "名",
+            "meaning": "作用；任务；职务"
+          },
+          "note": ""
+        },
+        {
+          "number": 294,
+          "kana": "ゆうびんぶつ",
+          "word": "郵便物",
+          "pos": "名词",
+          "meaning": "邮件",
+          "raw": {
+            "word": "郵便物",
+            "kana": "ゆうびんぶつ",
+            "pos": "名",
+            "meaning": "邮件"
+          },
+          "note": ""
+        },
+        {
+          "number": 295,
+          "kana": "ゆらい",
+          "word": "由来",
+          "pos": "名词",
+          "meaning": "由来，来历",
+          "raw": {
+            "word": "由来",
+            "kana": "ゆらい",
+            "pos": "名",
+            "meaning": "由来，来历"
+          },
+          "note": ""
+        },
+        {
+          "number": 296,
+          "kana": "ようい",
+          "word": "用意",
+          "pos": "名词・サ变动词",
+          "meaning": "准备",
+          "raw": {
+            "word": "用意",
+            "kana": "ようい",
+            "pos": "名・动 3",
+            "meaning": "准备"
+          },
+          "note": ""
+        },
+        {
+          "number": 297,
+          "kana": "ようじ",
+          "word": "用事",
+          "pos": "名词",
+          "meaning": "（计划做的）事情",
+          "raw": {
+            "word": "用事",
+            "kana": "ようじ",
+            "pos": "名",
+            "meaning": "（计划做的）事情"
+          },
+          "note": ""
+        },
+        {
+          "number": 298,
+          "kana": "ようしつ",
+          "word": "洋室",
+          "pos": "名词",
+          "meaning": "西式房间",
+          "raw": {
+            "word": "洋室",
+            "kana": "ようしつ",
+            "pos": "名",
+            "meaning": "西式房间"
+          },
+          "note": ""
+        },
+        {
+          "number": 299,
+          "kana": "ようす",
+          "word": "様子",
+          "pos": "名词",
+          "meaning": "情况，动向",
+          "raw": {
+            "word": "様子",
+            "kana": "ようす",
+            "pos": "名",
+            "meaning": "情况，动向"
+          },
+          "note": ""
+        },
+        {
+          "number": 300,
+          "kana": "ようちえん",
+          "word": "幼稚園",
+          "pos": "名词",
+          "meaning": "幼儿园",
+          "raw": {
+            "word": "幼稚園",
+            "kana": "ようちえん",
+            "pos": "名",
+            "meaning": "幼儿园"
+          },
+          "note": ""
+        },
+        {
+          "number": 301,
+          "kana": "よぼう",
+          "word": "予防",
+          "pos": "名词・サ变动词",
+          "meaning": "预防",
+          "raw": {
+            "word": "予防",
+            "kana": "よぼう",
+            "pos": "名・动 3",
+            "meaning": "预防"
+          },
+          "note": ""
+        },
+        {
+          "number": 302,
+          "kana": "よゆう",
+          "word": "余裕",
+          "pos": "名词",
+          "meaning": "富余；从容",
+          "raw": {
+            "word": "余裕",
+            "kana": "よゆう",
+            "pos": "名",
+            "meaning": "富余；从容"
+          },
+          "note": ""
+        },
+        {
+          "number": 303,
+          "kana": "らいきゃく",
+          "word": "来客",
+          "pos": "名词",
+          "meaning": "来客",
+          "raw": {
+            "word": "来客",
+            "kana": "らいきゃく",
+            "pos": "名",
+            "meaning": "来客"
+          },
+          "note": ""
+        },
+        {
+          "number": 304,
+          "kana": "らんぼう",
+          "word": "乱暴",
+          "pos": "名词・二类形容词",
+          "meaning": "粗鲁，蛮横",
+          "raw": {
+            "word": "乱暴",
+            "kana": "らんぼう",
+            "pos": "名・形 2",
+            "meaning": "粗鲁，蛮横"
+          },
+          "note": ""
+        },
+        {
+          "number": 305,
+          "kana": "りかい",
+          "word": "理解",
+          "pos": "名词・サ变动词",
+          "meaning": "理解",
+          "raw": {
+            "word": "理解",
+            "kana": "りかい",
+            "pos": "名・动 3",
+            "meaning": "理解"
+          },
+          "note": ""
+        },
+        {
+          "number": 306,
+          "kana": "りそう",
+          "word": "理想",
+          "pos": "名词",
+          "meaning": "理想",
+          "raw": {
+            "word": "理想",
+            "kana": "りそう",
+            "pos": "名",
+            "meaning": "理想"
+          },
+          "note": ""
+        },
+        {
+          "number": 307,
+          "kana": "りゅうがく",
+          "word": "留学",
+          "pos": "名词・サ变动词",
+          "meaning": "留学",
+          "raw": {
+            "word": "留学",
+            "kana": "りゅうがく",
+            "pos": "名・动 3",
+            "meaning": "留学"
+          },
+          "note": ""
+        },
+        {
+          "number": 308,
+          "kana": "りゅうがくせい",
+          "word": "留学生",
+          "pos": "名词",
+          "meaning": "留学生",
+          "raw": {
+            "word": "留学生",
+            "kana": "りゅうがくせい",
+            "pos": "名",
+            "meaning": "留学生"
+          },
+          "note": ""
+        },
+        {
+          "number": 309,
+          "kana": "りよう",
+          "word": "利用",
+          "pos": "名词・サ变动词",
+          "meaning": "利用",
+          "raw": {
+            "word": "利用",
+            "kana": "りよう",
+            "pos": "名・动 3",
+            "meaning": "利用"
+          },
+          "note": ""
+        },
+        {
+          "number": 310,
+          "kana": "ろうか",
+          "word": "廊下",
+          "pos": "名词",
+          "meaning": "走廊，楼道",
+          "raw": {
+            "word": "廊下",
+            "kana": "ろうか",
+            "pos": "名",
+            "meaning": "走廊，楼道"
+          },
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "collection": "docBeginner",
+      "number": 290,
+      "table": 2,
+      "reason": "原表仅有「接力赛跑；接力，传递」释义，单词与读音均缺失，不能仅凭中文确定原词，暂不猜填。"
+    }
+  ]
+}

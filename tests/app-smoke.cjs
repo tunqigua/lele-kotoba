@@ -210,3 +210,26 @@ handlers.keydown({key:'Enter',target:{matches(){return false;},closest(){return 
 assert.equal(options().length,4);assert.equal(spoken.length,keySpeech+1,'next question starts silently even with only one remaining word');
 ctx.window.KotobaQuiz.questionForWord=originalForWord;
 console.log('PASS: question-only unlimited grind; all learned scopes; full shuffled rounds; fifth-success removal; wrong/reset and lifetime label; no daily-plan consumption; navigation persistence; keyboard answers and correct-target speech.');
+
+// Red ru-ending first-class warnings appear beneath the word, without mislabeling second-class verbs.
+for(const [name,expected]of [['帰る',true],['入る',true],['走る',true],['食べる',false],['借りる',false],['着る',false]]){
+ const w=allWords.find(w=>w.word===name),s=E.fresh();s.settings.newGoal=1;E.rate(s,w.id,'good',clock-E.DAY);
+ winHandlers.storage({key:E.KEY,newValue:JSON.stringify(s)});nav('today');action('card');assert.equal(cardWord(),name);
+ const warning=/<div class="verb-warning">一类动词<\/div>/;assert.equal(warning.test(el('#main').innerHTML),expected,name+' card');
+ if(expected)assert.ok(el('#main').innerHTML.includes('</h2><div class="verb-warning">一类动词</div>'),'warning sits directly below the word');
+ action('reveal');assert.equal(warning.test(el('#main').innerHTML),expected,name+' revealed card');
+ action('detail',{id:w.id});assert.equal(warning.test(el('#detailContent').innerHTML),expected,name+' detail');el('#detailDialog').close();
+ action('quiz');assert.equal(options().length,4);assert.equal(warning.test(el('#main').innerHTML),expected,name+' reading question');
+ nav('grind');assert.equal(options().length,4);assert.equal(warning.test(el('#main').innerHTML),expected,name+' grind question');
+}
+assert.match(fs.readFileSync(__dirname+'/../dist/style.css','utf8'),/\.verb-warning\{color:#b43d39;/);
+const importedWord=allWords.find(w=>w.word==='いらっしゃる');action('detail',{id:importedWord.id});assert.match(el('#detailContent').innerHTML,/扩展词表二 第186页/);el('#detailDialog').close();
+const firstImport=allWords.find(w=>w.word==='味気ない');action('detail',{id:firstImport.id});assert.match(el('#detailContent').innerHTML,/扩展词表一 第225页/);el('#detailDialog').close();
+console.log('PASS: red ru-ending first-class warnings on cards, both question modes and details; second-class verbs remain unmarked; two imported indexes keep distinct source labels.');
+for(const [name,source]of [['擦る','初级补充词表 · 原表第93项'],['外出','中级补充词表 · 原表第22项']]){
+ const w=allWords.find(w=>w.word===name),s=E.fresh();s.settings.newGoal=1;E.rate(s,w.id,'good',clock-E.DAY);
+ winHandlers.storage({key:E.KEY,newValue:JSON.stringify(s)});nav('today');action('card');assert.match(el('#main').innerHTML,new RegExp(source));
+ action('reveal');assert.ok(!el('#main').innerHTML.includes('第null页'));assert.ok(!el('#main').innerHTML.includes('第undefined项'));
+ action('detail',{id:w.id});assert.ok(el('#detailContent').innerHTML.includes(source));el('#detailDialog').close();
+}
+console.log('PASS: Word vocabulary uses original entry numbers on cards and details without invented pages.');

@@ -2,8 +2,8 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const E=require('../dist/engine.js');
 const sandbox={window:{}};vm.runInNewContext(fs.readFileSync(__dirname+'/../dist/data.js','utf8'),sandbox);const {words,meta}=sandbox.window.KOTOBA_DATA,find=w=>words.find(x=>x.word===w),now=Date.parse('2026-10-20T08:00:00Z');
 test('dataset provenance, unique stable IDs, source pages and lesson constraints',()=>{
- assert.equal(words.length,1028);assert.equal(new Set(words.map(w=>w.id)).size,words.length);assert.equal(new Set(words.map(w=>w.word)).size,words.length);
- for(const w of words){assert.ok(w.meaning&&w.kana&&w.note&&w.reason);assert.match(w.priority,/^[ABC]$/);if(w.source==='book'){assert.ok(w.page>=189&&w.page<=209);if(w.lesson)assert.match(w.lesson,/^(?:[1-9]|1[0-5])(?:-[12])?$/);else assert.ok([198,207].includes(w.page));}else{assert.equal(w.lesson,null);assert.equal(w.page,null);}assert.ok(w.questions.every(q=>q>=1&&q<=75));}
+ assert.equal(words.length,2503);assert.equal(new Set(words.map(w=>w.id)).size,words.length);assert.equal(new Set(words.map(w=>w.word)).size,words.length);
+ for(const w of words){assert.ok(w.meaning&&w.kana&&w.note&&w.reason);assert.match(w.priority,/^[ABC]$/);if(w.source==='book'){assert.ok(meta.collections[w.collection].pages.includes(w.page));if(w.lesson)assert.match(w.lesson,/^(?:[1-9]|1[0-5])(?:-[12])?$/);else assert.ok([198,207].includes(w.page));for(const source of w.sources.filter(s=>s.collection!=='exam'))assert.ok(meta.collections[source.collection].pages.includes(source.page));}else{assert.equal(w.lesson,null);assert.equal(w.page,null);}assert.ok(w.questions.every(q=>q>=1&&q<=75));}
  for(const name of ['読む','持つ','両親','予定'])assert.equal(find(name).page,198);
  assert.equal(meta.examPoints.reduce((a,b)=>a+b.points,0),100);
 });

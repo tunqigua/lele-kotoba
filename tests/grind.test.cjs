@@ -72,3 +72,17 @@ test('grind wrong totals retain lifetime errors, schedule tomorrow and leave car
  const restored=E.validate(JSON.parse(JSON.stringify(s)),ids);assert.equal(restored.words.w0.readingWrong,5);
  restored.logs=[];assert.equal(E.validate(restored,ids).words.w0.readingWrong,5);
 });
+
+test('past mistakes come first inside every round, including a saved queue, while the recent-word gap still applies',()=>{
+ const s=fixture(12),random=seeded();s.words.w3.readingWrong=2;s.words.w8.lapses=1;s.words.w11.grindRequired=true;
+ s.grindSession={remaining:['w0','w1','w3','w2','w8','w4','w11','w5','w6','w7','w9','w10'],recent:[],lastId:null,round:1};
+ const first=[];for(let i=0;i<3;i++)first.push(E.nextGrindWord(words,s,random).id);
+ assert.deepEqual(first,['w3','w8','w11'],'a pre-update saved queue also prioritizes errors immediately');
+ const order=[...first];while(s.grindSession.remaining.length)order.push(E.nextGrindWord(words,s,random).id);
+ assert.equal(new Set(order).size,12,'error priority must not drop the other learned words');
+ const next=[];for(let i=0;i<3;i++)next.push(E.nextGrindWord(words,s,random).id);
+ assert.deepEqual(new Set(next),new Set(first));
+ const crowded=fixture(12);crowded.words.w3.readingWrong=1;
+ crowded.grindSession={remaining:['w0','w3','w1','w2','w4','w5','w6','w7','w8','w9','w10','w11'],recent:['w3'],lastId:'w3',round:1};
+ assert.notEqual(E.nextGrindWord(words,crowded,random).id,'w3','priority never forces an immediate retry');
+});
