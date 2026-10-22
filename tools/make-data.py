@@ -442,6 +442,8 @@ from import_indexes import import_indexes
 index_imports = import_indexes(words)
 from import_documents import import_documents
 document_imports = import_documents(words)
+from import_completion import import_completion
+completion_imports = import_completion(words)
 core=set('''行く 来る する 食べる 飲む 見る 聞く 話す 買う 帰る 寝る 働く ある いる 開ける 入る 出る 乗る 待つ 持つ 使う 作る 会う 書く 貸す 借りる 教える あげる くれる 送る 遅れる 起きる 終わる 決める 着る 手伝う なる 始まる 払う 降る 見せる 入れる できる 返す 要る 読む 始める 休む やる やめる
 いい・よい 新しい 古い 高い 安い 大きい 小さい 多い 少ない 近い 遠い 暑い 熱い 暖かい 温かい 寒い 涼しい 冷たい 忙しい 楽しい 面白い 難しい 易しい 優しい 早い・速い 広い 狭い 低い 欲しい
 静か にぎやか きれい 便利 不便 元気 暇 上手 下手 好き 嫌い 大変 大丈夫 必要
@@ -546,8 +548,17 @@ for spec in document_imports['collections']:
 meta['bookRange']+='；初级与中级Word补充词表'
 meta['scopeNote']+='另比对两份Word词表，仅补缺词；重复练习表不重复录入，Word来源按原表项号标注，不虚构教材页码。'
 meta['sources'].append({'title':'Word补充词表','description':'用户上传初级、中级两份Word词表；仅补已有词库缺项，保留原表项号，校正可确认的读音与错位。初级练习表第290项缺词形和读音，暂不猜填。'})
+meta.update(version='2026.10.23.1', completionImports=completion_imports,
+ bookRange='原词表189—198页；新增词表198—209页；扩展词表一225—237页；扩展词表二186—195页；初级与中级Word补充词表',
+ scopeNote='已对照用户上传的45张词表照片及两份Word词表补齐可辨认词项。原词表10页不再仅收精选；三页续表按实印193—195页标记。重复词合并来源，同形异读、同音异义分别保留。照片裁掉的课次留空；Word练习表第290项缺词形和读音，暂不猜填。此范围只代表已上传材料，不宣称涵盖整套四册教材。')
+meta['collections']['index4']['pages']=list(range(186,196))
+meta['sources'][0]['description']='45张用户词表照片均保留逐页录入记录；原词表10页569条索引记录重新逐行补齐，三页续表151条；同词合并出处。'
+for collection in ['original','additional','index3','index4']:
+ meta['counts'][collection]=sum(any(s['collection']==collection for s in w['sources']) for w in words)
 meta['sources'].extend([
  {'title':'小学館・大辞泉：外出','url':'https://kotobank.jp/word/外出-457545','description':'校正外出的读音为がいしゅつ。'},
+ {'title':'小学館・大辞泉：半月','url':'https://kotobank.jp/word/半月-606300','description':'半个月可以读はんつき，也可读はんげつ；训练不把另一正确读法列为错项。'},
+ {'title':'漢字ペディア：悪口','url':'https://www.kanjipedia.jp/kotoba/0000049000','description':'わるくち、わるぐち都是可接受读音，训练避免多解。'},
  {'title':'小学館・大辞泉：活躍','url':'https://kotobank.jp/word/活躍-464593','description':'校正活躍的读音为かつやく。'},
  {'title':'小学館・大辞泉：価値','url':'https://kotobank.jp/word/価値-45051','description':'校正価値的读音为かち。'},
  {'title':'小学館・大辞泉：団地','url':'https://kotobank.jp/word/団地-95279','description':'按だんち与住宅区释义补全原表漏字。'},

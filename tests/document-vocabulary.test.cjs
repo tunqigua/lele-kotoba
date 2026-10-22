@@ -17,13 +17,14 @@ test('Word sources only add missing vocabulary and account for every readable en
     if(record.status==='added'){
      added++;assert.equal(word.source,'document');assert.equal(word.collection,doc.collection);
      assert.equal(word.page,null);assert.equal(word.lesson,null);
-     assert.equal(word.sources.length,1);assert.equal(word.sources[0].number,row.number);assert.equal(word.sources[0].document,doc.document);
+     const source=word.sources.find(s=>s.document===doc.document&&s.number===row.number);
+     assert.ok(source,'the original document source remains when matching photos are attached');
     }else matched++;
    }
   }
  }
  assert.equal(added,267);assert.equal(matched,335);assert.equal(words.filter(w=>w.source==='document').length,added);
- const legacy=JSON.parse(fs.readFileSync(__dirname+'/legacy-words.json','utf8'));assert.equal(legacy.length,2236);
+ const legacy=JSON.parse(fs.readFileSync(__dirname+'/legacy-words.json','utf8'));assert.equal(legacy.length,2503);
  for(const old of legacy){const w=words.find(w=>w.id===old.id);assert.ok(w);assert.equal(w.word,old.word);assert.equal(w.kana,old.kana);}
 });
 
