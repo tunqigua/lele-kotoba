@@ -19,14 +19,22 @@ function validate(raw,ids){
  const next=fresh();
  const lastCardGrades=new Map();
  for(const l of raw.logs)if(l&&['again','hard','good'].includes(l.grade))lastCardGrades.set(l.id,l);
+ // Group logs by word once: the migration below reads each word's history several times.
+ const logsById=new Map();
+ for(const l of raw.logs){if(!l||typeof l.id!=='string')continue;const bucket=logsById.get(l.id);if(bucket)bucket.push(l);else logsById.set(l.id,[l]);}
+ // A record without learnedOn must not be treated as learned today, or every
+ // migrated word joins tomorrow's "yesterday" reading plan at once.
+ const savedAtDay=Number.isFinite(Date.parse(raw.savedAt))?today(Date.parse(raw.savedAt)):null;
+ const migratedDay=today(dayStart()-2*DAY);
  for(const [id,v]of Object.entries(raw.words)){
   if(!ids.has(id))continue;
   if(!v||!Number.isInteger(v.stage)||v.stage<0||v.stage>5||!Number.isFinite(v.due)||v.due<0||v.due>Date.now()+DAY*730||!Number.isFinite(v.seen)||v.seen<0||!Number.isFinite(v.lapses)||v.lapses<0)throw Error('备份中有无效的单词进度。');
-  const history=raw.logs.filter(l=>l&&l.id===id&&['quizRight','quizWrong'].includes(l.grade)&&validDay(l.day));
+  const mine=logsById.get(id)||[],firstDay=mine.reduce((min,l)=>validDay(l.day)&&(!min||l.day<min)?l.day:min,null);
+  const history=mine.filter(l=>['quizRight','quizWrong'].includes(l.grade)&&validDay(l.day));
   const daily=new Map();for(const l of history){const day=daily.get(l.day)||{wrong:false,right:false,last:null};day.wrong=day.wrong||l.grade==='quizWrong';day.right=day.right||l.grade==='quizRight';day.last=l.grade;daily.set(l.day,day);}
   let legacyStreak=0;for(const [,d]of [...daily].sort(([a],[b])=>a.localeCompare(b)))legacyStreak=d.wrong?0:d.right?Math.min(5,legacyStreak+1):legacyStreak;
   let legacyCardStreak=0,legacyCardMax=0;
-  for(const l of raw.logs)if(l&&l.id===id&&l.context!=='reading'&&['again','hard','good'].includes(l.grade)){legacyCardStreak=l.grade==='again'?legacyCardStreak+1:0;legacyCardMax=Math.max(legacyCardMax,legacyCardStreak);}
+  for(const l of mine)if(l.context!=='reading'&&['again','hard','good'].includes(l.grade)){legacyCardStreak=l.grade==='again'?legacyCardStreak+1:0;legacyCardMax=Math.max(legacyCardMax,legacyCardStreak);}
   const cardAgainStreak=Number.isInteger(v.cardAgainStreak)&&v.cardAgainStreak>=0?Math.min(v.cardAgainStreak,100000):legacyCardStreak;
   const cardAgainMax=Math.max(cardAgainStreak,legacyCardMax,Number.isInteger(v.cardAgainMax)&&v.cardAgainMax>=0?Math.min(v.cardAgainMax,100000):0);
   const dailyRule=v.readingRule==='daily-v1';
@@ -35,18 +43,18 @@ function validate(raw,ids){
   const readingDoneDay=dailyRule&&validDay(v.readingDoneDay)?v.readingDoneDay:lastReading?.grade==='quizRight'?lastReading.day:null;
   const readingFailedDay=dailyRule&&validDay(v.readingFailedDay)?v.readingFailedDay:lastFailed?.day||null;
   const lastCard=lastCardGrades.get(id),relearning=v.seen>0&&(typeof v.relearning==='boolean'?v.relearning:lastCard?.day===today()&&['again','hard'].includes(lastCard.grade));
-  const cardHistory=raw.logs.filter(l=>l&&l.id===id&&['again','hard','good','quizWrong','grindWrong'].includes(l.grade)&&validDay(l.day));
+  const cardHistory=mine.filter(l=>['again','hard','good','quizWrong','grindWrong'].includes(l.grade)&&validDay(l.day));
   const reviewedOn=[validDay(v.reviewedOn)?v.reviewedOn:'',...cardHistory.filter(l=>l.grade==='good').map(l=>l.day)].sort().at(-1)||null;
   const troubleDays=[...new Set([...(Array.isArray(v.troubleDays)?v.troubleDays.filter(validDay):[]),...cardHistory.filter(l=>l.grade!=='good').map(l=>today(Date.parse(l.day+'T00:00:00+08:00')+DAY))])].filter(d=>!reviewedOn||d>reviewedOn).sort();
   const reviewPending=!!v.reviewPending&&relearning;
   const due=v.due>0?Math.max(dayStart(v.due),relearning&&lastCard?.day===today()&&!reviewPending?reviewDue():0):0;
-  const readingWrong=Math.max(Number.isSafeInteger(v.readingWrong)&&v.readingWrong>=0?v.readingWrong:0,history.filter(l=>l.grade==='quizWrong').length+raw.logs.filter(l=>l&&l.id===id&&l.grade==='grindWrong').length);
+  const readingWrong=Math.max(Number.isSafeInteger(v.readingWrong)&&v.readingWrong>=0?v.readingWrong:0,history.filter(l=>l.grade==='quizWrong').length+mine.filter(l=>l.grade==='grindWrong').length);
   const grindStreak=Number.isInteger(v.grindStreak)&&v.grindStreak>=0&&v.grindStreak<=5?v.grindStreak:0;
   const readingStage=dailyRule&&readingStreak>=5&&Number.isInteger(v.readingStage)&&v.readingStage>=0&&v.readingStage<READING_INTERVALS.length?v.readingStage:0;
   const lastReadingDay=history.filter(l=>l.grade==='quizRight'&&validDay(l.day)).at(-1)?.day;
   const baseline=lastReadingDay?Date.parse(lastReadingDay+'T00:00:00+08:00'):Number.isFinite(Date.parse(raw.savedAt))?Date.parse(raw.savedAt):Date.now();
   const readingDue=dailyRule&&Number.isFinite(v.readingDue)&&v.readingDue>=0&&v.readingDue<=Date.now()+DAY*730?(v.readingDue?dayStart(v.readingDue):0):readingStreak>=5?reviewDue(baseline,READING_INTERVALS[0]):readingDoneDay?reviewDue(Date.parse(readingDoneDay+'T00:00:00+08:00')):0;
-  next.words[id]={grindRequired:!!v.grindRequired,grindStreak,cardAgainStreak,cardAgainMax,readingRetry:!!v.readingRetry&&readingDoneDay!==today(),readingRule:'daily-v1',readingDoneDay,readingFailedDay,readingDue,readingStage,readingWrong,troubleDays,reviewedOn,reviewPending,readingStreak,readingTotal:Number.isInteger(v.readingTotal)&&v.readingTotal>=0?v.readingTotal:history.filter(l=>l.grade==='quizRight').length,stage:v.stage,due,seen:Math.min(v.seen,100000),lapses:Math.min(v.lapses,100000),star:!!v.star,relearning,lastReviewDay:typeof v.lastReviewDay==='string'?v.lastReviewDay:null,learnedOn:typeof v.learnedOn==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v.learnedOn)?v.learnedOn:today()};
+  next.words[id]={grindRequired:!!v.grindRequired,grindStreak,cardAgainStreak,cardAgainMax,readingRetry:!!v.readingRetry&&readingDoneDay!==today(),readingRule:'daily-v1',readingDoneDay,readingFailedDay,readingDue,readingStage,readingWrong,troubleDays,reviewedOn,reviewPending,readingStreak,readingTotal:Number.isInteger(v.readingTotal)&&v.readingTotal>=0?v.readingTotal:history.filter(l=>l.grade==='quizRight').length,stage:v.stage,due,seen:Math.min(v.seen,100000),lapses:Math.min(v.lapses,100000),star:!!v.star,relearning,lastReviewDay:typeof v.lastReviewDay==='string'?v.lastReviewDay:null,learnedOn:validDay(v.learnedOn)&&v.learnedOn<=today()?v.learnedOn:firstDay||(savedAtDay&&savedAtDay<today()?savedAtDay:null)||migratedDay};
  }
  next.logs=raw.logs.slice(-20000).filter(l=>l&&ids.has(l.id)&&/^\d{4}-\d{2}-\d{2}$/.test(l.day)&&['again','hard','good','quizWrong','quizRight','grindRight','grindWrong'].includes(l.grade)).map(l=>({id:l.id,day:l.day,grade:l.grade,isNew:!!l.isNew,...(l.context==='reading'?{context:'reading'}:{}),...(['kana','kanji'].includes(l.quizType)?{quizType:l.quizType}:{})}));
  if(raw.readingPlan&&validDay(raw.readingPlan.day)&&Array.isArray(raw.readingPlan.ids)){
@@ -71,7 +79,9 @@ function rate(state,id,grade,now=Date.now(),context='card'){
  const stage=grade==='again'?0:grade==='hard'?Math.max(0,old.stage-1):(isNew?0:old.lastReviewDay===today(now)?old.stage:Math.min(5,old.stage+1));
  state.words[id]={...old,cardAgainStreak,cardAgainMax,stage,relearning:grade!=='good',reviewPending:grade!=='good'&&isDue(old,now,state),reviewedOn:grade==='good'?today(now):old.reviewedOn,lastReviewDay:today(now),seen:old.seen+1,lapses:old.lapses+(grade==='again'?1:0),due:reviewDue(now,grade==='good'?INTERVALS[stage]:1),learnedOn:isNew?today(now):old.learnedOn};
  if(grade!=='good'){state.words[id].grindStreak=0;state.words[id].grindRequired=true;}
- if(grade==='good')state.words[id].troubleDays=(old.troubleDays||[]).filter(d=>d>today(now));else markTrouble(state.words[id],now);
+ // A word marked "认识了" has completed this round, so a pending reading retry
+ // must not keep it in the due queue.
+ if(grade==='good'){state.words[id].troubleDays=(old.troubleDays||[]).filter(d=>d>today(now));state.words[id].readingRetry=false;}else markTrouble(state.words[id],now);
  state.logs.push({id,day:today(now),grade,isNew,...(context==='reading'?{context:'reading'}:{})});state.logs=state.logs.slice(-20000);return state.words[id];
 }
 function filter(words,settings){return words.filter(w=>(settings.priority==='all'||w.priority===settings.priority)&&(settings.lesson==='all'||(settings.lesson==='exam'?w.source==='exam':w.lesson&&w.lesson.split('-')[0]===settings.lesson)));}
