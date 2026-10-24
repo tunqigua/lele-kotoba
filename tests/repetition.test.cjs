@@ -68,11 +68,11 @@ test('unfinished words survive reload, backup and exhausted daily quotas',()=>{
  const state=E.fresh();state.settings.newGoal=1;state.settings.reviewGoal=1;
  E.rate(state,'a','hard');
  assert.equal(E.counts(state).newToday,1);
- assert.equal(E.counts(state).due,0,'today’s uncertainty is queued for tomorrow at midnight');
+ assert.equal(E.counts(state).due,1,'same-day errors are part of lifetime ranking');
  const restored=E.validate(JSON.parse(JSON.stringify(state)),ids);
  assert.equal(restored.words.a.relearning,true);
  assert.deepEqual(E.queue(words,restored,'mixed').map(w=>w.id),['a']);
- assert.deepEqual(E.queue(words,restored,'review').map(w=>w.id),[]);
+ assert.deepEqual(E.queue(words,restored,'review').map(w=>w.id),['a']);
  assert.deepEqual(E.queue(words,restored,'review',E.reviewDue()).map(w=>w.id),['a']);
  E.rate(restored,'a','good');
  assert.equal(restored.words.a.relearning,false);
@@ -98,5 +98,5 @@ test('daily review quotas never remove unfinished reviews',()=>{
  assert.equal(E.counts(state).reviewToday,0);
  assert.deepEqual(E.queue(words,state,'review').map(w=>w.id),['a']);
  state.settings.priority='B';
- assert.deepEqual(E.queue(words,state,'review'),[],'an explicitly selected scope still applies');
+ assert.deepEqual(E.queue(words,state,'review').map(w=>w.id),['a'],'lifetime review always draws from the whole vocabulary');
 });

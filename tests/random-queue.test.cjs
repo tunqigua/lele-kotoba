@@ -24,7 +24,7 @@ test('random new groups respect learned progress, remaining daily quota, and exp
  s.settings.lesson='7';assert.deepEqual(E.queue(words,s,'new',now,seeded()),[]);
 });
 
-test('review shuffles learned recent errors; unseen and same-day words never enter',()=>{
+test('review preserves the lifetime ranking of learned error words and excludes unseen words',()=>{
  const s=E.fresh();s.settings.reviewGoal=20;
  for(const w of words.slice(0,8))E.rate(s,w.id,'hard',now-E.DAY*2);
  E.rate(s,words[8].id,'good',now); // learned, but tomorrow’s review
@@ -32,7 +32,7 @@ test('review shuffles learned recent errors; unseen and same-day words never ent
  const a=E.queue(words,s,'review',now,seeded(2)),b=E.queue(words,s,'review',now,seeded(7));
  assert.equal(a.length,8);assert.ok(a.every(w=>s.words[w.id].seen>0&&E.isDue(s.words[w.id],now)));
  assert.deepEqual(new Set(a.map(w=>w.id)),new Set(words.slice(0,8).map(w=>w.id)));
- assert.notDeepEqual(a.map(w=>w.id),b.map(w=>w.id));
+ assert.deepEqual(a.map(w=>w.id),b.map(w=>w.id),'review ranking is not shuffled');
  assert.ok(!a.some(w=>w.id===words[8].id||w.id===words[9].id));
 });
 

@@ -13,7 +13,14 @@ const readingReady=(w,now=Date.now())=>!!(w?.seen&&w.readingDoneDay!==today(now)
 const readingAllowed=(w,now,state)=>!state?.readingPlan||state.readingPlan.day!==today(now)||state.readingPlan.ids.some(id=>state.words[id]===w);
 const isDue=(w,now=Date.now(),state=null)=>!!(w?.seen&&(w.reviewPending||w.due<=now||(readingAllowed(w,now,state)&&(w.readingRetry||readingCheckDue(w,now)))||(w.troubleDays||[]).some(d=>d<=today(now))));
 function markTrouble(w,now){w.troubleDays=[...new Set([...(w.troubleDays||[]),today(reviewDue(now))])].sort();}
-const fresh=()=>({schema:1,words:{},logs:[],studyTime:{},readingPlan:null,grindSession:null,settings:{newGoal:20,reviewGoal:50,priority:'all',lesson:'all'},savedAt:null});
+const fresh=()=>({schema:1,words:{},logs:[],studyTime:{},reviewPlan:null,readingPlan:null,grindSession:null,settings:{newGoal:20,reviewGoal:50,priority:'all',lesson:'all'},savedAt:null});
+function reviewErrorCount(w={},logs=[]){
+ let again=0,hard=0,wrong=0;
+ for(const l of logs){if(l.context==='reading')continue;if(l.grade==='again')again++;else if(l.grade==='hard')hard++;else if(['quizWrong','grindWrong'].includes(l.grade))wrong++;}
+ const stored=Number.isSafeInteger(w.reviewWrong)&&w.reviewWrong>=0?w.reviewWrong:0;
+ // Lapses already includes reading/grind errors; never add those totals twice.
+ return Math.max(stored,Math.max(w.lapses||0,(w.readingWrong||0)+again,wrong+again)+hard);
+}
 function validate(raw,ids){
  if(!raw||raw.schema!==1||typeof raw.words!=='object'||Array.isArray(raw.words)||!Array.isArray(raw.logs))throw Error('备份格式不匹配，请选择「拾词」导出的 JSON 文件。');
  const next=fresh();
@@ -54,9 +61,12 @@ function validate(raw,ids){
   const lastReadingDay=history.filter(l=>l.grade==='quizRight'&&validDay(l.day)).at(-1)?.day;
   const baseline=lastReadingDay?Date.parse(lastReadingDay+'T00:00:00+08:00'):Number.isFinite(Date.parse(raw.savedAt))?Date.parse(raw.savedAt):Date.now();
   const readingDue=dailyRule&&Number.isFinite(v.readingDue)&&v.readingDue>=0&&v.readingDue<=Date.now()+DAY*730?(v.readingDue?dayStart(v.readingDue):0):readingStreak>=5?reviewDue(baseline,READING_INTERVALS[0]):readingDoneDay?reviewDue(Date.parse(readingDoneDay+'T00:00:00+08:00')):0;
-  next.words[id]={grindRequired:!!v.grindRequired,grindStreak,cardAgainStreak,cardAgainMax,readingRetry:!!v.readingRetry&&readingDoneDay!==today(),readingRule:'daily-v1',readingDoneDay,readingFailedDay,readingDue,readingStage,readingWrong,troubleDays,reviewedOn,reviewPending,readingStreak,readingTotal:Number.isInteger(v.readingTotal)&&v.readingTotal>=0?v.readingTotal:history.filter(l=>l.grade==='quizRight').length,stage:v.stage,due,seen:Math.min(v.seen,100000),lapses:Math.min(v.lapses,100000),star:!!v.star,relearning,lastReviewDay:typeof v.lastReviewDay==='string'?v.lastReviewDay:null,learnedOn:validDay(v.learnedOn)&&v.learnedOn<=today()?v.learnedOn:firstDay||(savedAtDay&&savedAtDay<today()?savedAtDay:null)||migratedDay};
+  next.words[id]={reviewWrong:reviewErrorCount({...v,readingWrong},mine),grindRequired:!!v.grindRequired,grindStreak,cardAgainStreak,cardAgainMax,readingRetry:!!v.readingRetry&&readingDoneDay!==today(),readingRule:'daily-v1',readingDoneDay,readingFailedDay,readingDue,readingStage,readingWrong,troubleDays,reviewedOn,reviewPending,readingStreak,readingTotal:Number.isInteger(v.readingTotal)&&v.readingTotal>=0?v.readingTotal:history.filter(l=>l.grade==='quizRight').length,stage:v.stage,due,seen:Math.min(v.seen,100000),lapses:Math.min(v.lapses,100000),star:!!v.star,relearning,lastReviewDay:typeof v.lastReviewDay==='string'?v.lastReviewDay:null,learnedOn:validDay(v.learnedOn)&&v.learnedOn<=today()?v.learnedOn:firstDay||(savedAtDay&&savedAtDay<today()?savedAtDay:null)||migratedDay};
  }
  next.logs=raw.logs.slice(-20000).filter(l=>l&&ids.has(l.id)&&/^\d{4}-\d{2}-\d{2}$/.test(l.day)&&['again','hard','good','quizWrong','quizRight','grindRight','grindWrong'].includes(l.grade)).map(l=>({id:l.id,day:l.day,grade:l.grade,isNew:!!l.isNew,...(l.context==='reading'?{context:'reading'}:{}),...(['kana','kanji'].includes(l.quizType)?{quizType:l.quizType}:{})}));
+ if(raw.reviewPlan&&raw.reviewPlan.rule==='cumulative-v1'&&validDay(raw.reviewPlan.day)&&Number.isInteger(raw.reviewPlan.goal)&&raw.reviewPlan.goal>=1&&raw.reviewPlan.goal<=200&&Array.isArray(raw.reviewPlan.ids)){
+  next.reviewPlan={day:raw.reviewPlan.day,goal:raw.reviewPlan.goal,rule:'cumulative-v1',ids:[...new Set(raw.reviewPlan.ids)].filter(id=>ids.has(id)&&next.words[id]?.seen>0).slice(0,raw.reviewPlan.goal)};
+ }
  if(raw.readingPlan&&validDay(raw.readingPlan.day)&&Array.isArray(raw.readingPlan.ids)){
   next.readingPlan={day:raw.readingPlan.day,ids:[...new Set(raw.readingPlan.ids)].filter(id=>ids.has(id)&&next.words[id]?.seen>0),...(raw.readingPlan.rule===READING_PLAN_RULE?{rule:READING_PLAN_RULE}:{})};
  }
@@ -75,18 +85,17 @@ function recordStudyTime(state,start,end){
  while(start<end){const day=today(start),stop=Math.min(end,reviewDue(start));state.studyTime[day]=Math.min(DAY,(state.studyTime[day]||0)+stop-start);start=stop;}
  return true;
 }
-function recentReviewIds(state,now=Date.now()){
- const day=today(now),from=today(dayStart(now)-3*DAY),errors=new Map();
- for(const l of state.logs){
-  // Review quizzes also write a card grade; count the actual answer only once.
-  if(l.day<from||l.day>=day||l.context==='reading'||!['again','hard','quizWrong','grindWrong'].includes(l.grade)||!state.words[l.id]?.seen)continue;
-  const score=errors.get(l.id)||{count:0,last:''};score.count++;if(l.day>score.last)score.last=l.day;errors.set(l.id,score);
- }
- return [...errors].sort(([a,x],[b,y])=>y.count-x.count||y.last.localeCompare(x.last)||a.localeCompare(b)).slice(0,state.settings.reviewGoal).map(([id])=>id);
+function reviewIds(state,now=Date.now(),fix=false){
+ const day=today(now),goal=state.settings.reviewGoal;
+ if(state.reviewPlan?.day===day&&state.reviewPlan.goal===goal&&state.reviewPlan.rule==='cumulative-v1'&&state.reviewPlan.ids.length)return state.reviewPlan.ids;
+ const logsById=new Map();for(const l of state.logs){const bucket=logsById.get(l.id)||[];bucket.push(l);logsById.set(l.id,bucket);}
+ const ids=Object.entries(state.words).filter(([,w])=>w.seen>0).map(([id,w])=>[id,reviewErrorCount(w,logsById.get(id)||[])]).filter(([,count])=>count>0).sort(([a,x],[b,y])=>y-x||a.localeCompare(b)).slice(0,goal).map(([id])=>id);
+ if(fix&&(!state.reviewPlan||state.reviewPlan.day!==day||state.reviewPlan.goal!==goal||state.reviewPlan.ids.join()!==ids.join()))state.reviewPlan={day,goal,rule:'cumulative-v1',ids};
+ return ids;
 }
 function counts(state,now=Date.now()){
  const logs=state.logs.filter(l=>l.day===today(now));
- const reviews=recentReviewIds(state,now),done=reviews.filter(id=>state.words[id].reviewedOn===today(now)&&!state.words[id].reviewPending).length;
+ const reviews=reviewIds(state,now),done=reviews.filter(id=>state.words[id].reviewedOn===today(now)&&!state.words[id].reviewPending).length;
  return {learned:Object.values(state.words).filter(w=>w.seen>0).length,mastered:Object.values(state.words).filter(w=>w.seen>0&&w.stage>=3).length,due:reviews.length-done,newToday:new Set(logs.filter(l=>l.isNew).map(l=>l.id)).size,reviewToday:done,answers:logs.length};
 }
 function rate(state,id,grade,now=Date.now(),context='card'){
@@ -94,7 +103,7 @@ function rate(state,id,grade,now=Date.now(),context='card'){
  const old=state.words[id]||{stage:0,due:0,seen:0,lapses:0,star:false,learnedOn:today(now)};
  const isNew=old.seen===0,cardAgainStreak=context==='reading'?(old.cardAgainStreak||0):grade==='again'?Math.min(100000,(old.cardAgainStreak||0)+1):0,cardAgainMax=Math.max(old.cardAgainMax||0,cardAgainStreak);
  const stage=grade==='again'?0:grade==='hard'?Math.max(0,old.stage-1):(isNew?0:old.lastReviewDay===today(now)?old.stage:Math.min(5,old.stage+1));
- state.words[id]={...old,cardAgainStreak,cardAgainMax,stage,relearning:grade!=='good',reviewPending:grade!=='good'&&isDue(old,now,state),reviewedOn:grade==='good'?today(now):old.reviewedOn,lastReviewDay:today(now),seen:old.seen+1,lapses:old.lapses+(grade==='again'?1:0),due:reviewDue(now,grade==='good'?INTERVALS[stage]:1),learnedOn:isNew?today(now):old.learnedOn};
+ state.words[id]={...old,reviewWrong:reviewErrorCount(old)+(grade!=='good'&&context!=='reading'?1:0),cardAgainStreak,cardAgainMax,stage,relearning:grade!=='good',reviewPending:grade!=='good'&&isDue(old,now,state),reviewedOn:grade==='good'?today(now):old.reviewedOn,lastReviewDay:today(now),seen:old.seen+1,lapses:old.lapses+(grade==='again'?1:0),due:reviewDue(now,grade==='good'?INTERVALS[stage]:1),learnedOn:isNew?today(now):old.learnedOn};
  if(grade!=='good'){state.words[id].grindStreak=0;state.words[id].grindRequired=true;}
  // A word marked "认识了" has completed this round, so a pending reading retry
  // must not keep it in the due queue.
@@ -104,8 +113,8 @@ function rate(state,id,grade,now=Date.now(),context='card'){
 function filter(words,settings){return words.filter(w=>(settings.priority==='all'||w.priority===settings.priority)&&(settings.lesson==='all'||(settings.lesson==='exam'?w.source==='exam':w.lesson&&w.lesson.split('-')[0]===settings.lesson)));}
 function queue(words,state,mode='mixed',now=Date.now(),random=Math.random){
  const selected=filter(words,state.settings),c=counts(state,now);
- const reviews=new Set(recentReviewIds(state,now));
- const due=shuffle(selected.filter(w=>reviews.has(w.id)&&(state.words[w.id].reviewedOn!==today(now)||state.words[w.id].reviewPending)),random);
+ const ranked=reviewIds(state,now,mode==='review'),byId=new Map(words.map(w=>[w.id,w]));
+ const due=ranked.filter(id=>byId.has(id)&&(state.words[id].reviewedOn!==today(now)||state.words[id].reviewPending)).map(id=>byId.get(id));
  if(mode==='review')return due;
  const pending=shuffle(selected.filter(w=>state.words[w.id]?.seen>0&&(state.words[w.id].relearning||(state.words[w.id].readingRetry&&readingPlanned(state,w.id,now)))),random);
  // Draw from the entire eligible pool before applying the daily limit.
@@ -158,6 +167,7 @@ function dailyReadingPool(words,state,now=Date.now()){
 }
 function recordReading(state,id,correct,type='kana',now=Date.now()){
  const w=state.words[id];if(!readingReady(w,now)||!readingPlanned(state,id,now))return false;
+ w.reviewWrong=reviewErrorCount(w);
  const day=today(now),wasStable=w.readingStreak>=5;
  w.readingRule='daily-v1';
  w.readingTotal=(w.readingTotal||0)+(correct?1:0);
@@ -169,7 +179,7 @@ function recordReading(state,id,correct,type='kana',now=Date.now()){
   else{w.readingStage=0;w.readingDue=reviewDue(now);}
  }else{
   w.readingFailedDay=day;w.readingStreak=0;w.readingStage=0;w.readingDue=0;w.grindStreak=0;w.grindRequired=true;
-  w.lapses++;w.readingWrong=(w.readingWrong||0)+1;markTrouble(w,now);
+  w.reviewWrong++;w.lapses++;w.readingWrong=(w.readingWrong||0)+1;markTrouble(w,now);
  }
  state.logs.push({id,day:today(now),grade:correct?'quizRight':'quizWrong',isNew:false,quizType:type});state.logs=state.logs.slice(-20000);return true;
 }
@@ -192,11 +202,12 @@ function nextGrindWord(words,state,random=Math.random){
 }
 function recordGrind(state,id,correct,type='kana',now=Date.now()){
  const w=state.words[id];if(!grindReady(w))return false;
+ w.reviewWrong=reviewErrorCount(w);
  w.grindStreak=correct?Math.min(5,(w.grindStreak||0)+1):0;
  if(correct){w.readingTotal=(w.readingTotal||0)+1;if(w.grindStreak>=5)w.grindRequired=false;}
- else{w.grindRequired=true;w.readingRule='daily-v1';w.readingStreak=0;w.readingStage=0;w.readingDue=0;w.readingFailedDay=today(now);w.readingWrong=(w.readingWrong||0)+1;w.lapses++;markTrouble(w,now);}
+ else{w.grindRequired=true;w.readingRule='daily-v1';w.readingStreak=0;w.readingStage=0;w.readingDue=0;w.readingFailedDay=today(now);w.readingWrong=(w.readingWrong||0)+1;w.reviewWrong++;w.lapses++;markTrouble(w,now);}
  state.logs.push({id,day:today(now),grade:correct?'grindRight':'grindWrong',isNew:false,quizType:type});state.logs=state.logs.slice(-20000);return true;
 }
-const api={KEY,LEGACY_KEY,EARLIEST_KEY,LEGACY_KEYS,DAY,INTERVALS,READING_INTERVALS,shuffle,today,dayStart,reviewDue,isDue,recordStudyTime,recentReviewIds,readingReady,readingCheckDue,dailyReadingPlan,dailyReadingPool,dailyReadingStatus,readingPlanned,extremePool,grindPool,nextGrindWord,recordGrind,fresh,validate,counts,rate,filter,queue,advanceSession,readingPool,recordReading};
+const api={KEY,LEGACY_KEY,EARLIEST_KEY,LEGACY_KEYS,DAY,INTERVALS,READING_INTERVALS,shuffle,today,dayStart,reviewDue,isDue,recordStudyTime,reviewErrorCount,reviewIds,readingReady,readingCheckDue,dailyReadingPlan,dailyReadingPool,dailyReadingStatus,readingPlanned,extremePool,grindPool,nextGrindWord,recordGrind,fresh,validate,counts,rate,filter,queue,advanceSession,readingPool,recordReading};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.KotobaEngine=api;
 })(typeof window!=='undefined'?window:globalThis);

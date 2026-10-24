@@ -279,3 +279,23 @@ redDays.studyTime['2026-10-24']=300000;
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(redDays)});nav('stats');
 assert.doesNotMatch(dayClass('2026-10-24'),/is-short-study/,'exactly five minutes clears red after progress updates');
 console.log('PASS: calendar red below five minutes, normal at five minutes, unrecorded dates and future-date exclusion.');
+// The actual settings control expands lifetime top 50 to top 100 across all scopes.
+const lifetime=E.fresh(),rankedWords=allWords.slice(0,125);
+lifetime.settings.priority='C';lifetime.settings.lesson='exam';
+for(let i=0;i<rankedWords.length;i++){
+ const w=rankedWords[i];E.rate(lifetime,w.id,'good',clock-40*E.DAY);
+ Object.assign(lifetime.words[w.id],{reviewWrong:i+1,readingStreak:5,readingRule:'daily-v1',readingDue:E.reviewDue(clock,7)});
+}
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(lifetime)});nav('review');
+assert.match(el('#main').innerHTML,/本组 0 \/ 50/);
+assert.equal(cardWord(),ctx.window.KotobaQuiz.written(rankedWords[124]));
+assert.match(el('#main').innerHTML,/累计错 125 次/);
+action('settings');el('#newGoal').value='20';el('#reviewGoal').value='100';el('#saveSettings').onclick();
+assert.equal(readState().reviewPlan.ids.length,100);assert.match(el('#main').innerHTML,/本组 0 \/ 100/);
+assert.equal(cardWord(),ctx.window.KotobaQuiz.written(rankedWords[124]));
+action('reveal');action('rate',{grade:'good'});
+assert.equal(readState().words[rankedWords[124].id].reviewWrong,125);
+action('settings');el('#reviewGoal').value='50';el('#saveSettings').onclick();
+assert.match(el('#main').innerHTML,/本组 0 \/ 49/,'returning to 50 preserves today’s completed word');
+assert.equal(cardWord(),ctx.window.KotobaQuiz.written(rankedWords[123]));
+console.log('PASS: actual 50/100 settings select lifetime top N, ignore new-word filters, display totals and preserve completed work.');

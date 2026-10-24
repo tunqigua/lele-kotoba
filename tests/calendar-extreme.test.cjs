@@ -22,7 +22,7 @@ test('yesterday’s reading errors and uncertain cards remain scheduled after sa
  E.recordReading(s,'a',false,'kana',evening);E.recordReading(s,'a',true,'kanji',evening+1);
  E.rate(s,'b','hard',evening);E.rate(s,'b','good',evening+1);
  E.rate(s,'c','again',evening);E.rate(s,'c','good',evening+1);
- assert.equal(E.counts(s,midnight-1).due,0);
+ assert.equal(E.counts(s,midnight-1).due,1,'lifetime ranking includes today’s reading error');
  assert.deepEqual(E.queue(words,s,'review',midnight).map(w=>w.id).sort(),['a','b','c']);
  const restored=copy(s);assert.deepEqual(E.queue(words,restored,'review',midnight).map(w=>w.id).sort(),['a','b','c']);
  E.rate(restored,'a','good',midnight);assert.equal(E.isDue(restored.words.a,midnight),true,'daily reading is still due after a card review');
@@ -31,9 +31,9 @@ test('yesterday’s reading errors and uncertain cards remain scheduled after sa
  assert.equal(E.isDue(restored.words.a,midnight+E.DAY),true,'a new error today must survive a successful review today');
 });
 
-test('unfinished reviews survive reload and quotas; new same-day uncertainty waits for midnight',()=>{
+test('unfinished reviews survive reload and quotas, including same-day errors',()=>{
  const s=E.fresh();s.settings.reviewGoal=1;E.rate(s,'a','hard',evening);
- assert.deepEqual(E.queue(words,s,'review',evening),[]);
+ assert.deepEqual(E.queue(words,s,'review',evening).map(w=>w.id),['a']);
  assert.deepEqual(E.queue(words,s,'mixed',evening).slice(0,1).map(w=>w.id),['a']);
  E.rate(s,'a','hard',midnight);assert.equal(s.words.a.reviewPending,true);
  const restored=copy(s);assert.deepEqual(E.queue(words,restored,'review',midnight).map(w=>w.id),['a']);
