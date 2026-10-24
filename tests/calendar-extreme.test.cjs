@@ -4,10 +4,10 @@ const at=s=>Date.parse(s+'+08:00'),evening=at('2026-10-20T21:48:00'),midnight=at
 const words=['a','b','c','d'].map(id=>({id,priority:'A',source:'book',lesson:'7-1'})),ids=new Set(words.map(w=>w.id));
 const copy=s=>E.validate(JSON.parse(JSON.stringify(s)),ids);
 
-test('legacy schedules remain intact while error reviews unlock on Beijing midnight',()=>{
+test('new words receive their first spaced review at Beijing midnight',()=>{
  for(const time of ['2026-10-20T00:00:00','2026-10-20T21:48:00','2026-10-20T23:59:59']){
   const s=E.fresh();E.rate(s,'a','good',at(time));assert.equal(s.words.a.due,midnight);
-  assert.equal(E.counts(s,midnight-1).due,0);assert.equal(E.counts(s,midnight).due,0);
+  assert.equal(E.counts(s,midnight-1).due,0);assert.equal(E.counts(s,midnight).due,1);
   E.rate(s,'a','hard',at(time));assert.equal(E.counts(s,midnight).due,1);
  }
  const s=E.fresh();E.rate(s,'a','good',evening);E.rate(s,'a','good',midnight);
@@ -33,7 +33,7 @@ test('yesterday’s reading errors and uncertain cards remain scheduled after sa
 
 test('unfinished reviews survive reload and quotas, including same-day errors',()=>{
  const s=E.fresh();s.settings.reviewGoal=1;E.rate(s,'a','hard',evening);
- assert.deepEqual(E.queue(words,s,'review',evening).map(w=>w.id),['a']);
+ assert.deepEqual(E.queue(words,s,'review',evening).map(w=>w.id),[],'today’s new word stays in its learning session until tomorrow');
  assert.deepEqual(E.queue(words,s,'mixed',evening).slice(0,1).map(w=>w.id),['a']);
  E.rate(s,'a','hard',midnight);assert.equal(s.words.a.reviewPending,true);
  const restored=copy(s);assert.deepEqual(E.queue(words,restored,'review',midnight).map(w=>w.id),['a']);

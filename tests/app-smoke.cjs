@@ -16,7 +16,7 @@ function options(){return [...el('#main').innerHTML.matchAll(/data-answer="([^"]
 const readState=()=>JSON.parse(storage.get(ctx.window.KotobaEngine.KEY));
 const first=ctx.window.KOTOBA_DATA.words[0];assert.equal(first.word,'行く');
 action('quiz');assert.match(el('#main').innerHTML,/先学词，再训练/);assert.equal(options().length,0);
-assert.equal(spoken.length,0,'startup and unopened questions must be silent');action('card');assert.ok(!el('#main').innerHTML.includes('常用搭配与用法'),'usage stays hidden until reveal');action('reveal');assert.equal(spoken.length,1);assert.match(el('#main').innerHTML,/常用搭配与用法/);assert.match(el('#main').innerHTML,/がっこうにいく/);assert.match(el('#main').innerHTML,/去学校/);assert.match(el('#main').innerHTML,/联合记忆/);action('rate',{grade:'good'});assert.equal(readState().words[first.id].seen,1);
+assert.equal(spoken.length,0,'startup and unopened questions must be silent');action('card');assert.ok(!el('#main').innerHTML.includes('常用搭配与用法'),'usage stays hidden until reveal');action('reveal');assert.equal(spoken.length,1);assert.match(el('#main').innerHTML,/常用搭配与用法/);assert.match(el('#main').innerHTML,/计划：明天/,'first recognition gets a next-day check');assert.match(el('#main').innerHTML,/がっこうにいく/);assert.match(el('#main').innerHTML,/去学校/);assert.match(el('#main').innerHTML,/联合记忆/);action('rate',{grade:'good'});assert.equal(readState().words[first.id].seen,1);
 action('quiz');assert.equal(options().length,0,'today’s new cards wait until tomorrow for reading');clock+=86400000;winHandlers.focus();action('quiz');assert.equal(spoken.length,1,'a new unanswered reading question must be silent');
 function answer(correct=true){const o=options();assert.equal(o.length,4);assert.equal(new Set(o).size,4);const a=o.find(v=>v==='いく'||v==='行く');assert.ok(a);const before=spoken.length;action('quizAnswer',{answer:correct?a:o.find(v=>v!==a)});assert.equal(spoken.length,before+1,'both right and wrong choices trigger exactly one pronunciation');assert.equal(spoken.at(-1).text,first.kana,'always pronounce the target, never the wrong option');assert.equal(spoken.at(-1).lang,'ja-JP');action('quizAnswer',{answer:a});assert.equal(spoken.length,before+1,'duplicate answer clicks must not repeat speech');}
 for(let i=0;i<4;i++){answer();action('nextQuiz');assert.equal(options().length,0);if(i<3){clock+=86400000;winHandlers.focus();}}assert.equal(readState().words[first.id].readingStreak,4);
@@ -63,12 +63,12 @@ clock=Date.parse('2026-10-20T21:48:00+08:00');
 ctx.Math=Object.create(Math);ctx.Math.random=()=>.1;winHandlers.focus();
 const daily=E.fresh();for(const w of known){E.rate(daily,w.id,'hard',clock);E.rate(daily,w.id,'good',clock);}
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(daily)});nav('review');
-assert.equal(options().length,0);assert.match(el('#main').innerHTML,/今日错词复习已完成/);
+assert.equal(options().length,0);assert.match(el('#main').innerHTML,/今日复习已完成/);
 clock=Date.parse('2026-10-21T00:00:00+08:00');winHandlers.focus();
 assert.equal(el('#dueNav').textContent,3);assert.equal(options().length,4);
 assert.ok(!el('#main').innerHTML.includes('data-action="card"'),'review must not have separate card/reading tabs');
 const modes=new Set();let steps=0,wrongOnce=false;
-while(!el('#main').innerHTML.includes('今日错词复习已完成')&&steps++<15){
+while(!el('#main').innerHTML.includes('今日复习已完成')&&steps++<15){
  const o=options();
  if(o.length){
   modes.add('quiz');const prompt=el('#main').innerHTML.match(/<h2 lang="ja" class="[^"]*">([^<]+)<\/h2>/)?.[1];
@@ -82,7 +82,7 @@ while(!el('#main').innerHTML.includes('今日错词复习已完成')&&steps++<15
  }
 }
 assert.ok(steps<15);assert.deepEqual([...modes].sort(),['card','quiz']);
-assert.equal(E.counts(readState(),clock).due,0);assert.equal(E.counts(readState(),clock+E.DAY).due,3,'the previous three days of errors are selected again tomorrow');
+assert.equal(E.counts(readState(),clock).due,0);assert.equal(E.counts(readState(),clock+E.DAY).due,3,'yesterday failure returns first and remaining short-interval error words can supplement the quota');
 // Stable readings get word cards until their low-frequency check becomes due.
 const graduated=E.fresh();E.rate(graduated,first.id,'hard',clock-E.DAY);E.rate(graduated,first.id,'good',clock-E.DAY);graduated.words[first.id].readingRule='daily-v1';graduated.words[first.id].readingStreak=5;graduated.words[first.id].readingDue=E.reviewDue(clock,7);
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(graduated)});nav('review');ctx.Math.random=()=>.1;
@@ -279,12 +279,12 @@ redDays.studyTime['2026-10-24']=300000;
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(redDays)});nav('stats');
 assert.doesNotMatch(dayClass('2026-10-24'),/is-short-study/,'exactly five minutes clears red after progress updates');
 console.log('PASS: calendar red below five minutes, normal at five minutes, unrecorded dates and future-date exclusion.');
-// The actual settings control expands lifetime top 50 to top 100 across all scopes.
+// The actual settings control expands weak-error supplements from 50 to 100 across all scopes.
 const lifetime=E.fresh(),rankedWords=allWords.slice(0,125);
 lifetime.settings.priority='C';lifetime.settings.lesson='exam';
 for(let i=0;i<rankedWords.length;i++){
  const w=rankedWords[i];E.rate(lifetime,w.id,'good',clock-40*E.DAY);
- Object.assign(lifetime.words[w.id],{reviewWrong:i+1,readingStreak:5,readingRule:'daily-v1',readingDue:E.reviewDue(clock,7)});
+ Object.assign(lifetime.words[w.id],{reviewWrong:i+1,stage:0,due:E.reviewDue(clock,2),readingStreak:0,readingRule:'daily-v1',readingDue:E.reviewDue(clock,7)});
 }
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(lifetime)});nav('review');
 assert.match(el('#main').innerHTML,/本组 0 \/ 50/);
@@ -298,4 +298,16 @@ assert.equal(readState().words[rankedWords[124].id].reviewWrong,125);
 action('settings');el('#reviewGoal').value='50';el('#saveSettings').onclick();
 assert.match(el('#main').innerHTML,/本组 0 \/ 49/,'returning to 50 preserves today’s completed word');
 assert.equal(cardWord(),ctx.window.KotobaQuiz.written(rankedWords[123]));
-console.log('PASS: actual 50/100 settings select lifetime top N, ignore new-word filters, display totals and preserve completed work.');
+console.log('PASS: actual 50/100 settings select eligible high-error supplements, ignore new-word filters, display totals and preserve completed work.');
+
+// Yesterday's full new-word group comes before old high-error supplements in the real review UI.
+const balanced=E.fresh(),yesterdayNew=allWords.slice(0,25),historical=allWords.slice(25,125);
+for(const w of yesterdayNew){E.rate(balanced,w.id,'good',clock-E.DAY);balanced.words[w.id].readingStreak=5;balanced.words[w.id].readingDue=E.reviewDue(clock,7);}
+for(let i=0;i<historical.length;i++){const w=historical[i];E.rate(balanced,w.id,'good',clock-30*E.DAY);Object.assign(balanced.words[w.id],{reviewWrong:1000+i,stage:1,due:E.reviewDue(clock,2),readingStreak:0,readingDue:E.reviewDue(clock,7)});}
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(balanced)});nav('review');
+assert.equal(readState().reviewPlan.rule,'spaced-v1');
+assert.deepEqual(new Set(readState().reviewPlan.ids.slice(0,25)),new Set(yesterdayNew.map(w=>w.id)));
+assert.match(el('#main').innerHTML,/昨日新词/);assert.match(el('#main').innerHTML,/本组 0 \/ 50/);
+action('reveal');assert.match(el('#main').innerHTML,/计划：3天后/,'a successful next-day retrieval previews the next longer interval');
+assert.ok(!el('#main').innerHTML.includes('按累计错误排名复习'));
+console.log('PASS: first-known next-day date, yesterday’s 25 new words before historical errors, and a due success previews a three-day interval.');
