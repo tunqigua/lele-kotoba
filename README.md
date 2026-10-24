@@ -14,7 +14,7 @@
 
 A优先掌握355项，B重点巩固2258项，C阅读识记219项。分级依据基础程度、常用搭配和活用迁移价值；参考卷只用于判断题型，不按单套卷出现频率预测考试概率。
 
-257组联合记忆短语覆盖310项词条，带完整假名、中文和可点击的关联词。日语释义取常用义，并非穷尽所有词典义项。
+2832项词条全部带常用搭配或短句，共2926条，包含日语、完整假名与中文；其中2105项带针对用法的提醒。2404处原先仅有词性或自动活用说明的备注已换为实际用法。单词卡揭晓后直接显示在右侧，词条详情同样可见。2256组联合记忆短语覆盖2440项词条，可点击完整关联词；不把「なるべく」中的「なる」或「持ち帰る」中的「帰る」当成额外的独立词。原30条完整例句继续保留。日语释义取常用义，并非穷尽所有词典义项。
 
 以る结尾的一类动词（帰る、入る、走る、切る、要る、参る等）会在单词卡、读音题、狂刷题和详情下方显示红字「一类动词」，揭晓前也可见；二类动词不标红，不能只凭る结尾判断类别。いらっしゃる／なさる的特殊ます形，以及愛する等特殊活用已单独核对。
 
@@ -64,10 +64,10 @@ node tests/app-smoke.cjs
 
 检查覆盖全部照片的逐行来源、原词表569条及续表151条补齐、原扩展表1228条的来源完整性、Word词表去重、原表错位与读音修订、旧2503词ID兼容、特殊活用及红色词类提醒，狂刷错题优先与无限随机轮次、第五次达标退出与遇错重入、普通计划独立性、累计错误显示与备份，及昨日全部＋历史10词的固定读音名单、超过30词的保存与迁移、词卡第五次再学归档、北京时间零点与跨年更新、前日错误入队、混合复习、累计五错归档、旧词条ID与进度迁移、所有词的干扰选项、随机题型、仅抽已学词、错答归零、5次转低频、7/14/30天抽查、错答恢复、题目无答案泄露、作答后自动朗读与重复点击保护、短语链接及复习逻辑。UI检查采用DOM替身，不等同于实机浏览器显示检查。
 
-`tools/original-189-198.tsv`、`tools/index-193-195.tsv` 保留本轮720条复核记录，`tools/import_completion.py` 保存合并映射与新增数量；`tools/additional.tsv`、`tools/index-225-237.tsv`、`tools/index-186-192.tsv` 保留逐页录入；`tools/import_indexes.py` 保存照片来源、原印和规范修订；`tools/document-vocabulary.json` 保留Word原表项号、原文与校正，`tools/import_documents.py` 只补缺词、不重复导入练习表；`tools/enrich.py` 维护联合记忆与人工校核的易混选项。改动词库后重新生成 `dist/data.js`。
+`tools/original-189-198.tsv`、`tools/index-193-195.tsv` 保留本轮720条复核记录，`tools/import_completion.py` 保存合并映射与新增数量；`tools/additional.tsv`、`tools/index-225-237.tsv`、`tools/index-186-192.tsv` 保留逐页录入；`tools/import_indexes.py` 保存照片来源、原印和规范修订；`tools/document-vocabulary.json` 保留Word原表项号、原文与校正，`tools/import_documents.py` 只补缺词、不重复导入练习表；`tools/enrich.py` 维护原联合记忆与人工校核的易混选项；`tools/collocations.json` 按稳定ID维护逐词搭配、假名、中文、提醒和关联词，`tools/collocations.py` 严格校验覆盖范围并生成展示内容，缺词直接构建失败。搭配的复核方法见 `docs/collocation-review.md`。改动词库后重新生成 `dist/data.js`。
 
 ## 发布
 
-GitHub Pages工作流已准备在 `.github/workflows/pages.yml`，托管目录为 `dist/`。推送到 main 后自动检查并发布到 GitHub Pages。学习进度保存在当前浏览器，可导出备份。
+GitHub Pages工作流已准备在 `.github/workflows/pages.yml`，托管目录为 `dist/`。仓库 Settings → Pages 选择 GitHub Actions 后运行工作流即可。当前网站也可经Sites原项目发布，使用 `.openai/hosting.json` 的原项目标识，保留访问范围。
 
 源码不包含用户原始照片、整套DOCX、账号凭据或个人学习记录。

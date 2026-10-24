@@ -565,6 +565,8 @@ meta['sources'].extend([
  {'title':'小学館・大辞泉：天敵','url':'https://kotobank.jp/word/天敵-102601','description':'校正天敵的读音为てんてき。'},
  {'title':'小学館・大辞泉：棟','url':'https://kotobank.jp/word/棟-140698','description':'建筑物的棟读とう；教学棟不按楼的读音ろう出题。'}])
 enrich(words,meta)
+from collocations import attach_collocations
+attach_collocations(words,meta)
 path=pathlib.Path(__file__).resolve().parents[1]/'dist/data.js'
 path.write_text('window.KOTOBA_DATA = '+json.dumps({'meta':meta,'words':words},ensure_ascii=False,separators=(',',':'))+';\n')
 print(json.dumps({'total':len(words),'book':sum(w['source']=='book' for w in words),'examOnly':sum(w['source']=='exam' for w in words),'priorities':dict(collections.Counter(w['priority'] for w in words))},ensure_ascii=False))

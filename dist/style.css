@@ -212,6 +212,37 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
 
 .verb-warning{color:#b43d39;font-size:14px;font-weight:600;line-height:1.5;margin:0 0 8px;letter-spacing:0}.detail-word+.verb-warning{text-align:center}.quiz-card .verb-warning{font-size:14px}td .verb-warning{font-size:12px;margin:4px 0}
 
+.word-usages{margin:0 0 12px;min-width:0}
+.usage-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px}
+.usage-list[data-count="1"]{grid-template-columns:1fr}
+.usage-item{min-width:0;padding-left:11px;border-left:2px solid #dbe4d6}
+.usage-jp{font-size:21px;line-height:1.5;color:#304333;overflow-wrap:anywhere}
+.usage-kana{font-size:15px;line-height:1.5;color:#6c7967;margin-top:3px;overflow-wrap:anywhere}
+.usage-meaning{font-size:16px;line-height:1.6;color:#475840;margin-top:4px}
+.usage-tip{font-size:14px;line-height:1.6;color:#6b7566;margin-top:5px}
+.usage-links{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-top:7px}
+.usage-links>span{font-size:11px;color:#7c8875;margin-right:2px}
+.usage-links .phrase-word{font-size:12px;padding:2px 6px}
+.usage-note{margin-top:11px;padding-top:8px;border-top:1px solid #e8ece3}
+.usage-note .detail-label{display:block;margin-bottom:3px}
+.card-detail .usage-note p{font-size:15px;line-height:1.55;margin:0}
+.dialog-body .word-usages{margin-top:20px}
+.dialog-body .usage-note p{font-size:15px;margin:0}
+@media(min-width:961px) and (max-height:760px){
+  .word-usages{margin-bottom:8px}
+  .usage-list{gap:8px 12px}
+  .usage-jp{font-size:19px;line-height:1.4}
+  .usage-kana,.usage-meaning{font-size:14px;line-height:1.45}
+  .usage-tip,.card-detail .usage-note p{font-size:13px;line-height:1.45}
+  .usage-links{margin-top:5px}
+  .usage-note{margin-top:7px;padding-top:6px}
+}
+@media(max-width:640px){
+  .usage-list{grid-template-columns:1fr;gap:14px}
+  .usage-jp{font-size:20px}
+  .usage-kana,.usage-meaning{font-size:15px}
+}
+
 /* Recovery banner: shown when stored progress cannot be validated. */
 .corrupt-banner{border:1px solid #e3c2b7;background:#fdf5f1;margin-bottom:22px}
 .corrupt-banner h3{margin:0 0 8px;font-size:16px;color:#8c3f33}
