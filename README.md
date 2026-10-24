@@ -80,3 +80,5 @@ GitHub Pages工作流已准备在 `.github/workflows/pages.yml`，托管目录�
 自他分类与对应词数据见 tools/verb-transitivity.json，按 CC BY-SA 4.0 提供；Copyright James William BREEN and the Electronic Dictionary Research and Development Group。来源及文档：https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project ，许可：https://www.edrdg.org/edrdg/licence.html 。此数据许可不改变独立程序代码的许可。
 
 学习记录显示北京时间当前年月日和月历，每天按小时显示累计学习时长；可以前后切换月份。仅在学习页面处于前台时计时，每20秒保存，后台或连续2分钟无操作暂停；离开学习页面时保存。时长按北京时间零点分到不同日期，并随JSON备份导入导出；旧版本没有时长的日期显示「未记录」，不推算。普通学习日志和收藏保留。
+
+学习日历中，今天及过去日期记录的时长不足5分钟时标红，达到5分钟恢复正常；未来日期不标红。没有计时记录的日期仍显示「未记录」，按不足5分钟着色。

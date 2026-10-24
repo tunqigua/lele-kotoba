@@ -265,3 +265,17 @@ const autoVerb=allWords.find(w=>w.word==='開く（あく）'),transVerb=allWord
 action('detail',{id:autoVerb.id});assert.match(el('#detailContent').innerHTML,/自动词/);assert.match(el('#detailContent').innerHTML,/对应他动词/);assert.match(el('#detailContent').innerHTML,/開ける/);assert.match(el('#detailContent').innerHTML,/あける/);el('#detailDialog').close();
 action('detail',{id:transVerb.id});assert.match(el('#detailContent').innerHTML,/他动词/);assert.match(el('#detailContent').innerHTML,/对应自动词/);assert.match(el('#detailContent').innerHTML,/開く（あく）/);el('#detailDialog').close();
 console.log('PASS: active study time, background/idle pauses, midnight/year split, calendar navigation, backup hours and bidirectional verb details.');
+
+// Calendar red styling uses the exact five-minute threshold and never marks future days.
+clock=Date.parse('2026-10-24T12:00:00+08:00');
+const redDays=E.fresh();redDays.studyTime={'2026-10-20':0,'2026-10-21':299999,'2026-10-22':300000,'2026-10-23':3600000,'2026-10-24':299999};
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(redDays)});nav('stats');
+const dayClass=key=>el('#main').innerHTML.match(new RegExp('<div class="([^"]*)"[^>]*><time datetime="'+key+'"'))?.[1];
+for(const day of ['20','21','24'])assert.match(dayClass('2026-10-'+day),/is-short-study/);
+assert.match(dayClass('2026-10-19'),/is-short-study/,'unrecorded past dates stay labeled unrecorded but are red');
+for(const day of ['22','23','25'])assert.doesNotMatch(dayClass('2026-10-'+day),/is-short-study/);
+assert.match(dayClass('2026-10-24'),/is-today/,'today remains identified even when red');
+redDays.studyTime['2026-10-24']=300000;
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(redDays)});nav('stats');
+assert.doesNotMatch(dayClass('2026-10-24'),/is-short-study/,'exactly five minutes clears red after progress updates');
+console.log('PASS: calendar red below five minutes, normal at five minutes, unrecorded dates and future-date exclusion.');

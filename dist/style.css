@@ -258,6 +258,8 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
 .calendar-day time span{font-size:10px;font-weight:400}
 .calendar-day small{display:block;margin-top:9px;color:#66746a;font-size:12px}
 .calendar-day.is-today{border-color:#345d4d;background:#edf4ed;color:#254c39}
+.calendar-day.is-short-study{border-color:#e1b3b0;background:#fff1ef;color:#a3322d}
+.calendar-day.is-short-study small{color:#a3322d}
 .calendar-note{margin-top:14px}
 @media(max-width:640px){.calendar-week,.calendar-grid{gap:3px}.calendar-day{min-height:65px;padding:6px 3px}.calendar-day small{font-size:10px}.calendar-day time{font-size:13px;flex-direction:column;align-items:flex-start}.calendar-day time span{font-size:9px}}
 
