@@ -92,10 +92,10 @@ test('only current-day unresolved legacy grades migrate as unfinished',()=>{
 
 test('daily review quotas never remove unfinished reviews',()=>{
  const state=E.fresh();state.settings.reviewGoal=1;
- E.rate(state,'a','good',Date.now()-E.DAY*3);
+ E.rate(state,'a','hard',Date.now()-E.DAY*3);
  E.rate(state,'b','good',Date.now()-E.DAY*3);
  E.rate(state,'a','hard');
- assert.equal(E.counts(state).reviewToday,1);
+ assert.equal(E.counts(state).reviewToday,0);
  assert.deepEqual(E.queue(words,state,'review').map(w=>w.id),['a']);
  state.settings.priority='B';
  assert.deepEqual(E.queue(words,state,'review'),[],'an explicitly selected scope still applies');

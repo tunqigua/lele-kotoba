@@ -1,0 +1,8989 @@
+{
+  "source": "JMdict/EDICT, with reviewed word-sense corrections and authored counterpart pairs",
+  "copyright": "Copyright James William BREEN and the Electronic Dictionary Research and Development Group",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://www.edrdg.org/edrdg/licence.html",
+  "documentationUrl": "https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project",
+  "snapshot": "2026-10-24",
+  "entries": [
+    {
+      "id": "w638c386a4d",
+      "word": "行く",
+      "kana": "いく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1578850"
+      ]
+    },
+    {
+      "id": "w71400c113a",
+      "word": "来る",
+      "kana": "くる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1547720"
+      ]
+    },
+    {
+      "id": "w4aa34648b6",
+      "word": "する",
+      "kana": "する",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1157170"
+      ]
+    },
+    {
+      "id": "w3a9f9a5edc",
+      "word": "帰る",
+      "kana": "かえる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1221270"
+      ]
+    },
+    {
+      "id": "w21dac08421",
+      "word": "食べる",
+      "kana": "たべる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1358280"
+      ]
+    },
+    {
+      "id": "wa1ac40e3c7",
+      "word": "飲む",
+      "kana": "のむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1169870"
+      ]
+    },
+    {
+      "id": "wc88ba17eb4",
+      "word": "見る",
+      "kana": "みる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1259290"
+      ]
+    },
+    {
+      "id": "wabb639bc77",
+      "word": "聞く",
+      "kana": "きく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1591110"
+      ]
+    },
+    {
+      "id": "w5ae29a233e",
+      "word": "書く",
+      "kana": "かく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1343950"
+      ]
+    },
+    {
+      "id": "w7fc9b181f5",
+      "word": "読む",
+      "kana": "よむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1456360"
+      ]
+    },
+    {
+      "id": "w0ddba9c153",
+      "word": "ある",
+      "kana": "ある",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1296400"
+      ]
+    },
+    {
+      "id": "wc7d693c51c",
+      "word": "いる",
+      "kana": "いる",
+      "label": "自动词",
+      "note": "此处为「居る（いる）」的存在义，不能混入「射る・煎る・鋳る」等同音词。",
+      "sourceEntries": [
+        "1577980"
+      ]
+    },
+    {
+      "id": "w662dbb2d11",
+      "word": "注文",
+      "kana": "ちゅうもん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1426650"
+      ]
+    },
+    {
+      "id": "w848921dea9",
+      "word": "会う",
+      "kana": "あう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1198180"
+      ]
+    },
+    {
+      "id": "w8d2086f342",
+      "word": "開ける",
+      "kana": "あける",
+      "label": "他动词",
+      "note": "本词读「あける」，表示把门窗等打开；区别「夜が明ける」。",
+      "sourceEntries": [
+        "1202450"
+      ]
+    },
+    {
+      "id": "w1cd72882c5",
+      "word": "あげる",
+      "kana": "あげる",
+      "label": "他动词",
+      "note": "本词条为「给」的授受义；不合并上升、呕吐等其他词义。",
+      "sourceEntries": [
+        "1352320"
+      ]
+    },
+    {
+      "id": "w661cf28cf5",
+      "word": "歩く",
+      "kana": "あるく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1514320"
+      ]
+    },
+    {
+      "id": "w64d1bc5caa",
+      "word": "安心",
+      "kana": "あんしん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1153890"
+      ]
+    },
+    {
+      "id": "we2329c277f",
+      "word": "言う",
+      "kana": "いう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1587040"
+      ]
+    },
+    {
+      "id": "we50d3be026",
+      "word": "急ぐ",
+      "kana": "いそぐ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1228650"
+      ]
+    },
+    {
+      "id": "w2353efbc3e",
+      "word": "意味",
+      "kana": "いみ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1156800"
+      ]
+    },
+    {
+      "id": "w9b66b809cf",
+      "word": "要る",
+      "kana": "いる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1546640"
+      ]
+    },
+    {
+      "id": "wcd8a5479e9",
+      "word": "入れる",
+      "kana": "いれる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1465610"
+      ]
+    },
+    {
+      "id": "we6ee892103",
+      "word": "受け取る",
+      "kana": "うけとる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1329650"
+      ]
+    },
+    {
+      "id": "w14380f3f17",
+      "word": "受ける",
+      "kana": "うける",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1329590"
+      ]
+    },
+    {
+      "id": "w967f0c49c6",
+      "word": "動く",
+      "kana": "うごく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1451210"
+      ]
+    },
+    {
+      "id": "w7450d40871",
+      "word": "生まれる",
+      "kana": "うまれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1378690"
+      ]
+    },
+    {
+      "id": "w5f1ce3d353",
+      "word": "起きる",
+      "kana": "おきる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1223640"
+      ]
+    },
+    {
+      "id": "wa12cb4f130",
+      "word": "置く",
+      "kana": "おく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1421850"
+      ]
+    },
+    {
+      "id": "w5fd44627b0",
+      "word": "送る",
+      "kana": "おくる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1402730"
+      ]
+    },
+    {
+      "id": "wd903be7bda",
+      "word": "遅れる",
+      "kana": "おくれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1589040"
+      ]
+    },
+    {
+      "id": "w7e3f4f6bfc",
+      "word": "教える",
+      "kana": "おしえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1236900"
+      ]
+    },
+    {
+      "id": "wd0af359118",
+      "word": "押す",
+      "kana": "おす",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1180470"
+      ]
+    },
+    {
+      "id": "we770d4b2d4",
+      "word": "落ちる",
+      "kana": "おちる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1548550"
+      ]
+    },
+    {
+      "id": "wbed802225f",
+      "word": "落とす",
+      "kana": "おとす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1589260"
+      ]
+    },
+    {
+      "id": "wde70f1032d",
+      "word": "踊る",
+      "kana": "おどる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1538440"
+      ]
+    },
+    {
+      "id": "w40ef63fb3e",
+      "word": "覚える",
+      "kana": "おぼえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1206050"
+      ]
+    },
+    {
+      "id": "wc5ea074db5",
+      "word": "思う",
+      "kana": "おもう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1589350"
+      ]
+    },
+    {
+      "id": "w682cb461a0",
+      "word": "降りる",
+      "kana": "おりる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1589500"
+      ]
+    },
+    {
+      "id": "wb9a0bbca64",
+      "word": "終わる",
+      "kana": "おわる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1589600"
+      ]
+    },
+    {
+      "id": "wa21911e56f",
+      "word": "会話",
+      "kana": "かいわ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1198880"
+      ]
+    },
+    {
+      "id": "w3dcc92b12e",
+      "word": "買う",
+      "kana": "かう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1473740"
+      ]
+    },
+    {
+      "id": "w440682eae9",
+      "word": "飼う",
+      "kana": "かう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1312970"
+      ]
+    },
+    {
+      "id": "wa76072644b",
+      "word": "返す",
+      "kana": "かえす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1512130"
+      ]
+    },
+    {
+      "id": "w750a7aa2c8",
+      "word": "変える",
+      "kana": "かえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1510650"
+      ]
+    },
+    {
+      "id": "w86a07295c5",
+      "word": "確認",
+      "kana": "かくにん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1205900"
+      ]
+    },
+    {
+      "id": "wa6e9f8491b",
+      "word": "貸す",
+      "kana": "かす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1411160"
+      ]
+    },
+    {
+      "id": "wdb5fc899c5",
+      "word": "数える",
+      "kana": "かぞえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1372900"
+      ]
+    },
+    {
+      "id": "w5ba9a2f659",
+      "word": "借りる",
+      "kana": "かりる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1323560"
+      ]
+    },
+    {
+      "id": "w3aff8e09bb",
+      "word": "変わる",
+      "kana": "かわる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1510790"
+      ]
+    },
+    {
+      "id": "w86e5631846",
+      "word": "考える",
+      "kana": "かんがえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1281020"
+      ]
+    },
+    {
+      "id": "wf0f77e9bb3",
+      "word": "感じる",
+      "kana": "かんじる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1212260"
+      ]
+    },
+    {
+      "id": "w274e0009b0",
+      "word": "気付く",
+      "kana": "きづく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1591330"
+      ]
+    },
+    {
+      "id": "w84cd12f613",
+      "word": "決まる",
+      "kana": "きまる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1591420"
+      ]
+    },
+    {
+      "id": "wb98148951f",
+      "word": "決める",
+      "kana": "きめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1254180"
+      ]
+    },
+    {
+      "id": "w94959c02dc",
+      "word": "着る",
+      "kana": "きる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1423000"
+      ]
+    },
+    {
+      "id": "wa5e2691fe7",
+      "word": "比べる",
+      "kana": "くらべる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1483540"
+      ]
+    },
+    {
+      "id": "w41641fec63",
+      "word": "くれる",
+      "kana": "くれる",
+      "label": "他动词",
+      "note": "本词条为「给我／我方」的授受义，不是「暮れる」。",
+      "sourceEntries": [
+        "1269130"
+      ]
+    },
+    {
+      "id": "w28e99d50b5",
+      "word": "経験",
+      "kana": "けいけん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1251270"
+      ]
+    },
+    {
+      "id": "wcc735c87c7",
+      "word": "消す",
+      "kana": "けす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1350110"
+      ]
+    },
+    {
+      "id": "w19d4bd8811",
+      "word": "結婚",
+      "kana": "けっこん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1254790"
+      ]
+    },
+    {
+      "id": "w5dcc8d49b6",
+      "word": "質問",
+      "kana": "しつもん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1320760"
+      ]
+    },
+    {
+      "id": "w16ae24721e",
+      "word": "閉める",
+      "kana": "しめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1508590"
+      ]
+    },
+    {
+      "id": "w545dfc7d54",
+      "word": "出発",
+      "kana": "しゅっぱつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1340000"
+      ]
+    },
+    {
+      "id": "wb8bbaebbc1",
+      "word": "紹介",
+      "kana": "しょうかい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1351430"
+      ]
+    },
+    {
+      "id": "wf0ddd1ecf8",
+      "word": "食事",
+      "kana": "しょくじ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1358490"
+      ]
+    },
+    {
+      "id": "we75e88cb9a",
+      "word": "心配",
+      "kana": "しんぱい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1360930"
+      ]
+    },
+    {
+      "id": "w4f40e0596a",
+      "word": "住む",
+      "kana": "すむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1334040"
+      ]
+    },
+    {
+      "id": "w82f9b87241",
+      "word": "座る",
+      "kana": "すわる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1291800"
+      ]
+    },
+    {
+      "id": "w6c3fe52f0f",
+      "word": "相談",
+      "kana": "そうだん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1401210"
+      ]
+    },
+    {
+      "id": "w2dbcf36298",
+      "word": "立つ",
+      "kana": "たつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1597040"
+      ]
+    },
+    {
+      "id": "w0adb965bfb",
+      "word": "頼む",
+      "kana": "たのむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1548370"
+      ]
+    },
+    {
+      "id": "wc4fd467ea7",
+      "word": "足りる",
+      "kana": "たりる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1404740"
+      ]
+    },
+    {
+      "id": "w94c7b5d5e8",
+      "word": "出す",
+      "kana": "だす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1338180"
+      ]
+    },
+    {
+      "id": "w7c52b34674",
+      "word": "遅刻",
+      "kana": "ちこく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1422050"
+      ]
+    },
+    {
+      "id": "wf08b55c42c",
+      "word": "注意",
+      "kana": "ちゅうい",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1426530"
+      ]
+    },
+    {
+      "id": "w67847e89ae",
+      "word": "中止",
+      "kana": "ちゅうし",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1424410"
+      ]
+    },
+    {
+      "id": "wa621473e79",
+      "word": "使う",
+      "kana": "つかう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1305990"
+      ]
+    },
+    {
+      "id": "w41298444d4",
+      "word": "着く",
+      "kana": "つく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1422970"
+      ]
+    },
+    {
+      "id": "web27f636d2",
+      "word": "作る",
+      "kana": "つくる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1597890"
+      ]
+    },
+    {
+      "id": "w7672d14409",
+      "word": "伝える",
+      "kana": "つたえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1441870"
+      ]
+    },
+    {
+      "id": "w31405e576d",
+      "word": "続ける",
+      "kana": "つづける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1405800"
+      ]
+    },
+    {
+      "id": "weeed6ab0a9",
+      "word": "手伝う",
+      "kana": "てつだう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1328190"
+      ]
+    },
+    {
+      "id": "w4279ccf9d8",
+      "word": "できる",
+      "kana": "できる",
+      "label": "自动词",
+      "note": "本词条为「出来る」，表示能、会或完成，不是「出切る」。",
+      "sourceEntries": [
+        "1340450"
+      ]
+    },
+    {
+      "id": "wf95fd9a2c7",
+      "word": "出る",
+      "kana": "でる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1338240"
+      ]
+    },
+    {
+      "id": "w7177787c6e",
+      "word": "電話",
+      "kana": "でんわ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1443840"
+      ]
+    },
+    {
+      "id": "w32c1ece2df",
+      "word": "通る",
+      "kana": "とおる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1433030"
+      ]
+    },
+    {
+      "id": "w3da5c18551",
+      "word": "閉じる",
+      "kana": "とじる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1508550"
+      ]
+    },
+    {
+      "id": "w75650573b3",
+      "word": "止める",
+      "kana": "とめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1310670"
+      ]
+    },
+    {
+      "id": "w244b0ce365",
+      "word": "取る",
+      "kana": "とる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1326980"
+      ]
+    },
+    {
+      "id": "wacc0c09db2",
+      "word": "治す",
+      "kana": "なおす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "2856318"
+      ]
+    },
+    {
+      "id": "wf3bcb5432a",
+      "word": "直す",
+      "kana": "なおす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1599390"
+      ]
+    },
+    {
+      "id": "wa9f82405ba",
+      "word": "習う",
+      "kana": "ならう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1333070"
+      ]
+    },
+    {
+      "id": "w55800b4370",
+      "word": "並べる",
+      "kana": "ならべる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1508390"
+      ]
+    },
+    {
+      "id": "we8acc67c48",
+      "word": "なる",
+      "kana": "なる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1375610",
+        "1532910",
+        "1611000"
+      ]
+    },
+    {
+      "id": "wdc0628739b",
+      "word": "慣れる",
+      "kana": "なれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1212670"
+      ]
+    },
+    {
+      "id": "w231100596c",
+      "word": "逃げる",
+      "kana": "にげる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1450330"
+      ]
+    },
+    {
+      "id": "w3d448419e2",
+      "word": "似る",
+      "kana": "にる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1314600"
+      ]
+    },
+    {
+      "id": "wb44c0f4c26",
+      "word": "煮る",
+      "kana": "にる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1322540"
+      ]
+    },
+    {
+      "id": "w0541291538",
+      "word": "脱ぐ",
+      "kana": "ぬぐ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1416400"
+      ]
+    },
+    {
+      "id": "w789a6bdabb",
+      "word": "眠る",
+      "kana": "ねむる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1529390"
+      ]
+    },
+    {
+      "id": "wbba9fee5be",
+      "word": "寝る",
+      "kana": "ねる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1360010"
+      ]
+    },
+    {
+      "id": "w059d264fc2",
+      "word": "残す",
+      "kana": "のこす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1600260"
+      ]
+    },
+    {
+      "id": "w19a848172c",
+      "word": "乗り換える",
+      "kana": "のりかえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1600470"
+      ]
+    },
+    {
+      "id": "w86e4853a99",
+      "word": "乗る",
+      "kana": "のる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1355120"
+      ]
+    },
+    {
+      "id": "w31de7e1fb2",
+      "word": "入る",
+      "kana": "はいる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1465590"
+      ]
+    },
+    {
+      "id": "w663a9cf552",
+      "word": "運ぶ",
+      "kana": "はこぶ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1172660"
+      ]
+    },
+    {
+      "id": "wd8b32a6fe7",
+      "word": "走る",
+      "kana": "はしる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1402540"
+      ]
+    },
+    {
+      "id": "w9e8802daf9",
+      "word": "始まる",
+      "kana": "はじまる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1307500"
+      ]
+    },
+    {
+      "id": "w66901a639d",
+      "word": "始める",
+      "kana": "はじめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1307550"
+      ]
+    },
+    {
+      "id": "w235f0f7e93",
+      "word": "働く",
+      "kana": "はたらく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1451150"
+      ]
+    },
+    {
+      "id": "w26df935267",
+      "word": "話す",
+      "kana": "はなす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1562350"
+      ]
+    },
+    {
+      "id": "w6658327ea1",
+      "word": "払う",
+      "kana": "はらう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1501620"
+      ]
+    },
+    {
+      "id": "w737b40fc87",
+      "word": "吹く",
+      "kana": "ふく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1370760"
+      ]
+    },
+    {
+      "id": "w5abfcbebee",
+      "word": "降る",
+      "kana": "ふる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1282790"
+      ]
+    },
+    {
+      "id": "w7086d2bc78",
+      "word": "返事",
+      "kana": "へんじ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1512220"
+      ]
+    },
+    {
+      "id": "wa709b05c38",
+      "word": "勉強",
+      "kana": "べんきょう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1512670"
+      ]
+    },
+    {
+      "id": "wc1f5acd9d1",
+      "word": "曲がる",
+      "kana": "まがる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1239730"
+      ]
+    },
+    {
+      "id": "w64df5a0685",
+      "word": "待つ",
+      "kana": "まつ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1410590"
+      ]
+    },
+    {
+      "id": "wb43484cfb9",
+      "word": "学ぶ",
+      "kana": "まなぶ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1206530"
+      ]
+    },
+    {
+      "id": "w19f33dd11c",
+      "word": "守る",
+      "kana": "まもる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1327120"
+      ]
+    },
+    {
+      "id": "w495032b403",
+      "word": "見える",
+      "kana": "みえる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1259140"
+      ]
+    },
+    {
+      "id": "wfdb98a7a9f",
+      "word": "見せる",
+      "kana": "みせる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1259210"
+      ]
+    },
+    {
+      "id": "w179aba0d5d",
+      "word": "見つける",
+      "kana": "みつける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1604570"
+      ]
+    },
+    {
+      "id": "wb65a41e685",
+      "word": "迎える",
+      "kana": "むかえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1253190"
+      ]
+    },
+    {
+      "id": "we74e618b53",
+      "word": "持つ",
+      "kana": "もつ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1315720"
+      ]
+    },
+    {
+      "id": "w70851a939c",
+      "word": "もらう",
+      "kana": "もらう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1535910"
+      ]
+    },
+    {
+      "id": "wd1251275eb",
+      "word": "焼く",
+      "kana": "やく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1350600"
+      ]
+    },
+    {
+      "id": "we9e6d98e67",
+      "word": "休む",
+      "kana": "やすむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1227560"
+      ]
+    },
+    {
+      "id": "w18ca8614b7",
+      "word": "やめる",
+      "kana": "やめる",
+      "label": "他动词",
+      "note": "本词条为「止める／辞める」，不合并「病める」等同音词。",
+      "sourceEntries": [
+        "1310680",
+        "1318950"
+      ]
+    },
+    {
+      "id": "w0bd0bce439",
+      "word": "やる",
+      "kana": "やる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1012980",
+        "2011110",
+        "2446940",
+        "2678900"
+      ]
+    },
+    {
+      "id": "w6f54c4dcd1",
+      "word": "用意",
+      "kana": "ようい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1546220"
+      ]
+    },
+    {
+      "id": "we9f797d637",
+      "word": "汚れる",
+      "kana": "よごれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1179005"
+      ]
+    },
+    {
+      "id": "web000e9544",
+      "word": "予定",
+      "kana": "よてい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1543240"
+      ]
+    },
+    {
+      "id": "we183430c05",
+      "word": "予約",
+      "kana": "よやく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1543750"
+      ]
+    },
+    {
+      "id": "w92c1b6c8fd",
+      "word": "旅行",
+      "kana": "りょこう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1553170"
+      ]
+    },
+    {
+      "id": "w08cea58f80",
+      "word": "分かる",
+      "kana": "わかる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1606560"
+      ]
+    },
+    {
+      "id": "we846f75dd0",
+      "word": "分ける",
+      "kana": "わける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1503000"
+      ]
+    },
+    {
+      "id": "w4da7571d82",
+      "word": "忘れる",
+      "kana": "わすれる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1519210"
+      ]
+    },
+    {
+      "id": "wf08b4a81b9",
+      "word": "渡す",
+      "kana": "わたす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1444610"
+      ]
+    },
+    {
+      "id": "w764811986a",
+      "word": "挨拶",
+      "kana": "あいさつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1151120"
+      ]
+    },
+    {
+      "id": "wbb69e9c44a",
+      "word": "愛する",
+      "kana": "あいする",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1150450"
+      ]
+    },
+    {
+      "id": "w8e320d0723",
+      "word": "合う",
+      "kana": "あう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1284430"
+      ]
+    },
+    {
+      "id": "w59355004ec",
+      "word": "上がる",
+      "kana": "あがる",
+      "label": "自动词",
+      "note": "按本词条上升、提高义标注；不合并敬语「吃／喝」义。",
+      "sourceEntries": [
+        "1352290"
+      ]
+    },
+    {
+      "id": "w02a9bdec12",
+      "word": "あきらめる",
+      "kana": "あきらめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1436730",
+        "2409420"
+      ]
+    },
+    {
+      "id": "w30d3d250a0",
+      "word": "飽きる",
+      "kana": "あきる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1586250"
+      ]
+    },
+    {
+      "id": "webd1d323e4",
+      "word": "空く",
+      "kana": "あく",
+      "label": "自动词",
+      "note": "此处为「あく」的空出、空着义，如「席が空く」。",
+      "sourceEntries": [
+        "1586270"
+      ]
+    },
+    {
+      "id": "wf764c5afa2",
+      "word": "開く（あく）",
+      "kana": "あく",
+      "label": "自动词",
+      "note": "读「あく」，如「窓が開く」；区别自他两用的「開く（ひらく）」。",
+      "sourceEntries": [
+        "1586270"
+      ]
+    },
+    {
+      "id": "w5052e6da7a",
+      "word": "握手",
+      "kana": "あくしゅ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1152730"
+      ]
+    },
+    {
+      "id": "w48831091d5",
+      "word": "明ける",
+      "kana": "あける",
+      "label": "自动词",
+      "note": "此处为天亮、一段时间结束的意思，如「夜が明ける」。",
+      "sourceEntries": [
+        "1202450"
+      ]
+    },
+    {
+      "id": "w01c78c0a8e",
+      "word": "揚げる",
+      "kana": "あげる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "2864817"
+      ]
+    },
+    {
+      "id": "w84ba9e62da",
+      "word": "憧れる",
+      "kana": "あこがれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1453810"
+      ]
+    },
+    {
+      "id": "wc57c3ff0cd",
+      "word": "預かる",
+      "kana": "あずかる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1544970"
+      ]
+    },
+    {
+      "id": "w8854a32546",
+      "word": "預ける",
+      "kana": "あずける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1544990"
+      ]
+    },
+    {
+      "id": "w4e0d1a7748",
+      "word": "遊ぶ",
+      "kana": "あそぶ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1542160"
+      ]
+    },
+    {
+      "id": "w65a52adbd8",
+      "word": "与える",
+      "kana": "あたえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1544730"
+      ]
+    },
+    {
+      "id": "we5e3e43705",
+      "word": "扱う",
+      "kana": "あつかう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1153440"
+      ]
+    },
+    {
+      "id": "w3b3b02bb5f",
+      "word": "集まる",
+      "kana": "あつまる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1333550"
+      ]
+    },
+    {
+      "id": "wf20e62fd79",
+      "word": "集める",
+      "kana": "あつめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1333560"
+      ]
+    },
+    {
+      "id": "wfb2046cced",
+      "word": "浴びる",
+      "kana": "あびる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1547450"
+      ]
+    },
+    {
+      "id": "wd28ddbb1f5",
+      "word": "溢れる",
+      "kana": "あふれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1167610"
+      ]
+    },
+    {
+      "id": "w0be3a71a4b",
+      "word": "誤る",
+      "kana": "あやまる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1271300"
+      ]
+    },
+    {
+      "id": "w183cc7a18c",
+      "word": "謝る",
+      "kana": "あやまる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1323010"
+      ]
+    },
+    {
+      "id": "w20e5ac902f",
+      "word": "洗う",
+      "kana": "あらう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1390930"
+      ]
+    },
+    {
+      "id": "wf00aa89733",
+      "word": "争う",
+      "kana": "あらそう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1400620"
+      ]
+    },
+    {
+      "id": "w18651d6663",
+      "word": "表す",
+      "kana": "あらわす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1263490"
+      ]
+    },
+    {
+      "id": "w16d2f04ae8",
+      "word": "現れる",
+      "kana": "あらわれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1263510"
+      ]
+    },
+    {
+      "id": "we2d1155366",
+      "word": "慌てる",
+      "kana": "あわてる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1278830"
+      ]
+    },
+    {
+      "id": "wc09cb5acee",
+      "word": "案内",
+      "kana": "あんない",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1154860"
+      ]
+    },
+    {
+      "id": "w050766b17c",
+      "word": "言い換える",
+      "kana": "いいかえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1610580"
+      ]
+    },
+    {
+      "id": "w562ca401ee",
+      "word": "言い過ぎる",
+      "kana": "いいすぎる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1848440"
+      ]
+    },
+    {
+      "id": "w7513c8c8f5",
+      "word": "活かす",
+      "kana": "いかす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1587070"
+      ]
+    },
+    {
+      "id": "w37f4e3d32a",
+      "word": "生きる",
+      "kana": "いきる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1378520"
+      ]
+    },
+    {
+      "id": "wa83f533853",
+      "word": "生ける",
+      "kana": "いける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1587190"
+      ]
+    },
+    {
+      "id": "w4bcc50d5e8",
+      "word": "意識",
+      "kana": "いしき",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1156640"
+      ]
+    },
+    {
+      "id": "wd56b1d6be2",
+      "word": "維持",
+      "kana": "いじ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1158450"
+      ]
+    },
+    {
+      "id": "wd691cbdbdc",
+      "word": "苛める",
+      "kana": "いじめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1195140"
+      ]
+    },
+    {
+      "id": "wf06c4ae951",
+      "word": "致す",
+      "kana": "いたす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1421900"
+      ]
+    },
+    {
+      "id": "w87a697c855",
+      "word": "いただく",
+      "kana": "いただく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1587290"
+      ]
+    },
+    {
+      "id": "w4b6432eada",
+      "word": "痛む",
+      "kana": "いたむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1432710"
+      ]
+    },
+    {
+      "id": "w95df49d0f5",
+      "word": "炒める",
+      "kana": "いためる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1568920"
+      ]
+    },
+    {
+      "id": "w5ab754e55d",
+      "word": "一致",
+      "kana": "いっち",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1164740"
+      ]
+    },
+    {
+      "id": "w9a97fc3ae6",
+      "word": "移動",
+      "kana": "いどう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1158400"
+      ]
+    },
+    {
+      "id": "w5e30f18124",
+      "word": "いらっしゃる",
+      "kana": "いらっしゃる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1000940"
+      ]
+    },
+    {
+      "id": "wf6be711e76",
+      "word": "祝う",
+      "kana": "いわう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1337390"
+      ]
+    },
+    {
+      "id": "wfc86179dac",
+      "word": "植える",
+      "kana": "うえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1357250"
+      ]
+    },
+    {
+      "id": "wab1f205882",
+      "word": "伺う",
+      "kana": "うかがう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1305700"
+      ]
+    },
+    {
+      "id": "w754196c463",
+      "word": "受け入れる",
+      "kana": "うけいれる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1329670"
+      ]
+    },
+    {
+      "id": "w7ee90a22ff",
+      "word": "歌う",
+      "kana": "うたう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1588120"
+      ]
+    },
+    {
+      "id": "w7944b4cc66",
+      "word": "打つ",
+      "kana": "うつ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1408810"
+      ]
+    },
+    {
+      "id": "w3be8223c6e",
+      "word": "映る",
+      "kana": "うつる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1173710"
+      ]
+    },
+    {
+      "id": "we2952d33ea",
+      "word": "売る",
+      "kana": "うる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1473950"
+      ]
+    },
+    {
+      "id": "wa7f3a3da63",
+      "word": "売れる",
+      "kana": "うれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1473960"
+      ]
+    },
+    {
+      "id": "w8aa1288700",
+      "word": "運転",
+      "kana": "うんてん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1172830"
+      ]
+    },
+    {
+      "id": "wed65777930",
+      "word": "影響",
+      "kana": "えいきょう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1173660"
+      ]
+    },
+    {
+      "id": "w28bd4af784",
+      "word": "営業",
+      "kana": "えいぎょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1173430"
+      ]
+    },
+    {
+      "id": "w1abfcee460",
+      "word": "描く",
+      "kana": "えがく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1583460"
+      ]
+    },
+    {
+      "id": "w7dc71eadd0",
+      "word": "選ぶ",
+      "kana": "えらぶ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1588730"
+      ]
+    },
+    {
+      "id": "wf0e56b1b18",
+      "word": "得る",
+      "kana": "える",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1588760"
+      ]
+    },
+    {
+      "id": "w8c8b7e40ba",
+      "word": "延長",
+      "kana": "えんちょう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1176510"
+      ]
+    },
+    {
+      "id": "w6fc1284a24",
+      "word": "遠慮",
+      "kana": "えんりょ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1178450"
+      ]
+    },
+    {
+      "id": "w80d61251b6",
+      "word": "応援",
+      "kana": "おうえん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1179840"
+      ]
+    },
+    {
+      "id": "w1c18f0b48a",
+      "word": "応じる",
+      "kana": "おうじる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1179830"
+      ]
+    },
+    {
+      "id": "w727a497be0",
+      "word": "覆う",
+      "kana": "おおう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1588840"
+      ]
+    },
+    {
+      "id": "w862763f8f7",
+      "word": "大掃除",
+      "kana": "おおそうじ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1414390"
+      ]
+    },
+    {
+      "id": "w603aad33a6",
+      "word": "起こす",
+      "kana": "おこす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1223660"
+      ]
+    },
+    {
+      "id": "wf71b1fdd0c",
+      "word": "行う",
+      "kana": "おこなう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1589060"
+      ]
+    },
+    {
+      "id": "w342989d632",
+      "word": "起こる",
+      "kana": "おこる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1223680"
+      ]
+    },
+    {
+      "id": "w44180d9e24",
+      "word": "怒る",
+      "kana": "おこる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1445690"
+      ]
+    },
+    {
+      "id": "w5a4ce65ef1",
+      "word": "おごる",
+      "kana": "おごる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1565940",
+        "2857913"
+      ]
+    },
+    {
+      "id": "w44451edd1b",
+      "word": "押さえる",
+      "kana": "おさえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1589080"
+      ]
+    },
+    {
+      "id": "w931f5e0e2c",
+      "word": "お辞儀",
+      "kana": "おじぎ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1002030"
+      ]
+    },
+    {
+      "id": "wf5e5aabba9",
+      "word": "襲う",
+      "kana": "おそう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1333330"
+      ]
+    },
+    {
+      "id": "w489049eb13",
+      "word": "恐れる",
+      "kana": "おそれる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1589200"
+      ]
+    },
+    {
+      "id": "wcf120baa97",
+      "word": "落ち着く",
+      "kana": "おちつく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1589220"
+      ]
+    },
+    {
+      "id": "w65cab626d3",
+      "word": "おっしゃる",
+      "kana": "おっしゃる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1238840"
+      ]
+    },
+    {
+      "id": "w26711d8171",
+      "word": "訪れる",
+      "kana": "おとずれる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1518080"
+      ]
+    },
+    {
+      "id": "w48843eccf8",
+      "word": "劣る",
+      "kana": "おとる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1558400"
+      ]
+    },
+    {
+      "id": "w91c39dbd7d",
+      "word": "驚く",
+      "kana": "おどろく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1238680"
+      ]
+    },
+    {
+      "id": "w8f1caa45bb",
+      "word": "お願い",
+      "kana": "おねがい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "2036870"
+      ]
+    },
+    {
+      "id": "w2bdda4801b",
+      "word": "思い出す",
+      "kana": "おもいだす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1309260"
+      ]
+    },
+    {
+      "id": "w40b84dfc2a",
+      "word": "泳ぐ",
+      "kana": "およぐ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1174340"
+      ]
+    },
+    {
+      "id": "w9e9a0bea0e",
+      "word": "居る",
+      "kana": "おる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1577985"
+      ]
+    },
+    {
+      "id": "w93d2cf41a8",
+      "word": "お詫び",
+      "kana": "おわび",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "2087420"
+      ]
+    },
+    {
+      "id": "wcecf258d82",
+      "word": "恩返し",
+      "kana": "おんがえし",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1183280"
+      ]
+    },
+    {
+      "id": "w81bc4c0524",
+      "word": "解決",
+      "kana": "かいけつ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1198960"
+      ]
+    },
+    {
+      "id": "we3a6e71ef3",
+      "word": "開講",
+      "kana": "かいこう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1617450"
+      ]
+    },
+    {
+      "id": "w185ed68496",
+      "word": "開催",
+      "kana": "かいさい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1202710"
+      ]
+    },
+    {
+      "id": "w263a918861",
+      "word": "回収",
+      "kana": "かいしゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1199470"
+      ]
+    },
+    {
+      "id": "wf59bd9e46e",
+      "word": "改善",
+      "kana": "かいぜん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1200960"
+      ]
+    },
+    {
+      "id": "w2dfb21e54e",
+      "word": "開発",
+      "kana": "かいはつ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1202880"
+      ]
+    },
+    {
+      "id": "wd48124a59f",
+      "word": "買い物",
+      "kana": "かいもの",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1589730"
+      ]
+    },
+    {
+      "id": "w10502ae134",
+      "word": "換える",
+      "kana": "かえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1589780"
+      ]
+    },
+    {
+      "id": "w188e69bc21",
+      "word": "抱える",
+      "kana": "かかえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1516310"
+      ]
+    },
+    {
+      "id": "w016c76dfee",
+      "word": "欠かす",
+      "kana": "かかす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1253890"
+      ]
+    },
+    {
+      "id": "wf20a1d9292",
+      "word": "かかる",
+      "kana": "かかる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1193110",
+        "1207590",
+        "1249300",
+        "1609500",
+        "2841189"
+      ]
+    },
+    {
+      "id": "wd095846372",
+      "word": "書き込む",
+      "kana": "かきこむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1343730"
+      ]
+    },
+    {
+      "id": "w75e7f37a43",
+      "word": "限る",
+      "kana": "かぎる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1264640"
+      ]
+    },
+    {
+      "id": "we71e96311e",
+      "word": "隠れる",
+      "kana": "かくれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1170660"
+      ]
+    },
+    {
+      "id": "w4f4e84fc1d",
+      "word": "欠ける",
+      "kana": "かける",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1253920"
+      ]
+    },
+    {
+      "id": "w5f95216790",
+      "word": "掛ける",
+      "kana": "かける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1207610"
+      ]
+    },
+    {
+      "id": "w869908d6f7",
+      "word": "重ねる",
+      "kana": "かさねる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1335830"
+      ]
+    },
+    {
+      "id": "w5ffa1d880f",
+      "word": "飾る",
+      "kana": "かざる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1357210"
+      ]
+    },
+    {
+      "id": "wa0ae29c68f",
+      "word": "畏まる",
+      "kana": "かしこまる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1157440"
+      ]
+    },
+    {
+      "id": "wd6e162420f",
+      "word": "貸し出す",
+      "kana": "かしだす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1411130"
+      ]
+    },
+    {
+      "id": "w1dfcd44d47",
+      "word": "片付ける",
+      "kana": "かたづける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1511790"
+      ]
+    },
+    {
+      "id": "w99d1cc7485",
+      "word": "傾く",
+      "kana": "かたむく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1578210"
+      ]
+    },
+    {
+      "id": "wf2fd1b1d7e",
+      "word": "勝つ",
+      "kana": "かつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1346150"
+      ]
+    },
+    {
+      "id": "w47e6c61bb4",
+      "word": "活動",
+      "kana": "かつどう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1208360"
+      ]
+    },
+    {
+      "id": "w5661591a24",
+      "word": "活躍",
+      "kana": "かつやく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1208450"
+      ]
+    },
+    {
+      "id": "w12a65ec1ad",
+      "word": "適う",
+      "kana": "かなう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "2868802"
+      ]
+    },
+    {
+      "id": "w1179bda16c",
+      "word": "悲しむ",
+      "kana": "かなしむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1483200"
+      ]
+    },
+    {
+      "id": "w8349fcca41",
+      "word": "通う",
+      "kana": "かよう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1432850"
+      ]
+    },
+    {
+      "id": "wac3f035949",
+      "word": "渇く",
+      "kana": "かわく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1208520"
+      ]
+    },
+    {
+      "id": "w0e08943ff4",
+      "word": "関係",
+      "kana": "かんけい",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1215810"
+      ]
+    },
+    {
+      "id": "wff6d0453fb",
+      "word": "観光",
+      "kana": "かんこう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1214840"
+      ]
+    },
+    {
+      "id": "w3a07f52dea",
+      "word": "観察",
+      "kana": "かんさつ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1214900"
+      ]
+    },
+    {
+      "id": "w46d85a3836",
+      "word": "感謝",
+      "kana": "かんしゃ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1212380"
+      ]
+    },
+    {
+      "id": "wdbfa9801b0",
+      "word": "感心",
+      "kana": "かんしん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1212450"
+      ]
+    },
+    {
+      "id": "wc85f239d4a",
+      "word": "関する",
+      "kana": "かんする",
+      "label": "自动词",
+      "note": "常用「〜に関する」，不直接带动作对象。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w33246f6a5e",
+      "word": "完成",
+      "kana": "かんせい",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1211490"
+      ]
+    },
+    {
+      "id": "w08b96ee175",
+      "word": "感染",
+      "kana": "かんせん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1212470"
+      ]
+    },
+    {
+      "id": "w4f0ecc5059",
+      "word": "監督",
+      "kana": "かんとく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1213720"
+      ]
+    },
+    {
+      "id": "w608ea57575",
+      "word": "感動",
+      "kana": "かんどう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1212570"
+      ]
+    },
+    {
+      "id": "w4989b5cf94",
+      "word": "管理",
+      "kana": "かんり",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1214200"
+      ]
+    },
+    {
+      "id": "w605280392b",
+      "word": "外出",
+      "kana": "がいしゅつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1203800"
+      ]
+    },
+    {
+      "id": "wafb88d8573",
+      "word": "学習",
+      "kana": "がくしゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1206820"
+      ]
+    },
+    {
+      "id": "w382df01dd3",
+      "word": "合宿",
+      "kana": "がっしゅく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1284850"
+      ]
+    },
+    {
+      "id": "wb3d74eb223",
+      "word": "合唱",
+      "kana": "がっしょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1284870"
+      ]
+    },
+    {
+      "id": "wf4c6a69204",
+      "word": "我慢",
+      "kana": "がまん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1196970"
+      ]
+    },
+    {
+      "id": "w2c23c656fe",
+      "word": "がんばる",
+      "kana": "がんばる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1217700"
+      ]
+    },
+    {
+      "id": "wd50309a255",
+      "word": "聞こえる",
+      "kana": "きこえる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1591150"
+      ]
+    },
+    {
+      "id": "w56083666cb",
+      "word": "帰国",
+      "kana": "きこく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1221330"
+      ]
+    },
+    {
+      "id": "wdfdee45e55",
+      "word": "記号化",
+      "kana": "きごうか",
+      "label": "他动词",
+      "note": "サ变用法：内容を記号化する。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w0324d0ab9d",
+      "word": "傷つく",
+      "kana": "きずつく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1591240"
+      ]
+    },
+    {
+      "id": "wf3aa96940f",
+      "word": "帰省",
+      "kana": "きせい",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1221390"
+      ]
+    },
+    {
+      "id": "w9755bd0fb1",
+      "word": "期待",
+      "kana": "きたい",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1220570"
+      ]
+    },
+    {
+      "id": "wb93207a0a8",
+      "word": "記入",
+      "kana": "きにゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1223330"
+      ]
+    },
+    {
+      "id": "w5d76c5e03a",
+      "word": "記念",
+      "kana": "きねん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1223340"
+      ]
+    },
+    {
+      "id": "we5b8788a4e",
+      "word": "機能",
+      "kana": "きのう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1221130"
+      ]
+    },
+    {
+      "id": "we895e44af9",
+      "word": "希望",
+      "kana": "きぼう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1219910"
+      ]
+    },
+    {
+      "id": "w3126478da6",
+      "word": "休校",
+      "kana": "きゅうこう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1227760"
+      ]
+    },
+    {
+      "id": "w58778126ae",
+      "word": "休講",
+      "kana": "きゅうこう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1227780"
+      ]
+    },
+    {
+      "id": "w6747c881f5",
+      "word": "教育",
+      "kana": "きょういく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1236950"
+      ]
+    },
+    {
+      "id": "w768a225cea",
+      "word": "共生",
+      "kana": "きょうせい",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1234650"
+      ]
+    },
+    {
+      "id": "w653ae25090",
+      "word": "競争",
+      "kana": "きょうそう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1234140"
+      ]
+    },
+    {
+      "id": "w60b9427e5c",
+      "word": "共同",
+      "kana": "きょうどう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1591660"
+      ]
+    },
+    {
+      "id": "w1a054b3135",
+      "word": "協力",
+      "kana": "きょうりょく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1591720"
+      ]
+    },
+    {
+      "id": "w06c2072140",
+      "word": "切らす",
+      "kana": "きらす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1383780"
+      ]
+    },
+    {
+      "id": "wb375332a20",
+      "word": "切る",
+      "kana": "きる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1384830"
+      ]
+    },
+    {
+      "id": "wfe7cf6418c",
+      "word": "記録",
+      "kana": "きろく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1223440"
+      ]
+    },
+    {
+      "id": "wc5a804b2c0",
+      "word": "禁止",
+      "kana": "きんし",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1241550"
+      ]
+    },
+    {
+      "id": "w7ce5658c88",
+      "word": "緊張",
+      "kana": "きんちょう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1241880"
+      ]
+    },
+    {
+      "id": "w24db658b95",
+      "word": "議論",
+      "kana": "ぎろん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1226160"
+      ]
+    },
+    {
+      "id": "w7c63163d53",
+      "word": "挫く",
+      "kana": "くじく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1292010"
+      ]
+    },
+    {
+      "id": "wfde053cff7",
+      "word": "くださる",
+      "kana": "くださる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1184280"
+      ]
+    },
+    {
+      "id": "w0b5d6e5fc8",
+      "word": "配る",
+      "kana": "くばる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1472990"
+      ]
+    },
+    {
+      "id": "w16847b8872",
+      "word": "工夫",
+      "kana": "くふう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1278220"
+      ]
+    },
+    {
+      "id": "w8a370354c2",
+      "word": "暮らす",
+      "kana": "くらす",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1514940"
+      ]
+    },
+    {
+      "id": "w064e4ae7e6",
+      "word": "繰り返す",
+      "kana": "くりかえす",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1247030"
+      ]
+    },
+    {
+      "id": "w8fc42bab2c",
+      "word": "苦しむ",
+      "kana": "くるしむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1244350"
+      ]
+    },
+    {
+      "id": "w58451fc1ee",
+      "word": "苦労",
+      "kana": "くろう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1244680"
+      ]
+    },
+    {
+      "id": "w2e3bd7c719",
+      "word": "訓練",
+      "kana": "くんれん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1247470"
+      ]
+    },
+    {
+      "id": "we2f7ec7ec3",
+      "word": "経営",
+      "kana": "けいえい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1251130"
+      ]
+    },
+    {
+      "id": "w6ef064b3bb",
+      "word": "計画",
+      "kana": "けいかく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1252090"
+      ]
+    },
+    {
+      "id": "w3c722c72f1",
+      "word": "稽古",
+      "kana": "けいこ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1250990"
+      ]
+    },
+    {
+      "id": "wb968fb82da",
+      "word": "掲示",
+      "kana": "けいじ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1250620"
+      ]
+    },
+    {
+      "id": "wd2ac60d31e",
+      "word": "携帯",
+      "kana": "けいたい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1250680"
+      ]
+    },
+    {
+      "id": "wdeff13211c",
+      "word": "契約",
+      "kana": "けいやく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1250190"
+      ]
+    },
+    {
+      "id": "w50057f2b2f",
+      "word": "けが",
+      "kana": "けが",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1200220"
+      ]
+    },
+    {
+      "id": "w32d078a606",
+      "word": "化粧",
+      "kana": "けしょう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1577040"
+      ]
+    },
+    {
+      "id": "wd6b39dc627",
+      "word": "結晶",
+      "kana": "けっしょう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1254870"
+      ]
+    },
+    {
+      "id": "w6cf4660491",
+      "word": "決心",
+      "kana": "けっしん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1254340"
+      ]
+    },
+    {
+      "id": "w838719b5c3",
+      "word": "結論",
+      "kana": "けつろん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1255020"
+      ]
+    },
+    {
+      "id": "w666c33fc55",
+      "word": "喧嘩",
+      "kana": "けんか",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1257040"
+      ]
+    },
+    {
+      "id": "w1922c97318",
+      "word": "見学",
+      "kana": "けんがく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1259440"
+      ]
+    },
+    {
+      "id": "wb31c66f6ea",
+      "word": "研究",
+      "kana": "けんきゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1258520"
+      ]
+    },
+    {
+      "id": "w09adc5a1f5",
+      "word": "検査",
+      "kana": "けんさ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1257890"
+      ]
+    },
+    {
+      "id": "w33d3427e6e",
+      "word": "検索",
+      "kana": "けんさく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1257900"
+      ]
+    },
+    {
+      "id": "w40cc54c3d2",
+      "word": "建設",
+      "kana": "けんせつ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1257420"
+      ]
+    },
+    {
+      "id": "wc1073732ac",
+      "word": "建築",
+      "kana": "けんちく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1257500"
+      ]
+    },
+    {
+      "id": "w8b06617f32",
+      "word": "検討",
+      "kana": "けんとう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1258000"
+      ]
+    },
+    {
+      "id": "w54c6b07d99",
+      "word": "見物",
+      "kana": "けんぶつ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1260000"
+      ]
+    },
+    {
+      "id": "wacd5b6e906",
+      "word": "減少",
+      "kana": "げんしょう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1263210"
+      ]
+    },
+    {
+      "id": "wcb3fce805d",
+      "word": "公開",
+      "kana": "こうかい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1273370"
+      ]
+    },
+    {
+      "id": "w719c03e578",
+      "word": "交換",
+      "kana": "こうかん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1271750"
+      ]
+    },
+    {
+      "id": "w22436053a9",
+      "word": "講義",
+      "kana": "こうぎ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1282260"
+      ]
+    },
+    {
+      "id": "wd63d97fe0e",
+      "word": "貢献",
+      "kana": "こうけん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1282410"
+      ]
+    },
+    {
+      "id": "w53cc30b6a5",
+      "word": "構成",
+      "kana": "こうせい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1279730"
+      ]
+    },
+    {
+      "id": "w0b35f9ebc7",
+      "word": "行動",
+      "kana": "こうどう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1282100"
+      ]
+    },
+    {
+      "id": "w234283a496",
+      "word": "購入",
+      "kana": "こうにゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1282440"
+      ]
+    },
+    {
+      "id": "w5baae7413d",
+      "word": "交流",
+      "kana": "こうりゅう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1272580"
+      ]
+    },
+    {
+      "id": "w82faef5370",
+      "word": "超える",
+      "kana": "こえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1593070"
+      ]
+    },
+    {
+      "id": "w7f52edb2c0",
+      "word": "擦る",
+      "kana": "こする",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1298910"
+      ]
+    },
+    {
+      "id": "w23ba579d4d",
+      "word": "答える",
+      "kana": "こたえる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1449540"
+      ]
+    },
+    {
+      "id": "w39051c721a",
+      "word": "異なる",
+      "kana": "ことなる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1157510"
+      ]
+    },
+    {
+      "id": "w2d0cc45ee6",
+      "word": "断る",
+      "kana": "ことわる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1419570"
+      ]
+    },
+    {
+      "id": "w14a09b3ccb",
+      "word": "困る",
+      "kana": "こまる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1289590"
+      ]
+    },
+    {
+      "id": "wed3a14b283",
+      "word": "コミュニケーション",
+      "kana": "こみゅにけーしょん",
+      "label": "自动词",
+      "note": "サ变用法：相手とコミュニケーションする；常用「コミュニケーションを取る」。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w5370a1ef1f",
+      "word": "混む",
+      "kana": "こむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "2849867"
+      ]
+    },
+    {
+      "id": "w68a1a266c9",
+      "word": "込める",
+      "kana": "こめる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1288790"
+      ]
+    },
+    {
+      "id": "wb2310d9143",
+      "word": "壊す",
+      "kana": "こわす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1199890"
+      ]
+    },
+    {
+      "id": "we56e6a7517",
+      "word": "壊れる",
+      "kana": "こわれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1199900"
+      ]
+    },
+    {
+      "id": "w91ab7202ce",
+      "word": "混雑",
+      "kana": "こんざつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1290390"
+      ]
+    },
+    {
+      "id": "w735d3457d4",
+      "word": "コーチ",
+      "kana": "こーち",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1048910"
+      ]
+    },
+    {
+      "id": "w4fd078e9e4",
+      "word": "合格",
+      "kana": "ごうかく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1284600"
+      ]
+    },
+    {
+      "id": "w169a372ea7",
+      "word": "誤解",
+      "kana": "ごかい",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1271310"
+      ]
+    },
+    {
+      "id": "w2e111e0699",
+      "word": "ご馳走",
+      "kana": "ごちそう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1593590"
+      ]
+    },
+    {
+      "id": "wbc533c2f28",
+      "word": "誤用",
+      "kana": "ごよう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1271500"
+      ]
+    },
+    {
+      "id": "we1da38ba16",
+      "word": "栽培",
+      "kana": "さいばい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1294910"
+      ]
+    },
+    {
+      "id": "wa581c5d861",
+      "word": "採用",
+      "kana": "さいよう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1294890"
+      ]
+    },
+    {
+      "id": "w818e2731ee",
+      "word": "サイン",
+      "kana": "さいん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1056230"
+      ]
+    },
+    {
+      "id": "w31809ee567",
+      "word": "探す",
+      "kana": "さがす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1593670"
+      ]
+    },
+    {
+      "id": "w5cec9d62bd",
+      "word": "下がる",
+      "kana": "さがる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1184160"
+      ]
+    },
+    {
+      "id": "wc083ab6106",
+      "word": "咲く",
+      "kana": "さく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1297210"
+      ]
+    },
+    {
+      "id": "wbe483fa90d",
+      "word": "作文",
+      "kana": "さくぶん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1297960"
+      ]
+    },
+    {
+      "id": "wfd6bae72cb",
+      "word": "避ける",
+      "kana": "さける",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1583260"
+      ]
+    },
+    {
+      "id": "wf0fc13e125",
+      "word": "下げる",
+      "kana": "さげる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1184170"
+      ]
+    },
+    {
+      "id": "w30a49dc2fb",
+      "word": "支える",
+      "kana": "ささえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1310090"
+      ]
+    },
+    {
+      "id": "wbe3aead5da",
+      "word": "さしあげる",
+      "kana": "さしあげる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1291270"
+      ]
+    },
+    {
+      "id": "w90e9ac0db8",
+      "word": "差し出す",
+      "kana": "さしだす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1291230"
+      ]
+    },
+    {
+      "id": "w3c18a98791",
+      "word": "差す",
+      "kana": "さす",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1291330"
+      ]
+    },
+    {
+      "id": "wa4ea93167d",
+      "word": "誘う",
+      "kana": "さそう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1541900"
+      ]
+    },
+    {
+      "id": "w485e326993",
+      "word": "撮影",
+      "kana": "さつえい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1298800"
+      ]
+    },
+    {
+      "id": "w05ff10881b",
+      "word": "里帰り",
+      "kana": "さとがえり",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1550790"
+      ]
+    },
+    {
+      "id": "wa54d2115d1",
+      "word": "差別",
+      "kana": "さべつ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1291410"
+      ]
+    },
+    {
+      "id": "w8da382b865",
+      "word": "去る",
+      "kana": "さる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1231650"
+      ]
+    },
+    {
+      "id": "w6a41639261",
+      "word": "触る",
+      "kana": "さわる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1357980"
+      ]
+    },
+    {
+      "id": "w53f1cbf3fe",
+      "word": "参加",
+      "kana": "さんか",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1302090"
+      ]
+    },
+    {
+      "id": "wa1880f698b",
+      "word": "参考",
+      "kana": "さんこう",
+      "label": "他动词",
+      "note": "サ变用法可带对象；现代日语更常用「〜を参考にする」。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w0ebd8c6be7",
+      "word": "賛成",
+      "kana": "さんせい",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1304200"
+      ]
+    },
+    {
+      "id": "w2be528e3d8",
+      "word": "散歩",
+      "kana": "さんぽ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1303620"
+      ]
+    },
+    {
+      "id": "w011f1720ec",
+      "word": "残業",
+      "kana": "ざんぎょう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1304560"
+      ]
+    },
+    {
+      "id": "w5cf9e3bba9",
+      "word": "支援",
+      "kana": "しえん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1310100"
+      ]
+    },
+    {
+      "id": "we2bb7a067b",
+      "word": "叱る",
+      "kana": "しかる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1319580"
+      ]
+    },
+    {
+      "id": "w6f367515b6",
+      "word": "志願",
+      "kana": "しがん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1309080"
+      ]
+    },
+    {
+      "id": "waac3f1d304",
+      "word": "支給",
+      "kana": "しきゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1310130"
+      ]
+    },
+    {
+      "id": "w9a950c085e",
+      "word": "指示",
+      "kana": "しじ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1309800"
+      ]
+    },
+    {
+      "id": "wd1e4dbc2b8",
+      "word": "沈む",
+      "kana": "しずむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1431670"
+      ]
+    },
+    {
+      "id": "wa6d8f5fc67",
+      "word": "下書き",
+      "kana": "したがき",
+      "label": "他动词",
+      "note": "サ变用法：手紙を下書きする。",
+      "sourceEntries": []
+    },
+    {
+      "id": "wa1d7783338",
+      "word": "失敗",
+      "kana": "しっぱい",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1320140"
+      ]
+    },
+    {
+      "id": "w0f57380273",
+      "word": "指導",
+      "kana": "しどう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1309950"
+      ]
+    },
+    {
+      "id": "wdbb430ebde",
+      "word": "死ぬ",
+      "kana": "しぬ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1310730"
+      ]
+    },
+    {
+      "id": "w350710daab",
+      "word": "支払う",
+      "kana": "しはらう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1310300"
+      ]
+    },
+    {
+      "id": "w05b468f4e3",
+      "word": "縛る",
+      "kana": "しばる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1476050"
+      ]
+    },
+    {
+      "id": "wc4a3a489b2",
+      "word": "志望",
+      "kana": "しぼう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1309140"
+      ]
+    },
+    {
+      "id": "wd4d53dcdca",
+      "word": "仕舞う",
+      "kana": "しまう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1305380"
+      ]
+    },
+    {
+      "id": "w8525185c99",
+      "word": "閉まる",
+      "kana": "しまる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1436560"
+      ]
+    },
+    {
+      "id": "we3f0c508cb",
+      "word": "借金",
+      "kana": "しゃっきん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1323940"
+      ]
+    },
+    {
+      "id": "we624e832d6",
+      "word": "収穫",
+      "kana": "しゅうかく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1330510"
+      ]
+    },
+    {
+      "id": "w26a3166818",
+      "word": "修学",
+      "kana": "しゅうがく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1331950"
+      ]
+    },
+    {
+      "id": "wb2efec0fab",
+      "word": "就職",
+      "kana": "しゅうしょく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1331670"
+      ]
+    },
+    {
+      "id": "w7d4ffdcd52",
+      "word": "集中",
+      "kana": "しゅうちゅう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1333750"
+      ]
+    },
+    {
+      "id": "we63c682be9",
+      "word": "修理",
+      "kana": "しゅうり",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1332400"
+      ]
+    },
+    {
+      "id": "w355df9f601",
+      "word": "出世",
+      "kana": "しゅっせ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1339340"
+      ]
+    },
+    {
+      "id": "w77383070c5",
+      "word": "出席",
+      "kana": "しゅっせき",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1339460"
+      ]
+    },
+    {
+      "id": "w202e70a44f",
+      "word": "出張",
+      "kana": "しゅっちょう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1339660"
+      ]
+    },
+    {
+      "id": "w441785e1d1",
+      "word": "出版",
+      "kana": "しゅっぱん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1340030"
+      ]
+    },
+    {
+      "id": "w0e4fe2e521",
+      "word": "象徴",
+      "kana": "しょうちょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1351900"
+      ]
+    },
+    {
+      "id": "wa50a9cc5ee",
+      "word": "消毒",
+      "kana": "しょうどく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1350270"
+      ]
+    },
+    {
+      "id": "wc77f5c7a72",
+      "word": "消耗",
+      "kana": "しょうもう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1580310"
+      ]
+    },
+    {
+      "id": "wbf7c7bedbc",
+      "word": "省略",
+      "kana": "しょうりゃく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1351120"
+      ]
+    },
+    {
+      "id": "w0e2d3a3c09",
+      "word": "使用",
+      "kana": "しよう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1306200"
+      ]
+    },
+    {
+      "id": "w0b216145af",
+      "word": "知らせる",
+      "kana": "しらせる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1420410"
+      ]
+    },
+    {
+      "id": "w4953f75d49",
+      "word": "調べる",
+      "kana": "しらべる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1429060"
+      ]
+    },
+    {
+      "id": "w1e4792083f",
+      "word": "知る",
+      "kana": "しる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1420470"
+      ]
+    },
+    {
+      "id": "wa88de3627f",
+      "word": "進学",
+      "kana": "しんがく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1366010"
+      ]
+    },
+    {
+      "id": "w2d38d2d07a",
+      "word": "診察",
+      "kana": "しんさつ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1365460"
+      ]
+    },
+    {
+      "id": "w6e4b27131c",
+      "word": "心中",
+      "kana": "しんじゅう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1360840"
+      ]
+    },
+    {
+      "id": "w86a70add12",
+      "word": "信じる",
+      "kana": "しんじる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1359040"
+      ]
+    },
+    {
+      "id": "waea56368c6",
+      "word": "侵入",
+      "kana": "しんにゅう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1359850"
+      ]
+    },
+    {
+      "id": "w9c693a859d",
+      "word": "自己紹介",
+      "kana": "じこしょうかい",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1317650"
+      ]
+    },
+    {
+      "id": "wea1e1f6305",
+      "word": "自習",
+      "kana": "じしゅう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1317900"
+      ]
+    },
+    {
+      "id": "wc3cd66079e",
+      "word": "自称",
+      "kana": "じしょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1317950"
+      ]
+    },
+    {
+      "id": "w9587a3d1f0",
+      "word": "実感",
+      "kana": "じっかん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1320920"
+      ]
+    },
+    {
+      "id": "wbc35685c7f",
+      "word": "実験",
+      "kana": "じっけん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1320970"
+      ]
+    },
+    {
+      "id": "w5de8f97dd3",
+      "word": "実践",
+      "kana": "じっせん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1321260"
+      ]
+    },
+    {
+      "id": "wbad9e27cc1",
+      "word": "実現",
+      "kana": "じつげん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1321020"
+      ]
+    },
+    {
+      "id": "waa4d12859c",
+      "word": "自慢",
+      "kana": "じまん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1318680"
+      ]
+    },
+    {
+      "id": "wc48cd0e2ac",
+      "word": "邪魔",
+      "kana": "じゃま",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1323500"
+      ]
+    },
+    {
+      "id": "w07c4a60611",
+      "word": "渋滞",
+      "kana": "じゅうたい",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1335570"
+      ]
+    },
+    {
+      "id": "w7f528439fd",
+      "word": "受賞",
+      "kana": "じゅしょう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1329790"
+      ]
+    },
+    {
+      "id": "wc7426d7d78",
+      "word": "受信",
+      "kana": "じゅしん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1329810"
+      ]
+    },
+    {
+      "id": "w5be5cb5c47",
+      "word": "準備",
+      "kana": "じゅんび",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1341670"
+      ]
+    },
+    {
+      "id": "w9d6402401e",
+      "word": "乗車",
+      "kana": "じょうしゃ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1355270"
+      ]
+    },
+    {
+      "id": "we71c971b55",
+      "word": "上達",
+      "kana": "じょうたつ",
+      "label": "自动词",
+      "note": "此处为技能进步义，如「日本語が上達する」。",
+      "sourceEntries": [
+        "1353850"
+      ]
+    },
+    {
+      "id": "w370e67d4ac",
+      "word": "吸い込む",
+      "kana": "すいこむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1228230"
+      ]
+    },
+    {
+      "id": "w79603fee40",
+      "word": "吸う",
+      "kana": "すう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1228260"
+      ]
+    },
+    {
+      "id": "w8ff605709a",
+      "word": "空く（すく）",
+      "kana": "すく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1586265"
+      ]
+    },
+    {
+      "id": "w4dfa35b6b9",
+      "word": "優れる",
+      "kana": "すぐれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1539080"
+      ]
+    },
+    {
+      "id": "wb70f2aa8b7",
+      "word": "過ごす",
+      "kana": "すごす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1196000"
+      ]
+    },
+    {
+      "id": "w225550ae64",
+      "word": "進む",
+      "kana": "すすむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1365980"
+      ]
+    },
+    {
+      "id": "wbd27e88a8f",
+      "word": "進める",
+      "kana": "すすめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1365990"
+      ]
+    },
+    {
+      "id": "wc42d7b8955",
+      "word": "勧める",
+      "kana": "すすめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1595680"
+      ]
+    },
+    {
+      "id": "w7ca67446a0",
+      "word": "捨てる",
+      "kana": "すてる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1322320"
+      ]
+    },
+    {
+      "id": "w217234316b",
+      "word": "滑り落ちる",
+      "kana": "すべりおちる",
+      "label": "自动词",
+      "note": "表示自然滑落；使物体滑落用「滑り落とす」。",
+      "sourceEntries": [
+        "1208630"
+      ]
+    },
+    {
+      "id": "w884dd38121",
+      "word": "済む",
+      "kana": "すむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1295070"
+      ]
+    },
+    {
+      "id": "w8e1145478a",
+      "word": "生活",
+      "kana": "せいかつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1378860"
+      ]
+    },
+    {
+      "id": "w51991a5d11",
+      "word": "成功",
+      "kana": "せいこう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1375690"
+      ]
+    },
+    {
+      "id": "w6d060e4833",
+      "word": "正座",
+      "kana": "せいざ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1595990"
+      ]
+    },
+    {
+      "id": "w874e95e24b",
+      "word": "生存",
+      "kana": "せいぞん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1379230"
+      ]
+    },
+    {
+      "id": "w88637773bc",
+      "word": "清聴",
+      "kana": "せいちょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1645320"
+      ]
+    },
+    {
+      "id": "wa9a0e915a1",
+      "word": "成長",
+      "kana": "せいちょう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1375790"
+      ]
+    },
+    {
+      "id": "w0a501ee399",
+      "word": "整備",
+      "kana": "せいび",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1376240"
+      ]
+    },
+    {
+      "id": "wbd63f469a7",
+      "word": "整理",
+      "kana": "せいり",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1376250"
+      ]
+    },
+    {
+      "id": "w9a48f85e79",
+      "word": "設計",
+      "kana": "せっけい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1386020"
+      ]
+    },
+    {
+      "id": "w124a52dd6e",
+      "word": "接種",
+      "kana": "せっしゅ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1385420"
+      ]
+    },
+    {
+      "id": "wdacb831fd8",
+      "word": "接する",
+      "kana": "せっする",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1385350"
+      ]
+    },
+    {
+      "id": "w6329f21c41",
+      "word": "設定",
+      "kana": "せってい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1386060"
+      ]
+    },
+    {
+      "id": "w5119847c00",
+      "word": "接続",
+      "kana": "せつぞく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1385480"
+      ]
+    },
+    {
+      "id": "wa6a61230ff",
+      "word": "設備",
+      "kana": "せつび",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1386070"
+      ]
+    },
+    {
+      "id": "wf6c2c8d0f4",
+      "word": "説明",
+      "kana": "せつめい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1386460"
+      ]
+    },
+    {
+      "id": "w78d1c3aaae",
+      "word": "世話",
+      "kana": "せわ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1374300"
+      ]
+    },
+    {
+      "id": "w882c6b2f8c",
+      "word": "専攻",
+      "kana": "せんこう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1389780"
+      ]
+    },
+    {
+      "id": "wbacc4d5a47",
+      "word": "洗濯",
+      "kana": "せんたく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1390980"
+      ]
+    },
+    {
+      "id": "w208baebaef",
+      "word": "前後",
+      "kana": "ぜんご",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1392910"
+      ]
+    },
+    {
+      "id": "w3c92837c75",
+      "word": "総合",
+      "kana": "そうごう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1596380"
+      ]
+    },
+    {
+      "id": "wf3ea6d345e",
+      "word": "操作",
+      "kana": "そうさ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1400050"
+      ]
+    },
+    {
+      "id": "w58aa796142",
+      "word": "送信",
+      "kana": "そうしん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1402820"
+      ]
+    },
+    {
+      "id": "w0eddc952fb",
+      "word": "掃除",
+      "kana": "そうじ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1399790"
+      ]
+    },
+    {
+      "id": "w297f7169c7",
+      "word": "想像",
+      "kana": "そうぞう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1399610"
+      ]
+    },
+    {
+      "id": "wa773e90157",
+      "word": "想定",
+      "kana": "そうてい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1399630"
+      ]
+    },
+    {
+      "id": "wea192c3783",
+      "word": "相当",
+      "kana": "そうとう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1401240"
+      ]
+    },
+    {
+      "id": "w83d3f484ca",
+      "word": "添える",
+      "kana": "そえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1596490"
+      ]
+    },
+    {
+      "id": "w18ff0091fa",
+      "word": "育つ",
+      "kana": "そだつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1160540"
+      ]
+    },
+    {
+      "id": "wcf923e0b16",
+      "word": "育てる",
+      "kana": "そだてる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1160570"
+      ]
+    },
+    {
+      "id": "w58fe407a24",
+      "word": "卒業",
+      "kana": "そつぎょう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1405890"
+      ]
+    },
+    {
+      "id": "w782073f2b5",
+      "word": "ソテー",
+      "kana": "そてー",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1075430"
+      ]
+    },
+    {
+      "id": "w39bc1ae91b",
+      "word": "染める",
+      "kana": "そめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1391160"
+      ]
+    },
+    {
+      "id": "w74301b899d",
+      "word": "尊敬",
+      "kana": "そんけい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1406400"
+      ]
+    },
+    {
+      "id": "wb64e9b6e0d",
+      "word": "存在",
+      "kana": "そんざい",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1406150"
+      ]
+    },
+    {
+      "id": "w3ef9d19f9f",
+      "word": "尊重",
+      "kana": "そんちょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1406460"
+      ]
+    },
+    {
+      "id": "w35f1517578",
+      "word": "増加",
+      "kana": "ぞうか",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1403160"
+      ]
+    },
+    {
+      "id": "wa05624812d",
+      "word": "存じる",
+      "kana": "ぞんじる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1406140"
+      ]
+    },
+    {
+      "id": "wdd15d727f5",
+      "word": "退院",
+      "kana": "たいいん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1411300"
+      ]
+    },
+    {
+      "id": "wec4a5ff3ec",
+      "word": "対応",
+      "kana": "たいおう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1409840"
+      ]
+    },
+    {
+      "id": "w957aa665d5",
+      "word": "体験",
+      "kana": "たいけん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1409420"
+      ]
+    },
+    {
+      "id": "w57643921c3",
+      "word": "滞在",
+      "kana": "たいざい",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1410930"
+      ]
+    },
+    {
+      "id": "wbddd669565",
+      "word": "退職",
+      "kana": "たいしょく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1411420"
+      ]
+    },
+    {
+      "id": "w7c9efee021",
+      "word": "対する",
+      "kana": "たいする",
+      "label": "自动词",
+      "note": "常用「〜に対する／〜と対する」。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w512d996e49",
+      "word": "倒れる",
+      "kana": "たおれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1445790"
+      ]
+    },
+    {
+      "id": "w7d9980cf59",
+      "word": "高める",
+      "kana": "たかめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1283240"
+      ]
+    },
+    {
+      "id": "wc0c45f28a3",
+      "word": "たしなむ",
+      "kana": "たしなむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "2008820"
+      ]
+    },
+    {
+      "id": "wf60db0b875",
+      "word": "助かる",
+      "kana": "たすかる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1344380"
+      ]
+    },
+    {
+      "id": "wa820ad787d",
+      "word": "助ける",
+      "kana": "たすける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1344410"
+      ]
+    },
+    {
+      "id": "w14329a1e43",
+      "word": "尋ねる",
+      "kana": "たずねる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1369940"
+      ]
+    },
+    {
+      "id": "w6647a9adc7",
+      "word": "訪ねる",
+      "kana": "たずねる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1518070"
+      ]
+    },
+    {
+      "id": "wbfa7eae660",
+      "word": "経つ",
+      "kana": "たつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1251100"
+      ]
+    },
+    {
+      "id": "wbbf098fdf6",
+      "word": "建てる",
+      "kana": "たてる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1257330"
+      ]
+    },
+    {
+      "id": "w92a7ee35dc",
+      "word": "楽しむ",
+      "kana": "たのしむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1207270"
+      ]
+    },
+    {
+      "id": "waa309b8f80",
+      "word": "楽しめる",
+      "kana": "たのしめる",
+      "label": "可能形",
+      "note": "「楽しむ（他动词）」的可能形，不作为独立的自他对应词。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w20dc3aeb47",
+      "word": "溜まる",
+      "kana": "たまる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1552650"
+      ]
+    },
+    {
+      "id": "wf22cce91b9",
+      "word": "保つ",
+      "kana": "たもつ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1513250"
+      ]
+    },
+    {
+      "id": "we06604baf4",
+      "word": "頼る",
+      "kana": "たよる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1597200"
+      ]
+    },
+    {
+      "id": "w14ca40f769",
+      "word": "単身赴任",
+      "kana": "たんしんふにん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1417660"
+      ]
+    },
+    {
+      "id": "wb473740968",
+      "word": "誕生",
+      "kana": "たんじょう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1419080"
+      ]
+    },
+    {
+      "id": "we19facca68",
+      "word": "担当",
+      "kana": "たんとう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1418160"
+      ]
+    },
+    {
+      "id": "w20dbc7bbd3",
+      "word": "担任",
+      "kana": "たんにん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1418200"
+      ]
+    },
+    {
+      "id": "w6fc3645daf",
+      "word": "大歓迎",
+      "kana": "だいかんげい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1892230"
+      ]
+    },
+    {
+      "id": "wf975e10f09",
+      "word": "代表",
+      "kana": "だいひょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1412170"
+      ]
+    },
+    {
+      "id": "wa20d583ab5",
+      "word": "団結",
+      "kana": "だんけつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1419230"
+      ]
+    },
+    {
+      "id": "w9be7abb796",
+      "word": "近づく",
+      "kana": "ちかづく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1242170"
+      ]
+    },
+    {
+      "id": "w95113cfcb5",
+      "word": "違う",
+      "kana": "ちがう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1158880"
+      ]
+    },
+    {
+      "id": "w4d5b8550a5",
+      "word": "着用",
+      "kana": "ちゃくよう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1423270"
+      ]
+    },
+    {
+      "id": "wb9ae8b935a",
+      "word": "中継",
+      "kana": "ちゅうけい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1424040"
+      ]
+    },
+    {
+      "id": "w794e66405c",
+      "word": "注射",
+      "kana": "ちゅうしゃ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1426590"
+      ]
+    },
+    {
+      "id": "w197536648b",
+      "word": "調査",
+      "kana": "ちょうさ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1429120"
+      ]
+    },
+    {
+      "id": "w1fcbcf3d5f",
+      "word": "挑戦",
+      "kana": "ちょうせん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1428240"
+      ]
+    },
+    {
+      "id": "we6bcccb81a",
+      "word": "貯金",
+      "kana": "ちょきん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1427170"
+      ]
+    },
+    {
+      "id": "wbf4388b945",
+      "word": "著作",
+      "kana": "ちょさく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1427090"
+      ]
+    },
+    {
+      "id": "wd5174ad36c",
+      "word": "治療",
+      "kana": "ちりょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1316890"
+      ]
+    },
+    {
+      "id": "wcf56220def",
+      "word": "通学",
+      "kana": "つうがく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1433090"
+      ]
+    },
+    {
+      "id": "wda8bdb2886",
+      "word": "通勤",
+      "kana": "つうきん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1433140"
+      ]
+    },
+    {
+      "id": "wf97cb6b6c6",
+      "word": "通信",
+      "kana": "つうしん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1433330"
+      ]
+    },
+    {
+      "id": "we77a23abc9",
+      "word": "通じる",
+      "kana": "つうじる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1432880"
+      ]
+    },
+    {
+      "id": "w7ba8d0d94b",
+      "word": "通話",
+      "kana": "つうわ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1433610"
+      ]
+    },
+    {
+      "id": "wd5f746bb04",
+      "word": "浸かる",
+      "kana": "つかる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1433670"
+      ]
+    },
+    {
+      "id": "wa1ac22eb89",
+      "word": "疲れる",
+      "kana": "つかれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1483740"
+      ]
+    },
+    {
+      "id": "w31e5997cb6",
+      "word": "付き合う",
+      "kana": "つきあう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1597790"
+      ]
+    },
+    {
+      "id": "w59fd1cc9a0",
+      "word": "付く",
+      "kana": "つく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1495740"
+      ]
+    },
+    {
+      "id": "w2a8fa20b02",
+      "word": "尽くす",
+      "kana": "つくす",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1370090"
+      ]
+    },
+    {
+      "id": "w8c44ab19e8",
+      "word": "造る",
+      "kana": "つくる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1597890"
+      ]
+    },
+    {
+      "id": "w2f698f8c70",
+      "word": "つける",
+      "kana": "つける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1331540",
+        "1433680",
+        "1495770",
+        "1610400",
+        "2100600"
+      ]
+    },
+    {
+      "id": "wbcf22c1ac7",
+      "word": "謹む",
+      "kana": "つつしむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1598000"
+      ]
+    },
+    {
+      "id": "w326d27ccc9",
+      "word": "包む",
+      "kana": "つつむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1584060"
+      ]
+    },
+    {
+      "id": "wf2b380e5e6",
+      "word": "続く",
+      "kana": "つづく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1405790"
+      ]
+    },
+    {
+      "id": "w06656c8d90",
+      "word": "勤める",
+      "kana": "つとめる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1240825"
+      ]
+    },
+    {
+      "id": "wcaf94afa0c",
+      "word": "務める",
+      "kana": "つとめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "2872052"
+      ]
+    },
+    {
+      "id": "w48bf2d75eb",
+      "word": "繋がる",
+      "kana": "つながる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1251880"
+      ]
+    },
+    {
+      "id": "wa86ff2dae3",
+      "word": "繋ぐ",
+      "kana": "つなぐ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1251900"
+      ]
+    },
+    {
+      "id": "w78b80f398f",
+      "word": "つまずく",
+      "kana": "つまずく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1573400"
+      ]
+    },
+    {
+      "id": "w5a4b98134e",
+      "word": "詰める",
+      "kana": "つめる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1226510"
+      ]
+    },
+    {
+      "id": "w4a6188b4f0",
+      "word": "積もる",
+      "kana": "つもる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1382990"
+      ]
+    },
+    {
+      "id": "w29bd54e8b6",
+      "word": "連れる",
+      "kana": "つれる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1559290"
+      ]
+    },
+    {
+      "id": "wb9a2f9c035",
+      "word": "提案",
+      "kana": "ていあん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1436320"
+      ]
+    },
+    {
+      "id": "w976d810688",
+      "word": "提供",
+      "kana": "ていきょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1436360"
+      ]
+    },
+    {
+      "id": "w0eb3f33058",
+      "word": "提言",
+      "kana": "ていげん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1436390"
+      ]
+    },
+    {
+      "id": "wf33c19ac6f",
+      "word": "提出",
+      "kana": "ていしゅつ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1436410"
+      ]
+    },
+    {
+      "id": "w126f19c2f0",
+      "word": "定住",
+      "kana": "ていじゅう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1435620"
+      ]
+    },
+    {
+      "id": "w4dda4dfeb2",
+      "word": "徹夜",
+      "kana": "てつや",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1437700"
+      ]
+    },
+    {
+      "id": "w6ce77738b8",
+      "word": "展開",
+      "kana": "てんかい",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1440600"
+      ]
+    },
+    {
+      "id": "w84366e6a6f",
+      "word": "展示",
+      "kana": "てんじ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1440610"
+      ]
+    },
+    {
+      "id": "wfe1ff2462c",
+      "word": "出かける",
+      "kana": "でかける",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1598550"
+      ]
+    },
+    {
+      "id": "w46217a0365",
+      "word": "伝承",
+      "kana": "でんしょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1442050"
+      ]
+    },
+    {
+      "id": "w531e700282",
+      "word": "到着",
+      "kana": "とうちゃく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1449870"
+      ]
+    },
+    {
+      "id": "wd60a44f603",
+      "word": "登録",
+      "kana": "とうろく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1444810"
+      ]
+    },
+    {
+      "id": "wc858582e8e",
+      "word": "討論",
+      "kana": "とうろん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1449980"
+      ]
+    },
+    {
+      "id": "w598fe77271",
+      "word": "通す",
+      "kana": "とおす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1432900"
+      ]
+    },
+    {
+      "id": "w17f2d1f3d5",
+      "word": "特集",
+      "kana": "とくしゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1455060"
+      ]
+    },
+    {
+      "id": "we3a8b82c05",
+      "word": "特定",
+      "kana": "とくてい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1455210"
+      ]
+    },
+    {
+      "id": "w50323d01a5",
+      "word": "溶ける",
+      "kana": "とける",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1546070"
+      ]
+    },
+    {
+      "id": "we38c264b43",
+      "word": "飛び降りる",
+      "kana": "とびおりる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1598860"
+      ]
+    },
+    {
+      "id": "w6ab686b163",
+      "word": "飛び出す",
+      "kana": "とびだす",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1485350"
+      ]
+    },
+    {
+      "id": "w3f41fce829",
+      "word": "飛ぶ",
+      "kana": "とぶ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1429700"
+      ]
+    },
+    {
+      "id": "w1e75a5247f",
+      "word": "泊まる",
+      "kana": "とまる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1474850"
+      ]
+    },
+    {
+      "id": "wafb4c62e71",
+      "word": "止まる",
+      "kana": "とまる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1310620"
+      ]
+    },
+    {
+      "id": "w41ced462ce",
+      "word": "富む",
+      "kana": "とむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1496740"
+      ]
+    },
+    {
+      "id": "w22678fcf23",
+      "word": "伴う",
+      "kana": "ともなう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1478370"
+      ]
+    },
+    {
+      "id": "w7347f4a719",
+      "word": "捕らえる",
+      "kana": "とらえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1598960"
+      ]
+    },
+    {
+      "id": "w19e5055bfc",
+      "word": "取り上げる",
+      "kana": "とりあげる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1326800"
+      ]
+    },
+    {
+      "id": "wc9ff13f8ff",
+      "word": "取り入れる",
+      "kana": "とりいれる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1326880"
+      ]
+    },
+    {
+      "id": "w47815236b7",
+      "word": "撮る",
+      "kana": "とる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1298790"
+      ]
+    },
+    {
+      "id": "wd53962594f",
+      "word": "取れる",
+      "kana": "とれる",
+      "label": "自动词",
+      "note": "脱落等词义为自动词；也可作「取る（他动词）」的可能形，应结合句意区分。",
+      "sourceEntries": [
+        "1326990"
+      ]
+    },
+    {
+      "id": "wda04485609",
+      "word": "同居",
+      "kana": "どうきょ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1452130"
+      ]
+    },
+    {
+      "id": "wb9b178067a",
+      "word": "読書",
+      "kana": "どくしょ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1456420"
+      ]
+    },
+    {
+      "id": "w896a78742a",
+      "word": "努力",
+      "kana": "どりょく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1445130"
+      ]
+    },
+    {
+      "id": "w824ad14868",
+      "word": "治る",
+      "kana": "なおる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1599400"
+      ]
+    },
+    {
+      "id": "we2dff3b795",
+      "word": "眺める",
+      "kana": "ながめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1428830"
+      ]
+    },
+    {
+      "id": "wb1d7b5ac32",
+      "word": "流れ出す",
+      "kana": "ながれだす",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1552170"
+      ]
+    },
+    {
+      "id": "wcc5c6037eb",
+      "word": "流れる",
+      "kana": "ながれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1552140"
+      ]
+    },
+    {
+      "id": "w7251bec2dc",
+      "word": "泣く",
+      "kana": "なく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1229840"
+      ]
+    },
+    {
+      "id": "wf10a77ed39",
+      "word": "鳴く",
+      "kana": "なく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1532870"
+      ]
+    },
+    {
+      "id": "w939eaf14ac",
+      "word": "無くす",
+      "kana": "なくす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1529530"
+      ]
+    },
+    {
+      "id": "w2614826fd0",
+      "word": "なくなる",
+      "kana": "なくなる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1518540",
+        "1529550"
+      ]
+    },
+    {
+      "id": "w4be77d419e",
+      "word": "なさる",
+      "kana": "なさる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1157090"
+      ]
+    },
+    {
+      "id": "w57cb72e4c7",
+      "word": "納得",
+      "kana": "なっとく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1470080"
+      ]
+    },
+    {
+      "id": "w97cf5f3225",
+      "word": "名乗る",
+      "kana": "なのる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1531650"
+      ]
+    },
+    {
+      "id": "wb017a1139c",
+      "word": "怠ける",
+      "kana": "なまける",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1410660"
+      ]
+    },
+    {
+      "id": "w3088af836e",
+      "word": "悩む",
+      "kana": "なやむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1469870"
+      ]
+    },
+    {
+      "id": "w316c80e6bb",
+      "word": "鳴らす",
+      "kana": "ならす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1532880"
+      ]
+    },
+    {
+      "id": "w53d2a2e57d",
+      "word": "並ぶ",
+      "kana": "ならぶ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1508380"
+      ]
+    },
+    {
+      "id": "w47e845e4ee",
+      "word": "成り立つ",
+      "kana": "なりたつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1375600"
+      ]
+    },
+    {
+      "id": "w45794015d5",
+      "word": "鳴る",
+      "kana": "なる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1532910"
+      ]
+    },
+    {
+      "id": "wffebb63a3b",
+      "word": "似合う",
+      "kana": "にあう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1314680"
+      ]
+    },
+    {
+      "id": "w2361d0ab98",
+      "word": "匂う",
+      "kana": "におう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1599780"
+      ]
+    },
+    {
+      "id": "w2b9eb3a3c0",
+      "word": "賑わう",
+      "kana": "にぎわう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1463500"
+      ]
+    },
+    {
+      "id": "w111ef79c69",
+      "word": "入院",
+      "kana": "にゅういん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1465720"
+      ]
+    },
+    {
+      "id": "w9e0e35ad21",
+      "word": "入手",
+      "kana": "にゅうしゅ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1466290"
+      ]
+    },
+    {
+      "id": "wae5ceeefcd",
+      "word": "入力",
+      "kana": "にゅうりょく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1466850"
+      ]
+    },
+    {
+      "id": "w1569c6d36d",
+      "word": "認識",
+      "kana": "にんしき",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1467550"
+      ]
+    },
+    {
+      "id": "w9c123be3dd",
+      "word": "盗む",
+      "kana": "ぬすむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1448440"
+      ]
+    },
+    {
+      "id": "w6f5378e581",
+      "word": "塗る",
+      "kana": "ぬる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1444270"
+      ]
+    },
+    {
+      "id": "w977014b612",
+      "word": "濡れる",
+      "kana": "ぬれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1467620"
+      ]
+    },
+    {
+      "id": "w38708e4a0f",
+      "word": "願う",
+      "kana": "ねがう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1217950"
+      ]
+    },
+    {
+      "id": "we9172a4f67",
+      "word": "寝坊",
+      "kana": "ねぼう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1360320"
+      ]
+    },
+    {
+      "id": "w201ef33864",
+      "word": "納税",
+      "kana": "のうぜい",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1470060"
+      ]
+    },
+    {
+      "id": "wef09be2799",
+      "word": "残る",
+      "kana": "のこる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1304510"
+      ]
+    },
+    {
+      "id": "w3b248c34a2",
+      "word": "乗せる",
+      "kana": "のせる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1600270"
+      ]
+    },
+    {
+      "id": "we440cbd147",
+      "word": "除く",
+      "kana": "のぞく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1345640"
+      ]
+    },
+    {
+      "id": "wb600cb6acd",
+      "word": "伸ばす",
+      "kana": "のばす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1600290"
+      ]
+    },
+    {
+      "id": "w87c997af2c",
+      "word": "昇る",
+      "kana": "のぼる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1352570"
+      ]
+    },
+    {
+      "id": "weed92408a0",
+      "word": "登る",
+      "kana": "のぼる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1352570"
+      ]
+    },
+    {
+      "id": "w2b7900b3f8",
+      "word": "載る",
+      "kana": "のる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "2649690"
+      ]
+    },
+    {
+      "id": "w0ed1d0488a",
+      "word": "排気",
+      "kana": "はいき",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1472320"
+      ]
+    },
+    {
+      "id": "w2310ac66b5",
+      "word": "配達",
+      "kana": "はいたつ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1473140"
+      ]
+    },
+    {
+      "id": "w131a7f87bd",
+      "word": "配慮",
+      "kana": "はいりょ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1473210"
+      ]
+    },
+    {
+      "id": "wc378b8bf9c",
+      "word": "墓参り",
+      "kana": "はかまいり",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1584020"
+      ]
+    },
+    {
+      "id": "w329ff02d0d",
+      "word": "計る",
+      "kana": "はかる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1600650"
+      ]
+    },
+    {
+      "id": "w6553312608",
+      "word": "挟む",
+      "kana": "はさむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1600740"
+      ]
+    },
+    {
+      "id": "w3a91db640f",
+      "word": "発見",
+      "kana": "はっけん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1477310"
+      ]
+    },
+    {
+      "id": "w6350dbebeb",
+      "word": "発行",
+      "kana": "はっこう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1477390"
+      ]
+    },
+    {
+      "id": "w011d8d39ab",
+      "word": "発散",
+      "kana": "はっさん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1477480"
+      ]
+    },
+    {
+      "id": "w4770221db3",
+      "word": "発信",
+      "kana": "はっしん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1477560"
+      ]
+    },
+    {
+      "id": "wc77553ade4",
+      "word": "発想",
+      "kana": "はっそう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1477660"
+      ]
+    },
+    {
+      "id": "wbc4ce79b4f",
+      "word": "発展",
+      "kana": "はってん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1477720"
+      ]
+    },
+    {
+      "id": "w28630a41fb",
+      "word": "発表",
+      "kana": "はっぴょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1477840"
+      ]
+    },
+    {
+      "id": "wd3ef43dfd5",
+      "word": "発明",
+      "kana": "はつめい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1477910"
+      ]
+    },
+    {
+      "id": "w4b1414b4a1",
+      "word": "初詣",
+      "kana": "はつもうで",
+      "label": "自动词",
+      "note": "サ变用法：神社に初詣する。",
+      "sourceEntries": []
+    },
+    {
+      "id": "we5caa1bf89",
+      "word": "離れる",
+      "kana": "はなれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1550840"
+      ]
+    },
+    {
+      "id": "w0378160789",
+      "word": "嵌める",
+      "kana": "はめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1566420"
+      ]
+    },
+    {
+      "id": "w3fe4edb27d",
+      "word": "貼る",
+      "kana": "はる",
+      "label": "他动词",
+      "note": "按粘贴义标注，区别同音的「張る」。",
+      "sourceEntries": [
+        "1427900"
+      ]
+    },
+    {
+      "id": "we99af7b00f",
+      "word": "張る",
+      "kana": "はる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1427900"
+      ]
+    },
+    {
+      "id": "w9ac1ee0831",
+      "word": "晴れる",
+      "kana": "はれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1376470"
+      ]
+    },
+    {
+      "id": "w396570b8dc",
+      "word": "反省",
+      "kana": "はんせい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1480540"
+      ]
+    },
+    {
+      "id": "w49be16ea6f",
+      "word": "反対",
+      "kana": "はんたい",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1480670"
+      ]
+    },
+    {
+      "id": "wb4e4100acc",
+      "word": "判断",
+      "kana": "はんだん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1478620"
+      ]
+    },
+    {
+      "id": "w8ed7c68404",
+      "word": "販売",
+      "kana": "はんばい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1481800"
+      ]
+    },
+    {
+      "id": "w1cf2afe57b",
+      "word": "氾濫",
+      "kana": "はんらん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1481420"
+      ]
+    },
+    {
+      "id": "wa975302226",
+      "word": "冷える",
+      "kana": "ひえる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1556630"
+      ]
+    },
+    {
+      "id": "w6a25bbae5c",
+      "word": "控える",
+      "kana": "ひかえる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1279060"
+      ]
+    },
+    {
+      "id": "w4ca5765027",
+      "word": "光る",
+      "kana": "ひかる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1272820"
+      ]
+    },
+    {
+      "id": "wf0fff782f7",
+      "word": "引き受ける",
+      "kana": "ひきうける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1601520"
+      ]
+    },
+    {
+      "id": "w04fc5849f2",
+      "word": "弾く",
+      "kana": "ひく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1419370"
+      ]
+    },
+    {
+      "id": "wce8d18da64",
+      "word": "引く",
+      "kana": "ひく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1169250"
+      ]
+    },
+    {
+      "id": "w9d77a47859",
+      "word": "引越し",
+      "kana": "ひっこし",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1601880"
+      ]
+    },
+    {
+      "id": "w1430546c72",
+      "word": "引っ越す",
+      "kana": "ひっこす",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1169340"
+      ]
+    },
+    {
+      "id": "wd37fe35643",
+      "word": "一苦労",
+      "kana": "ひとくろう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1727970"
+      ]
+    },
+    {
+      "id": "w70180c6e82",
+      "word": "一人暮らし",
+      "kana": "ひとりぐらし",
+      "label": "自动词",
+      "note": "サ变用法：東京で一人暮らしする。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w4cad4d859c",
+      "word": "避難",
+      "kana": "ひなん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1484660"
+      ]
+    },
+    {
+      "id": "w27a85ea67c",
+      "word": "評価",
+      "kana": "ひょうか",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1490010"
+      ]
+    },
+    {
+      "id": "w6b60bf02fb",
+      "word": "表記",
+      "kana": "ひょうき",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1489420"
+      ]
+    },
+    {
+      "id": "we4ce76759d",
+      "word": "表現",
+      "kana": "ひょうげん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1489510"
+      ]
+    },
+    {
+      "id": "w119daf93ee",
+      "word": "開く",
+      "kana": "ひらく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1202440"
+      ]
+    },
+    {
+      "id": "w9ec5544355",
+      "word": "昼寝",
+      "kana": "ひるね",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1426370"
+      ]
+    },
+    {
+      "id": "w2d3b2f80de",
+      "word": "拾う",
+      "kana": "ひろう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1332570"
+      ]
+    },
+    {
+      "id": "wc1dde94dff",
+      "word": "広がる",
+      "kana": "ひろがる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1602360"
+      ]
+    },
+    {
+      "id": "w1a3e448dcb",
+      "word": "広げる",
+      "kana": "ひろげる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1602370"
+      ]
+    },
+    {
+      "id": "w658e751399",
+      "word": "描写",
+      "kana": "びょうしゃ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1490140"
+      ]
+    },
+    {
+      "id": "w6c1a9beb11",
+      "word": "増える",
+      "kana": "ふえる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1602440"
+      ]
+    },
+    {
+      "id": "wbef40bba09",
+      "word": "深める",
+      "kana": "ふかめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1362680"
+      ]
+    },
+    {
+      "id": "wb2daa00fe5",
+      "word": "普及",
+      "kana": "ふきゅう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1497110"
+      ]
+    },
+    {
+      "id": "web4d16c5e6",
+      "word": "復習",
+      "kana": "ふくしゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1500800"
+      ]
+    },
+    {
+      "id": "w445880a709",
+      "word": "含む",
+      "kana": "ふくむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1216880"
+      ]
+    },
+    {
+      "id": "w284c49568c",
+      "word": "扶助",
+      "kana": "ふじょ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1496980"
+      ]
+    },
+    {
+      "id": "w12a20b1ddc",
+      "word": "太る",
+      "kana": "ふとる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1408220"
+      ]
+    },
+    {
+      "id": "wcb853a3dc8",
+      "word": "踏む",
+      "kana": "ふむ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1450270"
+      ]
+    },
+    {
+      "id": "wba59b933de",
+      "word": "震える",
+      "kana": "ふるえる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1366310"
+      ]
+    },
+    {
+      "id": "we263700e22",
+      "word": "触れる",
+      "kana": "ふれる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1357990"
+      ]
+    },
+    {
+      "id": "w725aed4338",
+      "word": "噴火",
+      "kana": "ふんか",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1504560"
+      ]
+    },
+    {
+      "id": "w4f196acd59",
+      "word": "ぶらぶら",
+      "kana": "ぶらぶら",
+      "label": "自动词",
+      "note": "サ变用法：街をぶらぶらする；这里的「を」表示移动经过的场所。",
+      "sourceEntries": []
+    },
+    {
+      "id": "wb4021c2e3d",
+      "word": "分別",
+      "kana": "ぶんべつ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1504200"
+      ]
+    },
+    {
+      "id": "w7c6fd760fe",
+      "word": "分類",
+      "kana": "ぶんるい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1504460"
+      ]
+    },
+    {
+      "id": "wd1454ec022",
+      "word": "平均",
+      "kana": "へいきん",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1583870"
+      ]
+    },
+    {
+      "id": "wa252bc592d",
+      "word": "減る",
+      "kana": "へる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1263120"
+      ]
+    },
+    {
+      "id": "w0a920496d8",
+      "word": "変化",
+      "kana": "へんか",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1510890"
+      ]
+    },
+    {
+      "id": "w125337ad20",
+      "word": "変更",
+      "kana": "へんこう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1511040"
+      ]
+    },
+    {
+      "id": "wd107b864c3",
+      "word": "編集",
+      "kana": "へんしゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1603240"
+      ]
+    },
+    {
+      "id": "w5445652df4",
+      "word": "崩壊",
+      "kana": "ほうかい",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1516280"
+      ]
+    },
+    {
+      "id": "we07f3ce94b",
+      "word": "報告",
+      "kana": "ほうこく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1515670"
+      ]
+    },
+    {
+      "id": "w4f56b47f1f",
+      "word": "放送",
+      "kana": "ほうそう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1516750"
+      ]
+    },
+    {
+      "id": "w80f95ea504",
+      "word": "報道",
+      "kana": "ほうどう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1515730"
+      ]
+    },
+    {
+      "id": "wc76e18688a",
+      "word": "訪問",
+      "kana": "ほうもん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1518120"
+      ]
+    },
+    {
+      "id": "w0b46e9d797",
+      "word": "補講",
+      "kana": "ほこう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1690300"
+      ]
+    },
+    {
+      "id": "w8ac7528ec4",
+      "word": "保護",
+      "kana": "ほご",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1513530"
+      ]
+    },
+    {
+      "id": "wf0c6302ffa",
+      "word": "保障",
+      "kana": "ほしょう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1603500"
+      ]
+    },
+    {
+      "id": "wfadf24dbc5",
+      "word": "保存",
+      "kana": "ほぞん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1513940"
+      ]
+    },
+    {
+      "id": "wefa2622a96",
+      "word": "褒める",
+      "kana": "ほめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1603550"
+      ]
+    },
+    {
+      "id": "w3a5891963f",
+      "word": "彫る",
+      "kana": "ほる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1427950"
+      ]
+    },
+    {
+      "id": "w07f1ecfe4f",
+      "word": "翻訳",
+      "kana": "ほんやく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1523400"
+      ]
+    },
+    {
+      "id": "w658eeb1b73",
+      "word": "貿易",
+      "kana": "ぼうえき",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1520120"
+      ]
+    },
+    {
+      "id": "wba450f9969",
+      "word": "参る",
+      "kana": "まいる",
+      "label": "自动词",
+      "note": "此处为去、来或参拜义，不合并古语奉酒义。",
+      "sourceEntries": [
+        "1302070"
+      ]
+    },
+    {
+      "id": "w24d0e82891",
+      "word": "任せる",
+      "kana": "まかせる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1467150"
+      ]
+    },
+    {
+      "id": "we293dff414",
+      "word": "巻く",
+      "kana": "まく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1211200"
+      ]
+    },
+    {
+      "id": "w31e81db701",
+      "word": "待ち合わせる",
+      "kana": "まちあわせる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1410520"
+      ]
+    },
+    {
+      "id": "w58bbd6fdfa",
+      "word": "間違う",
+      "kana": "まちがう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1611610"
+      ]
+    },
+    {
+      "id": "w5099287a91",
+      "word": "間違える",
+      "kana": "まちがえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1215330"
+      ]
+    },
+    {
+      "id": "wac44712d14",
+      "word": "まとまる",
+      "kana": "まとまる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1611640"
+      ]
+    },
+    {
+      "id": "w19a6a5342b",
+      "word": "間に合う",
+      "kana": "まにあう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1215260"
+      ]
+    },
+    {
+      "id": "wcf8b2c6e4e",
+      "word": "まね",
+      "kana": "まね",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1363740"
+      ]
+    },
+    {
+      "id": "w0e404c81d0",
+      "word": "招く",
+      "kana": "まねく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1349590"
+      ]
+    },
+    {
+      "id": "w833154e63e",
+      "word": "真似る",
+      "kana": "まねる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1363760"
+      ]
+    },
+    {
+      "id": "wcd179fd2ef",
+      "word": "迷う",
+      "kana": "まよう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1532710"
+      ]
+    },
+    {
+      "id": "w0fae32113a",
+      "word": "回す",
+      "kana": "まわす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1199350"
+      ]
+    },
+    {
+      "id": "w1a1aa6a53c",
+      "word": "回る",
+      "kana": "まわる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1604300"
+      ]
+    },
+    {
+      "id": "w4238d4dfb2",
+      "word": "満足",
+      "kana": "まんぞく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1526860"
+      ]
+    },
+    {
+      "id": "w7ed55de694",
+      "word": "磨く",
+      "kana": "みがく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1523940"
+      ]
+    },
+    {
+      "id": "w27fdf54097",
+      "word": "見極める",
+      "kana": "みきわめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1259490"
+      ]
+    },
+    {
+      "id": "wb69929d33f",
+      "word": "見下す",
+      "kana": "みくだす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1259360"
+      ]
+    },
+    {
+      "id": "w59b622e60d",
+      "word": "乱れる",
+      "kana": "みだれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1548940"
+      ]
+    },
+    {
+      "id": "we5174c3607",
+      "word": "見つかる",
+      "kana": "みつかる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1604550"
+      ]
+    },
+    {
+      "id": "w30b93b852e",
+      "word": "見なす",
+      "kana": "みなす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1604630"
+      ]
+    },
+    {
+      "id": "w4ea525b62f",
+      "word": "診る",
+      "kana": "みる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1365450"
+      ]
+    },
+    {
+      "id": "wf4394cdf4f",
+      "word": "向かい合う",
+      "kana": "むかいあう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1604760"
+      ]
+    },
+    {
+      "id": "w8960d8342f",
+      "word": "向かう",
+      "kana": "むかう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1604800"
+      ]
+    },
+    {
+      "id": "wd2d050dbd5",
+      "word": "報いる",
+      "kana": "むくいる",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1515630"
+      ]
+    },
+    {
+      "id": "w8bf311dad9",
+      "word": "向ける",
+      "kana": "むける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1277100"
+      ]
+    },
+    {
+      "id": "wcca1f58793",
+      "word": "結ぶ",
+      "kana": "むすぶ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1254670"
+      ]
+    },
+    {
+      "id": "w2c7613a605",
+      "word": "迷惑",
+      "kana": "めいわく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1532800"
+      ]
+    },
+    {
+      "id": "wcc68f36e56",
+      "word": "めぐり合う",
+      "kana": "めぐりあう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1342030"
+      ]
+    },
+    {
+      "id": "w180e06d732",
+      "word": "召し上がる",
+      "kana": "めしあがる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1346370"
+      ]
+    },
+    {
+      "id": "w4db434041b",
+      "word": "目立つ",
+      "kana": "めだつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1535700"
+      ]
+    },
+    {
+      "id": "w69bc7e0c9e",
+      "word": "面接",
+      "kana": "めんせつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1533510"
+      ]
+    },
+    {
+      "id": "wd885de57d3",
+      "word": "申し上げる",
+      "kana": "もうしあげる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1362950"
+      ]
+    },
+    {
+      "id": "w1c9ec6828a",
+      "word": "申し遅れる",
+      "kana": "もうしおくれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1362970"
+      ]
+    },
+    {
+      "id": "w2430a43fa4",
+      "word": "申す",
+      "kana": "もうす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1363090"
+      ]
+    },
+    {
+      "id": "w913196a85a",
+      "word": "燃える",
+      "kana": "もえる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1469570"
+      ]
+    },
+    {
+      "id": "wc45eda4996",
+      "word": "持ち歩く",
+      "kana": "もちあるく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1315680"
+      ]
+    },
+    {
+      "id": "w43f6f16082",
+      "word": "持ち帰る",
+      "kana": "もちかえる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1658430"
+      ]
+    },
+    {
+      "id": "wf12833c4be",
+      "word": "求める",
+      "kana": "もとめる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1229350"
+      ]
+    },
+    {
+      "id": "w60a1005be6",
+      "word": "戻る",
+      "kana": "もどる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1535880"
+      ]
+    },
+    {
+      "id": "w755e59c6c5",
+      "word": "燃やす",
+      "kana": "もやす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1582900"
+      ]
+    },
+    {
+      "id": "wf8b5b736b8",
+      "word": "約束",
+      "kana": "やくそく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1538130"
+      ]
+    },
+    {
+      "id": "wa5ff2ad150",
+      "word": "役立つ",
+      "kana": "やくだつ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1538090"
+      ]
+    },
+    {
+      "id": "w4439d25461",
+      "word": "焼ける",
+      "kana": "やける",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1350610"
+      ]
+    },
+    {
+      "id": "w813745d758",
+      "word": "痩せる",
+      "kana": "やせる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1605510"
+      ]
+    },
+    {
+      "id": "wb30b4bfe8b",
+      "word": "やってくる",
+      "kana": "やってくる",
+      "label": "自动词",
+      "note": "「来る」构成的复合动词，表示来到、到来。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w9f5f8bb59b",
+      "word": "雇う",
+      "kana": "やとう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1605570"
+      ]
+    },
+    {
+      "id": "w6f0fc75b07",
+      "word": "止む",
+      "kana": "やむ",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1310640"
+      ]
+    },
+    {
+      "id": "w41005b0bb5",
+      "word": "優勝",
+      "kana": "ゆうしょう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1539280"
+      ]
+    },
+    {
+      "id": "w3967b73a24",
+      "word": "油断",
+      "kana": "ゆだん",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1538690"
+      ]
+    },
+    {
+      "id": "w8bf7908ba8",
+      "word": "指差す",
+      "kana": "ゆびさす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1309790"
+      ]
+    },
+    {
+      "id": "wb692bddbf0",
+      "word": "揺れる",
+      "kana": "ゆれる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1545710"
+      ]
+    },
+    {
+      "id": "wa0c3ad05ac",
+      "word": "要求",
+      "kana": "ようきゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1546680"
+      ]
+    },
+    {
+      "id": "w95d2e9fa58",
+      "word": "汚す",
+      "kana": "よごす",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1178960"
+      ]
+    },
+    {
+      "id": "w95a8fbc0a4",
+      "word": "呼び掛ける",
+      "kana": "よびかける",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1266280"
+      ]
+    },
+    {
+      "id": "w912252a806",
+      "word": "呼ぶ",
+      "kana": "よぶ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1266440"
+      ]
+    },
+    {
+      "id": "wba850d4e21",
+      "word": "予防",
+      "kana": "よぼう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1543660"
+      ]
+    },
+    {
+      "id": "wb4e8a82dc1",
+      "word": "喜ぶ",
+      "kana": "よろこぶ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1218760"
+      ]
+    },
+    {
+      "id": "w14304745e4",
+      "word": "理解",
+      "kana": "りかい",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1549910"
+      ]
+    },
+    {
+      "id": "wc5e9eb57f9",
+      "word": "離着陸",
+      "kana": "りちゃくりく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1821660"
+      ]
+    },
+    {
+      "id": "wecda64e27e",
+      "word": "留学",
+      "kana": "りゅうがく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1552740"
+      ]
+    },
+    {
+      "id": "wb9d0a6d84f",
+      "word": "流行",
+      "kana": "りゅうこう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1585110"
+      ]
+    },
+    {
+      "id": "wdf2144b498",
+      "word": "料理",
+      "kana": "りょうり",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1554310"
+      ]
+    },
+    {
+      "id": "w6cba8cc13b",
+      "word": "利用",
+      "kana": "りよう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1549660"
+      ]
+    },
+    {
+      "id": "w2ff4a6f70b",
+      "word": "練習",
+      "kana": "れんしゅう",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1559160"
+      ]
+    },
+    {
+      "id": "w24f7326e08",
+      "word": "連絡",
+      "kana": "れんらく",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1559900"
+      ]
+    },
+    {
+      "id": "waf3ccea763",
+      "word": "労働",
+      "kana": "ろうどう",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1606450"
+      ]
+    },
+    {
+      "id": "w5e37af2fd3",
+      "word": "朗読",
+      "kana": "ろうどく",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1560730"
+      ]
+    },
+    {
+      "id": "we468ba1b29",
+      "word": "録音",
+      "kana": "ろくおん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1561590"
+      ]
+    },
+    {
+      "id": "wb712c29fe3",
+      "word": "湧く",
+      "kana": "わく",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1606685"
+      ]
+    },
+    {
+      "id": "w545381a68b",
+      "word": "渡る",
+      "kana": "わたる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1444680"
+      ]
+    },
+    {
+      "id": "w1b705b89ee",
+      "word": "笑う",
+      "kana": "わらう",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1351360"
+      ]
+    },
+    {
+      "id": "wa99917e862",
+      "word": "割引",
+      "kana": "わりびき",
+      "label": "他动词",
+      "note": "サ变用法：料金を割引する。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w3ee1fb7b96",
+      "word": "割る",
+      "kana": "わる",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1208000"
+      ]
+    },
+    {
+      "id": "w6ef60899ab",
+      "word": "割れる",
+      "kana": "われる",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1208020"
+      ]
+    },
+    {
+      "id": "w2129038bf6",
+      "word": "アドバイス",
+      "kana": "アドバイス",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1017070"
+      ]
+    },
+    {
+      "id": "wb5971b521c",
+      "word": "アナウンス",
+      "kana": "アナウンス",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1017340"
+      ]
+    },
+    {
+      "id": "w1896d42b18",
+      "word": "アルバイト",
+      "kana": "アルバイト",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1019420"
+      ]
+    },
+    {
+      "id": "w265f036d1e",
+      "word": "オープン",
+      "kana": "オープン",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1032990"
+      ]
+    },
+    {
+      "id": "w2dd5ca6b6b",
+      "word": "サービス",
+      "kana": "サービス",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1055000"
+      ]
+    },
+    {
+      "id": "w97940c4190",
+      "word": "ショッピング",
+      "kana": "ショッピング",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1062760"
+      ]
+    },
+    {
+      "id": "w4c4a995e96",
+      "word": "スキー",
+      "kana": "スキー",
+      "label": "自动词",
+      "note": "サ变用法表示滑雪活动；常用「スキーをする」。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w645c3f570f",
+      "word": "スピーチ",
+      "kana": "スピーチ",
+      "label": "自动词",
+      "note": "サ变用法表示演讲；常用「スピーチをする」。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w0e9a2e499f",
+      "word": "チェック",
+      "kana": "チェック",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1077550"
+      ]
+    },
+    {
+      "id": "w02f17fee86",
+      "word": "デザイン",
+      "kana": "デザイン",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1082900"
+      ]
+    },
+    {
+      "id": "w71911cd8db",
+      "word": "デート",
+      "kana": "デート",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1081430"
+      ]
+    },
+    {
+      "id": "w3aa6571a5e",
+      "word": "ドライブ",
+      "kana": "ドライブ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1088580"
+      ]
+    },
+    {
+      "id": "wceeb707643",
+      "word": "ハイキング",
+      "kana": "ハイキング",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1095040"
+      ]
+    },
+    {
+      "id": "w55af20415e",
+      "word": "PR",
+      "kana": "ピーアール",
+      "label": "他动词",
+      "note": "サ变用法：商品をPRする。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w7751d5a1a7",
+      "word": "プラス",
+      "kana": "プラス",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1115630"
+      ]
+    },
+    {
+      "id": "w5a5f08df94",
+      "word": "プレゼント",
+      "kana": "プレゼント",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1116840"
+      ]
+    },
+    {
+      "id": "w30515e1a4a",
+      "word": "ホームステイ",
+      "kana": "ホームステイ",
+      "label": "自动词",
+      "note": "サ变用法：外国の家庭にホームステイする。",
+      "sourceEntries": []
+    },
+    {
+      "id": "w518467dd8f",
+      "word": "マスター",
+      "kana": "マスター",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1127970"
+      ]
+    },
+    {
+      "id": "wf54fcf00b7",
+      "word": "マーク",
+      "kana": "マーク",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1126140"
+      ]
+    },
+    {
+      "id": "w9060a06d59",
+      "word": "メモ",
+      "kana": "メモ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1133830"
+      ]
+    },
+    {
+      "id": "w7c77871629",
+      "word": "リサイクル",
+      "kana": "リサイクル",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1141350"
+      ]
+    },
+    {
+      "id": "w6ede3d6c79",
+      "word": "リストラ",
+      "kana": "リストラ",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1637150"
+      ]
+    },
+    {
+      "id": "w3f5b7c2a60",
+      "word": "リフレッシュ",
+      "kana": "リフレッシュ",
+      "label": "自他动词",
+      "note": "",
+      "sourceEntries": [
+        "1142630"
+      ]
+    },
+    {
+      "id": "w0d1d0ae682",
+      "word": "リラックス",
+      "kana": "リラックス",
+      "label": "自动词",
+      "note": "",
+      "sourceEntries": [
+        "1143240"
+      ]
+    },
+    {
+      "id": "wd45319d3ee",
+      "word": "レベルアップ",
+      "kana": "レベルアップ",
+      "label": "自他动词",
+      "note": "能力がレベルアップする／能力をレベルアップする。",
+      "sourceEntries": []
+    },
+    {
+      "id": "wc2bfc727f2",
+      "word": "計算",
+      "kana": "けいさん",
+      "label": "他动词",
+      "note": "",
+      "sourceEntries": [
+        "1252140"
+      ]
+    },
+    {
+      "id": "wad9712d81e",
+      "word": "大満足",
+      "kana": "だいまんぞく",
+      "label": "自动词",
+      "note": "サ变用法：結果に大満足する。",
+      "sourceEntries": []
+    }
+  ],
+  "pairs": [
+    {
+      "automatic": {
+        "word": "開く（あく）",
+        "kana": "あく",
+        "meaning": "打开（自动）"
+      },
+      "transitive": {
+        "word": "開ける",
+        "kana": "あける",
+        "meaning": "打开（他动）"
+      }
+    },
+    {
+      "automatic": {
+        "word": "閉まる",
+        "kana": "しまる",
+        "meaning": "关闭（自动）"
+      },
+      "transitive": {
+        "word": "閉める",
+        "kana": "しめる",
+        "meaning": "关闭（他动）"
+      }
+    },
+    {
+      "automatic": {
+        "word": "入る",
+        "kana": "はいる",
+        "meaning": "进入"
+      },
+      "transitive": {
+        "word": "入れる",
+        "kana": "いれる",
+        "meaning": "放入"
+      }
+    },
+    {
+      "automatic": {
+        "word": "出る",
+        "kana": "でる",
+        "meaning": "出去；出现"
+      },
+      "transitive": {
+        "word": "出す",
+        "kana": "だす",
+        "meaning": "拿出；使出来"
+      }
+    },
+    {
+      "automatic": {
+        "word": "上がる",
+        "kana": "あがる",
+        "meaning": "上升"
+      },
+      "transitive": {
+        "word": "上げる",
+        "kana": "あげる",
+        "meaning": "提高；举起"
+      }
+    },
+    {
+      "automatic": {
+        "word": "下がる",
+        "kana": "さがる",
+        "meaning": "下降"
+      },
+      "transitive": {
+        "word": "下げる",
+        "kana": "さげる",
+        "meaning": "降低"
+      }
+    },
+    {
+      "automatic": {
+        "word": "降りる",
+        "kana": "おりる",
+        "meaning": "下来；下车"
+      },
+      "transitive": {
+        "word": "降ろす",
+        "kana": "おろす",
+        "meaning": "放下；让下车"
+      }
+    },
+    {
+      "automatic": {
+        "word": "落ちる",
+        "kana": "おちる",
+        "meaning": "落下"
+      },
+      "transitive": {
+        "word": "落とす",
+        "kana": "おとす",
+        "meaning": "使落下；弄丢"
+      }
+    },
+    {
+      "automatic": {
+        "word": "起きる",
+        "kana": "おきる",
+        "meaning": "起床；发生"
+      },
+      "transitive": {
+        "word": "起こす",
+        "kana": "おこす",
+        "meaning": "叫醒；引起"
+      }
+    },
+    {
+      "automatic": {
+        "word": "起こる",
+        "kana": "おこる",
+        "meaning": "发生"
+      },
+      "transitive": {
+        "word": "起こす",
+        "kana": "おこす",
+        "meaning": "引起"
+      }
+    },
+    {
+      "automatic": {
+        "word": "終わる",
+        "kana": "おわる",
+        "meaning": "结束"
+      },
+      "transitive": {
+        "word": "終える",
+        "kana": "おえる",
+        "meaning": "结束某事"
+      }
+    },
+    {
+      "automatic": {
+        "word": "始まる",
+        "kana": "はじまる",
+        "meaning": "开始（自动）"
+      },
+      "transitive": {
+        "word": "始める",
+        "kana": "はじめる",
+        "meaning": "开始某事"
+      }
+    },
+    {
+      "automatic": {
+        "word": "止まる",
+        "kana": "とまる",
+        "meaning": "停止（自动）"
+      },
+      "transitive": {
+        "word": "止める",
+        "kana": "とめる",
+        "meaning": "使停止"
+      }
+    },
+    {
+      "automatic": {
+        "word": "続く",
+        "kana": "つづく",
+        "meaning": "继续；持续"
+      },
+      "transitive": {
+        "word": "続ける",
+        "kana": "つづける",
+        "meaning": "继续做"
+      }
+    },
+    {
+      "automatic": {
+        "word": "変わる",
+        "kana": "かわる",
+        "meaning": "变化"
+      },
+      "transitive": {
+        "word": "変える",
+        "kana": "かえる",
+        "meaning": "改变"
+      }
+    },
+    {
+      "automatic": {
+        "word": "動く",
+        "kana": "うごく",
+        "meaning": "移动；运转"
+      },
+      "transitive": {
+        "word": "動かす",
+        "kana": "うごかす",
+        "meaning": "使移动；开动"
+      }
+    },
+    {
+      "automatic": {
+        "word": "集まる",
+        "kana": "あつまる",
+        "meaning": "聚集"
+      },
+      "transitive": {
+        "word": "集める",
+        "kana": "あつめる",
+        "meaning": "收集"
+      }
+    },
+    {
+      "automatic": {
+        "word": "残る",
+        "kana": "のこる",
+        "meaning": "剩下"
+      },
+      "transitive": {
+        "word": "残す",
+        "kana": "のこす",
+        "meaning": "留下"
+      }
+    },
+    {
+      "automatic": {
+        "word": "決まる",
+        "kana": "きまる",
+        "meaning": "确定（自动）"
+      },
+      "transitive": {
+        "word": "決める",
+        "kana": "きめる",
+        "meaning": "决定"
+      }
+    },
+    {
+      "automatic": {
+        "word": "壊れる",
+        "kana": "こわれる",
+        "meaning": "损坏（自动）"
+      },
+      "transitive": {
+        "word": "壊す",
+        "kana": "こわす",
+        "meaning": "弄坏"
+      }
+    },
+    {
+      "automatic": {
+        "word": "直る",
+        "kana": "なおる",
+        "meaning": "修好；恢复正常"
+      },
+      "transitive": {
+        "word": "直す",
+        "kana": "なおす",
+        "meaning": "修理；改正"
+      }
+    },
+    {
+      "automatic": {
+        "word": "治る",
+        "kana": "なおる",
+        "meaning": "痊愈"
+      },
+      "transitive": {
+        "word": "治す",
+        "kana": "なおす",
+        "meaning": "治好"
+      }
+    },
+    {
+      "automatic": {
+        "word": "燃える",
+        "kana": "もえる",
+        "meaning": "燃烧（自动）"
+      },
+      "transitive": {
+        "word": "燃やす",
+        "kana": "もやす",
+        "meaning": "烧（他动）"
+      }
+    },
+    {
+      "automatic": {
+        "word": "焼ける",
+        "kana": "やける",
+        "meaning": "烤熟；烧着"
+      },
+      "transitive": {
+        "word": "焼く",
+        "kana": "やく",
+        "meaning": "烤；烧"
+      }
+    },
+    {
+      "automatic": {
+        "word": "汚れる",
+        "kana": "よごれる",
+        "meaning": "变脏"
+      },
+      "transitive": {
+        "word": "汚す",
+        "kana": "よごす",
+        "meaning": "弄脏"
+      }
+    },
+    {
+      "automatic": {
+        "word": "並ぶ",
+        "kana": "ならぶ",
+        "meaning": "排列；排队"
+      },
+      "transitive": {
+        "word": "並べる",
+        "kana": "ならべる",
+        "meaning": "摆放"
+      }
+    },
+    {
+      "automatic": {
+        "word": "見つかる",
+        "kana": "みつかる",
+        "meaning": "被发现"
+      },
+      "transitive": {
+        "word": "見つける",
+        "kana": "みつける",
+        "meaning": "找到"
+      }
+    },
+    {
+      "automatic": {
+        "word": "育つ",
+        "kana": "そだつ",
+        "meaning": "成长"
+      },
+      "transitive": {
+        "word": "育てる",
+        "kana": "そだてる",
+        "meaning": "养育"
+      }
+    },
+    {
+      "automatic": {
+        "word": "増える",
+        "kana": "ふえる",
+        "meaning": "增加（自动）"
+      },
+      "transitive": {
+        "word": "増やす",
+        "kana": "ふやす",
+        "meaning": "增加（他动）"
+      }
+    },
+    {
+      "automatic": {
+        "word": "減る",
+        "kana": "へる",
+        "meaning": "减少（自动）"
+      },
+      "transitive": {
+        "word": "減らす",
+        "kana": "へらす",
+        "meaning": "减少（他动）"
+      }
+    },
+    {
+      "automatic": {
+        "word": "広がる",
+        "kana": "ひろがる",
+        "meaning": "扩大（自动）"
+      },
+      "transitive": {
+        "word": "広げる",
+        "kana": "ひろげる",
+        "meaning": "展开；扩大（他动）"
+      }
+    },
+    {
+      "automatic": {
+        "word": "付く",
+        "kana": "つく",
+        "meaning": "附着"
+      },
+      "transitive": {
+        "word": "つける",
+        "kana": "つける",
+        "meaning": "附上；打开电器"
+      }
+    },
+    {
+      "automatic": {
+        "word": "繋がる",
+        "kana": "つながる",
+        "meaning": "相连"
+      },
+      "transitive": {
+        "word": "繋ぐ",
+        "kana": "つなぐ",
+        "meaning": "连接"
+      }
+    },
+    {
+      "automatic": {
+        "word": "積もる",
+        "kana": "つもる",
+        "meaning": "堆积"
+      },
+      "transitive": {
+        "word": "積む",
+        "kana": "つむ",
+        "meaning": "堆放；装载"
+      }
+    },
+    {
+      "automatic": {
+        "word": "溜まる",
+        "kana": "たまる",
+        "meaning": "积存"
+      },
+      "transitive": {
+        "word": "溜める",
+        "kana": "ためる",
+        "meaning": "积攒"
+      }
+    },
+    {
+      "automatic": {
+        "word": "進む",
+        "kana": "すすむ",
+        "meaning": "前进"
+      },
+      "transitive": {
+        "word": "進める",
+        "kana": "すすめる",
+        "meaning": "推进"
+      }
+    },
+    {
+      "automatic": {
+        "word": "戻る",
+        "kana": "もどる",
+        "meaning": "返回"
+      },
+      "transitive": {
+        "word": "戻す",
+        "kana": "もどす",
+        "meaning": "放回；退还"
+      }
+    },
+    {
+      "automatic": {
+        "word": "割れる",
+        "kana": "われる",
+        "meaning": "破裂"
+      },
+      "transitive": {
+        "word": "割る",
+        "kana": "わる",
+        "meaning": "打破"
+      }
+    },
+    {
+      "automatic": {
+        "word": "倒れる",
+        "kana": "たおれる",
+        "meaning": "倒下"
+      },
+      "transitive": {
+        "word": "倒す",
+        "kana": "たおす",
+        "meaning": "弄倒；打倒"
+      }
+    },
+    {
+      "automatic": {
+        "word": "流れる",
+        "kana": "ながれる",
+        "meaning": "流动"
+      },
+      "transitive": {
+        "word": "流す",
+        "kana": "ながす",
+        "meaning": "使流动"
+      }
+    },
+    {
+      "automatic": {
+        "word": "鳴る",
+        "kana": "なる",
+        "meaning": "鸣响"
+      },
+      "transitive": {
+        "word": "鳴らす",
+        "kana": "ならす",
+        "meaning": "使发声"
+      }
+    },
+    {
+      "automatic": {
+        "word": "乗る",
+        "kana": "のる",
+        "meaning": "乘坐"
+      },
+      "transitive": {
+        "word": "乗せる",
+        "kana": "のせる",
+        "meaning": "让乘坐；装载"
+      }
+    },
+    {
+      "automatic": {
+        "word": "載る",
+        "kana": "のる",
+        "meaning": "刊登；装载在上面"
+      },
+      "transitive": {
+        "word": "載せる",
+        "kana": "のせる",
+        "meaning": "刊载；放在上面"
+      }
+    },
+    {
+      "automatic": {
+        "word": "映る",
+        "kana": "うつる",
+        "meaning": "映出"
+      },
+      "transitive": {
+        "word": "映す",
+        "kana": "うつす",
+        "meaning": "映照；放映"
+      }
+    },
+    {
+      "automatic": {
+        "word": "冷える",
+        "kana": "ひえる",
+        "meaning": "变冷"
+      },
+      "transitive": {
+        "word": "冷やす",
+        "kana": "ひやす",
+        "meaning": "使冷却"
+      }
+    },
+    {
+      "automatic": {
+        "word": "濡れる",
+        "kana": "ぬれる",
+        "meaning": "淋湿（自动）"
+      },
+      "transitive": {
+        "word": "濡らす",
+        "kana": "ぬらす",
+        "meaning": "弄湿"
+      }
+    },
+    {
+      "automatic": {
+        "word": "溶ける",
+        "kana": "とける",
+        "meaning": "溶化"
+      },
+      "transitive": {
+        "word": "溶かす",
+        "kana": "とかす",
+        "meaning": "使溶化"
+      }
+    },
+    {
+      "automatic": {
+        "word": "泊まる",
+        "kana": "とまる",
+        "meaning": "住宿"
+      },
+      "transitive": {
+        "word": "泊める",
+        "kana": "とめる",
+        "meaning": "让留宿"
+      }
+    },
+    {
+      "automatic": {
+        "word": "助かる",
+        "kana": "たすかる",
+        "meaning": "得救"
+      },
+      "transitive": {
+        "word": "助ける",
+        "kana": "たすける",
+        "meaning": "救助"
+      }
+    },
+    {
+      "automatic": {
+        "word": "なくなる",
+        "kana": "なくなる",
+        "meaning": "消失；没有了"
+      },
+      "transitive": {
+        "word": "無くす",
+        "kana": "なくす",
+        "meaning": "丢失；消除"
+      }
+    },
+    {
+      "automatic": {
+        "word": "生まれる",
+        "kana": "うまれる",
+        "meaning": "出生；产生"
+      },
+      "transitive": {
+        "word": "生む",
+        "kana": "うむ",
+        "meaning": "生下；创造"
+      }
+    },
+    {
+      "automatic": {
+        "word": "現れる",
+        "kana": "あらわれる",
+        "meaning": "出现"
+      },
+      "transitive": {
+        "word": "現す",
+        "kana": "あらわす",
+        "meaning": "使显现"
+      }
+    },
+    {
+      "automatic": {
+        "word": "消える",
+        "kana": "きえる",
+        "meaning": "消失；熄灭"
+      },
+      "transitive": {
+        "word": "消す",
+        "kana": "けす",
+        "meaning": "消除；关掉"
+      }
+    },
+    {
+      "automatic": {
+        "word": "隠れる",
+        "kana": "かくれる",
+        "meaning": "隐藏；躲藏"
+      },
+      "transitive": {
+        "word": "隠す",
+        "kana": "かくす",
+        "meaning": "藏起"
+      }
+    },
+    {
+      "automatic": {
+        "word": "慣れる",
+        "kana": "なれる",
+        "meaning": "习惯"
+      },
+      "transitive": {
+        "word": "慣らす",
+        "kana": "ならす",
+        "meaning": "使习惯"
+      }
+    },
+    {
+      "automatic": {
+        "word": "通る",
+        "kana": "とおる",
+        "meaning": "通过"
+      },
+      "transitive": {
+        "word": "通す",
+        "kana": "とおす",
+        "meaning": "使通过"
+      }
+    },
+    {
+      "automatic": {
+        "word": "立つ",
+        "kana": "たつ",
+        "meaning": "站立"
+      },
+      "transitive": {
+        "word": "立てる",
+        "kana": "たてる",
+        "meaning": "使立起"
+      }
+    },
+    {
+      "automatic": {
+        "word": "建つ",
+        "kana": "たつ",
+        "meaning": "建成"
+      },
+      "transitive": {
+        "word": "建てる",
+        "kana": "たてる",
+        "meaning": "建造"
+      }
+    },
+    {
+      "automatic": {
+        "word": "回る",
+        "kana": "まわる",
+        "meaning": "旋转"
+      },
+      "transitive": {
+        "word": "回す",
+        "kana": "まわす",
+        "meaning": "转动"
+      }
+    },
+    {
+      "automatic": {
+        "word": "傾く",
+        "kana": "かたむく",
+        "meaning": "倾斜"
+      },
+      "transitive": {
+        "word": "傾ける",
+        "kana": "かたむける",
+        "meaning": "使倾斜"
+      }
+    },
+    {
+      "automatic": {
+        "word": "揺れる",
+        "kana": "ゆれる",
+        "meaning": "摇晃（自动）"
+      },
+      "transitive": {
+        "word": "揺らす",
+        "kana": "ゆらす",
+        "meaning": "摇动（他动）"
+      }
+    },
+    {
+      "automatic": {
+        "word": "伸びる",
+        "kana": "のびる",
+        "meaning": "伸长"
+      },
+      "transitive": {
+        "word": "伸ばす",
+        "kana": "のばす",
+        "meaning": "伸展；延长"
+      }
+    },
+    {
+      "automatic": {
+        "word": "合う",
+        "kana": "あう",
+        "meaning": "相合"
+      },
+      "transitive": {
+        "word": "合わせる",
+        "kana": "あわせる",
+        "meaning": "使吻合"
+      }
+    },
+    {
+      "automatic": {
+        "word": "空く",
+        "kana": "あく",
+        "meaning": "空出；空着"
+      },
+      "transitive": {
+        "word": "空ける",
+        "kana": "あける",
+        "meaning": "腾出；空出"
+      }
+    },
+    {
+      "automatic": {
+        "word": "解ける",
+        "kana": "とける",
+        "meaning": "解开（自动）"
+      },
+      "transitive": {
+        "word": "解く",
+        "kana": "とく",
+        "meaning": "解开；解答"
+      }
+    },
+    {
+      "automatic": {
+        "word": "染まる",
+        "kana": "そまる",
+        "meaning": "染上颜色"
+      },
+      "transitive": {
+        "word": "染める",
+        "kana": "そめる",
+        "meaning": "染色"
+      }
+    },
+    {
+      "automatic": {
+        "word": "深まる",
+        "kana": "ふかまる",
+        "meaning": "加深（自动）"
+      },
+      "transitive": {
+        "word": "深める",
+        "kana": "ふかめる",
+        "meaning": "使加深"
+      }
+    },
+    {
+      "automatic": {
+        "word": "高まる",
+        "kana": "たかまる",
+        "meaning": "提高（自动）"
+      },
+      "transitive": {
+        "word": "高める",
+        "kana": "たかめる",
+        "meaning": "提高（他动）"
+      }
+    },
+    {
+      "automatic": {
+        "word": "届く",
+        "kana": "とどく",
+        "meaning": "送到；到达"
+      },
+      "transitive": {
+        "word": "届ける",
+        "kana": "とどける",
+        "meaning": "送达"
+      }
+    },
+    {
+      "automatic": {
+        "word": "片付く",
+        "kana": "かたづく",
+        "meaning": "收拾好了"
+      },
+      "transitive": {
+        "word": "片付ける",
+        "kana": "かたづける",
+        "meaning": "收拾；整理"
+      }
+    },
+    {
+      "automatic": {
+        "word": "まとまる",
+        "kana": "まとまる",
+        "meaning": "集中；达成一致"
+      },
+      "transitive": {
+        "word": "纏める",
+        "kana": "まとめる",
+        "meaning": "汇总；整理"
+      }
+    },
+    {
+      "automatic": {
+        "word": "抜ける",
+        "kana": "ぬける",
+        "meaning": "脱落；漏掉"
+      },
+      "transitive": {
+        "word": "抜く",
+        "kana": "ぬく",
+        "meaning": "拔出；抽出"
+      }
+    },
+    {
+      "automatic": {
+        "word": "取れる",
+        "kana": "とれる",
+        "meaning": "脱落；去掉（自动）"
+      },
+      "transitive": {
+        "word": "取る",
+        "kana": "とる",
+        "meaning": "取；拿"
+      }
+    },
+    {
+      "automatic": {
+        "word": "痛む",
+        "kana": "いたむ",
+        "meaning": "疼痛"
+      },
+      "transitive": {
+        "word": "痛める",
+        "kana": "いためる",
+        "meaning": "弄伤"
+      }
+    },
+    {
+      "automatic": {
+        "word": "驚く",
+        "kana": "おどろく",
+        "meaning": "吃惊"
+      },
+      "transitive": {
+        "word": "驚かす",
+        "kana": "おどろかす",
+        "meaning": "使吃惊"
+      }
+    },
+    {
+      "automatic": {
+        "word": "返る",
+        "kana": "かえる",
+        "meaning": "返回；回到原处"
+      },
+      "transitive": {
+        "word": "返す",
+        "kana": "かえす",
+        "meaning": "归还；使返回"
+      }
+    },
+    {
+      "automatic": {
+        "word": "帰る",
+        "kana": "かえる",
+        "meaning": "回去；回来"
+      },
+      "transitive": {
+        "word": "帰す",
+        "kana": "かえす",
+        "meaning": "使回去；让回家"
+      }
+    },
+    {
+      "automatic": {
+        "word": "渡る",
+        "kana": "わたる",
+        "meaning": "渡过；穿过"
+      },
+      "transitive": {
+        "word": "渡す",
+        "kana": "わたす",
+        "meaning": "递给；交给"
+      }
+    },
+    {
+      "automatic": {
+        "word": "煮える",
+        "kana": "にえる",
+        "meaning": "煮熟；煮开"
+      },
+      "transitive": {
+        "word": "煮る",
+        "kana": "にる",
+        "meaning": "煮；炖"
+      }
+    },
+    {
+      "automatic": {
+        "word": "寝る",
+        "kana": "ねる",
+        "meaning": "睡觉"
+      },
+      "transitive": {
+        "word": "寝かす",
+        "kana": "ねかす",
+        "meaning": "让睡；使躺下"
+      }
+    },
+    {
+      "automatic": {
+        "word": "分かれる",
+        "kana": "わかれる",
+        "meaning": "分开（自动）"
+      },
+      "transitive": {
+        "word": "分ける",
+        "kana": "わける",
+        "meaning": "分开；分配"
+      }
+    },
+    {
+      "automatic": {
+        "word": "表れる",
+        "kana": "あらわれる",
+        "meaning": "表现出来"
+      },
+      "transitive": {
+        "word": "表す",
+        "kana": "あらわす",
+        "meaning": "表示；表达"
+      }
+    },
+    {
+      "automatic": {
+        "word": "生きる",
+        "kana": "いきる",
+        "meaning": "活着；生存"
+      },
+      "transitive": {
+        "word": "生かす",
+        "kana": "いかす",
+        "meaning": "使活下去；发挥"
+      }
+    },
+    {
+      "automatic": {
+        "word": "切れる",
+        "kana": "きれる",
+        "meaning": "断开；用尽"
+      },
+      "transitive": {
+        "word": "切る",
+        "kana": "きる",
+        "meaning": "切；剪"
+      }
+    },
+    {
+      "automatic": {
+        "word": "切れる",
+        "kana": "きれる",
+        "meaning": "用尽；中断"
+      },
+      "transitive": {
+        "word": "切らす",
+        "kana": "きらす",
+        "meaning": "用尽；使中断"
+      }
+    },
+    {
+      "automatic": {
+        "word": "欠ける",
+        "kana": "かける",
+        "meaning": "缺损；缺少"
+      },
+      "transitive": {
+        "word": "欠く",
+        "kana": "かく",
+        "meaning": "缺少；欠缺"
+      }
+    },
+    {
+      "automatic": {
+        "word": "かかる",
+        "kana": "かかる",
+        "meaning": "花费时间或金钱"
+      },
+      "transitive": {
+        "word": "掛ける",
+        "kana": "かける",
+        "meaning": "花费；投入"
+      }
+    },
+    {
+      "automatic": {
+        "word": "重なる",
+        "kana": "かさなる",
+        "meaning": "重叠"
+      },
+      "transitive": {
+        "word": "重ねる",
+        "kana": "かさねる",
+        "meaning": "使重叠；累积"
+      }
+    },
+    {
+      "automatic": {
+        "word": "傷つく",
+        "kana": "きずつく",
+        "meaning": "受伤"
+      },
+      "transitive": {
+        "word": "傷つける",
+        "kana": "きずつける",
+        "meaning": "伤害；弄伤"
+      }
+    },
+    {
+      "automatic": {
+        "word": "挫ける",
+        "kana": "くじける",
+        "meaning": "扭伤；气馁"
+      },
+      "transitive": {
+        "word": "挫く",
+        "kana": "くじく",
+        "meaning": "扭伤；挫败"
+      }
+    },
+    {
+      "automatic": {
+        "word": "詰まる",
+        "kana": "つまる",
+        "meaning": "塞满；堵塞"
+      },
+      "transitive": {
+        "word": "詰める",
+        "kana": "つめる",
+        "meaning": "装满；塞入"
+      }
+    },
+    {
+      "automatic": {
+        "word": "添う",
+        "kana": "そう",
+        "meaning": "伴随；贴近"
+      },
+      "transitive": {
+        "word": "添える",
+        "kana": "そえる",
+        "meaning": "添上；附上"
+      }
+    },
+    {
+      "automatic": {
+        "word": "近づく",
+        "kana": "ちかづく",
+        "meaning": "靠近"
+      },
+      "transitive": {
+        "word": "近づける",
+        "kana": "ちかづける",
+        "meaning": "使接近"
+      }
+    },
+    {
+      "automatic": {
+        "word": "違う",
+        "kana": "ちがう",
+        "meaning": "不同；不对"
+      },
+      "transitive": {
+        "word": "違える",
+        "kana": "ちがえる",
+        "meaning": "弄错；改变"
+      }
+    },
+    {
+      "automatic": {
+        "word": "離れる",
+        "kana": "はなれる",
+        "meaning": "离开；相隔"
+      },
+      "transitive": {
+        "word": "離す",
+        "kana": "はなす",
+        "meaning": "使分开；放开"
+      }
+    },
+    {
+      "automatic": {
+        "word": "嵌まる",
+        "kana": "はまる",
+        "meaning": "嵌入；套入（自动）"
+      },
+      "transitive": {
+        "word": "嵌める",
+        "kana": "はめる",
+        "meaning": "嵌入；戴上（他动）"
+      }
+    },
+    {
+      "automatic": {
+        "word": "晴れる",
+        "kana": "はれる",
+        "meaning": "放晴；消散"
+      },
+      "transitive": {
+        "word": "晴らす",
+        "kana": "はらす",
+        "meaning": "消除；驱散"
+      }
+    },
+    {
+      "automatic": {
+        "word": "沈む",
+        "kana": "しずむ",
+        "meaning": "下沉"
+      },
+      "transitive": {
+        "word": "沈める",
+        "kana": "しずめる",
+        "meaning": "使下沉"
+      }
+    }
+  ]
+}

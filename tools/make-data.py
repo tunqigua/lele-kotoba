@@ -567,6 +567,8 @@ meta['sources'].extend([
 enrich(words,meta)
 from collocations import attach_collocations
 attach_collocations(words,meta)
+from verb_transitivity import attach_verb_transitivity
+attach_verb_transitivity(words,meta)
 path=pathlib.Path(__file__).resolve().parents[1]/'dist/data.js'
 path.write_text('window.KOTOBA_DATA = '+json.dumps({'meta':meta,'words':words},ensure_ascii=False,separators=(',',':'))+';\n')
 print(json.dumps({'total':len(words),'book':sum(w['source']=='book' for w in words),'examOnly':sum(w['source']=='exam' for w in words),'priorities':dict(collections.Counter(w['priority'] for w in words))},ensure_ascii=False))

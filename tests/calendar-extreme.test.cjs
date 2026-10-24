@@ -4,10 +4,11 @@ const at=s=>Date.parse(s+'+08:00'),evening=at('2026-10-20T21:48:00'),midnight=at
 const words=['a','b','c','d'].map(id=>({id,priority:'A',source:'book',lesson:'7-1'})),ids=new Set(words.map(w=>w.id));
 const copy=s=>E.validate(JSON.parse(JSON.stringify(s)),ids);
 
-test('new and spaced reviews unlock on Beijing calendar midnight, including year rollover',()=>{
+test('legacy schedules remain intact while error reviews unlock on Beijing midnight',()=>{
  for(const time of ['2026-10-20T00:00:00','2026-10-20T21:48:00','2026-10-20T23:59:59']){
   const s=E.fresh();E.rate(s,'a','good',at(time));assert.equal(s.words.a.due,midnight);
-  assert.equal(E.counts(s,midnight-1).due,0);assert.equal(E.counts(s,midnight).due,1);
+  assert.equal(E.counts(s,midnight-1).due,0);assert.equal(E.counts(s,midnight).due,0);
+  E.rate(s,'a','hard',at(time));assert.equal(E.counts(s,midnight).due,1);
  }
  const s=E.fresh();E.rate(s,'a','good',evening);E.rate(s,'a','good',midnight);
  assert.equal(s.words.a.due,at('2026-10-24T00:00:00'));

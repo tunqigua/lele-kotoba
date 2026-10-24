@@ -3,10 +3,11 @@ const vm=require('node:vm'),fs=require('node:fs'),assert=require('node:assert/st
 const els=new Map(),handlers={},storage=new Map(),spoken=[];
 function el(s){if(!els.has(s))els.set(s,{innerHTML:'',textContent:'',style:{},value:'',dataset:{},classList:{add(){},remove(){},toggle(){}},showModal(){this.open=true;},close(){this.open=false;},click(){},remove(){},files:[]});return els.get(s);}
 const document={querySelector(s){if(s==='dialog[open]')return [...els.values()].find(v=>v.open)||null;return el(s);},querySelectorAll(){return[];},addEventListener(n,cb){handlers[n]=cb;},createElement(tag){return {...el(tag+Math.random()),set id(x){els.set('#'+x,this);},get id(){return'';}};},body:{append(){}}};
+let studyTimer;
 let clock=Date.parse('2026-10-20T21:48:00+08:00');
 const FakeDate=class extends Date{constructor(...args){super(...(args.length?args:[clock]));}static now(){return clock;}};
 const initialMath=Object.create(Math);initialMath.random=()=>.999999;
-const winHandlers={},ctx={document,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},location:{hash:''},history:{replaceState(a,b,h){ctx.location.hash=h;}},setTimeout(){return 1;},clearTimeout(){},Date:FakeDate,Intl,Map,Set,Math:initialMath,Blob,URL,SpeechSynthesisUtterance:function(text){this.text=text;},speechSynthesis:{getVoices:()=>[{lang:'ja-JP',name:'test'}],cancel(){},speak(u){spoken.push(u);}},console};
+const winHandlers={},ctx={document,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},location:{hash:''},history:{replaceState(a,b,h){ctx.location.hash=h;}},setTimeout(cb,delay){if(delay===20000)studyTimer=cb;return 1;},clearTimeout(){},Date:FakeDate,Intl,Map,Set,Math:initialMath,Blob,URL,SpeechSynthesisUtterance:function(text){this.text=text;},speechSynthesis:{getVoices:()=>[{lang:'ja-JP',name:'test'}],cancel(){},speak(u){spoken.push(u);}},console};
 ctx.window={...ctx,scrollY:0,scrollTo(){},addEventListener(n,cb){winHandlers[n]=cb;}};
 vm.createContext(ctx);for(const f of ['data.js','engine.js','quiz.js','app.js'])vm.runInContext(fs.readFileSync(__dirname+'/../dist/'+f,'utf8'),ctx,{filename:f});
 function action(name,data={}){const before=spoken.length,button={dataset:{action:name,...data},disabled:false};handlers.click({target:{closest(s){return s==='[data-action]'?button:null;}}});if(!['reveal','speak','quizAnswer'].includes(name))assert.equal(spoken.length,before,'navigation, next questions and rerenders must be silent');}
@@ -60,18 +61,18 @@ assert.match(el('#main').innerHTML,/行く/);
 // A tab left open on the empty review page updates at Beijing midnight, with no reload.
 clock=Date.parse('2026-10-20T21:48:00+08:00');
 ctx.Math=Object.create(Math);ctx.Math.random=()=>.1;winHandlers.focus();
-const daily=E.fresh();for(const w of known)E.rate(daily,w.id,'good',clock);
+const daily=E.fresh();for(const w of known){E.rate(daily,w.id,'hard',clock);E.rate(daily,w.id,'good',clock);}
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(daily)});nav('review');
-assert.equal(options().length,0);assert.match(el('#main').innerHTML,/到期的词，都复习好了/);
+assert.equal(options().length,0);assert.match(el('#main').innerHTML,/今日错词复习已完成/);
 clock=Date.parse('2026-10-21T00:00:00+08:00');winHandlers.focus();
 assert.equal(el('#dueNav').textContent,3);assert.equal(options().length,4);
 assert.ok(!el('#main').innerHTML.includes('data-action="card"'),'review must not have separate card/reading tabs');
 const modes=new Set();let steps=0,wrongOnce=false;
-while(!el('#main').innerHTML.includes('到期的词，都复习好了')&&steps++<15){
+while(!el('#main').innerHTML.includes('今日错词复习已完成')&&steps++<15){
  const o=options();
  if(o.length){
   modes.add('quiz');const prompt=el('#main').innerHTML.match(/<h2 lang="ja" class="[^"]*">([^<]+)<\/h2>/)?.[1];
-  const w=known.find(w=>w.kana===prompt||ctx.window.KotobaQuiz.written(w)===prompt);assert.ok(w,prompt);
+  const w=known.find(w=>w.kana===prompt||w.meaning===prompt||ctx.window.KotobaQuiz.written(w)===prompt);assert.ok(w,prompt);
   const a=o.find(v=>v===w.kana||v===ctx.window.KotobaQuiz.written(w));assert.ok(a);
   action('quizAnswer',{answer:wrongOnce?a:o.find(v=>v!==a)});wrongOnce=true;
   assert.match(el('#main').innerHTML,/quiz-feedback/,'feedback stays visible until Continue');
@@ -81,9 +82,9 @@ while(!el('#main').innerHTML.includes('到期的词，都复习好了')&&steps++
  }
 }
 assert.ok(steps<15);assert.deepEqual([...modes].sort(),['card','quiz']);
-assert.equal(E.counts(readState(),clock).due,0);assert.equal(E.counts(readState(),clock+E.DAY).due,1,'today’s reading error is scheduled again tomorrow');
+assert.equal(E.counts(readState(),clock).due,0);assert.equal(E.counts(readState(),clock+E.DAY).due,3,'the previous three days of errors are selected again tomorrow');
 // Stable readings get word cards until their low-frequency check becomes due.
-const graduated=E.fresh();E.rate(graduated,first.id,'good',clock-E.DAY);graduated.words[first.id].readingRule='daily-v1';graduated.words[first.id].readingStreak=5;graduated.words[first.id].readingDue=E.reviewDue(clock,7);
+const graduated=E.fresh();E.rate(graduated,first.id,'hard',clock-E.DAY);E.rate(graduated,first.id,'good',clock-E.DAY);graduated.words[first.id].readingRule='daily-v1';graduated.words[first.id].readingStreak=5;graduated.words[first.id].readingDue=E.reviewDue(clock,7);
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(graduated)});nav('review');ctx.Math.random=()=>.1;
 assert.equal(options().length,0);assert.equal(cardWord(),first.word);
 console.log('PASS: extreme fifth-error list; live midnight unlock; mixed review cards/questions; feedback, retries and next-day errors; stable readings rest between checks.');
@@ -100,10 +101,12 @@ assert.equal(readState().words[first.id].readingStage,1);assert.equal(readState(
 action('nextQuiz');assert.equal(options().length,0);
 const checkState=readState();checkState.words[first.id].due=E.reviewDue(clock,60);
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(checkState)});nav('review');
-assert.equal(options().length,0);clock=checkState.words[first.id].readingDue;ctx.Math.random=()=>.9;winHandlers.focus();
+assert.equal(options().length,0);clock=checkState.words[first.id].readingDue;
+checkState.logs.push({id:first.id,day:E.today(clock-E.DAY),grade:'quizWrong',isNew:false});
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(checkState)});ctx.Math.random=()=>.9;winHandlers.focus();
 assert.equal(options().length,4,'a due reading check must be served even when random selection would prefer a card');
 answer(false);const failed=readState().words[first.id];
-assert.equal(failed.readingStreak,0);assert.equal(failed.readingDue,0);assert.equal(failed.readingWrong,1);assert.equal(failed.reviewPending,true);
+assert.equal(failed.readingStreak,0);assert.equal(failed.readingDue,0);assert.equal(failed.readingWrong,2);assert.equal(failed.reviewPending,true);
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(readState())});
 assert.equal(options().length,4,'an unfinished failed reading review remains a reading question after reload');
 answer(true);assert.equal(readState().words[first.id].readingStreak,0);action('nextQuiz');nav('today');action('quiz');
@@ -213,7 +216,7 @@ console.log('PASS: question-only unlimited grind; all learned scopes; full shuff
 
 // Red ru-ending first-class warnings appear beneath the word, without mislabeling second-class verbs.
 for(const [name,expected]of [['帰る',true],['入る',true],['走る',true],['食べる',false],['借りる',false],['着る',false]]){
- const w=allWords.find(w=>w.word===name),s=E.fresh();s.settings.newGoal=1;E.rate(s,w.id,'good',clock-E.DAY);
+ const w=allWords.find(w=>w.word===name),s=E.fresh();s.settings.newGoal=1;E.rate(s,w.id,'hard',clock-E.DAY);E.rate(s,w.id,'good',clock-E.DAY);
  winHandlers.storage({key:E.KEY,newValue:JSON.stringify(s)});nav('today');action('card');assert.equal(cardWord(),name);
  const warning=/<div class="verb-warning">一类动词<\/div>/;assert.equal(warning.test(el('#main').innerHTML),expected,name+' card');
  if(expected)assert.ok(el('#main').innerHTML.includes('</h2><div class="verb-warning">一类动词</div>'),'warning sits directly below the word');
@@ -227,9 +230,38 @@ const importedWord=allWords.find(w=>w.word==='いらっしゃる');action('detai
 const firstImport=allWords.find(w=>w.word==='味気ない');action('detail',{id:firstImport.id});assert.match(el('#detailContent').innerHTML,/扩展词表一 第225页/);el('#detailDialog').close();
 console.log('PASS: red ru-ending first-class warnings on cards, both question modes and details; second-class verbs remain unmarked; two imported indexes keep distinct source labels.');
 for(const [name,source]of [['擦る','初级补充词表 · 原表第93项'],['外出','中级补充词表 · 原表第22项']]){
- const w=allWords.find(w=>w.word===name),s=E.fresh();s.settings.newGoal=1;E.rate(s,w.id,'good',clock-E.DAY);
+ const w=allWords.find(w=>w.word===name),s=E.fresh();s.settings.newGoal=1;E.rate(s,w.id,'hard',clock-E.DAY);E.rate(s,w.id,'good',clock-E.DAY);
  winHandlers.storage({key:E.KEY,newValue:JSON.stringify(s)});nav('today');action('card');assert.match(el('#main').innerHTML,new RegExp(source));
  action('reveal');assert.ok(!el('#main').innerHTML.includes('第null页'));assert.ok(!el('#main').innerHTML.includes('第undefined项'));
  action('detail',{id:w.id});assert.ok(el('#detailContent').innerHTML.includes(source));el('#detailDialog').close();
 }
 console.log('PASS: Word vocabulary uses original entry numbers on cards and details without invented pages.');
+
+// Real app tracking pauses on background/idle, splits midnight, and survives backup.
+clock=Date.parse('2025-12-31T23:59:40+08:00');
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(E.fresh())});nav('today');
+clock+=20000;studyTimer();clock+=20000;studyTimer();
+assert.equal(readState().studyTime['2025-12-31'],20000);
+assert.equal(readState().studyTime['2026-01-01'],20000);
+document.hidden=true;handlers.visibilitychange();clock+=60000;studyTimer();
+assert.equal(readState().studyTime['2026-01-01'],20000,'background time is excluded');
+document.hidden=false;handlers.visibilitychange();
+for(let i=0;i<7;i++){clock+=20000;studyTimer();}
+assert.equal(readState().studyTime['2026-01-01'],140000,'idle tracking stops after two minutes');
+handlers.pointerdown();clock+=10000;studyTimer();
+assert.equal(readState().studyTime['2026-01-01'],150000,'activity restarts tracking');
+nav('stats');clock+=20000;studyTimer();
+assert.equal(readState().studyTime['2026-01-01'],150000,'viewing stats is not study time');
+assert.match(el('#main').innerHTML,/今天是 2026年01月01日/);
+assert.match(el('#main').innerHTML,/aria-current="date"/);
+assert.match(el('#main').innerHTML,/未记录/);
+assert.match(el('#main').innerHTML,/2026年1月/);
+action('calendarPrev');assert.match(el('#main').innerHTML,/2025年12月/);
+action('calendarNext');assert.match(el('#main').innerHTML,/2026年1月/);
+const timedBackup=E.validate(readState(),new Set(allWords.map(w=>w.id)));
+assert.equal(timedBackup.studyTime['2026-01-01'],150000);
+// Counterparts in each detail point back to the other verb, with kana and Chinese.
+const autoVerb=allWords.find(w=>w.word==='開く（あく）'),transVerb=allWords.find(w=>w.word==='開ける');
+action('detail',{id:autoVerb.id});assert.match(el('#detailContent').innerHTML,/自动词/);assert.match(el('#detailContent').innerHTML,/对应他动词/);assert.match(el('#detailContent').innerHTML,/開ける/);assert.match(el('#detailContent').innerHTML,/あける/);el('#detailDialog').close();
+action('detail',{id:transVerb.id});assert.match(el('#detailContent').innerHTML,/他动词/);assert.match(el('#detailContent').innerHTML,/对应自动词/);assert.match(el('#detailContent').innerHTML,/開く（あく）/);el('#detailDialog').close();
+console.log('PASS: active study time, background/idle pauses, midnight/year split, calendar navigation, backup hours and bidirectional verb details.');

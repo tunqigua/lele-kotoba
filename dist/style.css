@@ -247,3 +247,23 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
 .corrupt-banner{border:1px solid #e3c2b7;background:#fdf5f1;margin-bottom:22px}
 .corrupt-banner h3{margin:0 0 8px;font-size:16px;color:#8c3f33}
 .corrupt-banner p{margin:0 0 14px;font-size:13px;line-height:1.8}
+
+.study-calendar{margin-bottom:24px}
+.study-calendar .section-bar{gap:12px;flex-wrap:wrap}
+.study-calendar h3{margin-bottom:4px}
+.calendar-week,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.calendar-week{margin:16px 0 8px;text-align:center;color:#6b756e;font-size:13px}
+.calendar-day{min-height:76px;padding:10px;border:1px solid #e3e7e2;border-radius:8px;background:#fafbf8}
+.calendar-day time{display:flex;align-items:center;justify-content:space-between;font-weight:600}
+.calendar-day time span{font-size:10px;font-weight:400}
+.calendar-day small{display:block;margin-top:9px;color:#66746a;font-size:12px}
+.calendar-day.is-today{border-color:#345d4d;background:#edf4ed;color:#254c39}
+.calendar-note{margin-top:14px}
+@media(max-width:640px){.calendar-week,.calendar-grid{gap:3px}.calendar-day{min-height:65px;padding:6px 3px}.calendar-day small{font-size:10px}.calendar-day time{font-size:13px;flex-direction:column;align-items:flex-start}.calendar-day time span{font-size:9px}}
+
+.transitivity-label{display:inline-block;padding:3px 9px;margin:4px 6px;border-radius:5px;background:#eaf1ea;color:#345d4d;font-size:12px;font-weight:600;vertical-align:middle}
+.verb-counterparts{margin:12px 0;padding:12px 0;border-top:1px solid #e5e8e1}
+.verb-counterparts p{margin:7px 0;line-height:1.6}
+.counterpart-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding-top:6px;font-size:13px}
+.counterpart-row>span:first-child{color:#69766c}
+.counterpart-row .text-button{font-size:16px;padding:0}

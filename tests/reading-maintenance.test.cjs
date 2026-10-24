@@ -22,10 +22,11 @@ test('one failed low-frequency check restores normal reading training and next-d
  const s=stable(),a=s.words[w.id],due=a.readingDue;
  a.due=E.reviewDue(due,60); // This word has no independently due word card.
  assert.equal(E.isDue(a,due-1),false);assert.equal(E.isDue(a,due),true);
- assert.deepEqual(E.queue(words,s,'review',due).map(x=>x.id),[w.id]);
+ assert.deepEqual(E.queue(words,s,'review',due),[],'ordinary reading checks remain in reading training');
  assert.ok(E.recordReading(s,w.id,false,'kanji',due));
  assert.equal(a.readingStreak,0);assert.equal(a.readingStage,0);assert.equal(a.readingDue,0);
  assert.equal(a.readingWrong,1);assert.equal(E.readingPool(words,s,due).length,1);
+ assert.deepEqual(E.queue(words,s,'review',E.reviewDue(due)).map(x=>x.id),[w.id]);
  assert.equal(E.isDue(a,due),false);assert.equal(E.isDue(a,E.reviewDue(due)),true);
  for(let i=0;i<5;i++)E.recordReading(s,w.id,true,'kana',due+(i+1)*E.DAY);
  assert.equal(a.readingStage,0);assert.equal(a.readingDue,E.reviewDue(due+5*E.DAY,7));

@@ -24,9 +24,9 @@ test('random new groups respect learned progress, remaining daily quota, and exp
  s.settings.lesson='7';assert.deepEqual(E.queue(words,s,'new',now,seeded()),[]);
 });
 
-test('review shuffles only learned words that are due; unseen and future words never enter',()=>{
+test('review shuffles learned recent errors; unseen and same-day words never enter',()=>{
  const s=E.fresh();s.settings.reviewGoal=20;
- for(const w of words.slice(0,8))E.rate(s,w.id,'good',now-E.DAY*2);
+ for(const w of words.slice(0,8))E.rate(s,w.id,'hard',now-E.DAY*2);
  E.rate(s,words[8].id,'good',now); // learned, but tomorrow’s review
  s.words[words[9].id]={stage:0,seen:0,due:0,lapses:0,star:true,reviewPending:true,readingRetry:true};
  const a=E.queue(words,s,'review',now,seeded(2)),b=E.queue(words,s,'review',now,seeded(7));
@@ -36,9 +36,9 @@ test('review shuffles only learned words that are due; unseen and future words n
  assert.ok(!a.some(w=>w.id===words[8].id||w.id===words[9].id));
 });
 
-test('a capped review group still selects oldest due words before randomizing their presentation',()=>{
+test('a capped review group selects highest recent error counts before randomizing presentation',()=>{
  const s=E.fresh();s.settings.reviewGoal=2;
- for(let i=0;i<5;i++)E.rate(s,words[i].id,'good',now-(i+2)*E.DAY);
+ for(let i=0;i<5;i++)for(let j=0;j<=i;j++)E.rate(s,words[i].id,'hard',now-E.DAY);
  const q=E.queue(words,s,'review',now,seeded());
  assert.deepEqual(new Set(q.map(w=>w.id)),new Set(['w4','w3']));
 });
