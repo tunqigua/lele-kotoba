@@ -269,3 +269,43 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
 .counterpart-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding-top:6px;font-size:13px}
 .counterpart-row>span:first-child{color:#69766c}
 .counterpart-row .text-button{font-size:16px;padding:0}
+
+/* Follow system appearance, including live changes while the page stays open. */
+:root{color-scheme:light dark}
+@media(prefers-color-scheme:dark){
+  :root{--ink:#e2e9e2;--muted:#a7b5a9;--purple:#b6d6b6;--purple-dark:#c8e5c8;--lavender:#2c3c30;--green:#b6d6b6;--line:#3d4b40;--paper:#1d2520;--bg:#141a17}
+  :root .sidebar{background:#19211c;border-color:var(--line)}
+  :root .topbar{background:var(--bg)}
+  :root :is(.study-card,.panel,.switches,.grade,.secondary,.mini-stat,.table-wrap,.empty,.quiz-choice,.date-chip,dialog,kbd,input,select){background:var(--paper);border-color:var(--line);color:var(--ink)}
+  :root :is(.card-detail,.form-cell,.note-block,.info-box,.quiet-panel,.scope-tag,.result-pill,.streak-counter,th){background:#242f27;border-color:var(--line)}
+  :root :is(.brand-icon,.text-button,.dictionary-link,.detail-word,.detail-meaning,.phrase-jp,.usage-jp,.form-cell span,td strong,.goal-row b,.stat-grid .panel strong,.dialog-head h2,.dialog-body h3,.quiz-feedback strong,details.panel summary){color:var(--purple)}
+  :root :is(.word-core h2,.word-core .word-meaning,.profile strong,.breadcrumb b,.usage-meaning,.example .jp){color:var(--ink)}
+  :root :is(.muted,.nav-item,.nav-item>span,.icon-button,.profile small,.storage-status,.welcome p,.word-core .kana,.word-core .pos,.pos,.recall-hint,.card-detail p,.detail-label,.evidence,.card-bottom,.grade small,.shortcut-guide,.panel-top small,.ring small,.goal-row,.week-day,.mini-stat small,td,td .reading,.list-count,.empty p,.quiz-hint,.quiz-feedback,.quiz-feedback p,.phrase-reading,.phrase-meaning,.phrase-links>span,.form-cell small,.detail-reading,.note-block,.detail-footer,.pagination,footer,.completed-note,.view-description,.exercise-help,.reading-toggle,.notes-hint,.session-banner,.session-banner button,.training-summary,.training-summary span:last-child,.stat-grid .panel span,.about-grid p,.about-grid ul,.correction p,.form-grid label,.dialog-body .muted,.dialog-body label,.date-chip,.quiet-panel .quote,.quiet-panel small,.shelf-caption,.brand small,.side-note,.side-note small,.breadcrumb,.breadcrumb span,.panel .goal-row,.card-meta .source,.study-instruction,.card-detail .form-caption,.form-pos,.card-provenance,.phrase-links>span,.grind-errors,.usage-kana,.usage-tip,.usage-links>span,.calendar-week,.calendar-day small,.counterpart-row>span:first-child,.example .zh,th){color:var(--muted)}
+  :root :is(.nav-item:hover,.icon-button:hover,.secondary:hover,.quiz-choice:hover,.phrase-word:hover,tr[data-id]:hover){background:#2c3c30}
+  :root :is(.nav-item.active,.switches button.active,.grade.good,.week-day.done span,.transitivity-label){background:var(--lavender);border-color:#60765a;color:var(--purple)}
+  :root .nav-item b{background:#344937;color:#d1e6cf}
+  :root :is(.tag,.tag.A,.tag.B,.tag.C,.tag.exam,.phrase-word){background:#2b382d;border-color:var(--line);color:#c1d5b8}
+  :root .grade.again{color:#e1c09d;border-color:#80674c}
+  :root .primary{background:#a9c9a2;color:#172317}
+  :root .primary:hover{background:#c0dfb8}
+  :root .button kbd{background:transparent;border-color:#60765a;color:inherit}
+  :root .ring{background:conic-gradient(var(--purple) var(--progress),#344137 0)}
+  :root .ring:before{background:var(--paper)}
+  :root :is(.week-day span,.avatar,.top-avatar){background:#303d31;color:var(--muted)}
+  :root .progress-line{background:#303d31}
+  :root :is(.progress-line div,.bar>div){background:#819f75}
+  :root :is(.bar,.bar strong){color:var(--muted)}
+  :root :is(.card-detail,.card-bottom,.is-revealed>.card-detail,.quiz-feedback,.linked-phrases,.phrase-word,.example,td,.usage-item,.usage-note,.verb-counterparts){border-color:var(--line)}
+  :root .quiz-choice.right{background:#283c26;border-color:#78976b;color:#c6e3b4}
+  :root .quiz-choice.wrong{background:#402a24;border-color:#a57563;color:#f0c1aa}
+  :root :is(.verb-warning,.corrupt-banner h3){color:#f4ada3}
+  :root .corrupt-banner{background:#392823;border-color:#976454}
+  :root .calendar-day{background:var(--paper);border-color:var(--line);color:var(--ink)}
+  :root .calendar-day.is-today{background:#283c2d;border-color:#a9c9a2;color:#d4e8cc}
+  :root .calendar-day.is-short-study{background:#3c2424;border-color:#a56762;color:#f4ada3}
+  :root .calendar-day.is-short-study small{color:#f4ada3}
+  :root .right-rail .panel:last-child{background:none;border:0}
+  :root .right-rail .panel:last-child :is(h3,p){color:var(--muted)}
+  :root dialog::backdrop{background:#0009}
+  #toast{background:#b6d6b6;color:#172317}
+}
