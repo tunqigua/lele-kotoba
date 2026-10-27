@@ -31,7 +31,7 @@ action('settings');assert.ok(el('#settingsDialog').open);el('#newGoal').value='3
 const repeatState=ctx.window.KotobaEngine.fresh();repeatState.settings.newGoal=3;
 winHandlers.storage({key:ctx.window.KotobaEngine.KEY,newValue:JSON.stringify(repeatState)});
 nav('today');action('card');
-const cardWord=()=>el('#main').innerHTML.match(/<div class="word-core"><h2 lang="ja">([^<]+)<\/h2>/)?.[1];
+const cardWord=()=>el('#main').innerHTML.match(/<div class="word-core"><h2 lang="ja">([\s\S]*?)<\/h2>/)?.[1].replace(/<rt>[\s\S]*?<\/rt>/g,'').replace(/<[^>]+>/g,'');
 let repeated=0,cardSteps=0;
 while(repeated<7&&cardSteps++<30){
  const word=cardWord();assert.ok(word);
@@ -326,3 +326,13 @@ assert.match(calendarCell('2026-10-24'),/新背<\/span><b>1</);assert.match(cale
 assert.doesNotMatch(calendarCell('2026-10-25'),/新背|错词/,'future cells do not imply completed activity');
 action('calendarPrev');assert.match(el('#main').innerHTML,/2026年9月/);action('calendarNext');assert.match(calendarCell('2026-10-23'),/新背<\/span><b>2</);
 console.log('PASS: calendar combines time, unique new words and unique reading-only mistakes, restores old logs, and hides future counts.');
+
+// A word's katakana is annotated in its library and detail views, without changing examples.
+const kanaCoffee=allWords.find(w=>w.word==='コーヒー');
+nav('library');handlers.input({target:{id:'wordSearch',value:'コーヒー'}});
+assert.match(el('#wordTable').innerHTML,/<ruby class="kana-ruby">コー<rt>こー<\/rt><\/ruby>/);
+action('detail',{id:kanaCoffee.id});
+assert.match(el('#detailContent').innerHTML,/<ruby class="kana-ruby">ヒー<rt>ひー<\/rt><\/ruby>/);
+assert.match(el('#detailContent').innerHTML,/<div class="usage-jp" lang="ja">コーヒー/,'example phrases remain unannotated');
+el('#detailDialog').close();
+console.log('PASS: katakana vocabulary includes hiragana annotations; examples remain unchanged.');

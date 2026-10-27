@@ -321,3 +321,9 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
   .calendar-day .calendar-time{font-size:0}
   .calendar-time:after{content:attr(data-short);font-size:9px}
 }
+
+/* Hiragana annotations for katakana; keep large word cards comfortable to read. */
+.kana-ruby rt{font-family:inherit;font-size:.5em;font-weight:400;letter-spacing:0;line-height:1.2;color:inherit}
+.word-core h2 .kana-ruby rt,.detail-word .kana-ruby rt{font-size:.35em}
+
+@media(min-width:961px){.is-revealed>.card-detail{overflow-y:auto}}
