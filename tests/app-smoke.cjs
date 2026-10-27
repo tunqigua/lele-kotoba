@@ -311,3 +311,18 @@ assert.match(el('#main').innerHTML,/昨日新词/);assert.match(el('#main').inne
 action('reveal');assert.match(el('#main').innerHTML,/计划：3天后/,'a successful next-day retrieval previews the next longer interval');
 assert.ok(!el('#main').innerHTML.includes('按累计错误排名复习'));
 console.log('PASS: first-known next-day date, yesterday’s 25 new words before historical errors, and a due success previews a three-day interval.');
+
+// Calendar cells show new words and unique reading-only wrong words, including legacy progress.
+clock=Date.parse('2026-10-24T12:00:00+08:00');
+const calendarCounts=E.fresh(),calendarIds=allWords.slice(0,3).map(w=>w.id);
+E.rate(calendarCounts,calendarIds[0],'again',clock-E.DAY);E.rate(calendarCounts,calendarIds[0],'hard',clock-E.DAY+1);E.rate(calendarCounts,calendarIds[0],'good',clock-E.DAY+2);
+E.rate(calendarCounts,calendarIds[1],'good',clock-E.DAY);E.recordReading(calendarCounts,calendarIds[1],false,'kana',clock-E.DAY+1);
+E.rate(calendarCounts,calendarIds[2],'good',clock);E.rate(calendarCounts,calendarIds[0],'hard',clock);
+calendarCounts.studyTime['2026-10-23']=1800000;delete calendarCounts.dailyWords;
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(calendarCounts)});nav('stats');
+const calendarCell=key=>el('#main').innerHTML.match(new RegExp('<div class="calendar-day[^>]*><time datetime="'+key+'"[\\s\\S]*?</div>'))?.[0];
+assert.match(calendarCell('2026-10-23'),/0\.5小时/);assert.match(calendarCell('2026-10-23'),/新背<\/span><b>2</);assert.match(calendarCell('2026-10-23'),/错词<\/span><b>1</);
+assert.match(calendarCell('2026-10-24'),/新背<\/span><b>1</);assert.match(calendarCell('2026-10-24'),/错词<\/span><b>0</);
+assert.doesNotMatch(calendarCell('2026-10-25'),/新背|错词/,'future cells do not imply completed activity');
+action('calendarPrev');assert.match(el('#main').innerHTML,/2026年9月/);action('calendarNext');assert.match(calendarCell('2026-10-23'),/新背<\/span><b>2</);
+console.log('PASS: calendar combines time, unique new words and unique reading-only mistakes, restores old logs, and hides future counts.');

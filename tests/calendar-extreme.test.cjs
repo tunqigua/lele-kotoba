@@ -73,3 +73,36 @@ test('legacy wrong-answer logs migrate once and lifetime totals survive log trim
  assert.equal(copy(restored).words.a.readingWrong,5);
  restored.logs=[];assert.equal(copy(restored).words.a.readingWrong,5);
 });
+
+test('calendar counts unique new words and reading-only mistakes per Beijing day',()=>{
+ const s=E.fresh();
+ E.rate(s,'a','again',evening);E.rate(s,'a','hard',evening+1);E.rate(s,'a','good',evening+2);
+ E.rate(s,'b','good',evening+3);
+ E.recordReading(s,'b',false,'kana',evening+4);E.rate(s,'b','hard',evening+5,'reading');
+ E.recordGrind(s,'c',false,'kanji',evening+6); // unseen words cannot produce a result
+ E.rate(s,'c','good',evening+7);E.recordGrind(s,'c',false,'kanji',evening+8);
+ E.recordReading(s,'b',true,'kana',evening+9);E.rate(s,'b','good',evening+10);
+ assert.deepEqual(s.dailyWords['2026-10-20'],{learned:['a','b','c'],wrong:['b']});
+ E.rate(s,'a','hard',midnight);E.recordReading(s,'a',false,'kana',midnight+1);E.rate(s,'a','good',midnight+2);E.rate(s,'d','good',midnight+3);
+ assert.deepEqual(s.dailyWords['2026-10-21'],{learned:['d'],wrong:['a']});
+ const restored=copy(s);assert.deepEqual(restored.dailyWords,s.dailyWords);
+ restored.logs=[];assert.deepEqual(copy(restored).dailyWords,s.dailyWords,'backups keep daily counts without detailed logs');
+});
+
+test('calendar migration deduplicates older logs and validates persisted daily word IDs',()=>{
+ const s=E.fresh();E.rate(s,'a','good',evening);E.rate(s,'b','good',evening-E.DAY);
+ delete s.dailyWords;
+ s.logs.push({id:'a',day:'2026-10-20',grade:'hard',isNew:false},{id:'a',day:'2026-10-20',grade:'quizWrong',isNew:false});
+ const restored=copy(s);
+ assert.deepEqual(restored.dailyWords['2026-10-20'],{learned:['a'],wrong:['a']});
+ assert.deepEqual(restored.dailyWords['2026-10-19'],{learned:['b'],wrong:[]});
+ restored.dailyWords['2026-10-20'].wrong.push('missing','a');
+ restored.dailyWords['bad-date']={learned:['a'],wrong:['a']};
+ restored.dailyWords['2099-01-01']={learned:['a'],wrong:['a']};
+ restored.dailyWords['2026-10-18']={learned:null,wrong:['missing','b','b']};
+ const checked=copy(restored);
+ assert.deepEqual(checked.dailyWords['2026-10-20'].wrong,['a']);
+ assert.deepEqual(checked.dailyWords['2026-10-18'],{learned:[],wrong:['b']});
+ assert.equal(checked.dailyWords['bad-date'],undefined);assert.equal(checked.dailyWords['2099-01-01'],undefined);
+ assert.deepEqual(copy(checked),checked,'migration remains idempotent');
+});
