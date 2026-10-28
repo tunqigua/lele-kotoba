@@ -1,8 +1,7 @@
 {
-  "id": "/lele-kotoba/",
   "name": "拾词 · 乐乐的日语自习室",
   "short_name": "拾词",
-  "start_url": "/lele-kotoba/",
+  "start_url": "./",
   "scope": "/lele-kotoba/",
   "display": "standalone",
   "background_color": "#fafbf9",
