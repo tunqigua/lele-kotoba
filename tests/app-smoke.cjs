@@ -27,6 +27,16 @@ for(const v of ['library','mistakes','review','stats','about','today']){nav(v);a
 nav('library');handlers.input({target:{id:'wordSearch',value:'借りる'}});assert.match(el('#wordTable').innerHTML,/借りる/);
 const id=ctx.window.KOTOBA_DATA.words.find(w=>w.word==='借りる').id;action('detail',{id});assert.match(el('#detailContent').innerHTML,/常用搭配与用法/);assert.match(el('#detailContent').innerHTML,/かりられる/);assert.match(el('#detailContent').innerHTML,/联合记忆/);el('#detailDialog').close();action('star',{id});nav('mistakes');assert.match(el('#main').innerHTML,/借りる/);
 action('settings');assert.ok(el('#settingsDialog').open);el('#newGoal').value='30';el('#reviewGoal').value='60';el('#saveSettings').onclick();assert.equal(readState().settings.newGoal,30);
+const progressBeforeGoals=JSON.stringify({words:readState().words,logs:readState().logs});
+action('settings');
+for(const name of ['newGoal','reviewGoal']){el('#'+name+'Unlimited').checked=true;el('#'+name+'Unlimited').onchange();assert.equal(el('#'+name).disabled,true);}
+el('#saveSettings').onclick();assert.equal(readState().settings.newGoal,null);assert.equal(readState().settings.reviewGoal,null);
+assert.equal(JSON.stringify({words:readState().words,logs:readState().logs}),progressBeforeGoals);
+nav('today');assert.match(el('#main').innerHTML,/无上限/);assert(!el('#main').innerHTML.includes('/ null'));
+action('settings');assert.equal(el('#newGoalUnlimited').checked,true);
+for(const name of ['newGoal','reviewGoal']){el('#'+name+'Unlimited').checked=false;el('#'+name+'Unlimited').onchange();el('#'+name).value='1000';}
+el('#saveSettings').onclick();assert.equal(readState().settings.newGoal,1000);assert.equal(readState().settings.reviewGoal,1000);
+action('settings');el('#newGoal').value='0';el('#saveSettings').onclick();assert.equal(readState().settings.newGoal,1000);assert.ok(el('#settingsDialog').open);el('#settingsDialog').close();
 // Exercise the actual card buttons as well as the shared scheduling engine.
 const repeatState=ctx.window.KotobaEngine.fresh();repeatState.settings.newGoal=3;
 winHandlers.storage({key:ctx.window.KotobaEngine.KEY,newValue:JSON.stringify(repeatState)});
