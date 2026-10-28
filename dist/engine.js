@@ -101,7 +101,8 @@ function validate(raw,ids){
  next.settings.newGoal=validGoal(s.newGoal)?s.newGoal:20;
  next.settings.reviewGoal=validGoal(s.reviewGoal)?s.reviewGoal:50;
  next.settings.priority=['all','A','B','C'].includes(s.priority)?s.priority:'all';
- next.settings.lesson=typeof s.lesson==='string'&&/^(all|exam|[1-9]|1[0-5])$/.test(s.lesson)?s.lesson:'all';
+ const lessons=[...new Set(Array.isArray(s.lesson)?s.lesson:[s.lesson])].filter(l=>typeof l==='string'&&/^(all|exam|[1-9]|1[0-5])$/.test(l));
+ next.settings.lesson=lessons.includes('all')||!lessons.length?'all':lessons.length===1?lessons[0]:lessons;
  next.savedAt=typeof raw.savedAt==='string'?raw.savedAt:null;return next;
 }
 function recordStudyTime(state,start,end){
@@ -160,7 +161,7 @@ function rate(state,id,grade,now=Date.now(),context='card'){
  if(grade==='good'){state.words[id].troubleDays=(old.troubleDays||[]).filter(d=>d>today(now));state.words[id].readingRetry=false;}else markTrouble(state.words[id],now);
  appendLog(state,{id,day:today(now),grade,isNew,...(context==='reading'?{context:'reading'}:{})});return state.words[id];
 }
-function filter(words,settings){return words.filter(w=>(settings.priority==='all'||w.priority===settings.priority)&&(settings.lesson==='all'||(settings.lesson==='exam'?w.source==='exam':w.lesson&&w.lesson.split('-')[0]===settings.lesson)));}
+function filter(words,settings){const lessons=Array.isArray(settings.lesson)?settings.lesson:[settings.lesson];return words.filter(w=>(settings.priority==='all'||w.priority===settings.priority)&&lessons.some(l=>l==='all'||(l==='exam'?w.source==='exam':w.lesson&&w.lesson.split('-')[0]===l)));}
 function queue(words,state,mode='mixed',now=Date.now(),random=Math.random){
  const selected=filter(words,state.settings),c=counts(state,now);
  const ranked=reviewIds(state,now,mode==='review'),byId=new Map(words.map(w=>[w.id,w]));

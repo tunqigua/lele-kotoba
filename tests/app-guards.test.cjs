@@ -93,3 +93,21 @@ test("a fresh tab with no prior writes is never blocked", () => {
   assert.equal(JSON.parse(storage.get(KEY)).words[id].star, true);
   assert.match(el("#saveStatus").textContent, /本机保存/);
 });
+
+test("resuming a page catches up with saved progress before writing", () => {
+  for (const event of ["pageshow", "focus"]) {
+    const { ctx, handlers, winHandlers, storage } = boot();
+    const E = ctx.window.KotobaEngine, id = ctx.window.KOTOBA_DATA.words[0].id;
+    const other = JSON.parse(storage.get(KEY));
+    E.rate(other, id, "good");
+    other.savedAt = "2099-01-01T00:00:00.000Z";
+    storage.set(KEY, JSON.stringify(other));
+    winHandlers[event]();
+    const button = { dataset: { action: "star", id }, disabled: false };
+    handlers.click({ target: { closest: selector => selector === "[data-action]" ? button : null } });
+    const after = JSON.parse(storage.get(KEY));
+    assert.equal(after.words[id].seen, 1, event);
+    assert.equal(after.words[id].star, true, event);
+    assert.deepEqual(after.logs, JSON.parse(JSON.stringify(other.logs)), event);
+  }
+});

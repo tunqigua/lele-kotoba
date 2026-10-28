@@ -1,0 +1,42 @@
+const assert=require('node:assert/strict');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const fs=require('node:fs'),vm=require('node:vm'),E=require('../dist/engine.js');
+(async()=>{
+ const browser=await chromium.launch({headless:true});
+ try{
+  const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  const ctx={window:{}};vm.runInNewContext(fs.readFileSync(__dirname+'/../dist/data.js','utf8'),ctx);
+  const seed=E.fresh();E.rate(seed,ctx.window.KOTOBA_DATA.words[0].id,'good');
+  seed.settings.lesson='2';seed.settings.newGoal=null;seed.settings.reviewGoal=null;
+  await page.addInitScript(seed=>{if(!sessionStorage.getItem('lesson-test-seeded')){localStorage.setItem('lele-kotoba-v4',JSON.stringify(seed));sessionStorage.setItem('lesson-test-seeded','1');}},seed);
+  await page.goto(process.env.TEST_URL||'http://127.0.0.1:8883');
+  const state=()=>page.evaluate(()=>JSON.parse(localStorage.getItem(window.KotobaEngine.KEY)));
+  const original=await state(),open=()=>page.locator('[data-action="range"]').click();
+  const box=value=>page.locator('.study-lesson[value="'+value+'"]');
+  await open();assert(await box('2').isChecked());assert(!(await box('all').isChecked()));
+  await box('3').check();await page.locator('#saveRange').click();assert.deepEqual((await state()).settings.lesson,['2','3']);
+  await open();await box('2').uncheck();await box('3').uncheck();await page.locator('#saveRange').click();
+  assert(await page.locator('#rangeDialog').isVisible());assert.deepEqual((await state()).settings.lesson,['2','3']);
+  await box('all').check();assert(!(await box('2').isChecked()));
+  await box('1').check();assert(!(await box('all').isChecked()));await box('3').check();
+  await page.locator('#rangeDialog [aria-label="关闭"]').click();assert.deepEqual((await state()).settings.lesson,['2','3']);
+  await page.reload();await open();assert(await box('2').isChecked());assert(await box('3').isChecked());
+  await box('2').uncheck();await box('3').uncheck();await box('5').check();await page.locator('#saveRange').click();
+  assert.equal((await state()).settings.lesson,'5');
+  await open();await box('all').check();assert(!(await box('5').isChecked()));await page.locator('#saveRange').click();
+  assert.equal((await state()).settings.lesson,'all');
+  const after=await state();for(const key of ['words','logs','dailyWords'])assert.deepEqual(after[key],original[key]);
+  assert.equal(after.settings.newGoal,null);assert.equal(after.settings.reviewGoal,null);
+  await page.setViewportSize({width:390,height:844});await open();await box('1').check();await box('3').check();
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.screenshot({path:'multiple-lessons-mobile.png',fullPage:true,animations:'disabled'});
+  await page.evaluate(()=>{const E=window.KotobaEngine,other=JSON.parse(localStorage.getItem(E.KEY));other.savedAt='2099-01-01T00:00:00.000Z';localStorage.setItem(E.KEY,JSON.stringify(other));});
+  await page.locator('#saveRange').click();
+  assert(await page.locator('#rangeDialog').isVisible());
+  assert.equal((await state()).settings.lesson,'all');
+  assert.match(await page.locator('#toast').textContent(),/未能保存/);
+  assert.deepEqual(errors,[]);
+  console.log('PASS: 单课、多课、全部互斥、空选拦截、取消不保存、刷新回显、原学习记录及无上限不变、手机布局。');
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});
