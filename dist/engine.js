@@ -121,11 +121,12 @@ function reviewCandidates(state,now=Date.now()){
   return {id,group,errors,yesterdayWrong,pending:Number(!!w.reviewPending),due:w.due||0};
  }).filter(x=>x.group<3).sort((a,b)=>a.group-b.group||(a.group===0?b.pending-a.pending||b.yesterdayWrong-a.yesterdayWrong:a.group===1?a.due-b.due:0)||b.errors-a.errors||a.id.localeCompare(b.id));
 }
+const completedReviews=(state,now)=>Object.entries(state.words).filter(([,w])=>w.seen>0&&w.learnedOn!==today(now)&&w.reviewedOn===today(now)&&!w.reviewPending).map(([id])=>id);
 function reviewIds(state,now=Date.now(),fix=false){
  const day=today(now),goal=state.settings.reviewGoal,plan=state.reviewPlan;
  if(plan?.day===day&&plan.goal===goal&&plan.rule==='spaced-v1'&&plan.ids.length)return plan.ids;
  // Work already completed in today's plan still occupies its daily slot when the goal changes.
- const done=plan?.day===day&&plan.rule==='spaced-v1'?plan.ids.filter(id=>state.words[id]?.reviewedOn===day&&!state.words[id].reviewPending):[];
+ const done=completedReviews(state,now);
  const ids=[...done,...reviewCandidates(state,now).map(x=>x.id).filter(id=>!done.includes(id))].slice(0,goal===null?Infinity:goal);
  if(fix&&(!plan||plan.rule!=='spaced-v1'||plan.day!==day||plan.goal!==goal||plan.ids.join()!==ids.join()))state.reviewPlan={day,goal,rule:'spaced-v1',ids};
  return ids;
@@ -147,7 +148,7 @@ function cardSchedule(w,grade='good',now=Date.now()){
 function counts(state,now=Date.now()){
  const logs=state.logs.filter(l=>l.day===today(now));
  const reviews=reviewIds(state,now),done=reviews.filter(id=>state.words[id].reviewedOn===today(now)&&!state.words[id].reviewPending).length;
- return {learned:Object.values(state.words).filter(w=>w.seen>0).length,mastered:Object.values(state.words).filter(w=>w.seen>0&&w.stage>=3).length,due:reviews.length-done,newToday:new Set(logs.filter(l=>l.isNew).map(l=>l.id)).size,reviewToday:done,answers:logs.length};
+ return {learned:Object.values(state.words).filter(w=>w.seen>0).length,mastered:Object.values(state.words).filter(w=>w.seen>0&&w.stage>=3).length,due:reviews.length-done,newToday:new Set(logs.filter(l=>l.isNew).map(l=>l.id)).size,reviewToday:completedReviews(state,now).length,answers:logs.length};
 }
 function rate(state,id,grade,now=Date.now(),context='card'){
  if(!['again','hard','good'].includes(grade))throw Error('Invalid grade');

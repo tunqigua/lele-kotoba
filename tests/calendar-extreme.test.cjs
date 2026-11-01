@@ -61,7 +61,7 @@ test('extremely difficult words count cumulative reading errors across both type
  E.recordReading(s,'a',true,'kanji',evening+100);
  assert.equal(s.words.a.readingStreak,0);
  for(let i=1;i<=5;i++)E.recordReading(s,'a',true,'kanji',evening+i*E.DAY);
- assert.equal(s.words.a.readingStreak,5);assert.equal(E.readingPool(words,s).some(w=>w.id==='a'),false);
+ assert.equal(s.words.a.readingStreak,5);assert.equal(E.readingPool(words,s,evening+5*E.DAY).some(w=>w.id==='a'),false);
  assert.deepEqual(E.extremePool(words,copy(s)).map(w=>w.id),['a','b'],'graduation does not erase the cumulative list');
  assert.equal(E.recordReading(s,'a',false,'kana',evening+5*E.DAY+200),false);assert.equal(s.words.a.readingWrong,5);
 });
