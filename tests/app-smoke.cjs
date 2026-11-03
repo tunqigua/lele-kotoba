@@ -83,7 +83,7 @@ while(!el('#main').innerHTML.includes('今日复习已完成')&&steps++<15){
  if(o.length){
   modes.add('quiz');const prompt=el('#main').innerHTML.match(/<h2 lang="ja" class="[^"]*">([^<]+)<\/h2>/)?.[1];
   const w=known.find(w=>w.kana===prompt||w.meaning===prompt||ctx.window.KotobaQuiz.written(w)===prompt);assert.ok(w,prompt);
-  const a=o.find(v=>v===w.kana||v===ctx.window.KotobaQuiz.written(w));assert.ok(a);
+  const a=o.find(v=>v===w.kana||v===ctx.window.KotobaQuiz.written(w)||v===w.meaning);assert.ok(a);
   action('quizAnswer',{answer:wrongOnce?a:o.find(v=>v!==a)});wrongOnce=true;
   assert.match(el('#main').innerHTML,/quiz-feedback/,'feedback stays visible until Continue');
   ctx.Math.random=()=>.9;action('nextQuiz');
@@ -167,7 +167,7 @@ while(options().length&&attempts35++<40){
  if(correct)completedIds.add(id);action('nextQuiz');
  if(attempts35===3){winHandlers.storage({key:E.KEY,newValue:JSON.stringify(readState())});assert.deepEqual(readState().readingPlan.ids,fixedIds);}
 }
-assert.equal(attempts35,36);assert.equal(completedIds.size,35);assert.deepEqual([...audioModes].sort(),['kana','kanji']);assert.equal(options().length,0);assert.match(el('#main').innerHTML,/今日读音 35 \/ 35/);
+assert.equal(attempts35,36);assert.equal(completedIds.size,35);assert.deepEqual([...audioModes].sort(),['kana','kanji','meaning']);assert.equal(options().length,0);assert.match(el('#main').innerHTML,/今日读音 35 \/ 35/);
 nav('stats');nav('today');action('quiz');assert.equal(options().length,0,'finished daily plan never refills with more historical words');
 assert.deepEqual(readState().readingPlan.ids,fixedIds);
 clock+=E.DAY;winHandlers.focus();assert.equal(readState().readingPlan.day,E.today(clock));assert.equal(readState().readingPlan.ids.length,20);
@@ -210,7 +210,7 @@ while(options().length&&grindSteps++<80){
  action('nextQuiz');
 }
 assert.ok(grindSteps>30&&grindSteps<80);assert.equal(options().length,0);assert.match(el('#main').innerHTML,/狂刷已全部达标/);
-assert.equal(el('#grindNav').textContent,0);assert.deepEqual([...grindTypes].sort(),['kana','kanji']);
+assert.equal(el('#grindNav').textContent,0);assert.deepEqual([...grindTypes].sort(),['kana','kanji','meaning']);
 assert.equal(readState().words[wrongGrindId].readingWrong,1,'success never clears the lifetime wrong total');
 nav('stats');nav('grind');assert.equal(options().length,0,'qualified words stay out on re-entry');
 // A later uncertain card reopens even a previously cross-day-qualified word; keyboard and speech match clicks.
@@ -364,3 +364,10 @@ ctx.Math.random=()=>.1;winHandlers.storage({key:E.KEY,newValue:JSON.stringify(ha
 assert.match(el('#main').innerHTML,/<div class="quiz-hint"><\/div>/);assert.ok(!el('#main').innerHTML.includes(hardWord.meaning));
 assert.ok(options().includes('安い'));action('quizAnswer',{answer:'安い'});assert.ok(el('#main').innerHTML.includes(hardWord.meaning));
 console.log('PASS: Chinese meaning stays hidden until an answer is selected.');
+
+// Reported regression: a pure-kana prompt must lead to meaning choices, never a copy.
+const semete=allWords.find(w=>w.word==='せめて'),meaningState=E.fresh();E.rate(meaningState,semete.id,'good',clock-E.DAY);
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(meaningState)});nav('today');action('quiz');
+assert.match(el('#main').innerHTML,/选择对应的中文意思/);assert.ok(options().includes(semete.meaning));assert.ok(!options().includes('せめて'));assert.ok(!el('#main').innerHTML.includes('quiz-feedback'));
+action('quizAnswer',{answer:options().find(x=>x!==semete.meaning)});assert.equal(readState().words[semete.id].readingWrong,1);assert.match(el('#main').innerHTML,/quiz-feedback/);assert.ok(el('#main').innerHTML.includes(semete.meaning));
+console.log('PASS: reported semete question selects Chinese meaning and preserves mistake/progress accounting.');

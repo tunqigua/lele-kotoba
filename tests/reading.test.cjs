@@ -27,3 +27,11 @@ test('harder kanji choices use varied real words, preserve endings and exclude s
 test('question prompts never expose Chinese meanings, including katakana-only words',()=>{
  for(const name of ['安い','コーヒー','する']){const w=words.find(w=>w.word===name);for(const r of [()=>.1,()=>.9]){const q=Q.questionForWord(w,r,words);assert.notEqual(q.prompt,w.meaning);assert.equal(q.prompt,q.type==='kanji'?w.kana:Q.written(w));}}
 });
+
+test('pure-kana words choose Chinese meanings instead of copying the Japanese prompt',()=>{
+ const random=seeded();for(const w of words.filter(w=>!/[一-龯]/.test(Q.written(w)))){
+  const q=Q.questionForWord(w,random,words);assert.equal(q.type,'meaning');assert.equal(q.prompt,Q.written(w));assert.equal(q.answer,w.meaning);assert.equal(q.options.length,4);assert.equal(new Set(q.options).size,4);assert.equal(q.options.filter(x=>x===w.meaning).length,1);assert.ok(!q.options.includes(q.prompt));assert.equal(q.hint,'');
+ }
+ const w=words.find(w=>w.word==='せめて'),q=Q.questionForWord(w,random,words);assert.ok(q.options.includes('至少；哪怕'));assert.ok(q.options.includes('立刻；马上'));
+ const s=E.fresh();E.rate(s,w.id,'good');E.recordReading(s,w.id,false,'meaning');E.recordReading(s,w.id,true,'meaning');const restored=E.validate(JSON.parse(JSON.stringify(s)),ids);assert.equal(restored.words[w.id].readingWrong,1);assert.equal(restored.logs.at(-1).quizType,'meaning');
+});

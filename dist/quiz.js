@@ -66,12 +66,22 @@ function createQuestion(words,state,previousId=null,random=Math.random,now=Date.
  if(pool.length>1)pool=pool.filter(w=>w.id!==previousId);if(!pool.length)return null;
  return questionForWord(pool[Math.floor(random()*pool.length)],random,root.KOTOBA_DATA?.words||words);
 }
-function questionForWord(w,random=Math.random,vocabulary=root.KOTOBA_DATA?.words||[]){
- const hasKanji=/[一-龯]/.test(written(w)),type=hasKanji&&random()<.5?'kanji':'kana';
- const options=type==='kanji'?kanjiOptions(w,random,vocabulary):kanaOptions(w,random);
- if(options.length!==4)throw Error('Unable to form four distinct choices: '+w.word);
- return {id:w.id,type,options,answer:type==='kanji'?written(w):(/^[ァ-ヺー]+$/.test(w.kana)?w.kana:hira(w.kana)),prompt:type==='kanji'?w.kana:written(w),hint:type==='kanji'?contextHint(w):hasKanji?w.meaning:'中文提示 · 选择正确假名',selected:null};
+function meaningOptions(w,random=Math.random,vocabulary=root.KOTOBA_DATA?.words||[]){
+ const correct=w.meaning,out=new Set(),parts=text=>text.replace(/[（(].*?[）)]/g,'').split(/[；;、，,\/]/).map(x=>x.trim()).filter(Boolean),target=parts(correct);
+ const add=text=>{if(text&&text!==correct&&!parts(text).some(part=>target.some(x=>x.includes(part)||part.includes(x))))out.add(text);};
+ // Use distinct meanings for this easily confused adverb.
+ if(w.word==='せめて')for(const text of ['总是；经常','完全不；一点也不','立刻；马上'])add(text);
+ for(const other of shuffle(vocabulary.filter(x=>x.pos===w.pos),random))add(other.meaning);
+ for(const other of shuffle(vocabulary,random))add(other.meaning);
+ for(const text of ['购买','出售','等待','学校','红色','父母','雨','有趣的'])add(text);
+ return shuffle([correct,...[...out].slice(0,3)],random);
 }
-const api={shuffle,phonetic,distance,kanaOptions,kanjiOptions,createQuestion,questionForWord,written};
+function questionForWord(w,random=Math.random,vocabulary=root.KOTOBA_DATA?.words||[]){
+ const hasKanji=/[一-龯]/.test(written(w)),type=hasKanji?(random()<.5?'kanji':'kana'):'meaning';
+ const options=type==='meaning'?meaningOptions(w,random,vocabulary):type==='kanji'?kanjiOptions(w,random,vocabulary):kanaOptions(w,random);
+ if(options.length!==4)throw Error('Unable to form four distinct choices: '+w.word);
+ return {id:w.id,type,options,answer:type==='meaning'?w.meaning:type==='kanji'?written(w):(/^[ァ-ヺー]+$/.test(w.kana)?w.kana:hira(w.kana)),prompt:type==='kanji'?w.kana:written(w),hint:type==='kanji'?contextHint(w):type==='meaning'?'':w.meaning,selected:null};
+}
+const api={shuffle,phonetic,distance,kanaOptions,kanjiOptions,meaningOptions,createQuestion,questionForWord,written};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.KotobaQuiz=api;
 })(typeof window!=='undefined'?window:globalThis);
