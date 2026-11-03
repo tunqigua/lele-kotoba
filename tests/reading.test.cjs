@@ -11,3 +11,19 @@ test('every dictionary entry has four nearby kana options, one accepted answer, 
 test('kanji choices preserve target structure and reject accepted alternative spellings',()=>{const random=seeded();for(const w of words.filter(w=>/[一-龯]/.test(Q.written(w)))){const options=Q.kanjiOptions(w,random),answer=Q.written(w);assert.equal(options.length,4,w.word);assert.equal(new Set(options).size,4,w.word);assert.equal(options.filter(o=>o===answer).length,1);for(const o of options)if(o!==answer){assert.ok(Q.distance(answer,o)<=2);assert.ok(!(w.acceptedWritten||[]).includes(o),w.word);}}});
 test('kanji question hints do not contain the correct written answer',()=>{const s=E.fresh(),random=seeded();for(const w of words)E.rate(s,w.id,'good');for(let i=0;i<5000;i++){const q=Q.createQuestion(words,s,null,random);if(q.type==='kanji')assert.ok(!q.hint.includes(q.answer),q.answer+' leaked by '+q.hint);}});
 test('collocations retain at least two actual vocabulary links and readable kana',()=>{let n=0;for(const w of words)for(const p of w.phrases||[]){n++;assert.ok(p.jp&&p.kana&&p.meaning);assert.ok(p.words.length>=2);assert.ok(p.words.every(x=>ids.has(x.id)));}assert.ok(meta.phraseCount>=200);assert.ok(n>400);});
+
+test('harder kanji choices use varied real words, preserve endings and exclude same-reading alternatives',()=>{
+ const target=words.find(w=>w.word==='安い'),random=seeded(),real=new Set(words.map(Q.written)),sets=new Set();
+ for(let i=0;i<30;i++){
+  const options=Q.kanjiOptions(target,random,words);assert.equal(options.length,4);assert.ok(options.includes('安い'));assert.ok(options.every(o=>o.endsWith('い')&&real.has(o)));sets.add([...options].sort().join());
+ }
+ assert.ok(sets.size>10,'distractors vary, not only answer positions');
+ for(const name of ['着る','取る','暖かい','注文','授業','図書館']){
+  const w=words.find(w=>w.word===name),options=Q.kanjiOptions(w,random,words);assert.equal(options.length,4);assert.equal(new Set(options).size,4);
+  for(const text of options.filter(o=>o!==Q.written(w))){assert.ok(!(w.acceptedWritten||[]).includes(text));assert.ok(!words.some(x=>Q.written(x)===text&&Q.phonetic(x.kana)===Q.phonetic(w.kana)));}
+ }
+});
+
+test('question prompts never expose Chinese meanings, including katakana-only words',()=>{
+ for(const name of ['安い','コーヒー','する']){const w=words.find(w=>w.word===name);for(const r of [()=>.1,()=>.9]){const q=Q.questionForWord(w,r,words);assert.notEqual(q.prompt,w.meaning);assert.equal(q.prompt,q.type==='kanji'?w.kana:Q.written(w));}}
+});

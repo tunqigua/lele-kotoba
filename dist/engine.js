@@ -2,7 +2,7 @@
 (function(root){
 'use strict';
 const KEY='lele-kotoba-v4', LEGACY_KEY='lele-kotoba-v3', EARLIEST_KEY='lele-kotoba-v2', LEGACY_KEYS=['lele-kotoba-v3','lele-kotoba-v2','lele-kotoba-v1'], DAY=86400000, INTERVALS=[1,3,7,14,30,60], READING_INTERVALS=[7,14,30];
-const READING_PLAN_RULE='yesterday-plus-10-v1';
+const READING_PLAN_RULE='yesterday-plus-10-v1', CUSTOM_READING_RULE='custom-count-v1';
 function shuffle(list,random=Math.random){const a=[...list];for(let i=a.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 const today=(now=Date.now())=>new Date(now+8*3600000).toISOString().slice(0,10);
 const dayStart=(now=Date.now())=>Date.parse(today(now)+'T00:00:00+08:00');
@@ -15,7 +15,7 @@ const readingReady=(w,now=Date.now())=>!!(w?.seen&&w.readingDoneDay!==today(now)
 const readingAllowed=(w,now,state)=>!state?.readingPlan||state.readingPlan.day!==today(now)||state.readingPlan.ids.some(id=>state.words[id]===w);
 const isDue=(w,now=Date.now(),state=null)=>!!(w?.seen&&(w.reviewPending||w.due<=now||(readingAllowed(w,now,state)&&(w.readingRetry||readingCheckDue(w,now)))||(w.troubleDays||[]).some(d=>d<=today(now))));
 function markTrouble(w,now){w.troubleDays=[...new Set([...(w.troubleDays||[]),today(reviewDue(now))])].sort();}
-const fresh=()=>({schema:1,words:{},logs:[],studyTime:{},dailyWords:{},reviewPlan:null,readingPlan:null,grindSession:null,settings:{newGoal:20,reviewGoal:50,priority:'all',lesson:'all'},savedAt:null});
+const fresh=()=>({schema:1,words:{},logs:[],studyTime:{},dailyWords:{},reviewPlan:null,readingPlan:null,grindSession:null,settings:{newGoal:20,reviewGoal:50,readingGoal:null,priority:'all',lesson:'all'},savedAt:null});
 function recordDailyWord(state,{id,day,grade,isNew}){
  const wrong=grade==='quizWrong';
  if(!isNew&&!wrong)return;
@@ -85,7 +85,7 @@ function validate(raw,ids){
   next.reviewPlan={day:raw.reviewPlan.day,goal:raw.reviewPlan.goal,rule:'spaced-v1',ids:[...new Set(raw.reviewPlan.ids)].filter(id=>ids.has(id)&&next.words[id]?.seen>0).slice(0,raw.reviewPlan.goal===null?Infinity:raw.reviewPlan.goal)};
  }
  if(raw.readingPlan&&validDay(raw.readingPlan.day)&&Array.isArray(raw.readingPlan.ids)){
-  next.readingPlan={day:raw.readingPlan.day,ids:[...new Set(raw.readingPlan.ids)].filter(id=>ids.has(id)&&next.words[id]?.seen>0),...(raw.readingPlan.rule===READING_PLAN_RULE?{rule:READING_PLAN_RULE}:{})};
+  next.readingPlan={day:raw.readingPlan.day,ids:[...new Set(raw.readingPlan.ids)].filter(id=>ids.has(id)&&next.words[id]?.seen>0),...([READING_PLAN_RULE,CUSTOM_READING_RULE].includes(raw.readingPlan.rule)?{rule:raw.readingPlan.rule}:{}),...(Number.isSafeInteger(raw.readingPlan.goal)&&raw.readingPlan.goal>=1?{goal:raw.readingPlan.goal}:{})};
  }
  if(raw.grindSession&&Array.isArray(raw.grindSession.remaining))next.grindSession={remaining:[...new Set(raw.grindSession.remaining)].filter(id=>ids.has(id)&&next.words[id]?.seen>0),recent:(Array.isArray(raw.grindSession.recent)?raw.grindSession.recent:[]).filter(id=>ids.has(id)&&next.words[id]?.seen>0).slice(-8),lastId:ids.has(raw.grindSession.lastId)?raw.grindSession.lastId:null,round:Number.isSafeInteger(raw.grindSession.round)&&raw.grindSession.round>=0?raw.grindSession.round:0};
  for(const [day,ms]of Object.entries(raw.studyTime&&typeof raw.studyTime==='object'&&!Array.isArray(raw.studyTime)?raw.studyTime:{}))if(validDay(day)&&day<=today()&&Number.isFinite(ms)&&ms>=0&&ms<=DAY)next.studyTime[day]=ms;
@@ -100,6 +100,7 @@ function validate(raw,ids){
  const s=raw.settings||{};
  next.settings.newGoal=validGoal(s.newGoal)?s.newGoal:20;
  next.settings.reviewGoal=validGoal(s.reviewGoal)?s.reviewGoal:50;
+ next.settings.readingGoal=Number.isSafeInteger(s.readingGoal)&&s.readingGoal>=1?Math.min(s.readingGoal,Object.values(next.words).filter(w=>w.seen>0).length)||null:null;
  next.settings.priority=['all','A','B','C'].includes(s.priority)?s.priority:'all';
  const lessons=[...new Set(Array.isArray(s.lesson)?s.lesson:[s.lesson])].filter(l=>typeof l==='string'&&/^(all|exam|[1-9]|1[0-5])$/.test(l));
  next.settings.lesson=lessons.includes('all')||!lessons.length?'all':lessons.length===1?lessons[0]:lessons;
@@ -191,7 +192,25 @@ function advanceSession(session,grade,random=Math.random){
 }
 function readingPool(words,state,now=Date.now()){return words.filter(w=>readingReady(state.words[w.id],now));}
 function dailyReadingPlan(words,state,now=Date.now(),random=Math.random){
- const day=today(now);if(state.readingPlan?.day===day&&state.readingPlan.rule===READING_PLAN_RULE)return state.readingPlan;
+ const goal=state.settings.readingGoal,day=today(now);
+ if(Number.isSafeInteger(goal)&&goal>=1){
+  const previous=state.readingPlan;
+  if(previous?.day===day&&previous.rule===CUSTOM_READING_RULE&&previous.goal===goal)return previous;
+  const known=words.filter(w=>state.words[w.id]?.seen>0),knownIds=new Set(known.map(w=>w.id)),ids=[],chosen=new Set();
+  const add=id=>{if(knownIds.has(id)&&!chosen.has(id)){ids.push(id);chosen.add(id);}};
+  // Today's attempts (including unfinished mistakes) survive a reduced target.
+  for(const l of state.logs)if(l.day===day&&['quizRight','quizWrong'].includes(l.grade))add(l.id);
+  for(const w of known)if(state.words[w.id].readingDoneDay===day||(previous?.day===day&&previous.ids.includes(w.id)&&state.words[w.id].readingFailedDay===day))add(w.id);
+  const limit=Math.min(goal,known.length),yesterday=today(dayStart(now)-DAY);
+  const eligible=w=>state.words[w.id].learnedOn<day&&readingReady(state.words[w.id],now);
+  const addEligible=id=>{const w=words.find(w=>w.id===id);if(ids.length<limit&&w&&eligible(w))add(id);};
+  const yesterdayWords=shuffle(known.filter(w=>eligible(w)&&state.words[w.id].learnedOn===yesterday),random);
+  for(const w of yesterdayWords)addEligible(w.id);
+  if(previous?.day===day)for(const id of previous.ids)addEligible(id);
+  for(const w of shuffle(known.filter(eligible),random))addEligible(w.id);
+  state.readingPlan={day,ids,rule:CUSTOM_READING_RULE,goal};return state.readingPlan;
+ }
+ if(state.readingPlan?.day===day&&state.readingPlan.rule===READING_PLAN_RULE)return state.readingPlan;
  const yesterday=today(dayStart(now)-DAY),known=new Map(words.filter(w=>state.words[w.id]?.seen>0).map(w=>[w.id,w]));
  const ids=[],chosen=new Set(),add=id=>{if(known.has(id)&&!chosen.has(id)){ids.push(id);chosen.add(id);}};
  // Count work already attempted today when introducing a new plan or importing progress.

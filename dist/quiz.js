@@ -1,4 +1,4 @@
-/* Local sound/character contrasts only: never pull unrelated vocabulary as choices. */
+/* Sound contrasts and plausible exam-style word/character contrasts. */
 (function(root){
 'use strict';
 const engine=typeof module!=='undefined'&&module.exports?require('./engine.js'):root.KotobaEngine;
@@ -33,12 +33,25 @@ const groups=['切刈刊','手毛午','注住柱','文丈六','建健鍵','築�
 groups.push('行待術衡街','来未米束東','食良飯倉','手毛乎午','分文公介今','自目白百','曲由田典','服報役板','分文公介今','肉内丙因','本木末未','日目白田','入人八又');
 const chars=new Map();for(const g of groups)for(const c of g){const a=chars.get(c)||new Set();for(const n of g)if(n!==c)a.add(n);chars.set(c,a);}
 const written=w=>(w.quizWritten||w.word).replace(/（.*?）/g,'');
-function kanjiOptions(w,random=Math.random){
+const realOptionCache=new WeakMap();
+function realKanjiOptions(w,vocabulary){
+ let cache=realOptionCache.get(vocabulary);if(!cache){cache=new Map();realOptionCache.set(vocabulary,cache);}if(cache.has(w))return cache.get(w);
+ const target=written(w),suffix=target.match(/[ぁ-ゖー]+$/)?.[0]||'',kind=pos=>pos?.includes('动词')?'verb':pos?.includes('い形容词')?'i-adjective':pos?.includes('な形容词')?'na-adjective':pos?.includes('名词')?'noun':pos;
+ const readings=new Set([w.kana,...(w.acceptedKana||[])].map(phonetic));
+ const options=vocabulary.filter(other=>{
+  const text=written(other);if(other===w||kind(other.pos)!==kind(w.pos)||text.length!==target.length||!/[一-龯]/.test(text)||text===target||(text.match(/[ぁ-ゖー]+$/)?.[0]||'')!==suffix)return false;
+  if((other.acceptedKana||[]).concat(other.kana).some(k=>readings.has(phonetic(k))))return false;
+  return distance(target,text)<=2&&(suffix||[...target].some(c=>/[一-龯]/.test(c)&&text.includes(c))||distance(hira(w.kana),hira(other.kana))<=2);
+ }).map(written);
+ cache.set(w,options);return options;
+}
+function kanjiOptions(w,random=Math.random,vocabulary=root.KOTOBA_DATA?.words||[]){
  const correct=written(w),out=new Set(),accepted=new Set([correct,...(w.acceptedWritten||[])]);
  const add=s=>{if(s!==correct&&!accepted.has(s)&&distance(correct,s)<=2)out.add(s);};
- for(const s of shuffle(w.kanjiDistractors||[],random))add(s);
+ // Real words with the same grammatical shape make plausible exam-style choices.
+ for(const s of shuffle(realKanjiOptions(w,vocabulary),random))add(s);
  const variants=[];for(let i=0;i<correct.length;i++)if(/[一-龯々]/.test(correct[i]))for(const c of chars.get(correct[i])||[])variants.push(correct.slice(0,i)+c+correct.slice(i+1));
- for(const s of shuffle(variants,random))add(s);
+ for(const s of shuffle([...(w.kanjiDistractors||[]),...variants],random))add(s);
  if(out.size<3)for(let i=0;i<correct.length;i++)if(/[一-龯]/.test(correct[i]))for(const c of '末未木本日目白'){add(correct.slice(0,i)+c+correct.slice(i+1));if(out.size>=3)break;}
  return shuffle([correct,...[...out].slice(0,3)],random);
 }
@@ -51,13 +64,13 @@ function contextHint(w){
 function createQuestion(words,state,previousId=null,random=Math.random,now=Date.now()){
  let pool=engine.readingPool(words,state,now);
  if(pool.length>1)pool=pool.filter(w=>w.id!==previousId);if(!pool.length)return null;
- return questionForWord(pool[Math.floor(random()*pool.length)],random);
+ return questionForWord(pool[Math.floor(random()*pool.length)],random,root.KOTOBA_DATA?.words||words);
 }
-function questionForWord(w,random=Math.random){
+function questionForWord(w,random=Math.random,vocabulary=root.KOTOBA_DATA?.words||[]){
  const hasKanji=/[一-龯]/.test(written(w)),type=hasKanji&&random()<.5?'kanji':'kana';
- const options=type==='kanji'?kanjiOptions(w,random):kanaOptions(w,random);
+ const options=type==='kanji'?kanjiOptions(w,random,vocabulary):kanaOptions(w,random);
  if(options.length!==4)throw Error('Unable to form four distinct choices: '+w.word);
- return {id:w.id,type,options,answer:type==='kanji'?written(w):(/^[ァ-ヺー]+$/.test(w.kana)?w.kana:hira(w.kana)),prompt:type==='kanji'?w.kana:hasKanji?written(w):w.meaning,hint:type==='kanji'?contextHint(w):hasKanji?w.meaning:'中文提示 · 选择正确假名',selected:null};
+ return {id:w.id,type,options,answer:type==='kanji'?written(w):(/^[ァ-ヺー]+$/.test(w.kana)?w.kana:hira(w.kana)),prompt:type==='kanji'?w.kana:written(w),hint:type==='kanji'?contextHint(w):hasKanji?w.meaning:'中文提示 · 选择正确假名',selected:null};
 }
 const api={shuffle,phonetic,distance,kanaOptions,kanjiOptions,createQuestion,questionForWord,written};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.KotobaQuiz=api;

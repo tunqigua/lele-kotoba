@@ -312,7 +312,7 @@ console.log('PASS: actual 50/100 settings select eligible high-error supplements
 
 // Yesterday's full new-word group comes before old high-error supplements in the real review UI.
 const balanced=E.fresh(),yesterdayNew=allWords.slice(0,25),historical=allWords.slice(25,125);
-for(const w of yesterdayNew){E.rate(balanced,w.id,'good',clock-E.DAY);balanced.words[w.id].readingStreak=5;balanced.words[w.id].readingDue=E.reviewDue(clock,7);}
+for(const w of yesterdayNew){E.rate(balanced,w.id,'good',clock-E.DAY);balanced.words[w.id].readingRule='daily-v1';balanced.words[w.id].readingStreak=5;balanced.words[w.id].readingDue=E.reviewDue(clock,7);}
 for(let i=0;i<historical.length;i++){const w=historical[i];E.rate(balanced,w.id,'good',clock-30*E.DAY);Object.assign(balanced.words[w.id],{reviewWrong:1000+i,stage:1,due:E.reviewDue(clock,2),readingStreak:0,readingDue:E.reviewDue(clock,7)});}
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(balanced)});nav('review');
 assert.equal(readState().reviewPlan.rule,'spaced-v1');
@@ -346,3 +346,21 @@ assert.match(el('#detailContent').innerHTML,/<ruby class="kana-ruby">ヒー<rt>�
 assert.match(el('#detailContent').innerHTML,/<div class="usage-jp" lang="ja">コーヒー/,'example phrases remain unannotated');
 el('#detailDialog').close();
 console.log('PASS: katakana vocabulary includes hiragana annotations; examples remain unchanged.');
+
+// The reading count control is bounded by learned words, without resetting records.
+clock=Date.parse('2026-10-24T12:00:00+08:00');
+const readingSettings=E.fresh();for(const w of allWords.slice(0,12))E.rate(readingSettings,w.id,'good',clock-E.DAY);
+readingSettings.studyTime['2026-10-23']=1800000;readingSettings.words[allWords[0].id].star=true;
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(readingSettings)});nav('today');action('settings');
+assert.equal(el('#readingGoal').max,12);el('#readingGoal').value='13';el('#saveSettings').onclick();assert.equal(readState().settings.readingGoal,null);
+el('#readingGoal').value='5';el('#saveSettings').onclick();assert.equal(readState().settings.readingGoal,5);assert.equal(readState().readingPlan.ids.length,5);assert.equal(readState().studyTime['2026-10-23'],1800000);assert.equal(readState().words[allWords[0].id].star,true);
+assert.deepEqual(readState().logs,JSON.parse(JSON.stringify(readingSettings.logs)));action('quiz');assert.equal(options().length,4);
+action('settings');assert.equal(el('#readingGoal').value,5);el('#readingGoal').value='10';el('#saveSettings').onclick();assert.equal(readState().readingPlan.ids.length,10);assert.equal(Object.keys(readState().words).length,12);
+console.log('PASS: configurable daily reading count, learned-word upper bound, and existing records preserved.');
+
+// Meanings appear only in answered feedback, with realistic harder kanji choices.
+const hardWord=allWords.find(w=>w.word==='安い'),hardState=E.fresh();E.rate(hardState,hardWord.id,'good',clock-E.DAY);
+ctx.Math.random=()=>.1;winHandlers.storage({key:E.KEY,newValue:JSON.stringify(hardState)});nav('today');action('quiz');
+assert.match(el('#main').innerHTML,/<div class="quiz-hint"><\/div>/);assert.ok(!el('#main').innerHTML.includes(hardWord.meaning));
+assert.ok(options().includes('安い'));action('quizAnswer',{answer:'安い'});assert.ok(el('#main').innerHTML.includes(hardWord.meaning));
+console.log('PASS: Chinese meaning stays hidden until an answer is selected.');

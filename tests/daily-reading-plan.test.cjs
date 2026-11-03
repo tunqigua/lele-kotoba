@@ -82,3 +82,35 @@ test('an existing thirty-word plan upgrades once, retaining progress and its his
  assert.deepEqual(E.dailyReadingStatus(words,copy,now),{total:35,done:1,remaining:34});
  assert.equal(E.dailyReadingPlan(words,copy,now,seeded(98)),p);
 });
+
+test('custom reading count caps the daily draw, keeps yesterday priority, and rests future checks',()=>{
+ const s=fixture();s.settings.readingGoal=5;let p=E.dailyReadingPlan(words,s,now,seeded());assert.equal(p.ids.length,5);assert.ok(p.ids.every(id=>s.words[id].learnedOn===E.today(now-E.DAY)));
+ s.settings.readingGoal=50;p=E.dailyReadingPlan(words,s,now,seeded());assert.equal(p.ids.length,50);assert.ok(words.slice(0,20).every(w=>p.ids.includes(w.id)));
+ const protectedId=words.slice(20,70).find(w=>!p.ids.includes(w.id)).id;s.words[protectedId].readingStreak=5;s.words[protectedId].readingDue=E.reviewDue(now,7);
+ s.settings.readingGoal=1000;p=E.dailyReadingPlan(words,s,now,seeded());assert.equal(p.ids.length,69);assert.ok(!p.ids.includes(protectedId));assert.ok(p.ids.every(id=>s.words[id].learnedOn<E.today(now)));
+});
+
+test('changing reading goal preserves all existing records, completed work and failed retries',()=>{
+ const s=fixture();s.settings.readingGoal=10;let p=E.dailyReadingPlan(words,s,now,seeded()),selected=[...p.ids];
+ for(const id of selected.slice(0,4))E.recordReading(s,id,true,'kana',now);
+ E.recordReading(s,selected[4],false,'kanji',now);s.studyTime[E.today(now)]=900000;s.words[selected[0]].star=true;
+ const records=JSON.stringify({words:s.words,logs:s.logs,studyTime:s.studyTime,dailyWords:s.dailyWords});
+ s.settings.readingGoal=2;p=E.dailyReadingPlan(words,s,now,seeded());assert.equal(p.ids.length,5,'attempts take precedence over a newly lowered goal');assert.ok(p.ids.includes(selected[4]));assert.equal(E.dailyReadingStatus(words,s,now).done,4);
+ assert.equal(JSON.stringify({words:s.words,logs:s.logs,studyTime:s.studyTime,dailyWords:s.dailyWords}),records);
+ const restored=E.validate(JSON.parse(JSON.stringify(s)),ids);assert.equal(restored.settings.readingGoal,2);assert.deepEqual(E.dailyReadingPlan(words,restored,now),p);assert.equal(restored.words[selected[0]].star,true);assert.equal(restored.studyTime[E.today(now)],900000);
+ s.settings.readingGoal=30;p=E.dailyReadingPlan(words,s,now,seeded());assert.equal(p.ids.length,30);assert.ok(selected.slice(0,5).every(id=>p.ids.includes(id)));
+ assert.equal(JSON.stringify({words:s.words,logs:s.logs,studyTime:s.studyTime,dailyWords:s.dailyWords}),records);
+});
+
+test('old backups keep their original reading plan, while reading goal is bounded by learned words',()=>{
+ const s=fixture();const before=E.dailyReadingPlan(words,s,now,seeded());delete s.settings.readingGoal;
+ let copy=E.validate(JSON.parse(JSON.stringify(s)),ids);assert.equal(copy.settings.readingGoal,null);assert.deepEqual(E.dailyReadingPlan(words,copy,now),before);
+ s.settings.readingGoal=500;copy=E.validate(s,ids);assert.equal(copy.settings.readingGoal,80);
+ learned(s,80,90,0);copy=E.validate(s,ids);assert.equal(copy.settings.readingGoal,90);
+ for(const invalid of [0,-1,1.5,'10']){s.settings.readingGoal=invalid;assert.equal(E.validate(s,ids).settings.readingGoal,null);}
+});
+
+test('grind-only mistakes do not consume a separate normal-reading daily quota',()=>{
+ const s=fixture();for(const w of words.slice(20,35))E.recordGrind(s,w.id,false,'kana',now);s.settings.readingGoal=3;
+ assert.equal(E.dailyReadingPlan(words,s,now,seeded()).ids.length,3);
+});
