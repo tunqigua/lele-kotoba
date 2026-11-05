@@ -371,3 +371,22 @@ winHandlers.storage({key:E.KEY,newValue:JSON.stringify(meaningState)});nav('toda
 assert.match(el('#main').innerHTML,/选择对应的中文意思/);assert.ok(options().includes(semete.meaning));assert.ok(!options().includes('せめて'));assert.ok(!el('#main').innerHTML.includes('quiz-feedback'));
 action('quizAnswer',{answer:options().find(x=>x!==semete.meaning)});assert.equal(readState().words[semete.id].readingWrong,1);assert.match(el('#main').innerHTML,/quiz-feedback/);assert.ok(el('#main').innerHTML.includes(semete.meaning));
 console.log('PASS: reported semete question selects Chinese meaning and preserves mistake/progress accounting.');
+
+// A finished lesson must not look like a completed daily new-word goal.
+const exhausted=E.fresh();exhausted.settings.lesson='1';exhausted.settings.newGoal=30;
+const lessonOne=allWords.filter(w=>w.lesson?.split('-')[0]==='1');
+lessonOne.forEach((w,i)=>{if(i>=9)E.rate(exhausted,w.id,'good',clock-E.DAY);E.rate(exhausted,w.id,'good',clock);});
+assert.equal(E.counts(exhausted,clock).newToday,9);
+const normalizedExhausted=E.validate(exhausted,new Set(allWords.map(w=>w.id)));
+const exhaustedRecords=JSON.stringify({words:normalizedExhausted.words,logs:normalizedExhausted.logs});
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(exhausted)});nav('today');action('card');
+assert.match(el('#main').innerHTML,/当前学习范围的新词已学完/);
+assert.match(el('#main').innerHTML,/每日目标 30 词，还差 21 词/);
+assert.match(el('#main').innerHTML,/data-action="range">选择更多学习范围/);
+assert.ok(!el('#main').innerHTML.includes('这一组，已经记进去了'));
+assert.equal(JSON.stringify({words:readState().words,logs:readState().logs}),exhaustedRecords);
+const expanded=readState();expanded.settings.lesson='all';
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(expanded)});nav('today');action('card');
+assert.match(el('#main').innerHTML,/本组 0 \/ 21/);
+assert.equal(JSON.stringify({words:readState().words,logs:readState().logs}),exhaustedRecords);
+console.log('PASS: exhausted lesson explains the missing 21 words; expanding scope restores the queue without changing records.');
