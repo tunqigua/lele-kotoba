@@ -2,9 +2,9 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const ctx={window:{}};vm.runInNewContext(fs.readFileSync(__dirname+'/../dist/data.js','utf8'),ctx);
 const {words,meta}=ctx.window.KOTOBA_DATA,find=name=>words.find(w=>w.word===name);
 
-test('all 782 verb entries have a reading-specific classification without changing their conjugation class',()=>{
+test('all 817 verb entries have a reading-specific classification without changing their conjugation class',()=>{
  const verbs=words.filter(w=>'动词サ变'.includes(w.pos)||w.pos.includes('动词')||w.pos.includes('サ变'));
- assert.equal(verbs.length,782);assert.equal(meta.verbTransitivity.total,782);
+ assert.equal(verbs.length,817);assert.equal(meta.verbTransitivity.total,817);
  for(const w of verbs)assert.ok(['自动词','他动词','自他动词','可能形'].includes(w.transitivity),w.word);
  for(const [name,label]of [['開く（あく）','自动词'],['開ける','他动词'],['開く','自他动词'],['いる','自动词'],['できる','自动词'],['くれる','他动词'],['やめる','他动词'],['する','自他动词'],['閉じる','自他动词'],['楽しめる','可能形'],['取れる','自动词']])assert.equal(find(name).transitivity,label,name);
  assert.equal(find('帰る').pos,'一类动词');assert.equal(find('食べる').pos,'二类动词');

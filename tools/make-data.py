@@ -1,3 +1,4 @@
+# coding: utf-8
 import json, pathlib, re, collections, hashlib
 # Manually checked against the nine uploaded index photographs, pp.189–197.
 # word | kana | Chinese gloss | class | lesson | printed page | study note
@@ -444,6 +445,8 @@ from import_documents import import_documents
 document_imports = import_documents(words)
 from import_completion import import_completion
 completion_imports = import_completion(words)
+from import_supplement import import_supplement, attach_supplement_details
+supplement_imports = import_supplement(words)
 core=set('''行く 来る する 食べる 飲む 見る 聞く 話す 買う 帰る 寝る 働く ある いる 開ける 入る 出る 乗る 待つ 持つ 使う 作る 会う 書く 貸す 借りる 教える あげる くれる 送る 遅れる 起きる 終わる 決める 着る 手伝う なる 始まる 払う 降る 見せる 入れる できる 返す 要る 読む 始める 休む やる やめる
 いい・よい 新しい 古い 高い 安い 大きい 小さい 多い 少ない 近い 遠い 暑い 熱い 暖かい 温かい 寒い 涼しい 冷たい 忙しい 楽しい 面白い 難しい 易しい 優しい 早い・速い 広い 狭い 低い 欲しい
 静か にぎやか きれい 便利 不便 元気 暇 上手 下手 好き 嫌い 大変 大丈夫 必要
@@ -456,6 +459,7 @@ core.update("""言う 思う 考える 歩く 急ぐ 受ける 置く 押す 覚
 core.update('受け取る 動く 生まれる 落ちる 落とす 踊る 飼う 変える 変わる 感じる 気付く 決まる 数える 閉める 閉じる 止める 取る 直す 治す 並べる 逃げる 煮る 眠る 残す 乗り換える 吹く 見つける 迎える 焼く 汚れる 分ける 渡す 慣れる 似る 厚い 青い 黒い 薄い 軽い 遅い 悲しい 美しい 珍しい 危険 簡単 安心 意味 意見 空港 切符 外国語 漢字 会話 経験 機会 遅刻 注意 中止 予約 用意 必ず'.split())
 recognition.update(w['word'] for w in words if w['pos'] in ['专名','接头词','接尾词','量词','数量词','感叹词'])
 first=['行く' ,'来る','する','帰る','食べる','飲む','見る','聞く','書く','読む','ある','いる','学校','切手','注文','先輩','よく','あまり','もう','まだ']
+core.update(r['word'] for r in supplement_imports['records'] if r['status']=='added' and r['suggestedPriority']=='⭐⭐⭐')
 for i,w in enumerate(words):
  w['id']='w'+hashlib.sha1(w['word'].encode()).hexdigest()[:10]
  w['questions']=refs.get(w['word'],[])
@@ -565,10 +569,12 @@ meta['sources'].extend([
  {'title':'小学館・大辞泉：天敵','url':'https://kotobank.jp/word/天敵-102601','description':'校正天敵的读音为てんてき。'},
  {'title':'小学館・大辞泉：棟','url':'https://kotobank.jp/word/棟-140698','description':'建筑物的棟读とう；教学棟不按楼的读音ろう出题。'}])
 enrich(words,meta)
+attach_supplement_details(words,meta,supplement_imports)
 from collocations import attach_collocations
 attach_collocations(words,meta)
 from verb_transitivity import attach_verb_transitivity
 attach_verb_transitivity(words,meta)
+meta['version']='2026.11.05.1'
 path=pathlib.Path(__file__).resolve().parents[1]/'dist/data.js'
 path.write_text('window.KOTOBA_DATA = '+json.dumps({'meta':meta,'words':words},ensure_ascii=False,separators=(',',':'))+';\n')
 print(json.dumps({'total':len(words),'book':sum(w['source']=='book' for w in words),'examOnly':sum(w['source']=='exam' for w in words),'priorities':dict(collections.Counter(w['priority'] for w in words))},ensure_ascii=False))

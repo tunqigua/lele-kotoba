@@ -390,3 +390,14 @@ winHandlers.storage({key:E.KEY,newValue:JSON.stringify(expanded)});nav('today');
 assert.match(el('#main').innerHTML,/本组 0 \/ 21/);
 assert.equal(JSON.stringify({words:readState().words,logs:readState().logs}),exhaustedRecords);
 console.log('PASS: exhausted lesson explains the missing 21 words; expanding scope restores the queue without changing records.');
+
+for(const name of ['相槌','操る','いない','愛情']){
+ const w=allWords.find(w=>w.word===name);action('detail',{id:w.id});
+ const html=el('#detailContent').innerHTML;
+ assert.ok(html.includes('词汇补全清单'),name);
+ assert.ok(html.includes(w.example.jp)&&html.includes(w.example.zh),name);
+ assert.ok(!html.includes('第null页'),name);
+ if(name==='操る')assert.ok(html.includes('一类动词')&&html.includes('他动词'));
+ el('#detailDialog').close();
+}
+console.log('PASS: supplementary vocabulary details show examples, correct source rows and verb labels.');
