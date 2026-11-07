@@ -18,7 +18,7 @@ test('daily reading selects yesterday’s 20 plus 10 random earlier words, never
 
 test('a fixed daily plan does not refill after correct answers and survives reload and backup',()=>{
  const s=fixture(),p=E.dailyReadingPlan(words,s,now,seeded());const selected=[...p.ids];
- for(const id of selected){E.recordReading(s,id,false,'kana',now);E.recordReading(s,id,true,'kanji',now+1);}
+ for(const id of selected){E.recordReading(s,id,false,'kana',now);for(let i=1;i<=3;i++)E.recordReading(s,id,true,'kanji',now+i);}
  assert.equal(E.dailyReadingPool(words,s,now).length,0);assert.deepEqual(E.dailyReadingStatus(words,s,now),{total:30,done:30,remaining:0});
  assert.deepEqual(E.dailyReadingPlan(words,s,now,seeded(99)).ids,selected);
  const v=E.validate(JSON.parse(JSON.stringify(s)),ids);assert.deepEqual(v.readingPlan.ids,selected);assert.equal(E.dailyReadingPool(words,v,now).length,0);

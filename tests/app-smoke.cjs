@@ -14,14 +14,16 @@ function action(name,data={}){const before=spoken.length,button={dataset:{action
 function nav(v){const before=spoken.length;ctx.location.hash='#'+v;winHandlers.hashchange();assert.equal(spoken.length,before,'changing sections must not pronounce an answer');}
 function options(){return [...el('#main').innerHTML.matchAll(/data-answer="([^"]+)"/g)].map(m=>m[1]);}
 const readState=()=>JSON.parse(storage.get(ctx.window.KotobaEngine.KEY));
+let activeQuestion;const baseQuestion=ctx.window.KotobaQuiz.questionForWord;ctx.window.KotobaQuiz.questionForWord=(...args)=>(activeQuestion=baseQuestion(...args));
 const first=ctx.window.KOTOBA_DATA.words[0];assert.equal(first.word,'行く');
 action('quiz');assert.match(el('#main').innerHTML,/先学词，再训练/);assert.equal(options().length,0);
 assert.equal(spoken.length,0,'startup and unopened questions must be silent');action('card');assert.ok(!el('#main').innerHTML.includes('常用搭配与用法'),'usage stays hidden until reveal');action('reveal');assert.equal(spoken.length,1);assert.match(el('#main').innerHTML,/常用搭配与用法/);assert.match(el('#main').innerHTML,/计划：明天/,'first recognition gets a next-day check');assert.match(el('#main').innerHTML,/がっこうにいく/);assert.match(el('#main').innerHTML,/去学校/);assert.match(el('#main').innerHTML,/联合记忆/);action('rate',{grade:'good'});assert.equal(readState().words[first.id].seen,1);
+const seededProgress=readState();for(const w of ctx.window.KOTOBA_DATA.words.slice(1,3)){ctx.window.KotobaEngine.rate(seededProgress,w.id,'good',clock-10*86400000);Object.assign(seededProgress.words[w.id],{readingStreak:5,readingRule:'daily-v1',readingDue:clock+60*86400000,due:clock+60*86400000});}winHandlers.storage({key:ctx.window.KotobaEngine.KEY,newValue:JSON.stringify(seededProgress)});
 action('quiz');assert.equal(options().length,0,'today’s new cards wait until tomorrow for reading');clock+=86400000;winHandlers.focus();action('quiz');assert.equal(spoken.length,1,'a new unanswered reading question must be silent');
 function answer(correct=true){const o=options();assert.equal(o.length,4);assert.equal(new Set(o).size,4);const a=o.find(v=>v==='いく'||v==='行く');assert.ok(a);const before=spoken.length;action('quizAnswer',{answer:correct?a:o.find(v=>v!==a)});assert.equal(spoken.length,before+1,'both right and wrong choices trigger exactly one pronunciation');assert.equal(spoken.at(-1).text,first.kana,'always pronounce the target, never the wrong option');assert.equal(spoken.at(-1).lang,'ja-JP');action('quizAnswer',{answer:a});assert.equal(spoken.length,before+1,'duplicate answer clicks must not repeat speech');}
 for(let i=0;i<4;i++){answer();action('nextQuiz');assert.equal(options().length,0);if(i<3){clock+=86400000;winHandlers.focus();}}assert.equal(readState().words[first.id].readingStreak,4);
 clock+=86400000;winHandlers.focus();answer(false);assert.match(el('#main').innerHTML,/计数已归零/);assert.equal(readState().words[first.id].readingStreak,0);action('nextQuiz');
-assert.equal(options().length,4);answer(true);assert.match(el('#main').innerHTML,/今日订正完成/);action('nextQuiz');assert.equal(options().length,0);assert.equal(readState().words[first.id].readingStreak,0);
+let retrySteps=0,retryLast=-1,retryHits=0;while(options().length&&retrySteps++<20){const q=activeQuestion;if(q.id===first.id){if(retryLast>=0)assert.ok(retrySteps-retryLast>=3,'two other words separate corrections');retryLast=retrySteps;retryHits++;}action('quizAnswer',{answer:q.answer});if(q.id===first.id)assert.match(el('#main').innerHTML,retryHits<3?/错后连对/:/今日订正完成/);action('nextQuiz');}assert.equal(retryHits,3);assert.equal(options().length,0);assert.equal(readState().words[first.id].readingStreak,0);
 for(let i=0;i<5;i++){clock+=86400000;winHandlers.focus();answer();action('nextQuiz');assert.equal(options().length,0);}assert.equal(readState().words[first.id].readingStreak,5);assert.match(el('#main').innerHTML,/本轮读音练习已完成/);
 for(const v of ['library','mistakes','review','stats','about','today']){nav(v);assert.ok(el('#main').innerHTML.length>300);assert.ok(!el('#main').innerHTML.includes('undefined'));}
 nav('library');handlers.input({target:{id:'wordSearch',value:'借りる'}});assert.match(el('#wordTable').innerHTML,/借りる/);
@@ -103,6 +105,7 @@ console.log('PASS: extreme fifth-error list; live midnight unlock; mixed review 
 const maintenance=E.fresh();E.rate(maintenance,first.id,'good',clock);
 maintenance.words[first.id].readingRule='daily-v1';maintenance.words[first.id].readingStreak=5;maintenance.words[first.id].readingStage=0;
 maintenance.words[first.id].readingDue=E.reviewDue(clock,7);maintenance.words[first.id].due=E.reviewDue(clock,60);
+for(const w of known.slice(1)){E.rate(maintenance,w.id,'good',clock-E.DAY*10);Object.assign(maintenance.words[w.id],{readingStreak:5,readingRule:'daily-v1',readingDue:E.reviewDue(clock,365),due:E.reviewDue(clock,365)});}
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(maintenance)});nav('today');action('quiz');
 assert.equal(options().length,0);assert.match(el('#main').innerHTML,/下次读音练习/);
 clock=maintenance.words[first.id].readingDue;winHandlers.focus();assert.equal(options().length,4);
@@ -119,7 +122,7 @@ answer(false);const failed=readState().words[first.id];
 assert.equal(failed.readingStreak,0);assert.equal(failed.readingDue,0);assert.equal(failed.readingWrong,2);assert.equal(failed.reviewPending,true);
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(readState())});
 assert.equal(options().length,4,'an unfinished failed reading review remains a reading question after reload');
-answer(true);assert.equal(readState().words[first.id].readingStreak,0);action('nextQuiz');nav('today');action('quiz');
+for(let step=0;step<20&&readState().words[first.id].readingRetry;step++){action('quizAnswer',{answer:activeQuestion.answer});action('nextQuiz');}assert.equal(readState().words[first.id].readingRetry,false);assert.equal(readState().words[first.id].readingStreak,0);nav('today');action('quiz');
 assert.equal(options().length,0,'after correction, this word stops for today');clock+=E.DAY;winHandlers.focus();
 assert.equal(options().length,4,'failed stable word returns to normal training on the next day');
 console.log('PASS: low-frequency empty state; midnight return; 14-day extension; mixed review forced check; failure/reset and unfinished review reload.');
@@ -154,25 +157,25 @@ const daily35=E.fresh(),yesterdaySet=new Set(Array.from(allWords.slice(0,25),w=>
 for(const w of allWords.slice(0,25))E.rate(daily35,w.id,'good',clock-E.DAY);
 for(const w of allWords.slice(25,60))E.rate(daily35,w.id,'good',clock-7*E.DAY);
 for(const w of allWords.slice(60,70))E.rate(daily35,w.id,'good',clock);
-const originalQuestion=ctx.window.KotobaQuiz.createQuestion;let lastQuestion;
-ctx.window.KotobaQuiz.createQuestion=(...args)=>(lastQuestion=originalQuestion(...args));
+const originalQuestion=ctx.window.KotobaQuiz.questionForWord;let lastQuestion;
+ctx.window.KotobaQuiz.questionForWord=(...args)=>(lastQuestion=originalQuestion(...args));
 ctx.Math.random=randomSeed(67);winHandlers.storage({key:E.KEY,newValue:JSON.stringify(daily35)});nav('today');action('quiz');
 const fixedIds=readState().readingPlan.ids;assert.equal(fixedIds.length,35);assert.equal(fixedIds.filter(id=>yesterdaySet.has(id)).length,25);
 assert.ok(!fixedIds.some(id=>Array.from(allWords.slice(60,70),w=>w.id).includes(id)));
 const completedIds=new Set();let attempts35=0;const audioModes=new Set();
-while(options().length&&attempts35++<40){
+while(options().length&&attempts35++<60){
  assert.ok(lastQuestion&&fixedIds.includes(lastQuestion.id));
- const snapshot=readState();if(fixedIds.some(id=>yesterdaySet.has(id)&&snapshot.words[id].readingDoneDay!==E.today(clock)))assert.ok(yesterdaySet.has(lastQuestion.id));
+ const snapshot=readState();if(!snapshot.words[lastQuestion.id].readingDoneDay&&fixedIds.some(id=>yesterdaySet.has(id)&&!snapshot.words[id].readingRetry&&snapshot.words[id].readingDoneDay!==E.today(clock)))assert.ok(yesterdaySet.has(lastQuestion.id));
  const correct=attempts35!==1,id=lastQuestion.id,beforeAudio=spoken.length;audioModes.add(lastQuestion.type);action('quizAnswer',{answer:correct?lastQuestion.answer:lastQuestion.options.find(a=>a!==lastQuestion.answer)});assert.equal(spoken.length,beforeAudio+1);assert.equal(spoken.at(-1).text,allWords.find(w=>w.id===id).kana);
  if(correct)completedIds.add(id);action('nextQuiz');
  if(attempts35===3){winHandlers.storage({key:E.KEY,newValue:JSON.stringify(readState())});assert.deepEqual(readState().readingPlan.ids,fixedIds);}
 }
-assert.equal(attempts35,36);assert.equal(completedIds.size,35);assert.deepEqual([...audioModes].sort(),['kana','kanji','meaning']);assert.equal(options().length,0);assert.match(el('#main').innerHTML,/今日读音 35 \/ 35/);
+assert.ok(attempts35>=38&&attempts35<60);assert.equal(completedIds.size,35);assert.deepEqual([...audioModes].sort(),['kana','kanji','meaning']);assert.equal(options().length,0);assert.match(el('#main').innerHTML,/今日读音 35 \/ 35/);
 nav('stats');nav('today');action('quiz');assert.equal(options().length,0,'finished daily plan never refills with more historical words');
 assert.deepEqual(readState().readingPlan.ids,fixedIds);
 clock+=E.DAY;winHandlers.focus();assert.equal(readState().readingPlan.day,E.today(clock));assert.equal(readState().readingPlan.ids.length,20);
 assert.ok(Array.from(allWords.slice(60,70),w=>w.id).every(id=>readState().readingPlan.ids.includes(id)));
-ctx.window.KotobaQuiz.createQuestion=originalQuestion;
+ctx.window.KotobaQuiz.questionForWord=originalQuestion;
 // Five actual card presses qualify separately from pronunciation errors.
 const cardOnly=E.fresh();cardOnly.settings.newGoal=1;ctx.Math.random=()=>.999999;
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(cardOnly)});nav('today');action('card');
@@ -401,3 +404,22 @@ for(const name of ['相槌','操る','いない','愛情']){
  el('#detailDialog').close();
 }
 console.log('PASS: supplementary vocabulary details show examples, correct source rows and verb labels.');
+
+// Every failed word obeys spacing even when it is interleaved inside mixed review.
+const interleaved=E.fresh(),interleavedWords=allWords.slice(0,4),interleavedFailed=new Set(),interleavedLast=new Map();
+for(const w of interleavedWords)E.rate(interleaved,w.id,'good',clock-E.DAY);
+let interleavedQuestion;const beforeInterleavedQuestion=ctx.window.KotobaQuiz.questionForWord;
+ctx.window.KotobaQuiz.questionForWord=(...args)=>(interleavedQuestion=beforeInterleavedQuestion(...args));
+ctx.Math.random=()=>.1;winHandlers.storage({key:E.KEY,newValue:JSON.stringify(interleaved)});nav('review');
+let interleavedSteps=0;
+while(options().length&&interleavedSteps++<100){
+ const q=interleavedQuestion,before=readState().words[q.id],correct=interleavedFailed.has(q.id);
+ if(before.readingRetry&&interleavedLast.has(q.id))assert.ok(interleavedSteps-interleavedLast.get(q.id)>=3,'mixed review must separate every failed word by at least two others');
+ action('quizAnswer',{answer:correct?q.answer:q.options.find(x=>x!==q.answer)});interleavedFailed.add(q.id);interleavedLast.set(q.id,interleavedSteps);
+ if(correct&&before.readingRetry&&(before.readingRetryStreak||0)<2)assert.ok(!el('#main').innerHTML.includes('本词本轮复习完成'),'the first two corrections do not complete a word');
+ action('nextQuiz');
+}
+assert.ok(interleavedSteps<100);assert.equal(interleavedFailed.size,4);assert.equal(E.dailyReadingStatus(allWords,readState(),clock).remaining,0);assert.equal(E.counts(readState(),clock).due,0);
+for(const w of interleavedWords)assert.equal(readState().words[w.id].readingRetryStreak,3);
+ctx.window.KotobaQuiz.questionForWord=beforeInterleavedQuestion;
+console.log('PASS: four interleaved mixed-review mistakes each need three correct answers, keep two-word gaps, and finish the group only after correction.');

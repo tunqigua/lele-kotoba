@@ -27,7 +27,7 @@ test('one failed low-frequency check restores normal reading training and next-d
  assert.equal(a.readingStreak,0);assert.equal(a.readingStage,0);assert.equal(a.readingDue,0);
  assert.equal(a.readingWrong,1);assert.equal(E.readingPool(words,s,due).length,1);
  assert.deepEqual(E.queue(words,s,'review',E.reviewDue(due)).map(x=>x.id),[w.id]);
- assert.equal(E.isDue(a,due),false);assert.equal(E.isDue(a,E.reviewDue(due)),true);
+ assert.equal(E.isDue(a,due),true,'unfinished corrections remain due');for(let i=1;i<=3;i++)E.recordReading(s,w.id,true,'kana',due+i);assert.equal(E.isDue(a,due+4),false);assert.equal(E.isDue(a,E.reviewDue(due)),true);
  for(let i=0;i<5;i++)E.recordReading(s,w.id,true,'kana',due+(i+1)*E.DAY);
  assert.equal(a.readingStage,0);assert.equal(a.readingDue,E.reviewDue(due+5*E.DAY,7));
 });
@@ -72,7 +72,7 @@ test('repeated wrong answers remain eligible until corrected; a correction never
  const s=E.fresh();E.rate(s,w.id,'good',now-E.DAY);E.recordReading(s,w.id,true,'kana',now-E.DAY);
  for(let i=0;i<6;i++){assert.ok(E.recordReading(s,w.id,false,i%2?'kana':'kanji',now+i));assert.equal(E.readingPool(words,s,now+i).length,1);}
  assert.equal(s.words[w.id].readingStreak,0);assert.equal(s.words[w.id].readingWrong,6);
- assert.ok(E.recordReading(s,w.id,true,'kana',now+10));assert.equal(s.words[w.id].readingStreak,0);
+ for(let i=0;i<3;i++){assert.ok(E.recordReading(s,w.id,true,'kana',now+8+i));assert.equal(s.words[w.id].readingStreak,0);assert.equal(E.readingPool(words,s,now+8+i).length,i<2?1:0);}
  assert.equal(E.readingPool(words,s,now+11).length,0);
  assert.equal(E.recordReading(s,w.id,false,'kanji',now+12),false,'a completed word cannot be graded twice today');
  assert.ok(E.recordReading(s,w.id,true,'kanji',now+3*E.DAY));assert.equal(s.words[w.id].readingStreak,1,'missed days do not count as errors');

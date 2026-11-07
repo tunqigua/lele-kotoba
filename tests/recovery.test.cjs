@@ -65,7 +65,7 @@ test("a future learnedOn is not trusted", () => {
   assert.notEqual(E.validate(raw, ids).words[id].learnedOn, "2099-01-01");
 });
 
-test("marking a card as known clears a pending reading retry and the due queue", () => {
+test("marking a card as known preserves an unfinished reading correction", () => {
   const id = words[5].id;
   const state = E.fresh();
   state.words[id] = {
@@ -74,18 +74,19 @@ test("marking a card as known clears a pending reading retry and the due queue",
   };
   assert.equal(E.isDue(state.words[id], now, state), true);
   E.rate(state, id, "good", now);
-  assert.equal(state.words[id].readingRetry, false);
-  assert.equal(E.isDue(state.words[id], now, state), false);
+  assert.equal(state.words[id].readingRetry, true);
+  assert.equal(E.isDue(state.words[id], now, state), true);
   assert.equal(E.queue(words, state, "review", now).some(w => w.id === id), false);
 });
 
-test("answering a review reading question right also clears the retry", () => {
+test("three correct reading answers clear a review retry before card completion", () => {
   const id = words[6].id;
   const state = E.fresh();
   state.words[id] = {
     stage: 1, due: 0, seen: 4, lapses: 0, star: false, learnedOn: E.today(now),
     readingRetry: true, reviewPending: true, relearning: true
   };
+  for(let i=0;i<3;i++){assert.ok(E.recordReading(state,id,true,"kana",now+i));assert.equal(state.words[id].readingRetry,i<2);}
   E.rate(state, id, "good", now, "reading");
   assert.equal(state.words[id].readingRetry, false);
   assert.equal(E.isDue(state.words[id], now, state), false);

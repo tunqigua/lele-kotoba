@@ -11,7 +11,7 @@ const validDay=d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d);
 // null means unlimited; keep it JSON-safe so backups retain the setting.
 const validGoal=n=>n===null||(Number.isSafeInteger(n)&&n>=1);
 const readingCheckDue=(w,now=Date.now())=>!!(w?.seen&&w.readingDoneDay!==today(now)&&Number.isFinite(w.readingDue)&&w.readingDue>0&&w.readingDue<=now);
-const readingReady=(w,now=Date.now())=>!!(w?.seen&&w.readingDoneDay!==today(now)&&((w.readingStreak||0)<5?(w.readingDue||0)<=now:readingCheckDue(w,now)));
+const readingReady=(w,now=Date.now())=>!!(w?.seen&&(w.readingRetry||(w.readingDoneDay!==today(now)&&((w.readingStreak||0)<5?(w.readingDue||0)<=now:readingCheckDue(w,now)))));
 const readingAllowed=(w,now,state)=>!state?.readingPlan||state.readingPlan.day!==today(now)||state.readingPlan.ids.some(id=>state.words[id]===w);
 const isDue=(w,now=Date.now(),state=null)=>!!(w?.seen&&(w.reviewPending||w.due<=now||(readingAllowed(w,now,state)&&(w.readingRetry||readingCheckDue(w,now)))||(w.troubleDays||[]).some(d=>d<=today(now))));
 function markTrouble(w,now){w.troubleDays=[...new Set([...(w.troubleDays||[]),today(reviewDue(now))])].sort();}
@@ -61,8 +61,9 @@ function validate(raw,ids){
   const dailyRule=v.readingRule==='daily-v1';
   const readingStreak=dailyRule&&Number.isInteger(v.readingStreak)&&v.readingStreak>=0&&v.readingStreak<=5?v.readingStreak:legacyStreak;
   const lastReading=history.at(-1),lastFailed=history.filter(l=>l.grade==='quizWrong').at(-1);
-  const readingDoneDay=dailyRule&&validDay(v.readingDoneDay)?v.readingDoneDay:lastReading?.grade==='quizRight'?lastReading.day:null;
+  const readingDoneDay=dailyRule&&(validDay(v.readingDoneDay)||v.readingDoneDay===null)?v.readingDoneDay:lastReading?.grade==='quizRight'?lastReading.day:null;
   const readingFailedDay=dailyRule&&validDay(v.readingFailedDay)?v.readingFailedDay:lastFailed?.day||null;
+  const readingRetry=(!!v.readingRetry||lastReading?.grade==='quizWrong'&&(!readingDoneDay||lastReading.day>readingDoneDay))&&readingDoneDay!==today();
   const lastCard=lastCardGrades.get(id),relearning=v.seen>0&&(typeof v.relearning==='boolean'?v.relearning:lastCard?.day===today()&&['again','hard'].includes(lastCard.grade));
   const cardHistory=mine.filter(l=>['again','hard','good','quizWrong','grindWrong'].includes(l.grade)&&validDay(l.day));
   const reviewedOn=[validDay(v.reviewedOn)?v.reviewedOn:'',...cardHistory.filter(l=>l.grade==='good').map(l=>l.day)].sort().at(-1)||null;
@@ -78,14 +79,14 @@ function validate(raw,ids){
   const reviewFailedDay=[validDay(v.reviewFailedDay)?v.reviewFailedDay:'',validDay(readingFailedDay)?readingFailedDay:'',...mine.filter(l=>l.context!=='reading'&&['again','hard','quizWrong','grindWrong'].includes(l.grade)&&validDay(l.day)).map(l=>l.day)].sort().at(-1)||null;
   let stage=v.stage;
   if(v.reviewFailedDay===undefined&&reviewFailedDay&&(!reviewedOn||reviewedOn<=reviewFailedDay)){stage=0;due=Math.min(due||Infinity,reviewDue(Date.parse(reviewFailedDay+'T00:00:00+08:00')));}
-  next.words[id]={reviewFailedDay,reviewWrong:reviewErrorCount({...v,readingWrong},mine),grindRequired:!!v.grindRequired,grindStreak,cardAgainStreak,cardAgainMax,readingRetry:!!v.readingRetry&&readingDoneDay!==today(),readingRule:'daily-v1',readingDoneDay,readingFailedDay,readingDue,readingStage,readingWrong,troubleDays,reviewedOn,reviewPending,readingStreak,readingTotal:Number.isInteger(v.readingTotal)&&v.readingTotal>=0?v.readingTotal:history.filter(l=>l.grade==='quizRight').length,stage,due,seen:Math.min(v.seen,100000),lapses:Math.min(v.lapses,100000),star:!!v.star,relearning,lastReviewDay:typeof v.lastReviewDay==='string'?v.lastReviewDay:null,learnedOn:validDay(v.learnedOn)&&v.learnedOn<=today()?v.learnedOn:firstDay||(savedAtDay&&savedAtDay<today()?savedAtDay:null)||migratedDay};
+  next.words[id]={reviewFailedDay,reviewWrong:reviewErrorCount({...v,readingWrong},mine),grindRequired:!!v.grindRequired,grindStreak,cardAgainStreak,cardAgainMax,readingRetry,readingRetryStreak:Number.isInteger(v.readingRetryStreak)&&v.readingRetryStreak>=0&&v.readingRetryStreak<=3?v.readingRetryStreak:0,readingRetryGap:v.readingRetryGap===3?3:2,readingRule:'daily-v1',readingDoneDay,readingFailedDay,readingDue,readingStage,readingWrong,troubleDays,reviewedOn,reviewPending,readingStreak,readingTotal:Number.isInteger(v.readingTotal)&&v.readingTotal>=0?v.readingTotal:history.filter(l=>l.grade==='quizRight').length,stage,due,seen:Math.min(v.seen,100000),lapses:Math.min(v.lapses,100000),star:!!v.star,relearning,lastReviewDay:typeof v.lastReviewDay==='string'?v.lastReviewDay:null,learnedOn:validDay(v.learnedOn)&&v.learnedOn<=today()?v.learnedOn:firstDay||(savedAtDay&&savedAtDay<today()?savedAtDay:null)||migratedDay};
  }
  next.logs=raw.logs.slice(-20000).filter(l=>l&&ids.has(l.id)&&/^\d{4}-\d{2}-\d{2}$/.test(l.day)&&['again','hard','good','quizWrong','quizRight','grindRight','grindWrong'].includes(l.grade)).map(l=>({id:l.id,day:l.day,grade:l.grade,isNew:!!l.isNew,...(l.context==='reading'?{context:'reading'}:{}),...(['kana','kanji','meaning'].includes(l.quizType)?{quizType:l.quizType}:{})}));
  if(raw.reviewPlan&&raw.reviewPlan.rule==='spaced-v1'&&validDay(raw.reviewPlan.day)&&validGoal(raw.reviewPlan.goal)&&Array.isArray(raw.reviewPlan.ids)){
   next.reviewPlan={day:raw.reviewPlan.day,goal:raw.reviewPlan.goal,rule:'spaced-v1',ids:[...new Set(raw.reviewPlan.ids)].filter(id=>ids.has(id)&&next.words[id]?.seen>0).slice(0,raw.reviewPlan.goal===null?Infinity:raw.reviewPlan.goal)};
  }
  if(raw.readingPlan&&validDay(raw.readingPlan.day)&&Array.isArray(raw.readingPlan.ids)){
-  next.readingPlan={day:raw.readingPlan.day,ids:[...new Set(raw.readingPlan.ids)].filter(id=>ids.has(id)&&next.words[id]?.seen>0),...([READING_PLAN_RULE,CUSTOM_READING_RULE].includes(raw.readingPlan.rule)?{rule:raw.readingPlan.rule}:{}),...(Number.isSafeInteger(raw.readingPlan.goal)&&raw.readingPlan.goal>=1?{goal:raw.readingPlan.goal}:{})};
+  next.readingPlan={day:raw.readingPlan.day,ids:[...new Set(raw.readingPlan.ids)].filter(id=>ids.has(id)&&next.words[id]?.seen>0),recent:(Array.isArray(raw.readingPlan.recent)?raw.readingPlan.recent:[]).filter(id=>ids.has(id)&&next.words[id]?.seen>0).slice(-3),...([READING_PLAN_RULE,CUSTOM_READING_RULE].includes(raw.readingPlan.rule)?{rule:raw.readingPlan.rule}:{}),...(Number.isSafeInteger(raw.readingPlan.goal)&&raw.readingPlan.goal>=1?{goal:raw.readingPlan.goal}:{})};
  }
  if(raw.grindSession&&Array.isArray(raw.grindSession.remaining))next.grindSession={remaining:[...new Set(raw.grindSession.remaining)].filter(id=>ids.has(id)&&next.words[id]?.seen>0),recent:(Array.isArray(raw.grindSession.recent)?raw.grindSession.recent:[]).filter(id=>ids.has(id)&&next.words[id]?.seen>0).slice(-8),lastId:ids.has(raw.grindSession.lastId)?raw.grindSession.lastId:null,round:Number.isSafeInteger(raw.grindSession.round)&&raw.grindSession.round>=0?raw.grindSession.round:0};
  for(const [day,ms]of Object.entries(raw.studyTime&&typeof raw.studyTime==='object'&&!Array.isArray(raw.studyTime)?raw.studyTime:{}))if(validDay(day)&&day<=today()&&Number.isFinite(ms)&&ms>=0&&ms<=DAY)next.studyTime[day]=ms;
@@ -158,9 +159,8 @@ function rate(state,id,grade,now=Date.now(),context='card'){
  const {stage,due}=cardSchedule(old,grade,now);
  state.words[id]={...old,reviewFailedDay:grade!=='good'?today(now):old.reviewFailedDay||null,reviewWrong:reviewErrorCount(old)+(grade!=='good'&&context!=='reading'?1:0),cardAgainStreak,cardAgainMax,stage,relearning:grade!=='good',reviewPending:grade!=='good'&&isDue(old,now,state),reviewedOn:grade==='good'?today(now):old.reviewedOn,lastReviewDay:today(now),seen:old.seen+1,lapses:old.lapses+(grade==='again'?1:0),due,learnedOn:isNew?today(now):old.learnedOn};
  if(grade!=='good'){state.words[id].grindStreak=0;state.words[id].grindRequired=true;}
- // A word marked "认识了" has completed this round, so a pending reading retry
- // must not keep it in the due queue.
- if(grade==='good'){state.words[id].troubleDays=(old.troubleDays||[]).filter(d=>d>today(now));state.words[id].readingRetry=false;}else markTrouble(state.words[id],now);
+ // Card recognition cannot complete an unfinished reading correction.
+ if(grade==='good'){state.words[id].troubleDays=(old.troubleDays||[]).filter(d=>d>today(now));}else markTrouble(state.words[id],now);
  appendLog(state,{id,day:today(now),grade,isNew,...(context==='reading'?{context:'reading'}:{})});return state.words[id];
 }
 function filter(words,settings){const lessons=Array.isArray(settings.lesson)?settings.lesson:[settings.lesson];return words.filter(w=>(settings.priority==='all'||w.priority===settings.priority)&&lessons.some(l=>l==='all'||(l==='exam'?w.source==='exam':w.lesson&&w.lesson.split('-')[0]===l)));}
@@ -192,12 +192,13 @@ function advanceSession(session,grade,random=Math.random){
 }
 function readingPool(words,state,now=Date.now()){return words.filter(w=>readingReady(state.words[w.id],now));}
 function dailyReadingPlan(words,state,now=Date.now(),random=Math.random){
- const goal=state.settings.readingGoal,day=today(now);
+ const goal=state.settings.readingGoal,day=today(now),previousDay=state.readingPlan?.day,recent=previousDay===day||previousDay===today(dayStart(now)-DAY)?state.readingPlan.recent||[]:[];
  if(Number.isSafeInteger(goal)&&goal>=1){
   const previous=state.readingPlan;
   if(previous?.day===day&&previous.rule===CUSTOM_READING_RULE&&previous.goal===goal)return previous;
   const known=words.filter(w=>state.words[w.id]?.seen>0),knownIds=new Set(known.map(w=>w.id)),ids=[],chosen=new Set();
   const add=id=>{if(knownIds.has(id)&&!chosen.has(id)){ids.push(id);chosen.add(id);}};
+  for(const w of known)if(state.words[w.id].readingRetry)add(w.id);
   // Today's attempts (including unfinished mistakes) survive a reduced target.
   for(const l of state.logs)if(l.day===day&&['quizRight','quizWrong'].includes(l.grade))add(l.id);
   for(const w of known)if(state.words[w.id].readingDoneDay===day||(previous?.day===day&&previous.ids.includes(w.id)&&state.words[w.id].readingFailedDay===day))add(w.id);
@@ -208,11 +209,12 @@ function dailyReadingPlan(words,state,now=Date.now(),random=Math.random){
   for(const w of yesterdayWords)addEligible(w.id);
   if(previous?.day===day)for(const id of previous.ids)addEligible(id);
   for(const w of shuffle(known.filter(eligible),random))addEligible(w.id);
-  state.readingPlan={day,ids,rule:CUSTOM_READING_RULE,goal};return state.readingPlan;
+  state.readingPlan={day,ids,recent,rule:CUSTOM_READING_RULE,goal};return state.readingPlan;
  }
  if(state.readingPlan?.day===day&&state.readingPlan.rule===READING_PLAN_RULE)return state.readingPlan;
  const yesterday=today(dayStart(now)-DAY),known=new Map(words.filter(w=>state.words[w.id]?.seen>0).map(w=>[w.id,w]));
  const ids=[],chosen=new Set(),add=id=>{if(known.has(id)&&!chosen.has(id)){ids.push(id);chosen.add(id);}};
+ for(const [id]of known)if(state.words[id].readingRetry)add(id);
  // Count work already attempted today when introducing a new plan or importing progress.
  for(const l of state.logs)if(l.day===day&&['quizRight','quizWrong'].includes(l.grade))add(l.id);
  const eligible=w=>state.words[w.id].learnedOn<day&&(readingReady(state.words[w.id],now)||state.words[w.id].readingDoneDay===day);
@@ -224,7 +226,7 @@ function dailyReadingPlan(words,state,now=Date.now(),random=Math.random){
  if(state.readingPlan?.day===day)for(const id of state.readingPlan.ids)addOlder(id);
  const olderWords=shuffle(words.filter(w=>known.has(w.id)&&eligible(w)&&state.words[w.id].learnedOn<yesterday&&!chosen.has(w.id)),random);
  for(const w of olderWords)addOlder(w.id);
- state.readingPlan={day,ids,rule:READING_PLAN_RULE};return state.readingPlan;
+ state.readingPlan={day,ids,recent,rule:READING_PLAN_RULE};return state.readingPlan;
 }
 function readingPlanned(state,id,now=Date.now()){return !state.readingPlan||state.readingPlan.day!==today(now)||state.readingPlan.ids.includes(id);}
 function dailyReadingStatus(words,state,now=Date.now()){
@@ -236,19 +238,46 @@ function dailyReadingPool(words,state,now=Date.now()){
  const first=pool.filter(w=>state.words[w.id].learnedOn===yesterday);
  return first.length?first:pool;
 }
-function recordReading(state,id,correct,type='kana',now=Date.now()){
- const w=state.words[id];if(!readingReady(w,now)||!readingPlanned(state,id,now))return false;
+function nextReadingWord(words,state,random=Math.random,now=Date.now(),targetId=null){
+ const plan=dailyReadingPlan(words,state,now,random),recent=plan.recent||[];
+ const pending=words.filter(w=>(targetId?w.id===targetId:plan.ids.includes(w.id))&&readingReady(state.words[w.id],now));
+ if(!pending.length)return null;
+ const available=pending.filter(w=>!state.words[w.id].readingRetry||!recent.slice(-(state.words[w.id].readingRetryGap||2)).includes(w.id));
+ if(available.length){
+  const retry=available.filter(w=>state.words[w.id].readingRetry),yesterday=today(dayStart(now)-DAY),first=available.filter(w=>state.words[w.id].learnedOn===yesterday),pool=retry.length?retry:first.length?first:available;
+  return {word:pool[Math.floor(random()*pool.length)],practice:false};
+ }
+ // Completed words fill the gaps too, so the last mistake never repeats back-to-back.
+ const pendingIds=new Set(pending.map(w=>w.id)),known=words.filter(w=>state.words[w.id]?.seen>0&&!pendingIds.has(w.id)&&(!state.words[w.id].readingRetry||!recent.slice(-(state.words[w.id].readingRetryGap||2)).includes(w.id)));
+ let pool=known.filter(w=>!recent.slice(-2).includes(w.id));
+ if(!pool.length)pool=known.filter(w=>w.id!==recent.at(-1));
+ if(!pool.length)return null;
+ const planned=pool.filter(w=>plan.ids.includes(w.id));if(planned.length)pool=planned;
+ return {word:pool[Math.floor(random()*pool.length)],practice:true};
+}
+function recordReading(state,id,correct,type='kana',now=Date.now(),practice=false,random=Math.random){
+ const w=state.words[id];if(!w?.seen||(!practice&&(!readingReady(w,now)||!readingPlanned(state,id,now))))return false;
+ const plan=state.readingPlan;
+ if(plan?.day===today(now))plan.recent=[...(plan.recent||[]),id].slice(-3);
+ if(practice&&correct&&!w.readingRetry)return true;
+ if(practice&&plan?.day===today(now)&&!plan.ids.includes(id))plan.ids.push(id);
  w.reviewWrong=reviewErrorCount(w);
- const day=today(now),wasStable=w.readingStreak>=5;
+ const day=today(now),wasStable=w.readingStreak>=5,retry=!!w.readingRetry;
  w.readingRule='daily-v1';
  w.readingTotal=(w.readingTotal||0)+(correct?1:0);
  if(correct){
+  if(!retry)w.readingRetryStreak=0;
+  if(retry){
+   w.readingRetryStreak=(w.readingRetryStreak||0)+1;
+   if(w.readingRetryStreak<3){w.readingRetryGap=Object.values(state.words).filter(w=>w.seen>0).length>3?2+Math.floor(random()*2):2;appendLog(state,{id,day,grade:'quizRight',isNew:false,quizType:type});return true;}
+  }
   w.readingDoneDay=day;w.readingRetry=false;
-  // A correction finishes today's practice, but does not certify a fresh retrieval.
-  w.readingStreak=w.readingFailedDay===day?0:Math.min(5,(w.readingStreak||0)+1);
+  // Three spaced corrections finish practice without certifying a fresh retrieval.
+  w.readingStreak=retry||w.readingFailedDay===day?0:Math.min(5,(w.readingStreak||0)+1);
   if(w.readingStreak>=5){w.grindRequired=false;w.readingStage=wasStable?Math.min(READING_INTERVALS.length-1,(w.readingStage||0)+1):0;w.readingDue=reviewDue(now,READING_INTERVALS[w.readingStage]);}
   else{w.readingStage=0;w.readingDue=reviewDue(now);}
  }else{
+  w.readingDoneDay=null;w.readingRetry=true;w.readingRetryStreak=0;w.readingRetryGap=Object.values(state.words).filter(w=>w.seen>0).length>3?2+Math.floor(random()*2):2;
   w.readingFailedDay=day;w.readingStreak=0;w.readingStage=0;w.readingDue=0;w.grindStreak=0;w.grindRequired=true;
   w.reviewFailedDay=day;w.stage=0;w.due=reviewDue(now);w.reviewWrong++;w.lapses++;w.readingWrong=(w.readingWrong||0)+1;markTrouble(w,now);
  }
@@ -279,6 +308,6 @@ function recordGrind(state,id,correct,type='kana',now=Date.now()){
  else{w.grindRequired=true;w.readingRule='daily-v1';w.readingStreak=0;w.readingStage=0;w.readingDue=0;w.readingFailedDay=today(now);w.readingWrong=(w.readingWrong||0)+1;w.reviewFailedDay=today(now);w.stage=0;w.due=reviewDue(now);w.reviewWrong++;w.lapses++;markTrouble(w,now);}
  appendLog(state,{id,day:today(now),grade:correct?'grindRight':'grindWrong',isNew:false,quizType:type});return true;
 }
-const api={KEY,LEGACY_KEY,EARLIEST_KEY,LEGACY_KEYS,DAY,INTERVALS,READING_INTERVALS,validGoal,shuffle,today,dayStart,reviewDue,isDue,recordStudyTime,reviewErrorCount,reviewCandidates,reviewReason,cardSchedule,reviewIds,readingReady,readingCheckDue,dailyReadingPlan,dailyReadingPool,dailyReadingStatus,readingPlanned,extremePool,grindPool,nextGrindWord,recordGrind,fresh,validate,counts,rate,filter,queue,advanceSession,readingPool,recordReading};
+const api={KEY,LEGACY_KEY,EARLIEST_KEY,LEGACY_KEYS,DAY,INTERVALS,READING_INTERVALS,validGoal,shuffle,today,dayStart,reviewDue,isDue,recordStudyTime,reviewErrorCount,reviewCandidates,reviewReason,cardSchedule,reviewIds,readingReady,readingCheckDue,dailyReadingPlan,dailyReadingPool,dailyReadingStatus,readingPlanned,nextReadingWord,extremePool,grindPool,nextGrindWord,recordGrind,fresh,validate,counts,rate,filter,queue,advanceSession,readingPool,recordReading};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.KotobaEngine=api;
 })(typeof window!=='undefined'?window:globalThis);

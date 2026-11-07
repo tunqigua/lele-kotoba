@@ -26,7 +26,7 @@ test('yesterday’s reading errors and uncertain cards remain scheduled after sa
  assert.deepEqual(E.queue(words,s,'review',midnight).map(w=>w.id).sort(),['a','b','c']);
  const restored=copy(s);assert.deepEqual(E.queue(words,restored,'review',midnight).map(w=>w.id).sort(),['a','b','c']);
  E.rate(restored,'a','good',midnight);assert.equal(E.isDue(restored.words.a,midnight),true,'daily reading is still due after a card review');
- E.recordReading(restored,'a',false,'kanji',midnight+10);E.recordReading(restored,'a',true,'kana',midnight+15);E.rate(restored,'a','good',midnight+20);
+ E.recordReading(restored,'a',false,'kanji',midnight+10);for(let i=0;i<3;i++)E.recordReading(restored,'a',true,'kana',midnight+15+i);E.rate(restored,'a','good',midnight+20);
  assert.equal(E.isDue(restored.words.a,midnight+30),false);
  assert.equal(E.isDue(restored.words.a,midnight+E.DAY),true,'a new error today must survive a successful review today');
 });
@@ -58,7 +58,7 @@ test('extremely difficult words count cumulative reading errors across both type
 
  }
  assert.equal(s.words.a.readingWrong,5);assert.deepEqual(E.extremePool(words,s).map(w=>w.id),['a','b']);
- E.recordReading(s,'a',true,'kanji',evening+100);
+ for(let i=0;i<3;i++)E.recordReading(s,'a',true,'kanji',evening+100+i);
  assert.equal(s.words.a.readingStreak,0);
  for(let i=1;i<=5;i++)E.recordReading(s,'a',true,'kanji',evening+i*E.DAY);
  assert.equal(s.words.a.readingStreak,5);assert.equal(E.readingPool(words,s,evening+5*E.DAY).some(w=>w.id==='a'),false);
