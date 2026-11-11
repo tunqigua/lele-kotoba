@@ -48,6 +48,34 @@ function boot() {
 
 const KEY = "lele-kotoba-v4";
 
+test("plan toggle keeps the current card and progress, and remembers its state after reload", () => {
+  const { ctx, el, handlers, storage } = boot();
+  const preference = "lele-kotoba-plan-hidden";
+  const snapshot = () => { const s = JSON.parse(storage.get(KEY)); return JSON.stringify({ words:s.words, logs:s.logs, settings:s.settings, readingPlan:s.readingPlan }); };
+  const before = snapshot(), card = el("#main").innerHTML;
+  const button = { dataset:{action:"togglePlan"}, setAttribute(name,value){this[name]=value;} };
+  const click = () => handlers.click({target:{closest:selector=>selector==="[data-action]"?button:null}});
+  assert.match(card, /aria-controls="studyPlan" aria-expanded="true"/);
+  click();assert.equal(storage.get(preference),"true");assert.equal(el("#studyPlan").hidden,true);
+  assert.equal(button["aria-expanded"],"false");assert.equal(button.textContent,"展开学习计划");
+  assert.equal(el("#main").innerHTML,card,"toggle must not redraw the card or reset the question");
+  assert.equal(snapshot(),before);
+  vm.runInContext(fs.readFileSync(root+"app.js","utf8"),ctx,{filename:"app.js"});
+  assert.match(el("#main").innerHTML,/id="studyPlan" hidden/);
+  assert.match(el("#main").innerHTML,/aria-controls="studyPlan" aria-expanded="false"/);
+  click();assert.equal(storage.get(preference),"false");assert.equal(el("#studyPlan").hidden,false);
+  assert.equal(snapshot(),before);
+});
+
+test("the plan can still be expanded or collapsed when preference storage is unavailable", () => {
+  const { ctx, el, handlers } = boot(), original = ctx.localStorage.setItem;
+  ctx.localStorage.setItem = (key,value) => { if(key==="lele-kotoba-plan-hidden")throw Error("storage unavailable");original(key,value); };
+  const button={dataset:{action:"togglePlan"},setAttribute(){}};
+  const click=()=>handlers.click({target:{closest:selector=>selector==="[data-action]"?button:null}});
+  assert.doesNotThrow(click);assert.equal(el("#studyPlan").hidden,true);
+  assert.doesNotThrow(click);assert.equal(el("#studyPlan").hidden,false);
+});
+
 test("Enter on a focused row button is left to the button, not the row", () => {
   const { ctx, el, handlers } = boot();
   const id = ctx.window.KOTOBA_DATA.words[0].id;
