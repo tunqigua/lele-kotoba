@@ -22,9 +22,14 @@ const fs=require('node:fs'),vm=require('node:vm'),E=require('../dist/engine.js')
    assert(await page.locator('.card-detail').evaluate(el=>el.scrollHeight<=el.clientHeight+1),'notes must not need a separate scrollbar');
   };
   assert.equal(await toggle.getAttribute('aria-expanded'),'true');
+  assert.equal(await toggle.evaluate(el=>el.parentElement.id),'planTogglePanel');
+  assert.equal(await toggle.innerText(),'');assert.equal(await toggle.locator('svg').count(),1);
+  assert.equal(await toggle.getAttribute('aria-label'),'收起学习计划');
   await page.locator('[data-action="reveal"]').click();await stacked();
   const before=await records(),word=await page.locator('.word-core h2').textContent(),width=(await page.locator('.study-card').boundingBox()).width;
   await toggle.click();assert.equal(await toggle.getAttribute('aria-expanded'),'false');assert(!(await page.locator('#studyPlan').isVisible()));
+  assert.equal(await toggle.evaluate(el=>el.parentElement.id),'planToggleToolbar');
+  assert.equal(await toggle.getAttribute('title'),'展开学习计划');
   assert((await page.locator('.study-card').boundingBox()).width>width+200,'collapsed plan must give the card its width');
   assert.equal(await page.locator('.word-core h2').textContent(),word);assert.deepEqual(await records(),before);
   assert.equal(await toggle.evaluate(el=>el===document.activeElement),true,'keyboard focus stays on the toggle');
@@ -32,6 +37,7 @@ const fs=require('node:fs'),vm=require('node:vm'),E=require('../dist/engine.js')
   await page.locator('[data-action="reveal"]').click();await stacked();
   for(const viewport of [{width:1920,height:1080},{width:1280,height:900},{width:1024,height:700}]){await page.setViewportSize(viewport);await stacked();}
   await toggle.click();assert(await page.locator('#studyPlan').isVisible());await stacked();
+  assert.equal(await toggle.evaluate(el=>el.parentElement.id),'planTogglePanel');
   await page.emulateMedia({colorScheme:'dark'});await stacked();
   if(process.env.SCREENSHOT_DIR){await page.emulateMedia({colorScheme:'light'});await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:process.env.SCREENSHOT_DIR+'/plan-expanded.png',fullPage:true});await toggle.click();await page.screenshot({path:process.env.SCREENSHOT_DIR+'/plan-collapsed.png',fullPage:true});}
   await page.locator('[data-action="quiz"]').click();await page.locator('[data-action="quizAnswer"]').first().click();

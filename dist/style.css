@@ -327,12 +327,16 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
 .word-core h2 .kana-ruby rt,.detail-word .kana-ruby rt{font-size:.35em}
 
 .study-toolbar-actions{display:flex;align-items:center;justify-content:flex-end;gap:12px;flex-wrap:wrap}
-.plan-toggle{border:1px solid var(--line);border-radius:6px;padding:8px 11px;min-height:38px;white-space:nowrap;font-size:14px}
+.plan-toggle{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:36px;height:36px;min-width:36px;min-height:36px;padding:7px;border:0;border-radius:7px}
+.plan-toggle svg{display:block;pointer-events:none}
 .plan-toggle:hover{background:var(--lavender)}
+.plan-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:16px}
+.plan-heading h3{margin:0}
+#planToggleToolbar:empty{display:none}
 .plan-hidden .study-layout{grid-template-columns:minmax(0,1fr)}
 .right-rail[hidden]{display:none}
 @media(max-width:960px){.right-rail:not([hidden]) .panel{display:block}.right-rail:not([hidden]){padding-top:12px}}
-@media(max-width:640px){.study-toolbar-actions{justify-content:flex-start;gap:8px}.plan-toggle{font-size:12px}}
+@media(max-width:640px){.study-toolbar-actions{justify-content:flex-start;gap:8px}}
 
 .goal-field .unlimited-choice{display:flex;align-items:center;gap:8px;margin-top:10px;cursor:pointer}.goal-field .unlimited-choice input{width:auto;min-height:0;accent-color:var(--purple)}
 
