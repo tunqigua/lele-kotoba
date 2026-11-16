@@ -346,3 +346,25 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
 
 .quiz-choice.meaning-choice{font-size:17px;line-height:1.6}
 @media(max-width:640px){.quiz-choice.meaning-choice{font-size:14px}}
+
+:is(.memory-map,.reading-hints){min-width:0;max-width:100%;margin:0 0 12px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;text-align:left;overflow-wrap:anywhere}
+:is(.memory-map,.reading-hints) summary{font-size:15px;font-weight:600;cursor:pointer;color:var(--ink)}
+.memory-map figure{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 12px;margin:12px 0 2px}
+.memory-map figure::before{content:"";position:absolute;inset:14% 18%;z-index:-1;background:linear-gradient(to bottom right,transparent calc(50% - 1px),var(--line) 50%,transparent calc(50% + 1px)),linear-gradient(to bottom left,transparent calc(50% - 1px),var(--line) 50%,transparent calc(50% + 1px))}
+.memory-center{grid-area:2/1/3/3;justify-self:center;max-width:100%;padding:7px 18px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-size:23px;font-weight:600;text-align:center}
+.memory-center span{display:block}
+.memory-center span+span{font-size:14px;font-weight:400;margin-top:2px}
+.memory-branch{min-width:0;padding:8px 10px;background:var(--paper);border:1px solid var(--line);border-radius:6px;line-height:1.55}
+.memory-branch-1{grid-area:1/1}.memory-branch-2{grid-area:1/2}.memory-branch-3{grid-area:3/1}.memory-branch-4{grid-area:3/2}
+.memory-branch-label{font-size:13px;font-weight:700;color:var(--ink)}
+.memory-word{display:flex;align-items:baseline;gap:2px 8px;flex-wrap:wrap}
+.memory-word span{font-size:14px}
+.memory-map .text-button{font-size:17px}
+.memory-reason,.reading-hints li{font-size:14px;line-height:1.6}
+.reading-hints ul{padding-left:1.2em;margin:6px 0}
+.reading-hints li+li{margin-top:4px}
+:is(.memory-map,.reading-hints) .text-button{padding:0;text-align:left;white-space:normal;text-decoration:underline;text-underline-offset:.16em}
+.dialog-body .reading-hints,.dialog-body .memory-map:first-of-type{margin-top:16px}
+.quiz-feedback>:is(.memory-map,.reading-hints){grid-column:1/-1;margin:0 0 2px}
+@media(min-width:961px){.quiz-feedback>.reading-hints{grid-row:4}.quiz-feedback>.memory-map{grid-row:5}}
+@media(max-width:480px){.memory-map figure{column-gap:8px}.memory-branch{padding:7px 8px}}
