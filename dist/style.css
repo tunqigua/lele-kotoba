@@ -368,3 +368,14 @@ body{color:var(--ink)}.sidebar{width:208px;padding:28px 15px 20px;background:#f7
 .quiz-feedback>:is(.memory-map,.reading-hints){grid-column:1/-1;margin:0 0 2px}
 @media(min-width:961px){.quiz-feedback>.reading-hints{grid-row:4}.quiz-feedback>.memory-map{grid-row:5}}
 @media(max-width:480px){.memory-map figure{column-gap:8px}.memory-branch{padding:7px 8px}}
+
+.kanji-chain{margin:12px 0 14px}
+.kanji-chain h3{font-size:15px;margin:0 0 7px}
+.kanji-chain ol{list-style:none;margin:0;padding:0}
+.chain-word{display:flex;align-items:baseline;gap:3px 9px;flex-wrap:wrap;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--paper);font-size:14px;line-height:1.5}
+.chain-word strong{font-size:17px}
+.kanji-chain [aria-current="true"] .chain-word{border-color:currentColor}
+.chain-meaning{color:var(--muted)}
+.chain-link{padding:2px 8px;font-size:13px;line-height:1.5}
+.chain-link>span:first-child{margin-right:4px}
+.kanji-chain mark{background:transparent;color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:.18em}

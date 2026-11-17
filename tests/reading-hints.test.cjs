@@ -57,3 +57,33 @@ test('each vocabulary entry has four distinct, navigable memory anchors',()=>{
   const street=memory.forWord(words.find(w=>w.word==='通り'));
   assert.match(street[2].why,/ます形词干/);
 });
+
+test('same-kanji chains use distinct vocabulary entries and identify each shared character',()=>{
+  runInNewContext(readFileSync(__dirname+'/../dist/memory-map.js','utf8'),context);
+  const readings=context.window.KOTOBA_KANJI_READINGS;
+  const memory=context.window.KotobaMemory.build(words,hints,context.window.KOTOBA_RADICALS,readings);
+  const display=w=>(w.quizWritten||w.word).replace(/（.*?）/g,'');
+  const sample=memory.chainFor(words.find(w=>w.word==='営業'));
+  assert.equal(sample.words.map(w=>w.word).join(' → '),'経済 → 経営 → 営業 → 授業 → 業績');
+  assert.equal(sample.links.map(e=>e.char+e.toReading).join(' '),'経けい 営えい 業ぎょう 業ぎょう');
+  let supported=0;
+  for(const word of words){
+    const chain=memory.chainFor(word);
+    if(chain.links.length)supported++;
+    assert.ok(chain.words.includes(word));
+    assert.ok(chain.words.length<=5);
+    assert.equal(new Set(chain.words.map(display)).size,chain.words.length);
+    assert.equal(chain.links.length,chain.words.length-1);
+    for(const [i,edge] of chain.links.entries()){
+      const [left,right]=chain.words.slice(i,i+2);
+      assert.ok(/\p{Script=Han}/u.test(edge.char));
+      assert.ok(display(left).includes(edge.char)&&display(right).includes(edge.char),word.word);
+      assert.equal(edge.fromReading,readings[left.id]?.[edge.char]);
+      assert.equal(edge.toReading,readings[right.id]?.[edge.char]);
+      assert.ok(byId.has(right.id));
+    }
+  }
+  assert.ok(supported>2000);
+  assert.equal(memory.chainFor(words.find(w=>w.word==='ありがとう')).links.length,0);
+  console.log(`${supported} entries with same-kanji chains`);
+});

@@ -245,7 +245,7 @@ const additionalSenses=[
  ["〜歳","いくつ","用「おいくつですか」问几岁时，以「〜歳」回答"],
 ];
 
-function build(words,hints={},radicals={}){
+function build(words,hints={},radicals={},kanjiReadings={}){
  const byId=new Map(words.map(w=>[w.id,w])),byWord=new Map();
  const byHan=new Map(),byRadical=new Map(),byKana=new Map(),byEdge=new Map(),byShape=new Map(),byGloss=new Map(),byForm=new Map(),byEnding=new Map();
  const entries=new Map(),stems=new Map(),derivatives=new Map(),curated=new Map(),contexts=new Map();
@@ -428,7 +428,43 @@ function build(words,hints={},radicals={}){
   }
   return Array.from({length:4},(_,i)=>branches[i]||null);
  };
- return {forWord:makeLinks};
+ const example=['経済','経営','営業','授業','業績'].map(word=>byWord.get(word));
+ function connection(from,to,char){
+  return {char,fromReading:kanjiReadings[from.id]?.[char],toReading:kanjiReadings[to.id]?.[char]};
+ }
+ function chainFor(word){
+  const words=[word],links=[],used=new Set([written(word)]);
+  if(example.every(Boolean)&&example.includes(word)){
+   return {words:example,links:['経','営','業','業'].map((char,i)=>connection(example[i],example[i+1],char))};
+  }
+  function extend(atStart){
+   const end=atStart?words[0]:words[words.length-1];
+   const previous=(atStart?links[0]:links[links.length-1])?.char;
+   let best=null;
+   for(const char of entries.get(end.id).chars){
+    for(const candidate of byHan.get(char)){
+     if(used.has(written(candidate)))continue;
+     const edge=atStart?connection(candidate,end,char):connection(end,candidate,char);
+     const known=edge.fromReading&&edge.toReading;
+     const same=known&&edge.fromReading===edge.toReading;
+     const score=(same?30:known?6:10)+(char!==previous?9:0)+
+                 (entries.get(candidate.id).chars.length>1?3:0)+(coreWord(candidate)?2:0);
+     if(!best||score>best.score)best={candidate,edge,score};
+    }
+   }
+   if(!best)return false;
+   used.add(written(best.candidate));
+   if(atStart){words.unshift(best.candidate);links.unshift(best.edge);}
+   else{words.push(best.candidate);links.push(best.edge);}
+   return true;
+  }
+  for(let i=0;i<4;i++){
+   const atStart=i%2===0;
+   if(!extend(atStart)&&!extend(!atStart))break;
+  }
+  return {words,links};
+ }
+ return {forWord:makeLinks,chainFor};
 }
 window.KotobaMemory={build};
 })();
