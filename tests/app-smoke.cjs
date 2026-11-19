@@ -99,6 +99,13 @@ assert.equal(E.counts(readState(),clock).due,0);assert.equal(E.counts(readState(
 const graduated=E.fresh();E.rate(graduated,first.id,'hard',clock-E.DAY);E.rate(graduated,first.id,'good',clock-E.DAY);graduated.words[first.id].readingRule='daily-v1';graduated.words[first.id].readingStreak=5;graduated.words[first.id].readingDue=E.reviewDue(clock,7);
 winHandlers.storage({key:E.KEY,newValue:JSON.stringify(graduated)});nav('review');ctx.Math.random=()=>.1;
 assert.equal(options().length,0);assert.equal(cardWord(),first.word);
+const loanword=ctx.window.KOTOBA_DATA.words.find(w=>w.word==='コーヒー'),loanwordReview=E.fresh();
+E.rate(loanwordReview,loanword.id,'good',clock-E.DAY);
+Object.assign(loanwordReview.words[loanword.id],{readingRule:'daily-v1',readingStreak:5,readingDue:E.reviewDue(clock,7)});
+winHandlers.storage({key:E.KEY,newValue:JSON.stringify(loanwordReview)});nav('review');
+assert.match(el('#main').innerHTML,/<h2 lang="ja">コーヒー<\/h2>/,'the closed card shows the katakana spelling without ruby');
+action('reveal');
+assert.match(el('#main').innerHTML,/<h2 lang="ja">.*<rt>こー<\/rt>.*<rt>ひー<\/rt>.*<\/h2>/,'revealing the card restores its hiragana guide');
 console.log('PASS: extreme fifth-error list; live midnight unlock; mixed review cards/questions; feedback, retries and next-day errors; stable readings rest between checks.');
 
 // Low-frequency checks return at midnight, extend on success, and recover on failure.
